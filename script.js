@@ -1,0 +1,273 @@
+// Main functionality
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Mobile Menu Toggle (for future expansion)
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('.nav');
+
+    if (mobileMenuToggle && nav) {
+        mobileMenuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    }
+
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            // Close mobile menu if open
+            if (nav.classList.contains('active')) {
+                nav.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+            }
+            
+            if (targetSection) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = targetSection.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // CTA Button scroll to contact
+    const ctaButton = document.querySelector('.cta-button');
+    if (ctaButton) {
+        ctaButton.addEventListener('click', function() {
+            const contactSection = document.querySelector('#contact');
+            if (contactSection) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = contactSection.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+
+    // Header hide/show on scroll
+    const header = document.querySelector('.header');
+    let lastScrollTop = 0;
+    let scrollThreshold = 100;
+
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Change background based on scroll position
+        if (scrollTop > 100) {
+            header.style.background = 'rgba(255, 255, 255, 0.25)';
+        } else {
+            header.style.background = 'rgba(255, 255, 255, 0.15)';
+        }
+        
+        // Hide/show header based on scroll direction
+        if (scrollTop > scrollThreshold) {
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down - hide header
+                header.classList.add('hidden');
+            } else {
+                // Scrolling up - show header
+                header.classList.remove('hidden');
+            }
+        } else {
+            // Always show header at the top
+            header.classList.remove('hidden');
+        }
+        
+        lastScrollTop = scrollTop;
+    });
+
+    // Carousel Functionality
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentSlide = 0;
+
+    function updateCarousel() {
+        slides.forEach((slide, index) => {
+            slide.classList.remove('active', 'prev', 'next');
+            
+            if (index === currentSlide) {
+                slide.classList.add('active');
+            } else if (index === (currentSlide - 1 + slides.length) % slides.length) {
+                slide.classList.add('prev');
+            } else if (index === (currentSlide + 1) % slides.length) {
+                slide.classList.add('next');
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateCarousel();
+    }
+
+    if (nextBtn && prevBtn) {
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+    }
+
+    // Initialize carousel
+    if (slides.length > 0) {
+        updateCarousel();
+    }
+
+    // Touch/Swipe functionality for mobile
+    let startX = 0;
+    let endX = 0;
+    const carouselContainer = document.querySelector('.carousel-container');
+    
+    if (carouselContainer) {
+        carouselContainer.addEventListener('touchstart', function(e) {
+            startX = e.touches[0].clientX;
+        }, { passive: true });
+        
+        carouselContainer.addEventListener('touchend', function(e) {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        }, { passive: true });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - next slide
+                    nextSlide();
+                } else {
+                    // Swipe right - previous slide
+                    prevSlide();
+                }
+            }
+        }
+    }
+
+    // Auto-play carousel removed per user request
+
+    // Contact form handling
+    const form = document.querySelector('.contact-form');
+    if (form) {
+        const submitButton = form.querySelector('.submit-button');
+        const originalButtonText = submitButton.textContent;
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Change button text
+            submitButton.textContent = currentLang === 'de' ? 'Wird gesendet...' : 'Sending...';
+            submitButton.disabled = true;
+            
+            // Submit form via fetch
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Success
+                    showFormMessage(
+                        currentLang === 'de' ? 
+                        'Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.' : 
+                        'Thank you! Your message has been sent successfully.',
+                        'success'
+                    );
+                    form.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            }).catch(error => {
+                // Error
+                showFormMessage(
+                    currentLang === 'de' ? 
+                    'Entschuldigung, es gab einen Fehler beim Senden. Bitte versuchen Sie es erneut.' : 
+                    'Sorry, there was an error sending your message. Please try again.',
+                    'error'
+                );
+            }).finally(() => {
+                // Reset button
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+            });
+        });
+    }
+
+    function showFormMessage(message, type) {
+        // Remove existing message
+        const existingMessage = document.querySelector('.form-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        // Create new message
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `form-message ${type}`;
+        messageDiv.textContent = message;
+        
+        // Insert message before submit button
+        const form = document.querySelector('.contact-form');
+        const submitButton = form.querySelector('.submit-button');
+        form.insertBefore(messageDiv, submitButton);
+        
+        // Remove message after 5 seconds
+        setTimeout(() => {
+            messageDiv.remove();
+        }, 5000);
+    }
+
+    // Scroll Animations
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target;
+                
+                // Debug logging
+                console.log('Animating element:', element.className);
+                
+                // Add animate class to trigger animations
+                element.classList.add('animate');
+                
+                // Stop observing this element
+                observer.unobserve(element);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all elements with animation classes
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+
+    // Hero animations on page load
+    window.addEventListener('load', () => {
+        const heroElements = document.querySelectorAll('.hero-content .animate-on-scroll');
+        heroElements.forEach((element, index) => {
+            setTimeout(() => {
+                element.classList.add('animate');
+            }, index * 200);
+        });
+    });
+}); 

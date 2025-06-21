@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- German Pages -->
+  <url>
+    <loc>https://dd-gossen.com/</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/" />
+  </url>
+  
+  <url>
+    <loc>https://dd-gossen.com/impressum.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/legal-notice.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/impressum.html" />
+  </url>
+  
+  <url>
+    <loc>https://dd-gossen.com/datenschutz.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/datenschutz.html" />
+  </url>
+  
+  <url>
+    <loc>https://dd-gossen.com/agb.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/terms.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/agb.html" />
+  </url>
+  
+  <!-- English Pages -->
+  <url>
+    <loc>https://dd-gossen.com/en/</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/" />
+  </url>
+  
+  <url>
+    <loc>https://dd-gossen.com/en/legal-notice.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/legal-notice.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/impressum.html" />
+  </url>
+  
+  <url>
+    <loc>https://dd-gossen.com/en/privacy-policy.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/privacy-policy.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/datenschutz.html" />
+  </url>
+  
+  <url>
+    <loc>https://dd-gossen.com/en/terms.html</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/terms.html" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/agb.html" />
+  </url>
+  
+</urlset> 
