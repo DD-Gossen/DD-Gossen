@@ -1,0 +1,34 @@
+DNS-EINSTELLUNGEN FÜR dd-gossen.com
+=====================================
+
+Bei Ihrem Domain-Anbieter (z.B. Strato, 1&1, GoDaddy) folgende DNS-Records setzen:
+
+CNAME Records:
+--------------
+Name: www
+Ziel: dd-gossen.github.io
+
+A Records (für Root-Domain):
+----------------------------
+Name: @ (oder leer lassen)
+Ziele: 
+- 185.199.108.153
+- 185.199.109.153  
+- 185.199.110.153
+- 185.199.111.153
+
+AAAA Records (IPv6, optional):
+------------------------------
+Name: @ (oder leer lassen)
+Ziele:
+- 2606:50c0:8000::153
+- 2606:50c0:8001::153
+- 2606:50c0:8002::153
+- 2606:50c0:8003::153
+
+ERGEBNIS:
+---------
+✅ https://dd-gossen.com
+✅ https://www.dd-gossen.com
+✅ https://dd-gossen.com/impressum (ohne .html)
+✅ https://dd-gossen.com/datenschutz (ohne .html) 
