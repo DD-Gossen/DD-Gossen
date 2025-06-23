@@ -634,8 +634,7 @@ body[data-lang="en"] .flag-de {
 /* Carousel Navigation */
 .carousel-btn {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 200px;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -653,7 +652,7 @@ body[data-lang="en"] .flag-de {
 
 .carousel-btn:hover {
     background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-50%) scale(1.1);
+    transform: scale(1.1);
 }
 
 .carousel-btn-prev {
