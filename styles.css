@@ -45,7 +45,7 @@ body {
 
 .header .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem 20px;
     position: relative;
@@ -57,8 +57,6 @@ body {
     font-weight: 400;
     color: #0f172a;
     text-decoration: none;
-    position: absolute;
-    left: 20px;
     transition: color 0.3s ease;
 }
 
@@ -73,12 +71,15 @@ body {
     color: inherit;
 }
 
+/* Header Right Section */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 /* Language Flag */
 .language-flag {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -91,10 +92,11 @@ body {
     z-index: 10;
     background-size: cover;
     background-position: center;
+    flex-shrink: 0;
 }
 
 .language-flag:hover {
-    transform: translateY(-50%) scale(1.1);
+    transform: scale(1.1);
     border-color: white;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -1498,9 +1500,12 @@ html {
     }
 
     .language-flag {
-        right: 20px;
         width: 20px;
         height: 20px;
+    }
+    
+    .header-right {
+        gap: 0.75rem;
     }
 
                 .nav-list {
