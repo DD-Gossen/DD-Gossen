@@ -8,13 +8,19 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-image: url('DD-background.webp');
+    /* Background wird via JavaScript geladen für bessere Performance */
+    background-color: #f8fafc; /* Fallback-Farbe während des Ladens */
     background-size: cover;
     background-position: top;
     background-attachment: scroll;
     background-repeat: no-repeat;
     min-height: 100vh;
     overflow-x: hidden;
+    transition: background-image 0.3s ease;
+}
+
+body.background-loaded {
+    background-image: url('DD-background.webp');
 }
 
 /* Container */
@@ -291,7 +297,7 @@ body[data-lang="en"] .flag-de {
 .section {
     padding: 5rem 0;
    
-    backdrop-filter: blur(10px);
+    
     margin: 2rem 0;
     border-radius: 15px;
 }

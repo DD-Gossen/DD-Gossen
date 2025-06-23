@@ -258,4 +258,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }, index * 200);
         });
     });
+
+    // Background lazy loading for better performance
+    function loadBackgroundImage() {
+        const img = new Image();
+        img.onload = function() {
+            // Background loaded successfully
+            document.body.classList.add('background-loaded');
+            console.log('Background image loaded successfully');
+        };
+        img.onerror = function() {
+            console.warn('Background image failed to load');
+        };
+        img.src = 'DD-background.webp';
+    }
+
+    // Load background after a short delay to prioritize critical content
+    setTimeout(loadBackgroundImage, 100);
 }); 
