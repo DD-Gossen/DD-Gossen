@@ -263,11 +263,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function loadBackgroundImage() {
         const img = new Image();
         img.onload = function() {
-            // Background loaded successfully - add with smooth fade-in
-            setTimeout(() => {
-                document.body.classList.add('background-loaded');
-                console.log('Background image loaded successfully');
-            }, 300); // Kurze Verzögerung für sanfteren Übergang
+            // Background loaded successfully - apply immediately
+            document.body.classList.add('background-loaded');
+            console.log('Background image loaded successfully');
         };
         img.onerror = function() {
             console.warn('Background image failed to load');
@@ -276,5 +274,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Load background after critical content is ready
-    setTimeout(loadBackgroundImage, 500); // Etwas längere Verzögerung für bessere UX
+    setTimeout(loadBackgroundImage, 100); // Minimale Verzögerung für Performance
 }); 

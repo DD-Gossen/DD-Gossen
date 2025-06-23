@@ -18,30 +18,9 @@ body {
     overflow-x: hidden;
 }
 
+/* Direkter Übergang ohne Animation */
 body.background-loaded {
     background-image: url('DD-background.webp');
-}
-
-/* Sanfter Übergang für das Hintergrundbild */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('DD-background.webp');
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 1.5s ease-in-out;
-    pointer-events: none;
-}
-
-body.background-loaded::before {
-    opacity: 1;
 }
 
 /* Container */
