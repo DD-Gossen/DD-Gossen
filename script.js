@@ -73,22 +73,27 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollTop = scrollTop;
     });
 
-    // Carousel Functionality
+    // Simple Carousel Functionality
     const slides = document.querySelectorAll('.carousel-slide');
+    const projectInfos = document.querySelectorAll('.project-info');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     let currentSlide = 0;
 
     function updateCarousel() {
+        // Update slides
         slides.forEach((slide, index) => {
-            slide.classList.remove('active', 'prev', 'next');
-            
+            slide.classList.remove('active');
             if (index === currentSlide) {
                 slide.classList.add('active');
-            } else if (index === (currentSlide - 1 + slides.length) % slides.length) {
-                slide.classList.add('prev');
-            } else if (index === (currentSlide + 1) % slides.length) {
-                slide.classList.add('next');
+            }
+        });
+        
+        // Update project info
+        projectInfos.forEach((info, index) => {
+            info.classList.remove('active');
+            if (index === currentSlide) {
+                info.classList.add('active');
             }
         });
     }
@@ -155,8 +160,9 @@ document.addEventListener('DOMContentLoaded', function() {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Change button text
-            submitButton.textContent = currentLang === 'de' ? 'Wird gesendet...' : 'Sending...';
+            // Change button text based on page language
+            const isEnglish = window.location.pathname.includes('/en/');
+            submitButton.textContent = isEnglish ? 'Sending...' : 'Wird gesendet...';
             submitButton.disabled = true;
             
             // Submit form via fetch
@@ -169,24 +175,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }).then(response => {
                 if (response.ok) {
                     // Success
-                    showFormMessage(
-                        currentLang === 'de' ? 
-                        'Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.' : 
-                        'Thank you! Your message has been sent successfully.',
-                        'success'
-                    );
+                    const successMessage = isEnglish ? 
+                        'Thank you! Your message has been sent successfully.' :
+                        'Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.';
+                    showFormMessage(successMessage, 'success');
                     form.reset();
                 } else {
                     throw new Error('Network response was not ok');
                 }
             }).catch(error => {
                 // Error
-                showFormMessage(
-                    currentLang === 'de' ? 
-                    'Entschuldigung, es gab einen Fehler beim Senden. Bitte versuchen Sie es erneut.' : 
-                    'Sorry, there was an error sending your message. Please try again.',
-                    'error'
-                );
+                const errorMessage = isEnglish ?
+                    'Sorry, there was an error sending your message. Please try again.' :
+                    'Entschuldigung, es gab einen Fehler beim Senden. Bitte versuchen Sie es erneut.';
+                showFormMessage(errorMessage, 'error');
             }).finally(() => {
                 // Reset button
                 submitButton.textContent = originalButtonText;
