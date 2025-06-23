@@ -263,9 +263,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function loadBackgroundImage() {
         const img = new Image();
         img.onload = function() {
-            // Background loaded successfully
-            document.body.classList.add('background-loaded');
-            console.log('Background image loaded successfully');
+            // Background loaded successfully - add with smooth fade-in
+            setTimeout(() => {
+                document.body.classList.add('background-loaded');
+                console.log('Background image loaded successfully');
+            }, 300); // Kurze Verzögerung für sanfteren Übergang
         };
         img.onerror = function() {
             console.warn('Background image failed to load');
@@ -273,6 +275,6 @@ document.addEventListener('DOMContentLoaded', function() {
         img.src = 'DD-background.webp';
     }
 
-    // Load background after a short delay to prioritize critical content
-    setTimeout(loadBackgroundImage, 100);
+    // Load background after critical content is ready
+    setTimeout(loadBackgroundImage, 500); // Etwas längere Verzögerung für bessere UX
 }); 
