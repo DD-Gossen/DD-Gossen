@@ -39,21 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // CTA Button scroll to contact
-    const ctaButton = document.querySelector('.cta-button');
-    if (ctaButton) {
-        ctaButton.addEventListener('click', function() {
-            const contactSection = document.querySelector('#contact');
-            if (contactSection) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = contactSection.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    }
+
 
     // Header hide/show on scroll
     const header = document.querySelector('.header');

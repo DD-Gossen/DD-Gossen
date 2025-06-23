@@ -31,25 +31,33 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.2);
     position: fixed;
     width: calc(100% - 80px);
+    
     top: 20px;
     left: 40px;
     z-index: 999;
     border-radius: 30px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    align-items: center;
+    
+}
+
+@media (min-width: 1500px) {
+    .header {
+        width: calc(100% - 500px);
+        left: 250px;
+    }
 }
 
 .header.hidden {
     transform: translateY(-120px);
 }
 
-.header .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 20px;
-    position: relative;
-}
+
 
 .logo {
     font-family: 'Barlow Condensed', sans-serif;
@@ -57,9 +65,9 @@ body {
     font-weight: 400;
     color: #0f172a;
     text-decoration: none;
-    position: absolute;
     left: 20px;
     transition: color 0.3s ease;
+    text-align:left;
 }
 
 .logo:hover {
@@ -75,10 +83,8 @@ body {
 
 /* Language Flag */
 .language-flag {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
+   
+   
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -91,10 +97,14 @@ body {
     z-index: 10;
     background-size: cover;
     background-position: center;
+    justify-content: flex-end;
+
+    display: flex;
+    
 }
 
 .language-flag:hover {
-    transform: translateY(-50%) scale(1.1);
+    transform: translateY(-15%) scale(1.1);
     border-color: white;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
@@ -152,6 +162,8 @@ body[data-lang="en"] .flag-de {
 }
 
 /* Mobile Menu Toggle */
+
+
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
@@ -159,6 +171,7 @@ body[data-lang="en"] .flag-de {
     padding: 5px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
+    margin-right: 20px;
 }
 
 .mobile-menu-toggle span {
@@ -246,6 +259,8 @@ body[data-lang="en"] .flag-de {
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(15, 23, 42, 0.3);
+    text-decoration: none;
+    display: inline-block;
 }
 
 .cta-button:hover {
