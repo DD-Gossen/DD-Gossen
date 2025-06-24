@@ -259,22 +259,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Background lazy loading for better performance
-    function loadBackgroundImage() {
-        const img = new Image();
-        img.onload = function() {
-            // Background loaded successfully - apply immediately
-            document.body.classList.add('background-loaded');
-            console.log('Background image loaded successfully');
-        };
-        img.onerror = function() {
-            console.warn('Background image failed to load');
-        };
-        // Dynamischer Pfad je nach Sprache
-        const isEnglish = window.location.pathname.includes('/en/');
-        img.src = isEnglish ? '../DD-background.webp' : 'DD-background.webp';
-    }
-
-    // Load background after critical content is ready
-    setTimeout(loadBackgroundImage, 100); // Minimale Verzögerung für Performance
+    // Background lazy loading für bessere Performance (entfernt, da jetzt per CSS)
+    // function loadBackgroundImage() {
+    //     const img = new Image();
+    //     img.onload = function() {
+    //         document.body.classList.add('background-loaded');
+    //         console.log('Background image loaded successfully');
+    //     };
+    //     img.onerror = function() {
+    //         console.warn('Background image failed to load');
+    //     };
+    //     const isEnglish = window.location.pathname.includes('/en/');
+    //     img.src = isEnglish ? '../DD-background.webp' : 'DD-background.webp';
+    // }
+    // setTimeout(loadBackgroundImage, 100); // Minimale Verzögerung für Performance
 }); 

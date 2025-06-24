@@ -8,7 +8,7 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    /* Background wird via JavaScript geladen für bessere Performance */
+    background-image: url('DD-background.webp');
     background-color: #237eb5; /* Schöne blaue Farbe während des Ladens */
     background-size: cover;
     background-position: top;
@@ -18,9 +18,13 @@ body {
     overflow-x: hidden;
 }
 
+body[data-lang="en"] {
+    background-image: url('../DD-background.webp');
+}
+
 /* Direkter Übergang ohne Animation */
 body.background-loaded {
-    background-image: url('DD-background.webp');
+    /* Optional: kann entfernt werden, da das Bild jetzt direkt gesetzt wird */
 }
 
 /* Container */
