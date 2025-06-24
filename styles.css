@@ -1473,14 +1473,13 @@ html {
         }
 }
 
-/* Burger-Menü nur auf Legal-Pages ausblenden */
-.legal-page ~ .mobile-menu-toggle,
-.legal-content ~ .mobile-menu-toggle,
-header .mobile-menu-toggle {
+/* Burger-Menü nur auf Legal-Pages (deutsch & englisch) ausblenden */
+.legal-page header .mobile-menu-toggle,
+.legal-page ~ .page-wrapper header .mobile-menu-toggle {
     display: none !important;
 }
 
-/* Korrigiere: Auf der Main Page soll das Burger-Menü sichtbar bleiben */
+/* Auf allen anderen Seiten anzeigen */
 body:not(.legal-page) header .mobile-menu-toggle {
     display: flex !important;
-} 
+}

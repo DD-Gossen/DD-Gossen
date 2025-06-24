@@ -284,7 +284,9 @@ document.addEventListener('DOMContentLoaded', function() {
 // Burger-Menü auf Legal-Pages (deutsch & englisch) ausblenden
 window.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector('.legal-page')) {
-        var burger = document.querySelector('.mobile-menu-toggle');
-        if (burger) burger.style.display = 'none';
+        var burgers = document.querySelectorAll('.mobile-menu-toggle');
+        burgers.forEach(function(burger) {
+            burger.style.display = 'none';
+        });
     }
 }); 
