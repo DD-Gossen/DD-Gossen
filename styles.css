@@ -1467,4 +1467,16 @@ html {
             padding: 0;
             margin: 2rem 0;
         }
+}
+
+/* Burger-Menü auf Legal-Seiten ausblenden */
+.legal-page ~ .mobile-menu-toggle,
+.legal-page .mobile-menu-toggle,
+body .mobile-menu-toggle {
+    display: none !important;
+}
+
+/* Speziell für die Struktur der Legal-Seiten: */
+header .mobile-menu-toggle {
+    display: none !important;
 } 
