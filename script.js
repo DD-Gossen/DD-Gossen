@@ -120,25 +120,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Touch/Swipe functionality for mobile
     let startX = 0;
+    let startY = 0;
     let endX = 0;
+    let endY = 0;
     const carouselContainer = document.querySelector('.carousel-container');
     
     if (carouselContainer) {
         carouselContainer.addEventListener('touchstart', function(e) {
             startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
         }, { passive: true });
         
         carouselContainer.addEventListener('touchend', function(e) {
             endX = e.changedTouches[0].clientX;
+            endY = e.changedTouches[0].clientY;
             handleSwipe();
         }, { passive: true });
         
         function handleSwipe() {
             const swipeThreshold = 50;
-            const diff = startX - endX;
-            
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
+            const diffX = startX - endX;
+            const diffY = startY - endY;
+            // Nur wenn horizontale Bewegung deutlich größer als vertikale ist
+            if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > Math.abs(diffY)) {
+                if (diffX > 0) {
                     // Swipe left - next slide
                     nextSlide();
                 } else {
@@ -146,6 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     prevSlide();
                 }
             }
+            // Sonst: Seite kann normal gescrollt werden
         }
     }
 
