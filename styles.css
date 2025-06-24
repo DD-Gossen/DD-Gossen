@@ -1451,6 +1451,7 @@ html {
     .logo {
         font-size: 1.5rem;
         left: 10px;
+        padding-left: 12px;
     }
 
     .language-flag {
