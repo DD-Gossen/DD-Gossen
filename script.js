@@ -273,4 +273,12 @@ document.addEventListener('DOMContentLoaded', function() {
     //     img.src = isEnglish ? '../DD-background.webp' : 'DD-background.webp';
     // }
     // setTimeout(loadBackgroundImage, 100); // Minimale Verzögerung für Performance
+});
+
+// Burger-Menü auf Legal-Pages (deutsch & englisch) ausblenden
+window.addEventListener('DOMContentLoaded', function() {
+    if (document.querySelector('.legal-page')) {
+        var burger = document.querySelector('.mobile-menu-toggle');
+        if (burger) burger.style.display = 'none';
+    }
 }); 
