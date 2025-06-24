@@ -270,7 +270,9 @@ document.addEventListener('DOMContentLoaded', function() {
         img.onerror = function() {
             console.warn('Background image failed to load');
         };
-        img.src = 'DD-background.webp';
+        // Dynamischer Pfad je nach Sprache
+        const isEnglish = window.location.pathname.includes('/en/');
+        img.src = isEnglish ? '../DD-background.webp' : 'DD-background.webp';
     }
 
     // Load background after critical content is ready
