@@ -1473,14 +1473,14 @@ html {
         }
 }
 
-/* Burger-Menü auf Legal-Seiten ausblenden */
+/* Burger-Menü nur auf Legal-Pages ausblenden */
 .legal-page ~ .mobile-menu-toggle,
-.legal-page .mobile-menu-toggle,
-body .mobile-menu-toggle {
+.legal-content ~ .mobile-menu-toggle,
+header .mobile-menu-toggle {
     display: none !important;
 }
 
-/* Speziell für die Struktur der Legal-Seiten: */
-header .mobile-menu-toggle {
-    display: none !important;
+/* Korrigiere: Auf der Main Page soll das Burger-Menü sichtbar bleiben */
+body:not(.legal-page) header .mobile-menu-toggle {
+    display: flex !important;
 } 
