@@ -173,24 +173,32 @@ body[data-lang="en"] .flag-de {
 
 /* Mobile Menu Toggle */
 
-
+/* Burger-Menü immer ausblenden */
 .mobile-menu-toggle {
-    display: none;
+  display: none !important;
+}
+.mobile-menu-toggle span {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex !important;
     flex-direction: column;
     cursor: pointer;
     padding: 5px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
     margin-right: 20px;
-}
-
-.mobile-menu-toggle span {
+  }
+  .mobile-menu-toggle span {
+    display: block !important;
     width: 20px;
     height: 2px;
     background-color: #0f172a;
     margin: 2px 0;
     transition: 0.3s;
-    display: block;
+  }
 }
 
 /* Main Content */
@@ -1483,4 +1491,10 @@ html {
 /* Auf allen anderen Seiten anzeigen */
 body:not(.legal-page) header .mobile-menu-toggle {
     display: flex !important;
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-toggle {
+    display: none !important;
+  }
 }
