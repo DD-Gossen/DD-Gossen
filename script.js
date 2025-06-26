@@ -78,7 +78,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectInfos = document.querySelectorAll('.project-info');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const projectCard = document.querySelector('.project-card');
+    const expandButton = document.querySelector('.expand-button');
     let currentSlide = 0;
+    let isExpanded = false;
 
     function updateCarousel() {
         // Update slides
@@ -96,21 +99,53 @@ document.addEventListener('DOMContentLoaded', function() {
                 info.classList.add('active');
             }
         });
+
+        // Update expand button text based on language
+        if (expandButton) {
+            const isEnglish = window.location.pathname.includes('/en/');
+            expandButton.textContent = isEnglish ? 'Learn More' : 'Mehr erfahren';
+        }
     }
 
     function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
         updateCarousel();
+        // Close expanded card when changing slides
+        if (isExpanded) {
+            toggleExpand();
+        }
     }
 
     function prevSlide() {
         currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         updateCarousel();
+        // Close expanded card when changing slides
+        if (isExpanded) {
+            toggleExpand();
+        }
+    }
+
+    function toggleExpand() {
+        isExpanded = !isExpanded;
+        if (projectCard) {
+            projectCard.classList.toggle('expanded', isExpanded);
+        }
+        if (expandButton) {
+            const isEnglish = window.location.pathname.includes('/en/');
+            expandButton.textContent = isExpanded ? 
+                (isEnglish ? 'Show Less' : 'Weniger anzeigen') : 
+                (isEnglish ? 'Learn More' : 'Mehr erfahren');
+        }
     }
 
     if (nextBtn && prevBtn) {
         nextBtn.addEventListener('click', nextSlide);
         prevBtn.addEventListener('click', prevSlide);
+    }
+
+    // Add expand button functionality
+    if (expandButton) {
+        expandButton.addEventListener('click', toggleExpand);
     }
 
     // Initialize carousel
