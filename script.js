@@ -78,10 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectInfos = document.querySelectorAll('.project-info');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-    const projectCard = document.querySelector('.project-card');
-    const expandButton = document.querySelector('.expand-button');
     let currentSlide = 0;
-    let isExpanded = false;
 
     function updateCarousel() {
         // Update slides
@@ -99,53 +96,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 info.classList.add('active');
             }
         });
-
-        // Update expand button text based on language
-        if (expandButton) {
-            const isEnglish = window.location.pathname.includes('/en/');
-            expandButton.textContent = isEnglish ? 'Learn More' : 'Mehr erfahren';
-        }
     }
 
     function nextSlide() {
         currentSlide = (currentSlide + 1) % slides.length;
         updateCarousel();
-        // Close expanded card when changing slides
-        if (isExpanded) {
-            toggleExpand();
-        }
     }
 
     function prevSlide() {
         currentSlide = (currentSlide - 1 + slides.length) % slides.length;
         updateCarousel();
-        // Close expanded card when changing slides
-        if (isExpanded) {
-            toggleExpand();
-        }
-    }
-
-    function toggleExpand() {
-        isExpanded = !isExpanded;
-        if (projectCard) {
-            projectCard.classList.toggle('expanded', isExpanded);
-        }
-        if (expandButton) {
-            const isEnglish = window.location.pathname.includes('/en/');
-            expandButton.textContent = isExpanded ? 
-                (isEnglish ? 'Show Less' : 'Weniger anzeigen') : 
-                (isEnglish ? 'Learn More' : 'Mehr erfahren');
-        }
     }
 
     if (nextBtn && prevBtn) {
         nextBtn.addEventListener('click', nextSlide);
         prevBtn.addEventListener('click', prevSlide);
-    }
-
-    // Add expand button functionality
-    if (expandButton) {
-        expandButton.addEventListener('click', toggleExpand);
     }
 
     // Initialize carousel
@@ -158,26 +123,48 @@ document.addEventListener('DOMContentLoaded', function() {
     let startY = 0;
     let endX = 0;
     let endY = 0;
+    let isSwiping = false;
     const carouselContainer = document.querySelector('.carousel-container');
     
     if (carouselContainer) {
         carouselContainer.addEventListener('touchstart', function(e) {
             startX = e.touches[0].clientX;
             startY = e.touches[0].clientY;
+            isSwiping = false;
         }, { passive: true });
         
+        carouselContainer.addEventListener('touchmove', function(e) {
+            if (!isSwiping) {
+                const currentX = e.touches[0].clientX;
+                const currentY = e.touches[0].clientY;
+                const diffX = Math.abs(currentX - startX);
+                const diffY = Math.abs(currentY - startY);
+                
+                // Only start swiping if horizontal movement is clearly dominant
+                if (diffX > 10 && diffX > diffY * 2) {
+                    isSwiping = true;
+                    e.preventDefault();
+                }
+            } else {
+                e.preventDefault();
+            }
+        }, { passive: false });
+        
         carouselContainer.addEventListener('touchend', function(e) {
-            endX = e.changedTouches[0].clientX;
-            endY = e.changedTouches[0].clientY;
-            handleSwipe();
+            if (isSwiping) {
+                endX = e.changedTouches[0].clientX;
+                endY = e.changedTouches[0].clientY;
+                handleSwipe();
+            }
         }, { passive: true });
         
         function handleSwipe() {
             const swipeThreshold = 50;
             const diffX = startX - endX;
             const diffY = startY - endY;
-            // Nur wenn horizontale Bewegung deutlich größer als vertikale ist
-            if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > Math.abs(diffY)) {
+            
+            // Only trigger if horizontal movement is significant and dominant
+            if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
                 if (diffX > 0) {
                     // Swipe left - next slide
                     nextSlide();
@@ -186,7 +173,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     prevSlide();
                 }
             }
-            // Sonst: Seite kann normal gescrollt werden
         }
     }
 
