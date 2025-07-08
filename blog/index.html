@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | DD-Gossen</title>
+  <meta name="description" content="Blog zu Shopify, Webdesign und E-Commerce von Maik Gossen.">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('../DD-background.webp');
+    }
+    .blog-main {
+      margin-top: 120px;
+      min-height: 100vh;
+    }
+    .blog-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .main-article-card {
+      max-width: 900px;
+      margin: 0 auto 3rem auto;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .main-article-card img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      margin-bottom: 1.5rem;
+      border-radius: 18px;
+      object-fit: cover;
+      display: block;
+    }
+    #article-card img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      margin-bottom: 1.5rem;
+      border-radius: 18px;
+      object-fit: cover;
+      display: block;
+    }
+    .main-article-card h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+    .main-article-card p {
+      color: #0f172a;
+      opacity: 0.85;
+      margin-bottom: 1.2rem;
+    }
+    .main-article-card .blog-date {
+      font-size: 0.95rem;
+      color: #237eb5;
+      margin-bottom: 1.2rem;
+    }
+    .main-article-card .blog-summary {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .main-article-card .blog-readmore {
+      background: #0f172a;
+      color: white;
+      border: none;
+      padding: 0.8rem 2.2rem;
+      font-size: 1.1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(15, 23, 42, 0.3);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .main-article-card .blog-readmore:hover {
+      background: #1e293b;
+    }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem auto;
+    }
+    .blog-card {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    }
+    .blog-card img {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      margin-bottom: 1rem;
+      border-radius: 14px;
+      object-fit: cover;
+      display: block;
+    }
+    .blog-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.3rem;
+      color: #0f172a;
+      margin-bottom: 0.7rem;
+      text-align: center;
+    }
+    .blog-card .blog-date {
+      font-size: 0.9rem;
+      color: #237eb5;
+      margin-bottom: 0.7rem;
+    }
+    .blog-card .blog-summary {
+      font-size: 1rem;
+      color: #0f172a;
+      opacity: 0.8;
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+    .blog-card .blog-readmore {
+      background: #0f172a;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.5rem;
+      font-size: 1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(15, 23, 42, 0.3);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .blog-card .blog-readmore:hover {
+      background: #1e293b;
+    }
+    @media (max-width: 768px) {
+      .main-article-card {
+        padding: 1.2rem;
+      }
+      .blog-grid {
+        gap: 1rem;
+      }
+      .blog-card {
+        padding: 1.2rem 0.7rem 1rem 0.7rem;
+      }
+      .main-article-card img {
+        max-width: 100%;
+      }
+      .blog-card img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="../" class="logo">
+      <h2>DD-Gossen</h2>
+    </a>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="../#home" class="nav-link">Startseite</a></li>
+        <li><a href="../#services" class="nav-link">Mein Angebot</a></li>
+        <li><a href="../#about-me" class="nav-link">Über mich</a></li>
+        <li><a href="../#carousel" class="nav-link">Projekte</a></li>
+        <li><a href="../#contact" class="nav-link">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+  <main class="blog-main">
+    <div class="blog-header">
+      <h1 class="section-title">Blog</h1>
+      <p>Aktuelle Artikel zu Shopify, Webdesign & E-Commerce</p>
+    </div>
+    <div id="main-article"></div>
+    <div class="blog-grid" id="blog-grid"></div>
+  </main>
+  <script src="blog.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogartikel | DD-Gossen</title>
+  <meta name="description" content="Blogartikel zu Shopify, Webdesign und E-Commerce von Maik Gossen.">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="stylesheet" href="../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('../DD-background.webp');
+    }
+    .blog-main {
+      margin-top: 120px;
+      min-height: 100vh;
+    }
+    .article-card {
+      max-width: 900px;
+      margin: 0 auto 3rem auto;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .article-card img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      margin-bottom: 1.5rem;
+      border-radius: 18px;
+      object-fit: cover;
+      display: block;
+    }
+    .article-card h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #0f172a;
+    }
+    .article-card .blog-date {
+      font-size: 0.95rem;
+      color: #237eb5;
+      margin-bottom: 1.2rem;
+    }
+    .article-content {
+      width: 100%;
+      color: #0f172a;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .support-card {
+      max-width: 600px;
+      margin: 0 auto 2.5rem auto;
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .support-card p {
+      font-size: 1.1rem;
+      color: #0f172a;
+      opacity: 0.9;
+      margin-bottom: 1.2rem;
+    }
+    .contact-btn {
+      background: #0f172a;
+      color: white;
+      border: none;
+      padding: 0.8rem 2.2rem;
+      font-size: 1.1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(15, 23, 42, 0.3);
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1.2rem;
+    }
+    .contact-btn:hover {
+      background: #1e293b;
+    }
+    @media (max-width: 768px) {
+      .article-card {
+        padding: 1.2rem;
+      }
+      .support-card {
+        padding: 1.2rem 0.7rem 1rem 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="../" class="logo">
+      <h2>DD-Gossen</h2>
+    </a>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="../#home" class="nav-link">Startseite</a></li>
+        <li><a href="../#services" class="nav-link">Mein Angebot</a></li>
+        <li><a href="../#about-me" class="nav-link">Über mich</a></li>
+        <li><a href="../#carousel" class="nav-link">Projekte</a></li>
+        <li><a href="../#contact" class="nav-link">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="mobile-menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+  <main class="blog-main">
+    <div class="article-card" id="article-card">
+      <!-- Artikel wird per JS geladen -->
+    </div>
+    <div class="support-card">
+      <p>Brauchen Sie Unterstützung bei einem Shopify-Projekt? Ich helfe Ihnen gerne weiter – von der Idee bis zum fertigen Shop!</p>
+      <a class="contact-btn" href="../#contact">Jetzt Kontakt aufnehmen</a>
+    </div>
+  </main>
+  <script src="blog.js"></script>
+</body>
+</html>
