@@ -5,131 +5,6 @@ let postsCache = null;
 let lastCacheTime = 0;
 const CACHE_DURATION = 5 * 60 * 1000; // 5 Minuten
 
-// Hilfsfunktionen
-function fetchMarkdownList() {
-  // Liest alle .md-Dateien im blog/posts/-Ordner (statisch gepflegte Liste)
-  return [
-    '2024-06-01-shopify-tipps.md',
-    '2024-06-02-seo-grundlagen.md',
-    '2024-06-03-apps-empfehlung.md',
-    '2024-06-04-design-trends.md',
-    '2024-06-05-rechtliches.md',
-    '2024-06-06-shopify-vs-woocommerce.md',
-  ];
-}
-
-function fetchMarkdown(filename) {
-  // Optimierte Pfad-Strategie: Versuche zuerst den wahrscheinlichsten Pfad
-  const paths = [
-    'posts/' + filename,  // Wahrscheinlichster Pfad
-    '/blog/posts/' + filename,
-    '../posts/' + filename,
-    './posts/' + filename
-  ];
-  
-  return new Promise((resolve, reject) => {
-    const tryPath = (index) => {
-      if (index >= paths.length) {
-        reject(new Error(`Could not load ${filename} from any path`));
-        return;
-      }
-      
-      fetch(paths[index])
-        .then(r => {
-          if (!r.ok) {
-            throw new Error(`HTTP error! status: ${r.status}`);
-          }
-          return r.text();
-        })
-        .then(text => {
-          console.log(`Successfully loaded ${filename} from ${paths[index]}`);
-          resolve(text);
-        })
-        .catch(error => {
-          console.log(`Failed to load ${filename} from ${paths[index]}:`, error);
-          tryPath(index + 1);
-        });
-    };
-    
-    tryPath(0);
-  });
-}
-
-// Optimierte Funktion zum Laden aller Posts parallel
-async function loadAllPosts() {
-  // Prüfe Cache
-  const now = Date.now();
-  if (postsCache && (now - lastCacheTime) < CACHE_DURATION) {
-    return postsCache;
-  }
-
-  const files = fetchMarkdownList();
-  const posts = [];
-  
-  // Lade alle Posts parallel statt sequentiell
-  const loadPromises = files.map(async (f) => {
-    try {
-      const raw = await fetchMarkdown(f);
-      const { attributes, body } = parseFrontmatter(raw);
-      
-      return {
-        ...attributes,
-        body,
-        slug: f.replace(/\.md$/, ''),
-        filename: f,
-        date: attributes.date || f.slice(0, 10),
-      };
-    } catch (error) {
-      console.error('Failed to load post:', f, error);
-      return null;
-    }
-  });
-
-  // Warte auf alle parallelen Requests
-  const results = await Promise.all(loadPromises);
-  
-  // Filtere erfolgreich geladene Posts
-  const validPosts = results.filter(post => post !== null);
-  
-  // Wenn keine Posts geladen wurden, versuche JSON-Fallback
-  if (validPosts.length === 0) {
-    try {
-      const jsonResponse = await fetch('posts.json');
-      if (jsonResponse.ok) {
-        const jsonData = await jsonResponse.json();
-        postsCache = jsonData;
-        lastCacheTime = now;
-        return jsonData;
-      }
-    } catch (jsonError) {
-      console.error('JSON fallback also failed:', jsonError);
-    }
-  }
-  
-  // Cache die Ergebnisse
-  postsCache = validPosts;
-  lastCacheTime = now;
-  return validPosts;
-}
-
-function parseFrontmatter(md) {
-  const match = md.match(/^---([\s\S]*?)---/);
-  if (!match) return { attributes: {}, body: md };
-  const attrs = {};
-  match[1].split('\n').forEach(line => {
-    const [key, ...rest] = line.split(':');
-    if (key && rest.length) {
-      let value = rest.join(':').trim();
-      // Entferne Anführungszeichen am Anfang/Ende
-      if (value.startsWith('"') && value.endsWith('"')) {
-        value = value.slice(1, -1);
-      }
-      attrs[key.trim()] = value;
-    }
-  });
-  return { attributes: attrs, body: md.slice(match[0].length).trim() };
-}
-
 // Deutsche Datumsformatierung
 function formatGermanDate(dateString) {
   const date = new Date(dateString);
@@ -141,40 +16,27 @@ function formatGermanDate(dateString) {
   return date.toLocaleDateString('de-DE', options);
 }
 
-function markdownToHtml(md) {
-  // Tabellen-Support
-  md = md.replace(/\|([^\n]*)\|\n\|([\s\S]*?)\|\n((\|.*\|\n)+)/g, function(match, header, align, rows) {
-    const headers = header.split('|').map(h => h.trim()).filter(Boolean);
-    const aligns = align.split('|').map(a => a.trim());
-    const bodyRows = rows.trim().split('\n').map(r => r.split('|').map(c => c.trim()).filter(Boolean));
-    let html = '<table><thead><tr>';
-    headers.forEach(h => html += '<th>' + h + '</th>');
-    html += '</tr></thead><tbody>';
-    bodyRows.forEach(row => {
-      html += '<tr>';
-      row.forEach(cell => html += '<td>' + cell + '</td>');
-      html += '</tr>';
-    });
-    html += '</tbody></table>';
-    return html;
-  });
+// Lade alle Posts aus JSON
+async function loadAllPosts() {
+  // Prüfe Cache
+  const now = Date.now();
+  if (postsCache && (now - lastCacheTime) < CACHE_DURATION) {
+    return postsCache;
+  }
 
-  let html = md
-    .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-    .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-    .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-    .replace(/\*\*(.*?)\*\*/gim, '<b>$1</b>')
-    .replace(/\*(.*?)\*/gim, '<i>$1</i>')
-    .replace(/`([^`]+)`/gim, '<code>$1</code>')
-    .replace(/```([\s\S]*?)```/gim, '<pre><code>$1</code></pre>')
-    .replace(/!\[(.*?)\]\((.*?)\)/gim, '<img alt="$1" src="$2" />')
-    .replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2">$1</a>')
-    .replace(/^\s*\n/gim, '<br>')
-    .replace(/^\s*\* (.*)$/gim, '<li>$1</li>')
-    .replace(/\n\n/g, '</p><p>');
-  html = '<p>' + html + '</p>';
-  html = html.replace(/<p><\/p>/g, '');
-  return html;
+  try {
+    const jsonResponse = await fetch('posts.json');
+    if (!jsonResponse.ok) {
+      throw new Error(`HTTP error! status: ${jsonResponse.status}`);
+    }
+    const jsonData = await jsonResponse.json();
+    postsCache = jsonData;
+    lastCacheTime = now;
+    return jsonData;
+  } catch (error) {
+    console.error('Failed to load posts.json:', error);
+    return [];
+  }
 }
 
 // Übersicht rendern
@@ -239,12 +101,7 @@ async function renderBlogArticle() {
   }
   
   try {
-    // Versuche zuerst aus dem Cache
-    let posts = postsCache;
-    if (!posts) {
-      posts = await loadAllPosts();
-    }
-    
+    const posts = await loadAllPosts();
     const post = posts.find(p => p.slug === slug);
     if (!post) {
       card.innerHTML = '<p>Artikel nicht gefunden.</p>';
@@ -255,7 +112,7 @@ async function renderBlogArticle() {
       <img src="${post.image}" alt="${post.title}">
       <div class="blog-date">Artikel vom ${formatGermanDate(post.date)}</div>
       <h1>${post.title}</h1>
-      <div class="article-content">${markdownToHtml(post.body)}</div>
+      <div class="article-content">${post.body}</div>
     `;
   } catch (error) {
     console.error('Failed to load article:', error);
