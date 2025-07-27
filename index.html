@@ -49,6 +49,43 @@
     
     <link rel="stylesheet" href="styles.css">
     
+    <!-- Language Redirect Script -->
+    <script>
+        (function() {
+            // Check if user has already made a language choice
+            if (localStorage.getItem('languageChoice')) {
+                return; // User has already chosen, don't redirect
+            }
+            
+            // Check if this is the first visit
+            if (sessionStorage.getItem('firstVisit')) {
+                return; // Not first visit, don't redirect
+            }
+            
+            // Mark as first visit
+            sessionStorage.setItem('firstVisit', 'true');
+            
+            // Get user's country using IP geolocation
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    const country = data.country_code;
+                    const germanSpeakingCountries = ['DE', 'AT', 'CH'];
+                    
+                    // If user is not from German-speaking countries, redirect to English
+                    if (!germanSpeakingCountries.includes(country)) {
+                        // Check if we're not already on the English page
+                        if (!window.location.pathname.includes('/en/')) {
+                            window.location.href = '/en/';
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.log('Could not determine user location, staying on current page');
+                });
+        })();
+    </script>
+    
     <!-- Schema Markup für Local Business -->
     <script type="application/ld+json">
     {

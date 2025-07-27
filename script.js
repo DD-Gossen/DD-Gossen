@@ -1,6 +1,15 @@
 // Main functionality
 document.addEventListener('DOMContentLoaded', function() {
 
+    // Language choice tracking
+    const languageFlags = document.querySelectorAll('.language-flag');
+    languageFlags.forEach(flag => {
+        flag.addEventListener('click', function() {
+            // Store user's language choice
+            localStorage.setItem('languageChoice', 'true');
+        });
+    });
+
     // Mobile Menu Toggle (for future expansion)
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('.nav');
