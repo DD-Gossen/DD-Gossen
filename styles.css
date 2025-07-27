@@ -715,6 +715,10 @@ body[data-lang="en"] .flag-de {
         font-size: 0.9rem;
     }
     
+    .project-link {
+        font-size: 1rem;
+    }
+    
     .carousel-btn {
         display: none;
     }
@@ -756,6 +760,10 @@ body[data-lang="en"] .flag-de {
     
     .project-info p {
         font-size: 0.85rem;
+    }
+    
+    .project-link {
+        font-size: 0.95rem;
     }
 }
 
@@ -1497,4 +1505,154 @@ body:not(.legal-page) header .mobile-menu-toggle {
   .mobile-menu-toggle {
     display: none !important;
   }
+  
+  /* Größere Schrift für Desktop in verschiedenen Sektionen */
+  .about-me-text p {
+    font-size: 1.2rem;
+  }
+  
+  .project-info p {
+    font-size: 1.15rem;
+  }
+  
+  .benefit-content p {
+    font-size: 1.1rem;
+  }
+  
+  .service-card p {
+    font-size: 1.1rem;
+  }
+  
+  .service-list li {
+    font-size: 1.1rem;
+  }
+  
+  .service-card h3 {
+    font-size: 1.7rem;
+  }
+  
+  .hero-description {
+    font-size: 1.3rem;
+  }
+  
+  .legal-section p {
+    font-size: 1.1rem;
+  }
+  
+  .project-link {
+    font-size: 1.1rem;
+  }
+}
+
+/* Review Section */
+.review-section {
+    padding: 4rem 0;
+    background: transparent;
+    text-align: center;
+}
+
+.review-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.review-stars {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.star {
+    font-size: 2rem;
+    color: #007bff;
+    text-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.star:hover {
+    transform: scale(1.2);
+}
+
+.review-quote {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #0f172a;
+    font-style: italic;
+    margin: 0;
+    position: relative;
+    padding: 0 1rem;
+    display: inline;
+}
+
+
+
+.review-attribution {
+    text-align: right;
+    font-size: 1.1rem;
+    color: #0f172a;
+    opacity: 0.5;
+    margin-top: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Responsive Design für Review Section */
+@media (max-width: 768px) {
+    .review-content {
+        margin: 0 1rem;
+        padding: 1.5rem;
+    }
+    
+    .review-quote {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+    
+    .star {
+        font-size: 1.5rem;
+    }
+    
+    .quote-mark-open,
+    .quote-mark-close {
+        font-size: 2rem;
+    }
+    
+    .review-attribution {
+        font-size: 1rem;
+        margin-top: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .review-stars {
+        gap: 0.3rem;
+    }
+    
+    .star {
+        font-size: 1.3rem;
+    }
+    
+    .review-quote {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    .quote-mark-open,
+    .quote-mark-close {
+        font-size: 1.5rem;
+    }
+    
+    .review-attribution {
+        font-size: 0.9rem;
+        margin-top: 0.6rem;
+    }
 }
