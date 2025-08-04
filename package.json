@@ -1,0 +1,13 @@
+{
+  "name": "dd-gossen-website",
+  "version": "1.0.0",
+  "description": "DD-Gossen Website mit Blog",
+  "scripts": {
+    "build": "cd blog && node build.js",
+    "deploy": "./deploy.sh",
+    "dev": "python3 -m http.server 8000"
+  },
+  "keywords": ["shopify", "webdesign", "blog"],
+  "author": "Maik Gossen",
+  "license": "MIT"
+} 
