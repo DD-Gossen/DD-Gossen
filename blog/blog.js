@@ -120,11 +120,21 @@ function updateSchemaMarkup(post, canonicalUrl) {
 // Lade Posts aus JSON
 async function loadPosts() {
   try {
+    console.log('Lade posts.json...');
     const response = await fetch('posts.json');
+    console.log('Response Status:', response.status);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
     const posts = await response.json();
+    console.log('Geladene Posts:', posts.length, posts);
     return posts;
   } catch (error) {
-    console.error('Fehler beim Laden:', error);
+    console.error('Fehler beim Laden der Posts:', error);
+    console.error('URL:', window.location.href);
+    console.error('Aktueller Pfad:', window.location.pathname);
     return [];
   }
 }
