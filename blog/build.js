@@ -1,27 +1,76 @@
 const fs = require('fs');
 const path = require('path');
 
-// Markdown zu HTML konvertieren (einfache Implementierung)
+// Markdown zu HTML konvertieren (verbesserte Implementierung)
 function markdownToHtml(markdown) {
-  return markdown
-    // Überschriften
-    .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-    .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-    .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-    // Listen
-    .replace(/^\* (.*$)/gim, '<li>$1</li>')
-    .replace(/^- (.*$)/gim, '<li>$1</li>')
-    // Absätze
-    .replace(/\n\n/g, '</p>\n<p>')
-    .replace(/^(.+)$/gm, '<p>$1</p>')
-    // Listen-Container
-    .replace(/<li>(.*)<\/li>/g, '<ul><li>$1</li></ul>')
-    // Doppelte p-Tags entfernen
-    .replace(/<p><\/p>/g, '')
-    .replace(/<p><p>/g, '<p>')
-    .replace(/<\/p><\/p>/g, '</p>')
-    // Zeilenumbrüche
-    .replace(/\n/g, '');
+  let html = markdown;
+  
+  // Überschriften mit IDs für Inhaltsverzeichnis
+  html = html.replace(/^### (.*$)/gim, (match, title) => {
+    const id = title.toLowerCase().replace(/[^a-z0-9äöüß]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+    return `<h3 id="${id}">${title}</h3>`;
+  });
+  
+  html = html.replace(/^## (.*$)/gim, (match, title) => {
+    const id = title.toLowerCase().replace(/[^a-z0-9äöüß]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+    return `<h2 id="${id}">${title}</h2>`;
+  });
+  
+  html = html.replace(/^# (.*$)/gim, (match, title) => {
+    const id = title.toLowerCase().replace(/[^a-z0-9äöüß]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+    return `<h1 id="${id}">${title}</h1>`;
+  });
+  
+  // Listen
+  html = html.replace(/^\* (.*$)/gim, '<li>$1</li>');
+  html = html.replace(/^- (.*$)/gim, '<li>$1</li>');
+  
+  // Listen-Container (verbessert)
+  html = html.replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>');
+  
+  // Absätze mit besserer Formatierung
+  html = html.replace(/\n\n/g, '</p>\n<p>');
+  html = html.replace(/^(.+)$/gm, '<p>$1</p>');
+  
+  // Doppelte p-Tags entfernen
+  html = html.replace(/<p><\/p>/g, '');
+  html = html.replace(/<p><p>/g, '<p>');
+  html = html.replace(/<\/p><\/p>/g, '</p>');
+  
+  // Zeilenumbrüche entfernen
+  html = html.replace(/\n/g, '');
+  
+  // Listen-Formatierung korrigieren
+  html = html.replace(/<ul><ul>/g, '<ul>');
+  html = html.replace(/<\/ul><\/ul>/g, '</ul>');
+  
+  return html;
+}
+
+// Inhaltsverzeichnis generieren
+function generateTableOfContents(markdown) {
+  const headings = [];
+  const lines = markdown.split('\n');
+  
+  lines.forEach(line => {
+    const h2Match = line.match(/^## (.*$)/);
+    if (h2Match) {
+      const title = h2Match[1];
+      const id = title.toLowerCase().replace(/[^a-z0-9äöüß]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+      headings.push({ title, id });
+    }
+  });
+  
+  if (headings.length === 0) return '';
+  
+  const tocHtml = headings.map(heading => 
+    `<li><a href="#${heading.id}">${heading.title}</a></li>`
+  ).join('');
+  
+  return `<div class="table-of-contents">
+    <h3>Inhaltsverzeichnis</h3>
+    <ul>${tocHtml}</ul>
+  </div>`;
 }
 
 // YAML Frontmatter parsen
@@ -69,11 +118,12 @@ function buildPosts() {
         
         try {
           const { metadata, markdown } = parseFrontmatter(content);
+          const toc = generateTableOfContents(markdown);
           const html = markdownToHtml(markdown);
           
           posts.push({
             ...metadata,
-            body: html
+            body: toc + html
           });
         } catch (error) {
           console.error(`Fehler beim Verarbeiten von ${file}:`, error.message);
