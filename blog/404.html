@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Artikel - DD-Gossen</title>
+    <script>
+        // Clean URL handling for GitHub Pages
+        (function() {
+            const path = window.location.pathname;
+            const slug = path.split('/').pop();
+            
+            if (slug && slug !== 'blog' && slug !== 'index.html') {
+                // Redirect to article.html with slug parameter
+                window.location.href = '/blog/article.html?slug=' + slug;
+            } else {
+                // Redirect to blog overview
+                window.location.href = '/blog/';
+            }
+        })();
+    </script>
+</head>
+<body>
+    <p>Weiterleitung...</p>
+</body>
+</html> 
