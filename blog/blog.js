@@ -161,8 +161,8 @@ async function renderBlogOverview() {
   const newestPost = posts[0];
   mainArticle.innerHTML = `
     <div class="main-article-card">
-      <img src="${newestPost.image}" alt="${newestPost.title}">
       <div class="blog-date">Artikel vom ${formatGermanDate(newestPost.date)}</div>
+      <img src="${newestPost.image}" alt="${newestPost.title}">
       <h2>${newestPost.title}</h2>
       <div class="blog-summary">${newestPost.summary}</div>
       <a class="blog-readmore" href="article.html?slug=${newestPost.slug}">Jetzt Weiterlesen.</a>
@@ -173,8 +173,8 @@ async function renderBlogOverview() {
   const otherPosts = posts.slice(1);
   blogGrid.innerHTML = otherPosts.map(post => `
     <div class="blog-card">
-      <img src="${post.image}" alt="${post.title}">
       <div class="blog-date">Artikel vom ${formatGermanDate(post.date)}</div>
+      <img src="${post.image}" alt="${post.title}">
       <h3>${post.title}</h3>
       <div class="blog-summary">${post.summary}</div>
       <a class="blog-readmore" href="article.html?slug=${post.slug}">Jetzt Weiterlesen.</a>
