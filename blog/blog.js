@@ -11,6 +11,38 @@ function formatGermanDate(dateString) {
   return date.toLocaleDateString('de-DE', options);
 }
 
+// Meta-Tags dynamisch setzen
+function setMetaTags(post) {
+  const baseUrl = window.location.origin + window.location.pathname;
+  
+  // Fallback-Werte für fehlende Meta-Daten
+  const metaDescription = post.meta_description || post.summary || 'Blogartikel zu Shopify, Webdesign und E-Commerce von Maik Gossen.';
+  const keywords = post.keywords || 'Shopify, Webdesign, E-Commerce, Blog';
+  const ogTitle = post.og_title || post.title + ' | DD-Gossen';
+  const ogDescription = post.og_description || metaDescription;
+  const ogImage = post.og_image ? `https://dd-gossen.com/blog/${post.og_image}` : 'https://dd-gossen.com/blog/images/Testbild.webp';
+  const canonicalUrl = `${baseUrl}?slug=${post.slug}`;
+  
+  // Meta-Tags setzen
+  document.getElementById('dynamic-title').textContent = post.title + ' | DD-Gossen';
+  document.getElementById('dynamic-description').setAttribute('content', metaDescription);
+  document.getElementById('dynamic-keywords').setAttribute('content', keywords);
+  
+  // Open Graph Tags
+  document.getElementById('og-title').setAttribute('content', ogTitle);
+  document.getElementById('og-description').setAttribute('content', ogDescription);
+  document.getElementById('og-image').setAttribute('content', ogImage);
+  document.getElementById('og-url').setAttribute('content', canonicalUrl);
+  
+  // Twitter Card Tags
+  document.getElementById('twitter-title').setAttribute('content', ogTitle);
+  document.getElementById('twitter-description').setAttribute('content', ogDescription);
+  document.getElementById('twitter-image').setAttribute('content', ogImage);
+  
+  // Canonical URL
+  document.getElementById('canonical-url').setAttribute('href', canonicalUrl);
+}
+
 // Lade Posts aus JSON
 async function loadPosts() {
   try {
@@ -86,6 +118,9 @@ async function renderBlogArticle() {
     articleCard.innerHTML = '<p>Artikel nicht gefunden.</p>';
     return;
   }
+
+  // Meta-Tags setzen
+  setMetaTags(post);
 
   articleCard.innerHTML = `
     <img src="${post.image}" alt="${post.title}">
