@@ -207,9 +207,9 @@ async function renderBlogArticle() {
   setMetaTags(post);
 
   articleCard.innerHTML = `
+    <h1 class="article-title">${post.title}</h1>
     <img src="${post.image}" alt="${post.title}">
     <div class="blog-date">Artikel vom ${formatGermanDate(post.date)}</div>
-    <h1>${post.title}</h1>
     <div class="article-content">${post.body}</div>
   `;
 }
