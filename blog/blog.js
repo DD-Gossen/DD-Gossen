@@ -208,8 +208,8 @@ async function renderBlogArticle() {
 
   articleCard.innerHTML = `
     <h1 class="article-title">${post.title}</h1>
-    <img src="${post.image}" alt="${post.title}">
     <div class="blog-date">Artikel vom ${formatGermanDate(post.date)}</div>
+    <img src="${post.image}" alt="${post.title}">
     <div class="article-content">${post.body}</div>
   `;
 }
