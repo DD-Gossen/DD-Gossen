@@ -24,4 +24,7 @@ npm-debug.log*
 
 # Setup files (not needed for production)
 google-my-business-info.txt
-google-search-console-setup.txt 
+google-search-console-setup.txt
+
+# Generated files
+blog/posts.json 

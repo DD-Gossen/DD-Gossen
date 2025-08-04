@@ -10,10 +10,12 @@ blog/
 ├── articles/                           # Hier sind Ihre Artikel
 │   ├── 2025-08-04-adressen.md         # Einfach zu bearbeiten
 │   └── 2024-06-06-shopify-vs-woocommerce.md
-├── posts.json                          # Automatisch generiert
+├── posts.json                          # ⚠️ Automatisch generiert (nicht im Git)
 ├── build.js                            # Konvertierung Markdown → JSON
 └── README.md                           # Diese Anleitung
 ```
+
+**Wichtig:** `posts.json` wird automatisch generiert und ist **nicht mehr im Git-Repository** gespeichert!
 
 ---
 
@@ -25,13 +27,14 @@ blog/
 2. **Benennen Sie** sie nach dem Schema: `YYYY-MM-DD-titel.md`
 3. **Kopieren Sie** die Vorlage von einem bestehenden Artikel
 4. **Bearbeiten Sie** den Inhalt
+5. **Führen Sie** `node build.js` aus
 
 ### 2. Artikel bearbeiten
 
 1. **Öffnen Sie** die gewünschte `.md` Datei in `blog/articles/`
 2. **Bearbeiten Sie** den Inhalt (Markdown-Format)
 3. **Speichern Sie** die Datei
-4. **Führen Sie** `node build.js` aus (oder automatisch)
+4. **Führen Sie** `node build.js` aus
 
 ### 3. Artikel löschen
 
@@ -91,6 +94,8 @@ node build.js
 3. **Generiert** `posts.json` automatisch
 4. **Sortiert** Artikel nach Datum
 
+**⚠️ Wichtig:** `posts.json` wird bei jedem Build neu erstellt!
+
 ---
 
 ## ✨ Vorteile der neuen Lösung
@@ -112,6 +117,12 @@ node build.js
 - **Automatische JSON-Generierung**
 - **Konsistente Struktur**
 - **Dynamische Meta-Tags**
+
+### ✅ **Saubere Git-Historie**
+- **Nur Markdown-Dateien** im Repository
+- **Keine generierten Dateien** im Git
+- **Kleine Commits** - nur echte Änderungen
+- **Klare Trennung** zwischen Quellcode und generierten Dateien
 
 ---
 
@@ -137,6 +148,14 @@ node build.js
 
 ### 5. Testen
 Öffnen Sie `blog/index.html` und prüfen Sie, ob der Artikel angezeigt wird.
+
+### 6. Committen
+```bash
+# Nur die Markdown-Datei committen
+git add blog/articles/2025-01-27-neuer-artikel.md
+git commit -m "Neuer Artikel: Titel"
+git push
+```
 
 ---
 
@@ -185,7 +204,8 @@ node build.js
 2. **Frontmatter:** Muss zwischen `---` stehen
 3. **Bilder:** Laden Sie Bilder in `blog/images/` hoch
 4. **Build:** Führen Sie `node build.js` nach jeder Änderung aus
-5. **Git:** Committen Sie sowohl `.md` als auch `posts.json`
+5. **Git:** Committen Sie nur die `.md` Dateien, nicht `posts.json`
+6. **posts.json:** Wird automatisch generiert und ist nicht im Repository
 
 ---
 
@@ -194,7 +214,7 @@ node build.js
 1. **Artikel bearbeiten** → `.md` Datei ändern
 2. **Build ausführen** → `node build.js`
 3. **Testen** → Lokal prüfen
-4. **Commit** → Zu Git hinzufügen
+4. **Commit** → Nur `.md` Dateien zu Git hinzufügen
 5. **Push** → Zu GitHub hochladen
 
 ---
@@ -206,5 +226,6 @@ Sie haben jetzt eine **professionelle Blog-Lösung** mit:
 - ✅ **Individuelle Dateien** für jeden Artikel
 - ✅ **Automatische SEO-Optimierung**
 - ✅ **Flexible Anpassungen** pro Artikel
+- ✅ **Saubere Git-Historie** ohne generierte Dateien
 
 **Viel Spaß beim Schreiben!** 🚀 
