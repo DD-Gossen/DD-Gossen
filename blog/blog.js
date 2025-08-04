@@ -41,6 +41,80 @@ function setMetaTags(post) {
   
   // Canonical URL
   document.getElementById('canonical-url').setAttribute('href', canonicalUrl);
+  
+  // Schema Markup aktualisieren
+  updateSchemaMarkup(post, canonicalUrl);
+}
+
+// Schema Markup dynamisch aktualisieren
+function updateSchemaMarkup(post, canonicalUrl) {
+  // Breadcrumb Schema aktualisieren
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://dd-gossen.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://dd-gossen.com/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": post.title,
+        "item": canonicalUrl
+      }
+    ]
+  };
+  
+  // Article Schema aktualisieren
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.meta_description || post.summary,
+    "image": post.og_image ? `https://dd-gossen.com/blog/${post.og_image}` : 'https://dd-gossen.com/blog/images/Testbild.webp',
+    "author": {
+      "@type": "Person",
+      "name": "Maik Gossen",
+      "jobTitle": "Shopify Developer & Web Designer"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "DD-Gossen",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dd-gossen.com/favicon.png"
+      }
+    },
+    "datePublished": post.date,
+    "dateModified": post.date,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalUrl
+    },
+    "inLanguage": "de",
+    "keywords": post.keywords || 'Shopify, Webdesign, E-Commerce, Blog'
+  };
+  
+  // Schema Scripts aktualisieren
+  const breadcrumbScript = document.getElementById('breadcrumb-schema');
+  const articleScript = document.getElementById('article-schema');
+  
+  if (breadcrumbScript) {
+    breadcrumbScript.textContent = JSON.stringify(breadcrumbSchema, null, 2);
+  }
+  
+  if (articleScript) {
+    articleScript.textContent = JSON.stringify(articleSchema, null, 2);
+  }
 }
 
 // Lade Posts aus JSON

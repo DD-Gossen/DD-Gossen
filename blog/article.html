@@ -25,6 +25,65 @@
   <!-- Canonical URL -->
   <link rel="canonical" id="canonical-url" href="">
   
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json" id="breadcrumb-schema">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://dd-gossen.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://dd-gossen.com/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Artikel",
+        "item": ""
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Article Schema -->
+  <script type="application/ld+json" id="article-schema">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Blogartikel | DD-Gossen",
+    "description": "Blogartikel zu Shopify, Webdesign und E-Commerce von Maik Gossen.",
+    "image": "https://dd-gossen.com/blog/images/Testbild.webp",
+    "author": {
+      "@type": "Person",
+      "name": "Maik Gossen",
+      "jobTitle": "Shopify Developer & Web Designer"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "DD-Gossen",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dd-gossen.com/favicon.png"
+      }
+    },
+    "datePublished": "",
+    "dateModified": "",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": ""
+    },
+    "inLanguage": "de"
+  }
+  </script>
+  
   <link rel="icon" type="image/png" href="../favicon.png">
   <link rel="stylesheet" href="../styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">

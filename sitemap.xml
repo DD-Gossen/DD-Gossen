@@ -11,6 +11,56 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/" />
   </url>
   
+  <!-- Blog Pages -->
+  <url>
+    <loc>https://dd-gossen.com/blog/</loc>
+    <lastmod>2025-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dd-gossen.com/blog/article.html?slug=2025-08-04-adressen</loc>
+    <lastmod>2025-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://dd-gossen.com/blog/article.html?slug=2024-06-06-shopify-vs-woocommerce</loc>
+    <lastmod>2024-06-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://dd-gossen.com/blog/article.html?slug=2024-06-04-design-trends</loc>
+    <lastmod>2024-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://dd-gossen.com/blog/article.html?slug=2024-06-03-apps-empfehlung</loc>
+    <lastmod>2024-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://dd-gossen.com/blog/article.html?slug=2024-06-02-seo-grundlagen</loc>
+    <lastmod>2024-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://dd-gossen.com/blog/article.html?slug=2024-06-01-shopify-tipps</loc>
+    <lastmod>2024-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
   <url>
     <loc>https://dd-gossen.com/impressum.html</loc>
     <lastmod>2025-01-27</lastmod>
