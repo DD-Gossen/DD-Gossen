@@ -64,7 +64,7 @@ body {
   margin: 2rem auto 1.5rem auto;
   line-height: 1.2;
   text-align: center;
-  max-width: 700px;
+  max-width: 550px;
   padding: 0 1rem;
 }
 
@@ -74,7 +74,7 @@ body {
   color: #237eb5;
   margin: 0 auto 1.2rem auto;
   text-align: center;
-  max-width: 700px;
+  max-width: 550px;
   padding: 0 1rem;
   font-weight: 500;
   opacity: 0.9;
@@ -82,7 +82,7 @@ body {
 
 /* Article Content */
 .article-content {
-  max-width: 700px;
+  max-width: 550px;
   margin: 0 auto 2.5rem auto;
   color: #0f172a;
   font-family: 'Inter', sans-serif;
