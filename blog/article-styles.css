@@ -26,7 +26,7 @@ body {
   max-width: 900px;
   width: 100%;
   margin: 0 auto 3rem auto;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.52);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
@@ -64,14 +64,14 @@ body {
   margin: 2rem auto 1.5rem auto;
   line-height: 1.2;
   text-align: center;
-  max-width: 550px;
+  max-width: 650px;
   padding: 0 1rem;
 }
 
 /* Article Date */
 .article-card .blog-date {
   font-size: 0.95rem;
-  color: #237eb5;
+  color: #144361;
   margin: 0 auto 1.2rem auto;
   text-align: center;
   max-width: 550px;
@@ -82,7 +82,7 @@ body {
 
 /* Article Content */
 .article-content {
-  max-width: 550px;
+width:600px;
   margin: 0 auto 2.5rem auto;
   color: #0f172a;
   font-family: 'Inter', sans-serif;
@@ -175,12 +175,12 @@ body {
 
 /* Table of Contents */
 .table-of-contents {
-  background: rgba(15, 23, 42, 0.03);
+  
   border-radius: 12px;
   padding: 1.5rem;
   margin: 2rem 0 3rem 0;
   border-left: 4px solid #237eb5;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+ 
 }
 
 .table-of-contents h3 {
@@ -212,12 +212,11 @@ body {
   padding: 0.3rem 0.5rem;
   font-size: 0.95rem;
   opacity: 0.7;
-  border-radius: 4px;
+ 
 }
 
 .table-of-contents a:hover {
   opacity: 1;
-  background: rgba(35, 126, 181, 0.1);
   color: #237eb5;
 }
 
@@ -250,25 +249,35 @@ body {
 }
 
 .cta-button {
-  background: linear-gradient(135deg, #237eb5 0%, #1e40af 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color: white;
   border: none;
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
+  padding: 0.8rem 2.2rem;
+  font-size: 1.1rem;
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 600;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(35, 126, 181, 0.3);
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.3);
   text-decoration: none;
   display: inline-block;
+  margin-top: 1.2rem;
+}
+
+a.cta-button  {
+  color: white;
+  text-decoration: none;
+}
+
+a.cta-button:hover {
+  color: white;
+  text-decoration: none;
 }
 
 .cta-button:hover {
-  background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(35, 126, 181, 0.4);
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.4);
 }
 
 /* Support Card */
@@ -312,7 +321,6 @@ body {
 
 .contact-btn:hover {
   background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-  transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(15, 23, 42, 0.4);
 }
 
@@ -565,8 +573,8 @@ body {
   }
   
   .cta-button {
-    padding: 0.6rem 1.6rem;
-    font-size: 0.9rem;
+    padding: 0.6rem 1.6rem !important;
+    font-size: 0.9rem !important;
   }
 }
 
