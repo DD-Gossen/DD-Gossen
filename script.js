@@ -295,6 +295,99 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Client Logos Auto-Scroll with Hover Pause
+    const clientLogosScroll = document.getElementById('clientLogosScroll');
+    if (clientLogosScroll) {
+        const logosTrack = clientLogosScroll.querySelector('.client-logos-track');
+        
+        // Calculate exact width for seamless loop
+        function setupSeamlessScroll() {
+            const logos = logosTrack.querySelectorAll('.client-logo-item');
+            const totalLogos = logos.length;
+            const halfLogos = totalLogos / 2;
+            
+            // Calculate exact width of first half
+            let firstHalfWidth = 0;
+            for (let i = 0; i < halfLogos; i++) {
+                const logo = logos[i];
+                const logoWidth = logo.offsetWidth;
+                const gap = i < halfLogos - 1 ? parseFloat(getComputedStyle(logosTrack).gap) || 48 : 0; // 3rem = 48px default
+                firstHalfWidth += logoWidth + gap;
+            }
+            
+            // Set custom property for exact width
+            logosTrack.style.setProperty('--scroll-distance', `-${firstHalfWidth}px`);
+            
+            // Create keyframes dynamically
+            const style = document.createElement('style');
+            style.id = 'client-logos-animation';
+            style.textContent = `
+                @keyframes scroll-logos-seamless {
+                    0% {
+                        transform: translate3d(0, 0, 0);
+                    }
+                    100% {
+                        transform: translate3d(var(--scroll-distance), 0, 0);
+                    }
+                }
+                .client-logos-track {
+                    animation-name: scroll-logos-seamless !important;
+                }
+            `;
+            
+            // Remove old style if exists
+            const oldStyle = document.getElementById('client-logos-animation');
+            if (oldStyle) oldStyle.remove();
+            
+            document.head.appendChild(style);
+        }
+        
+        // Setup on load and resize
+        if (logosTrack) {
+            // Wait for images to load
+            const images = logosTrack.querySelectorAll('img');
+            let loadedImages = 0;
+            
+            if (images.length > 0) {
+                images.forEach(img => {
+                    if (img.complete) {
+                        loadedImages++;
+                    } else {
+                        img.addEventListener('load', () => {
+                            loadedImages++;
+                            if (loadedImages === images.length) {
+                                setTimeout(setupSeamlessScroll, 100);
+                            }
+                        });
+                    }
+                });
+                
+                if (loadedImages === images.length) {
+                    setTimeout(setupSeamlessScroll, 100);
+                }
+            } else {
+                setupSeamlessScroll();
+            }
+            
+            // Recalculate on resize
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(setupSeamlessScroll, 250);
+            });
+        }
+        
+        // Pause on hover
+        clientLogosScroll.addEventListener('mouseenter', () => {
+            logosTrack.style.animationPlayState = 'paused';
+        });
+        
+        // Resume on mouse leave
+        clientLogosScroll.addEventListener('mouseleave', () => {
+            logosTrack.style.animationPlayState = 'running';
+        });
+    }
+
     // Background lazy loading für bessere Performance (entfernt, da jetzt per CSS)
     // function loadBackgroundImage() {
     //     const img = new Image();
