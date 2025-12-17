@@ -634,6 +634,88 @@ body[data-lang="en"] .flag-de {
     transform: translateX(-50%);
 }
 
+.section-subtitle {
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 2rem auto 3rem auto;
+    color: #0f172a;
+    opacity: 0.8;
+    max-width: 800px;
+    display: block;
+    width: 100%;
+}
+
+/* Revenue Loss Cards Grid */
+.revenue-loss-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.revenue-loss-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1.5rem 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.revenue-loss-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.revenue-loss-icon {
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.revenue-loss-icon svg {
+    width: 36px;
+    height: 36px;
+}
+
+.revenue-loss-card h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 1rem;
+}
+
+.revenue-loss-card p {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #0f172a;
+    opacity: 0.8;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .revenue-loss-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .revenue-loss-card {
+        padding: 1.5rem 2rem;
+    }
+}
+
 /* Services Section */
 .services-grid {
     display: grid;
@@ -1467,6 +1549,12 @@ body[data-lang="en"] .flag-de {
     
     .section-title {
         font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
     }
     
     .services-grid {
