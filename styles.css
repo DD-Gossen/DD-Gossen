@@ -2137,6 +2137,17 @@ body:not(.legal-page) header .mobile-menu-toggle {
     margin-bottom: 1.5rem;
 }
 
+.cookie-link {
+    color: #007bff;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.cookie-link:hover {
+    color: #004c9e;
+}
+
 .cookie-settings {
     margin: 1.5rem 0;
     padding: 1.5rem;
@@ -2246,6 +2257,17 @@ body:not(.legal-page) header .mobile-menu-toggle {
 .cookie-btn-secondary:hover {
     background: rgba(255, 255, 255, 1);
     border-color: rgba(15, 23, 42, 0.3);
+}
+
+.cookie-btn-reject {
+    background: linear-gradient(135deg, #007bff 0%, #004c9e 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.cookie-btn-reject:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
 }
 
 @media (max-width: 768px) {

@@ -724,7 +724,7 @@
         <div class="cookie-banner-content">
             <div class="cookie-banner-header">
                 <h3>Cookie-Einstellungen</h3>
-                <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Sie können auswählen, welche Cookies Sie zulassen möchten.</p>
+                <p>Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten. Sie können auswählen, welche Cookies Sie zulassen möchten. Weitere Informationen finden Sie in unserer <a href="datenschutz" class="cookie-link">Datenschutzerklärung</a> und im <a href="impressum" class="cookie-link">Impressum</a>.</p>
             </div>
             
             <div class="cookie-settings" id="cookieSettings" style="display: none;">
@@ -764,6 +764,7 @@
             
             <div class="cookie-banner-actions">
                 <button class="cookie-btn cookie-btn-secondary" id="cookieSettingsBtn">Einstellungen</button>
+                <button class="cookie-btn cookie-btn-reject" id="cookieRejectAll">Alle ablehnen</button>
                 <button class="cookie-btn cookie-btn-primary" id="cookieAcceptAll">Alle akzeptieren</button>
                 <button class="cookie-btn cookie-btn-primary" id="cookieAcceptSelected" style="display: none;">Auswahl speichern</button>
             </div>
@@ -793,6 +794,7 @@
                 const banner = document.getElementById('cookieBanner');
                 const settingsPanel = document.getElementById('cookieSettings');
                 const settingsBtn = document.getElementById('cookieSettingsBtn');
+                const rejectAllBtn = document.getElementById('cookieRejectAll');
                 const acceptAllBtn = document.getElementById('cookieAcceptAll');
                 const acceptSelectedBtn = document.getElementById('cookieAcceptSelected');
                 const analyticsCheckbox = document.getElementById('cookieAnalytics');
@@ -805,8 +807,8 @@
                 if (!consent) {
                     banner.style.display = 'block';
                 } else {
-                    // Load analytics if consented
-                    if (consent.analytics) {
+                    // Load analytics ONLY if explicitly consented
+                    if (consent.analytics === true) {
                         loadGoogleAnalytics();
                     }
                 }
@@ -815,6 +817,7 @@
                 settingsBtn.addEventListener('click', function() {
                     settingsPanel.style.display = settingsPanel.style.display === 'none' ? 'block' : 'none';
                     acceptAllBtn.style.display = settingsPanel.style.display === 'block' ? 'none' : 'block';
+                    rejectAllBtn.style.display = settingsPanel.style.display === 'block' ? 'none' : 'block';
                     acceptSelectedBtn.style.display = settingsPanel.style.display === 'block' ? 'block' : 'none';
                 });
                 
@@ -825,6 +828,19 @@
                 
                 marketingCheckbox.addEventListener('change', function() {
                     marketingStatus.textContent = this.checked ? 'Aktiv' : 'Inaktiv';
+                });
+                
+                // Reject all - only necessary cookies
+                rejectAllBtn.addEventListener('click', function() {
+                    const consent = {
+                        necessary: true,
+                        analytics: false,
+                        marketing: false,
+                        timestamp: new Date().toISOString()
+                    };
+                    setCookieConsent(consent);
+                    banner.style.display = 'none';
+                    // Do NOT load analytics or marketing cookies
                 });
                 
                 // Accept all
@@ -850,7 +866,8 @@
                     };
                     setCookieConsent(consent);
                     banner.style.display = 'none';
-                    if (consent.analytics) {
+                    // Load analytics ONLY if explicitly checked
+                    if (consent.analytics === true) {
                         loadGoogleAnalytics();
                     }
                 });
