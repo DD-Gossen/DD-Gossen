@@ -820,14 +820,38 @@ body[data-lang="en"] .flag-de {
     justify-content: center;
     align-items: center;
     width: 400px;
-    height: 400px;
+    height: auto;
+    align-self: start;
+    margin-top: -4rem;
+    position: relative;
 }
 
 .about-me-image img {
-    width: 280px;
-    height: 280px;
+    width: 100%;
+    height: auto;
     border-radius: 15px;
     object-fit: cover;
+}
+
+.name-badge {
+    position: absolute;
+    bottom: 30px;
+    left: 25%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 0.2rem 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.name-badge span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
+    opacity: 0.5;
 }
 
 .about-me-text h3 {
@@ -847,9 +871,31 @@ body[data-lang="en"] .flag-de {
 }
 
 .about-me-text p:last-child {
+    margin-bottom: 1.5rem;
+}
+
+.about-me-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-me-list li {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    color: #0f172a;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    padding-left: 0;
+}
+
+.about-me-list li:last-child {
     margin-bottom: 0;
-    font-weight: 500;
-    opacity: 0.9;
+}
+
+.about-me-list li strong {
+    font-weight: 600;
+    color: #0f172a;
 }
 
 /* Mobile Responsive for About Me */
@@ -863,14 +909,13 @@ body[data-lang="en"] .flag-de {
     .about-me-image {
         width: 100%;
         height: auto;
-        min-height: 280px;
         max-width: 100%;
     }
     
     .about-me-image img {
-        width: 220px;
-        height: 220px;
-        max-width: 100%;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
     }
     
     .about-me-text h3 {
@@ -880,7 +925,15 @@ body[data-lang="en"] .flag-de {
     
     .about-me-text p {
         font-size: 0.95rem;
-        text-align: center;
+        text-align: left;
+    }
+    
+    .about-me-list {
+        text-align: left;
+    }
+    
+    .about-me-list li {
+        font-size: 0.9rem;
     }
     
     .about-me-card {
@@ -899,12 +952,22 @@ body[data-lang="en"] .flag-de {
     }
     
     .about-me-image {
-        min-height: 250px;
+        min-height: auto;
     }
     
     .about-me-image img {
-        width: 180px;
-        height: 180px;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+    
+    .name-badge {
+        bottom: 10px;
+        padding: 0.5rem 1rem;
+    }
+    
+    .name-badge span {
+        font-size: 0.9rem;
     }
     
     .about-me-text h3 {
@@ -916,6 +979,11 @@ body[data-lang="en"] .flag-de {
         font-size: 0.9rem;
         line-height: 1.6;
         margin-bottom: 1rem;
+        text-align: left;
+    }
+    
+    .about-me-list li {
+        font-size: 0.85rem;
     }
     
     .about-me-card {
@@ -2429,17 +2497,84 @@ body:not(.legal-page) header .mobile-menu-toggle {
     
     .benefits-left {
         position: relative;
+        align-items: center;
+        text-align: center;
     }
     
     .benefits-title {
         font-size: 2.5rem;
+        text-align: center;
     }
     
     .benefits-subtitle {
         font-size: 1.1rem;
+        text-align: center;
+    }
+    
+    .benefits-cta {
+        align-self: center;
     }
     
     .benefits-contact-buttons {
-        justify-content: flex-start;
+        justify-content: center;
+    }
+}
+
+/* Freelancer vs Agency Section */
+.freelancer-section {
+    padding: 5rem 0;
+}
+
+.freelancer-benefits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 3rem;
+    max-width: 1000px;
+    margin: 3rem auto 0;
+}
+
+.freelancer-benefit-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 0.5rem 0;
+}
+
+.freelancer-benefit-check {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.freelancer-benefit-content {
+    flex: 1;
+}
+
+.freelancer-benefit-content p {
+    font-family: Arial, sans-serif;
+    font-size: 1.1rem;
+    color: #0f172a;
+    line-height: 1.6;
+    margin: 0;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .freelancer-benefits {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        margin-top: 2rem;
+    }
+    
+    .freelancer-benefit-item {
+        gap: 1rem;
+        padding: 0.5rem 0;
+    }
+    
+    .freelancer-benefit-content p {
+        font-size: 1rem;
     }
 }
