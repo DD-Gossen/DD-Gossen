@@ -655,6 +655,29 @@ document.addEventListener('DOMContentLoaded', function() {
     //     img.src = isEnglish ? '../DD-background.webp' : 'DD-background.webp';
     // }
     // setTimeout(loadBackgroundImage, 100); // Minimale Verzögerung für Performance
+
+    // Competencies Tabs
+    const competencyTabs = document.querySelectorAll('.competency-tab');
+    const competencyPanels = document.querySelectorAll('.competency-panel');
+
+    if (competencyTabs.length > 0) {
+        competencyTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const targetTab = this.getAttribute('data-tab');
+
+                // Remove active class from all tabs and panels
+                competencyTabs.forEach(t => t.classList.remove('active'));
+                competencyPanels.forEach(p => p.classList.remove('active'));
+
+                // Add active class to clicked tab and corresponding panel
+                this.classList.add('active');
+                const targetPanel = document.getElementById(targetTab);
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                }
+            });
+        });
+    }
 });
 
 // Burger-Menü auf Legal-Pages (deutsch & englisch) ausblenden
