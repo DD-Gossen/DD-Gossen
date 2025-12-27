@@ -1247,6 +1247,41 @@ body[data-lang="en"] .flag-de {
 }
 
 /* Contact Section */
+.contact-buttons-top {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0 3rem;
+    flex-wrap: wrap;
+}
+
+.contact-top-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-family: Arial, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #0f172a;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-top-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-top-btn svg {
+    flex-shrink: 0;
+}
+
 .contact-content {
     text-align: center;
     max-width: 800px;
@@ -1296,6 +1331,7 @@ body[data-lang="en"] .flag-de {
 }
 
 .benefit-content p {
+    font-family: Arial, sans-serif;
     font-size: 0.95rem;
     line-height: 1.5;
     color: #0f172a;
@@ -1437,6 +1473,21 @@ body[data-lang="en"] .flag-de {
 
 /* Mobile Responsive for Contact Form */
 @media (max-width: 768px) {
+    .contact-buttons-top {
+        gap: 0.75rem;
+        margin: 1.5rem 0 2rem;
+    }
+    
+    .contact-top-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+    
+    .contact-top-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+    
     .contact-benefits {
         grid-template-columns: 1fr;
         gap: 1.5rem;
@@ -1448,11 +1499,11 @@ body[data-lang="en"] .flag-de {
     }
     
     .benefit-content h4 {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
     
     .benefit-content p {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     
     .contact-form {
@@ -2100,9 +2151,9 @@ body:not(.legal-page) header .mobile-menu-toggle {
 }
 
 .review-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     padding: 2rem;
@@ -2675,6 +2726,7 @@ body:not(.legal-page) header .mobile-menu-toggle {
         position: relative;
         align-items: center;
         text-align: center;
+        padding-right: 0;
     }
     
     .benefits-title {
