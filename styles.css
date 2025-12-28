@@ -282,10 +282,11 @@ body[data-lang="en"] .flag-de {
 }
 
 .customer-stars .star {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: #007bff;
     text-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
     line-height: 1;
+    display: inline-block;
 }
 
 .customer-text {
@@ -2172,10 +2173,11 @@ body:not(.legal-page) header .mobile-menu-toggle {
 }
 
 .star {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #007bff;
     text-shadow: 0 2px 4px rgba(0, 123, 255, 0.3);
     transition: transform 0.3s ease;
+    display: inline-block;
 }
 
 .star:hover {
@@ -2308,7 +2310,7 @@ body:not(.legal-page) header .mobile-menu-toggle {
     }
     
     .star {
-        font-size: 2rem;
+        font-size: 1.3rem;
     }
     
     .review-attribution {
@@ -2343,7 +2345,7 @@ body:not(.legal-page) header .mobile-menu-toggle {
     }
     
     .star {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
     }
     
     .review-title {

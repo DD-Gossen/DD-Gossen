@@ -288,7 +288,7 @@
                                 <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="white"/>
                             </svg>
                         </a>
-                        <a href="https://calendly.com/YOUR_USERNAME" target="_blank" class="social-button booking-button" title="Call buchen">
+                        <a href="javascript:void(0)" class="social-button booking-button" title="Call buchen" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <!-- Calendar icon -->
                                 <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z" fill="white"/>
@@ -498,7 +498,7 @@
                                     <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="#0f172a"/>
                                 </svg>
                             </a>
-                            <a href="https://calendly.com/maik-gossen" target="_blank" class="benefits-contact-btn" title="Termin buchen">
+                            <a href="javascript:void(0)" class="benefits-contact-btn" title="Termin buchen" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z" fill="#0f172a"/>
                                 </svg>
@@ -800,7 +800,7 @@
                             <li><strong>Studium:</strong> Mediendesign an der Hochschule Mainz</li>
                             <li><strong>Was mir wichtig ist:</strong> Strukturierte Zusammenarbeit und eine angenehme Kommunikation</li>
                             <li><strong>Was ich liebe:</strong> Wenn es funktioniert und gut aussieht</li>
-                        </ul>
+                            </ul>
                     </div>
                 </div>
             </div>
@@ -1085,7 +1085,7 @@
                         </svg>
                         <span>LinkedIn</span>
                     </a>
-                    <a href="https://calendly.com/maik-gossen" target="_blank" class="contact-top-btn" title="Termin buchen">
+                    <a href="javascript:void(0)" class="contact-top-btn" title="Termin buchen" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z" fill="currentColor"/>
                         </svg>
@@ -1337,5 +1337,42 @@
             }
         })();
     </script>
+    <!-- Cal element-click embed code begins -->
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+
+      
+      // Important: Please add the following attributes to the element that should trigger the calendar to open upon clicking.
+      // `data-cal-link="maik-gossen-hmpi7t/erstgespraech"`
+      // data-cal-namespace="erstgespraech"
+      // `data-cal-config='{"layout":"month_view"}'`
+
+      // Initialize Cal.com UI
+      function initCalUI() {
+        if (window.Cal && window.Cal.ns && window.Cal.ns.erstgespraech) {
+          Cal.ns.erstgespraech("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+        } else {
+          setTimeout(initCalUI, 100);
+        }
+      }
+      
+      // Prevent scrolling but allow Cal.com to work
+      document.addEventListener('click', function(e) {
+        const calButton = e.target.closest('[data-cal-link]');
+        if (calButton && calButton.getAttribute('href') === 'javascript:void(0)') {
+          // Only prevent default scroll behavior, let Cal.com handle the click
+          e.preventDefault();
+        }
+      }, false);
+      
+      // Start initialization
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCalUI);
+      } else {
+        initCalUI();
+      }
+    </script>
+    <!-- Cal element-click embed code ends -->
 </body>
 </html> 
