@@ -2969,12 +2969,14 @@ body:not(.legal-page) header .mobile-menu-toggle {
     .comparison-section {
         padding: 2rem 0;
         overflow-x: hidden;
+        overflow-y: hidden;
     }
     
     .comparison-section .container {
         padding-left: 0;
         padding-right: 0;
         overflow-x: visible;
+        overflow-y: hidden;
     }
     
     .comparison-grid {
@@ -2983,7 +2985,7 @@ body:not(.legal-page) header .mobile-menu-toggle {
         gap: 0;
         margin-top: 1.5rem;
         overflow-x: auto;
-        overflow-y: visible;
+        overflow-y: hidden;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
@@ -3003,6 +3005,8 @@ body:not(.legal-page) header .mobile-menu-toggle {
         scroll-snap-align: start;
         min-width: 85%;
         position: relative;
+        overflow-y: hidden;
+        height: auto;
     }
     
     .comparison-column-negative {
