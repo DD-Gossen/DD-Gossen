@@ -27,4 +27,7 @@ google-my-business-info.txt
 google-search-console-setup.txt
 
 # Generated files
-blog/posts.json 
+blog/posts.json
+
+# Large design files
+*.psd 
