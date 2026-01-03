@@ -660,22 +660,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Scroll Animations
     const observerOptions = {
-        threshold: 0.2,
-        rootMargin: '0px 0px -100px 0px'
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !entry.target.classList.contains('animate')) {
                 const element = entry.target;
-                
-                // Debug logging
-                console.log('Animating element:', element.className);
                 
                 // Add animate class to trigger animations
                 element.classList.add('animate');
                 
-                // Stop observing this element
+                // Stop observing this element immediately to prevent multiple triggers
                 observer.unobserve(element);
             }
         });

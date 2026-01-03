@@ -136,6 +136,43 @@ body[data-lang="en"] .flag-de {
     background-image: url('../german.png');
 }
 
+/* Header Right Container (Button + Flag) */
+.header-right-container {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+/* Header CTA Button */
+.header-cta-container {
+    display: flex;
+    align-items: center;
+}
+
+.header-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1.5rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    background: #0f172a;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.header-cta-button:hover {
+    background: #1e293b;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
+    color: white;
+}
+
 .nav-list {
     display: flex;
     list-style: none;
@@ -189,7 +226,7 @@ body[data-lang="en"] .flag-de {
     padding: 5px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
-    margin-right: 20px;
+    margin-right: 10px;
   }
   .mobile-menu-toggle span {
     display: block !important;
@@ -2185,52 +2222,58 @@ html {
 
 .animate-on-scroll.animate {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) !important;
 }
 
 /* Specific Animation Types - Disable transition when using keyframe animations */
 .animate-on-scroll.fade-in-up {
-    transition: none;
+    transition: none !important;
+    transform: translateY(50px);
 }
 
 .animate-on-scroll.fade-in-up.animate {
     animation: fadeInUp 0.8s ease-out forwards;
+    transform: translateY(0) !important;
 }
 
 .animate-on-scroll.fade-in-left {
-    transform: translateX(-50px);
-    transition: none;
+    transform: translateX(-50px) !important;
+    transition: none !important;
 }
 
 .animate-on-scroll.fade-in-left.animate {
     animation: fadeInLeft 0.8s ease-out forwards;
+    transform: translateX(0) !important;
 }
 
 .animate-on-scroll.fade-in-right {
-    transform: translateX(50px);
-    transition: none;
+    transform: translateX(50px) !important;
+    transition: none !important;
 }
 
 .animate-on-scroll.fade-in-right.animate {
     animation: fadeInRight 0.8s ease-out forwards;
+    transform: translateX(0) !important;
 }
 
 .animate-on-scroll.fade-in-scale {
-    transform: scale(0.9);
-    transition: none;
+    transform: scale(0.9) !important;
+    transition: none !important;
 }
 
 .animate-on-scroll.fade-in-scale.animate {
     animation: fadeInScale 0.8s ease-out forwards;
+    transform: scale(1) !important;
 }
 
 .animate-on-scroll.slide-in-down {
-    transform: translateY(-30px);
-    transition: none;
+    transform: translateY(-30px) !important;
+    transition: none !important;
 }
 
 .animate-on-scroll.slide-in-down.animate {
     animation: slideInDown 0.8s ease-out forwards;
+    transform: translateY(0) !important;
 }
 
 /* Staggered Animations */
@@ -2248,11 +2291,27 @@ html {
         width: calc(100% - 20px);
         left: 10px;
         top: 10px;
-        padding: 0 10px;
+        padding: 0.5rem 10px;
     }
 
     .header .container {
         padding: 1.5rem 10px;
+    }
+    
+    .header-right-container {
+        gap: 0.5rem;
+        margin-right: 60px;
+    }
+    
+    .header-cta-container {
+        display: flex;
+        align-items: center;
+    }
+    
+    .header-cta-button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.75rem;
+        white-space: nowrap;
     }
 
     .logo {
@@ -2261,10 +2320,27 @@ html {
         padding-left: 12px;
     }
 
+    .language-container {
+        display: none;
+    }
+    
     .language-flag {
-        right: 20px;
         width: 20px;
         height: 20px;
+    }
+    
+    .mobile-language-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 0;
+        margin-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .mobile-language-flag {
+        width: 32px;
+        height: 32px;
     }
 
                 .nav-list {
