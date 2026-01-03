@@ -1341,12 +1341,13 @@ body[data-lang="en"] .flag-de {
     .project-customer-name {
         font-size: 1.5rem;
         margin-top: 0;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.1rem;
     }
     
     .project-description {
         font-size: 0.85rem;
         margin-top: 0;
+        margin-bottom: 0;
     }
     
     .project-tag {
