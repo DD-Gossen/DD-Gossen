@@ -82,76 +82,123 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollTop = scrollTop;
     });
 
-    // Simple Carousel Functionality
-    const slides = document.querySelectorAll('.carousel-slide');
-    const projectInfos = document.querySelectorAll('.project-info');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    let currentSlide = 0;
+    // Projects Carousel Functionality
+    const projectsCarouselTrack = document.getElementById('projectsCarouselTrack');
+    const projectCards = document.querySelectorAll('.project-card-new');
+    const projectsPrevBtn = document.getElementById('projectsPrevBtn');
+    const projectsNextBtn = document.getElementById('projectsNextBtn');
+    let currentProjectIndex = 0;
 
-    function updateCarousel() {
-        // Update slides
-        slides.forEach((slide, index) => {
-            slide.classList.remove('active');
-            if (index === currentSlide) {
-                slide.classList.add('active');
+    function isMobileViewProjects() {
+        return window.innerWidth <= 768;
+    }
+
+    function updateProjectsCarousel() {
+        if (!projectsCarouselTrack || projectCards.length === 0) return;
+        
+        const mobile = isMobileViewProjects();
+        
+        // Update active state for opacity
+        projectCards.forEach((card, index) => {
+            if (index === currentProjectIndex) {
+                card.classList.add('active');
+            } else {
+                card.classList.remove('active');
             }
         });
         
-        // Update project info
-        projectInfos.forEach((info, index) => {
-            info.classList.remove('active');
-            if (index === currentSlide) {
-                info.classList.add('active');
+        if (mobile) {
+            // Mobile: Single card with visible edges
+            const cardWidth = projectCards[0].offsetWidth;
+            const gap = 16; // 1rem gap
+            const wrapper = document.querySelector('.projects-carousel-wrapper');
+            const wrapperWidth = wrapper ? wrapper.offsetWidth : window.innerWidth;
+            const wrapperPadding = wrapper ? parseInt(window.getComputedStyle(wrapper).paddingLeft) : 20;
+            
+            const visibleWidth = wrapperWidth - (wrapperPadding * 2);
+            const centerOffset = (visibleWidth - cardWidth) / 2;
+            const cardOffset = -(currentProjectIndex * (cardWidth + gap));
+            const offset = centerOffset + cardOffset;
+            projectsCarouselTrack.style.transform = `translateX(${offset}px)`;
+        } else {
+            // Desktop: Show center card with partial cards on sides reaching to browser edges
+            const cardWidth = projectCards[0].offsetWidth;
+            const gap = 32; // 2rem gap
+            const viewportWidth = window.innerWidth;
+            
+            // Calculate offset to center the active card in the viewport
+            // Cards should extend to browser edges
+            const centerOffset = viewportWidth / 2 - cardWidth / 2;
+            const cardOffset = -(currentProjectIndex * (cardWidth + gap));
+            const offset = centerOffset + cardOffset;
+            projectsCarouselTrack.style.transform = `translateX(${offset}px)`;
+        }
+    }
+
+    function nextProject() {
+        if (projectCards.length === 0) return;
+        const maxIndex = projectCards.length - 1;
+        if (isMobileViewProjects()) {
+            currentProjectIndex = (currentProjectIndex + 1) % (maxIndex + 1);
+        } else {
+            currentProjectIndex = currentProjectIndex + 1;
+            if (currentProjectIndex > maxIndex) {
+                currentProjectIndex = 0;
             }
-        });
+        }
+        updateProjectsCarousel();
     }
 
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        updateCarousel();
+    function prevProject() {
+        if (projectCards.length === 0) return;
+        const maxIndex = projectCards.length - 1;
+        if (isMobileViewProjects()) {
+            currentProjectIndex = (currentProjectIndex - 1 + (maxIndex + 1)) % (maxIndex + 1);
+        } else {
+            currentProjectIndex = currentProjectIndex - 1;
+            if (currentProjectIndex < 0) {
+                currentProjectIndex = maxIndex;
+            }
+        }
+        updateProjectsCarousel();
     }
 
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        updateCarousel();
+    if (projectsPrevBtn && projectsNextBtn) {
+        projectsPrevBtn.addEventListener('click', prevProject);
+        projectsNextBtn.addEventListener('click', nextProject);
     }
 
-    if (nextBtn && prevBtn) {
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
+    // Initialize projects carousel
+    if (projectCards.length > 0) {
+        updateProjectsCarousel();
     }
 
-    // Initialize carousel
-    if (slides.length > 0) {
-        updateCarousel();
-    }
-
-    // Touch/Swipe functionality for mobile
-    let startX = 0;
-    let startY = 0;
-    let endX = 0;
-    let endY = 0;
-    let isSwiping = false;
-    const carouselContainer = document.querySelector('.carousel-container');
+    // Touch/Swipe functionality for projects carousel on mobile
+    let projectsStartX = 0;
+    let projectsStartY = 0;
+    let projectsEndX = 0;
+    let projectsEndY = 0;
+    let projectsIsSwiping = false;
+    const projectsCarouselWrapper = document.querySelector('.projects-carousel-wrapper');
     
-    if (carouselContainer) {
-        carouselContainer.addEventListener('touchstart', function(e) {
-            startX = e.touches[0].clientX;
-            startY = e.touches[0].clientY;
-            isSwiping = false;
+    if (projectsCarouselWrapper) {
+        projectsCarouselWrapper.addEventListener('touchstart', function(e) {
+            if (!isMobileViewProjects()) return;
+            projectsStartX = e.touches[0].clientX;
+            projectsStartY = e.touches[0].clientY;
+            projectsIsSwiping = false;
         }, { passive: true });
         
-        carouselContainer.addEventListener('touchmove', function(e) {
-            if (!isSwiping) {
+        projectsCarouselWrapper.addEventListener('touchmove', function(e) {
+            if (!isMobileViewProjects()) return;
+            if (!projectsIsSwiping) {
                 const currentX = e.touches[0].clientX;
                 const currentY = e.touches[0].clientY;
-                const diffX = Math.abs(currentX - startX);
-                const diffY = Math.abs(currentY - startY);
+                const diffX = Math.abs(currentX - projectsStartX);
+                const diffY = Math.abs(currentY - projectsStartY);
                 
-                // Only start swiping if horizontal movement is clearly dominant
                 if (diffX > 10 && diffX > diffY * 2) {
-                    isSwiping = true;
+                    projectsIsSwiping = true;
                     e.preventDefault();
                 }
             } else {
@@ -159,31 +206,40 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, { passive: false });
         
-        carouselContainer.addEventListener('touchend', function(e) {
-            if (isSwiping) {
-                endX = e.changedTouches[0].clientX;
-                endY = e.changedTouches[0].clientY;
-                handleSwipe();
+        projectsCarouselWrapper.addEventListener('touchend', function(e) {
+            if (!isMobileViewProjects()) return;
+            if (projectsIsSwiping) {
+                projectsEndX = e.changedTouches[0].clientX;
+                projectsEndY = e.changedTouches[0].clientY;
+                handleProjectsSwipe();
             }
         }, { passive: true });
         
-        function handleSwipe() {
+        function handleProjectsSwipe() {
             const swipeThreshold = 50;
-            const diffX = startX - endX;
-            const diffY = startY - endY;
+            const diffX = projectsStartX - projectsEndX;
+            const diffY = projectsStartY - projectsEndY;
             
-            // Only trigger if horizontal movement is significant and dominant
             if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > Math.abs(diffY) * 1.5) {
                 if (diffX > 0) {
-                    // Swipe left - next slide
-                    nextSlide();
+                    nextProject();
                 } else {
-                    // Swipe right - previous slide
-                    prevSlide();
+                    prevProject();
                 }
             }
         }
     }
+
+    // Handle window resize for projects carousel
+    let projectsResizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(projectsResizeTimeout);
+        projectsResizeTimeout = setTimeout(function() {
+            if (projectCards.length > 0) {
+                updateProjectsCarousel();
+            }
+        }, 250);
+    });
 
     // Auto-play carousel removed per user request
 
