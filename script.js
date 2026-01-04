@@ -741,4 +741,65 @@ window.addEventListener('DOMContentLoaded', function() {
             burger.style.display = 'none';
         });
     }
+});
+
+// FAQ Accordion Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            const answer = this.nextElementSibling;
+            
+            // Close all other FAQ items
+            faqQuestions.forEach(otherQuestion => {
+                if (otherQuestion !== this) {
+                    otherQuestion.setAttribute('aria-expanded', 'false');
+                    const otherAnswer = otherQuestion.nextElementSibling;
+                    if (otherAnswer) {
+                        otherAnswer.style.maxHeight = '0';
+                        otherAnswer.style.paddingTop = '0';
+                    }
+                }
+            });
+            
+            // Toggle current item
+            if (isExpanded) {
+                this.setAttribute('aria-expanded', 'false');
+                // Get current height before closing
+                const currentHeight = answer.scrollHeight;
+                answer.style.maxHeight = currentHeight + 'px';
+                // Force reflow
+                void answer.offsetHeight;
+                // Now close
+                answer.style.maxHeight = '0';
+                answer.style.paddingTop = '0';
+            } else {
+                this.setAttribute('aria-expanded', 'true');
+                // Remove transition temporarily to measure
+                answer.style.transition = 'none';
+                // Set padding first (smaller on mobile)
+                const isMobile = window.innerWidth <= 768;
+                const paddingTop = isMobile ? '0.5rem' : '0.75rem';
+                answer.style.paddingTop = paddingTop;
+                // Remove max-height restriction to measure actual content
+                answer.style.maxHeight = 'none';
+                // Get the actual height including padding
+                const fullHeight = answer.scrollHeight;
+                // Reset for animation
+                answer.style.maxHeight = '0';
+                answer.style.paddingTop = '0';
+                // Restore transition
+                answer.style.transition = '';
+                // Force reflow
+                void answer.offsetHeight;
+                // Animate to full height
+                requestAnimationFrame(() => {
+                    answer.style.maxHeight = fullHeight + 'px';
+                    answer.style.paddingTop = paddingTop;
+                });
+            }
+        });
+    });
 }); 
