@@ -7,8 +7,8 @@
     <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/" />
   </url>
   
   <!-- Blog Pages -->
