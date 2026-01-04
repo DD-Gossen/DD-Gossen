@@ -70,25 +70,25 @@ body.background-loaded {
 
 
 .logo {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 400;
-    color: #0f172a;
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    left: 20px;
-    transition: color 0.3s ease;
-    text-align:left;
+    transition: opacity 0.3s ease;
+    margin-left: -1rem;
 }
 
 .logo:hover {
-    color: #007bff;
+    opacity: 0.8;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
 }
 
 .logo h2 {
-    margin: 0;
-    font-size: inherit;
-    font-weight: inherit;
-    color: inherit;
+    display: none;
 }
 
 /* Language Flag */
@@ -177,6 +177,11 @@ body[data-lang="en"] .flag-de {
     display: flex;
     list-style: none;
     gap: 2rem;
+}
+
+/* Hide mobile language item on desktop */
+.mobile-language-item {
+    display: none;
 }
 
 .nav-link {
@@ -2315,9 +2320,12 @@ html {
     }
 
     .logo {
-        font-size: 1.5rem;
-        left: 10px;
-        padding-left: 12px;
+        padding-left: 0;
+        margin-left: -0.5rem;
+    }
+    
+    .logo-img {
+        height: 35px;
     }
 
     .language-container {
