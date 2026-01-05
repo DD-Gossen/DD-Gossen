@@ -82,7 +82,7 @@ body.background-loaded {
 }
 
 .logo-img {
-    height: 60px;
+    height: 50px;
     width: auto;
     object-fit: contain;
 }
@@ -1500,7 +1500,7 @@ body[data-lang="en"] .flag-de {
     font-size: 1rem;
     font-weight: 600;
     color: white;
-    background: #007bff;
+    background: #0f172a;
     border: none;
     border-radius: 30px;
     text-decoration: none;
@@ -1509,9 +1509,9 @@ body[data-lang="en"] .flag-de {
 }
 
 .contact-booking-btn:hover {
-    background: #0056b3;
+    background: #1e293b;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
 }
 
 .contact-booking-btn svg {
@@ -2305,7 +2305,9 @@ html {
     
     .header-right-container {
         gap: 0.5rem;
-        margin-right: 60px;
+        margin-right: 15px;
+        margin-left: auto;
+        justify-content: flex-end;
     }
     
     .header-cta-container {
@@ -2320,8 +2322,8 @@ html {
     }
 
     .logo {
-        padding-left: 0;
-        margin-left: -0.5rem;
+        padding-left: 1rem;
+        margin-left: 0;
     }
     
     .logo-img {
@@ -2329,12 +2331,12 @@ html {
     }
 
     .language-container {
-        display: none;
+        display: flex;
     }
     
     .language-flag {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
     }
     
     .mobile-language-item {
@@ -3641,5 +3643,72 @@ body:not(.legal-page) header .mobile-menu-toggle {
     .faq-icon {
         width: 18px;
         height: 18px;
+    }
+}
+
+/* SEO Content Section */
+.seo-content-section {
+    padding: 5rem 0;
+}
+
+.seo-content-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seo-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.seo-content-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.seo-content-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.seo-content-text {
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: #0f172a;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Mobile Styles for SEO Content */
+@media (max-width: 768px) {
+    .seo-content-card {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .seo-content-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .seo-content-title {
+        font-size: 0.9rem;
+    }
+    
+    .seo-content-text {
+        font-size: 0.7rem;
     }
 }

@@ -190,8 +190,12 @@ async function renderBlogArticle() {
   const urlParams = new URLSearchParams(window.location.search);
   const slug = urlParams.get('slug');
   
+  // Wenn kein Slug vorhanden ist und bereits Content in der Karte ist, nichts tun
   if (!slug) {
-    articleCard.innerHTML = '<p>Artikel nicht gefunden.</p>';
+    // Prüfe ob bereits Content vorhanden ist
+    if (articleCard.innerHTML.trim() && articleCard.innerHTML.trim() !== '<!-- Artikel wird per JS geladen -->') {
+      return; // Statischer Content ist bereits vorhanden
+    }
     return;
   }
 
@@ -199,19 +203,40 @@ async function renderBlogArticle() {
   const post = posts.find(p => p.slug === slug);
   
   if (!post) {
-    articleCard.innerHTML = '<p>Artikel nicht gefunden.</p>';
+    // Prüfe ob bereits Content vorhanden ist
+    if (articleCard.innerHTML.trim() && articleCard.innerHTML.trim() !== '<!-- Artikel wird per JS geladen -->') {
+      return; // Statischer Content ist bereits vorhanden
+    }
     return;
   }
 
   // Meta-Tags setzen
   setMetaTags(post);
 
-  articleCard.innerHTML = `
-    <h1 class="article-title">${post.title}</h1>
-    <div class="blog-date">Artikel vom ${formatGermanDate(post.date)}</div>
-    <img src="${post.image}" alt="${post.title}">
-    <div class="article-content">${post.body}</div>
-  `;
+  // Titel und Datum außerhalb der Karte setzen
+  const titleElement = document.getElementById('article-title-standalone');
+  const dateElement = document.getElementById('article-date-standalone');
+  const heroImageElement = document.getElementById('article-hero-image');
+  
+  if (titleElement && !titleElement.textContent.includes('Artikel Titel')) {
+    titleElement.textContent = post.title;
+  }
+  
+  if (dateElement && !dateElement.textContent.includes('Artikel vom ...')) {
+    dateElement.textContent = `Artikel vom ${formatGermanDate(post.date)}`;
+  }
+  
+  // Hero-Bild außerhalb der Karte setzen
+  if (heroImageElement && !heroImageElement.innerHTML.trim()) {
+    heroImageElement.innerHTML = `<img src="${post.image}" alt="${post.title}">`;
+  }
+
+  // Nur rendern wenn Karte leer ist
+  if (!articleCard.innerHTML.trim() || articleCard.innerHTML.trim() === '<!-- Artikel wird per JS geladen -->') {
+    articleCard.innerHTML = `
+      <div class="article-content">${post.body}</div>
+    `;
+  }
 }
 
 // Initialisierung

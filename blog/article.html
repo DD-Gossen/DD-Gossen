@@ -94,25 +94,191 @@
     }
     .blog-main {
       margin-top: 120px;
+      min-height: calc(100vh - 120px);
+      padding: 2rem 10%;
+    }
+    
+    /* Artikel Layout - 2 Spalten */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0;
+      align-items: start;
       min-height: 100vh;
     }
-    .article-card {
-      max-width: 900px;
-      margin: 0 auto 3rem auto;
-      background: rgba(255,255,255,0.15);
+    
+    /* Linke Sidebar (feste Position) */
+    .article-sidebar {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 140px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-self: start;
+    }
+    
+    /* Sidebar Karten */
+    .sidebar-card {
+      background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(10px);
       border-radius: 20px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-      padding: 2.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 1.5rem;
+    }
+    
+    .sidebar-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid rgba(15, 23, 42, 0.2);
+    }
+    
+    /* Inhaltsverzeichnis in Sidebar */
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .toc-list li {
+      margin-bottom: 0.0rem;
+    }
+    
+    .toc-list a {
+      color: #0f172a;
+      text-decoration: none;
+      font-size: 0.8rem;
+      line-height: 1;
+      display: block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      opacity: 0.7;
+    }
+    
+    .toc-list a:hover,
+    .toc-list a.active {
+      background: rgba(15, 23, 42, 0.1);
+      opacity: 1;
+      color: #0f172a;
+    }
+    
+    /* CTA Sidebar Card */
+    .cta-sidebar-card {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      border-left: 4px solid #0f172a;
+    }
+    
+    .cta-sidebar-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 0 0 1rem 0;
+    }
+    
+    .cta-sidebar-button {
+      background: #0f172a;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(15, 23, 42, 0.3);
+      text-decoration: none;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .cta-sidebar-button:hover {
+      background: #1e293b;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.4);
+    }
+    
+    /* Rechter Content Wrapper */
+    .article-content-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    
+    /* Artikel Titel außerhalb der Karte */
+    .article-title-wrapper {
+      margin-bottom: 0.25rem;
+    }
+    
+    .article-title-standalone {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 0.5rem 0;
+      line-height: 1.2;
+    }
+    
+    .article-date-standalone {
+      font-size: 0.95rem;
+      color: #0f172a;
+      opacity: 0.7;
+      font-weight: 500;
+    }
+    
+    /* Hero-Bild außerhalb der Karte */
+    .article-hero-image {
+      width: 100%;
+      margin-bottom: 0.5rem;
+      margin-left: 0;
+      margin-right: 0;
+      box-sizing: border-box;
+      padding-left: 0;
+      padding-right: 1rem;
+    }
+    
+    .article-hero-image img {
+      width: 100%;
+      max-width: 100%;
+      height: 250px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .article-card {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      padding: 0.5rem 2.5rem 2.5rem 2.5rem;   
       display: flex;
       flex-direction: column;
       align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-sizing: border-box;
     }
     .article-card img {
       width: 100%;
       max-width: 600px;
       height: auto;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0rem;
       border-radius: 18px;
       object-fit: cover;
       display: block;
@@ -143,59 +309,61 @@
       padding: 0 1rem;
     }
     .article-content {
-      max-width: 700px;
-      margin: 0 auto 2.5rem auto;
+      max-width: 100%;
+      width: 100%;
+      margin: 0 auto 1.5rem auto;
       color: #0f172a;
-      font-size: 1.08rem;
-      line-height: 1.7;
-      padding: 0 1rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      padding: 0;
+      box-sizing: border-box;
     }
     .article-content h1 {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 2.4rem;
+      font-size: 2rem;
       font-weight: 700;
       color: #0f172a;
-      margin: 3rem 0 2rem 0;
+      margin: 2rem 0 1rem 0;
       line-height: 1.2;
     }
     .article-content h2 {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: 600;
       color: #0f172a;
-      margin: 3rem 0 1.5rem 0;
-      padding-bottom: 0.8rem;
+      margin: 2rem 0 0.8rem 0;
+      padding-bottom: 0.5rem;
       line-height: 1.3;
       scroll-margin-top: 120px;
     }
     .article-content h3 {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       font-weight: 600;
       color: #0f172a;
-      margin: 2.5rem 0 1rem 0;
-      line-height: 1.4;
+      margin: 1.5rem 0 0.6rem 0;
+      line-height: 1.3;
       scroll-margin-top: 120px;
     }
     .article-content h4 {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.2rem;
+      font-size: 1.05rem;
       font-weight: 600;
       color: #0f172a;
-      margin: 2rem 0 0.8rem 0;
-      line-height: 1.4;
+      margin: 1.2rem 0 0.5rem 0;
+      line-height: 1.3;
     }
     .article-content p {
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
+      margin-bottom: 1rem;
+      line-height: 1.5;
     }
     .article-content ul, .article-content ol {
-      margin: 1.5rem 0;
-      padding-left: 1.8rem;
+      margin: 1rem 0;
+      padding-left: 1.5rem;
     }
     .article-content li {
-      margin-bottom: 0.8rem;
-      line-height: 1.6;
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
     }
     .article-content strong {
       font-weight: 600;
@@ -218,23 +386,22 @@
     .cta-box {
       background: rgba(15, 23, 42, 0.03);
       border-radius: 12px;
-      padding: 2rem;
-      margin: 2.5rem 0;
-      border-left: 4px solid #237eb5;
+      padding: 1rem;
+      margin: 1rem 0;
       text-align: center;
     }
     .cta-box h3 {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.5rem;
+      font-size: 1.1rem;
       font-weight: 600;
       color: #0f172a;
-      margin: 0 0 1rem 0;
+      margin: 0 0 0.5rem 0;
     }
     .cta-box p {
       color: #0f172a;
-      font-size: 1.05rem;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      margin-bottom: 0.8rem;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
@@ -243,8 +410,8 @@
       background: #0f172a;
       color: white !important;
       border: none;
-      padding: 0.8rem 2.2rem;
-      font-size: 1.1rem;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 600;
       border-radius: 50px;
@@ -297,55 +464,130 @@
     .table-of-contents a:hover {
       opacity: 1;
     }
-    .support-card {
-      max-width: 600px;
-      margin: 0 auto 2.5rem auto;
-      background: rgba(255,255,255,0.18);
+    /* Autorenbox */
+    .author-box {
+      background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(10px);
       border-radius: 20px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-      padding: 2rem 1.5rem;
-      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      gap: 1.5rem;
+      align-items: flex-start;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
-    .support-card p {
-      font-size: 1.1rem;
-      color: #0f172a;
-      opacity: 0.9;
-      margin-bottom: 1.2rem;
+    
+    .author-avatar {
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid rgba(255, 255, 255, 0.3);
     }
-    .contact-btn {
-      background: #0f172a;
-      color: white;
-      border: none;
-      padding: 0.8rem 2.2rem;
-      font-size: 1.1rem;
+    
+    .author-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .author-info {
+      flex: 1;
+    }
+    
+    .author-name {
       font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem;
       font-weight: 600;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(15, 23, 42, 0.3);
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 1.2rem;
+      color: #0f172a;
+      margin: 0 0 0.5rem 0;
     }
-    .contact-btn:hover {
-      background: #1e293b;
+    
+    .author-title {
+      font-size: 1rem;
+      color: #0f172a;
+      margin: 0 0 0.75rem 0;
+      font-weight: 500;
+      opacity: 0.7;
     }
+    
+    .author-description {
+      font-size: 0.95rem;
+      color: #0f172a;
+      opacity: 0.8;
+      margin: 0;
+      line-height: 1.6;
+    }
+    @media (max-width: 1024px) {
+      .blog-main {
+        padding: 2rem 7%;
+      }
+      
+      .article-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0;
+      }
+      
+      .article-sidebar {
+        position: relative;
+        top: 0;
+        order: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .article-content-wrapper {
+        order: 2;
+      }
+      
+      .sidebar-card {
+        margin-bottom: 1rem;
+      }
+      
+      /* Nur Inhaltsverzeichnis nach oben, CTA bleibt unten */
+      .toc-card {
+        order: 1;
+      }
+      
+      .cta-sidebar-card {
+        order: 2;
+      }
+    }
+    
     @media (max-width: 768px) {
-      .article-title {
+      .blog-main {
+        padding: 2rem 5%;
+      }
+      
+      .article-title-standalone {
         font-size: 2.2rem;
-        margin: 1.5rem auto 1rem auto;
-        padding: 0 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .article-date-standalone {
+        font-size: 0.9rem;
+      }
+      .article-hero-image {
+        padding-left: 0;
+        padding-right: 2.5rem;
+      }
+      
+      .article-hero-image img {
+        height: 150px;
       }
       .article-card {
-        padding: 1.2rem;
+        padding: 1rem 1.2rem 1.2rem 1.2rem;
       }
-      .support-card {
-        padding: 1.2rem 0.7rem 1rem 0.7rem;
+      .author-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+      }
+      .author-avatar {
+        width: 100px;
+        height: 100px;
       }
       .article-content h1 {
         font-size: 2rem;
@@ -458,32 +700,269 @@
 <body>
   <header class="header">
     <a href="../" class="logo">
-      <h2>DD-Gossen</h2>
+      <img src="../Logo.png" alt="DD-Gossen Logo" class="logo-img">
     </a>
-    <nav class="nav">
-      <ul class="nav-list">
-        <li><a href="../#home" class="nav-link">Startseite</a></li>
-        <li><a href="../#services" class="nav-link">Mein Angebot</a></li>
-        <li><a href="../#about-me" class="nav-link">Über mich</a></li>
-        <li><a href="../#carousel" class="nav-link">Projekte</a></li>
-        <li><a href="../#contact" class="nav-link">Kontakt</a></li>
-      </ul>
-    </nav>
-    <div class="mobile-menu-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
+    <div class="header-right-container">
+      <div class="header-cta-container">
+        <a href="#" class="header-cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt anfragen</a>
+      </div>
+      <div class="language-container">
+        <a href="../../en/" class="language-flag flag-uk" title="Switch to English"></a>
+      </div>
     </div>
   </header>
   <main class="blog-main">
-    <div class="article-card" id="article-card">
-      <!-- Artikel wird per JS geladen -->
-    </div>
-    <div class="support-card">
-      <p>Brauchen Sie Unterstützung bei einem Shopify-Projekt? Ich helfe Ihnen gerne weiter – von der Idee bis zum fertigen Shop!</p>
-      <a class="contact-btn" href="../#contact">Jetzt Kontakt aufnehmen</a>
+    <div class="article-layout">
+      <!-- Linke Sidebar (feste Position) -->
+      <aside class="article-sidebar">
+        <!-- Inhaltsverzeichnis -->
+        <div class="sidebar-card toc-card" id="toc-card">
+          <h3 class="sidebar-title">Inhaltsverzeichnis</h3>
+          <ul class="toc-list" id="toc-list">
+            <!-- Wird per JS gefüllt -->
+          </ul>
+        </div>
+        
+        <!-- CTA Box -->
+        <div class="sidebar-card cta-sidebar-card">
+          <h3 class="cta-sidebar-title">Jetzt Shopping-Brandkampagne aufsetzen</h3>
+          <a href="#" class="cta-sidebar-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Hier klicken</a>
+        </div>
+      </aside>
+      
+      <!-- Rechter Hauptinhalt (scrollbar) -->
+      <div class="article-content-wrapper">
+        <!-- Titel außerhalb der Karte -->
+        <div class="article-title-wrapper">
+          <h1 class="article-title-standalone" id="article-title-standalone">Shopify mit PlentyOne verbinden - Alles was du wissen musst</h1>
+          <div class="article-date-standalone" id="article-date-standalone">Artikel vom 27. Januar 2025</div>
+        </div>
+        
+        <!-- Blogbild als Hero-Bild -->
+        <div class="article-hero-image" id="article-hero-image">
+          <img src="images/Shopify-PlentyOne.png" alt="Shopify mit PlentyOne verbinden">
+        </div>
+        
+        <div class="article-card" id="article-card">
+          <div class="article-content">
+            <h2 id="voraussetzungen">Voraussetzungen für die Integration</h2>
+            <p>Bevor du Shopify mit PlentyOne verbindest, solltest du einige wichtige Voraussetzungen erfüllen. Diese sind entscheidend für eine erfolgreiche Integration und einen reibungslosen Betrieb deines Online-Shops.</p>
+            
+            <h3>Technische Voraussetzungen</h3>
+            <ul>
+              <li>Ein aktiver Shopify-Plan (Basic, Shopify oder Advanced)</li>
+              <li>Zugriff auf dein PlentyOne-System</li>
+              <li>API-Zugangsdaten für beide Systeme</li>
+              <li>Stabile Internetverbindung während der Einrichtung</li>
+            </ul>
+            
+            <h3>Datenvorbereitung</h3>
+            <p>Stelle sicher, dass deine Produktdaten in beiden Systemen konsistent sind. Besonders wichtig sind:</p>
+            <ul>
+              <li>Eindeutige Produkt-IDs oder SKUs</li>
+              <li>Konsistente Produktnamen</li>
+              <li>Vollständige Produktbeschreibungen</li>
+              <li>Korrekte Preisangaben</li>
+              <li>Lagerbestände in beiden Systemen</li>
+            </ul>
+            
+            <h2 id="einrichtung">Schritt-für-Schritt Einrichtung</h2>
+            <p>Die Einrichtung der Verbindung zwischen Shopify und PlentyOne erfolgt in mehreren Schritten. Folge dieser Anleitung genau, um Fehler zu vermeiden.</p>
+            
+            <h3>Schritt 1: API-Zugangsdaten generieren</h3>
+            <p>Zuerst musst du in beiden Systemen API-Zugangsdaten erstellen. In Shopify findest du diese unter Einstellungen > Apps und Verkaufskanäle > Entwickler-Apps.</p>
+            
+            <h3>Schritt 2: Verbindung herstellen</h3>
+            <p>Nutze die offizielle Shopify-App für PlentyOne oder eine Drittanbieter-Lösung, um die Verbindung herzustellen. Die meisten Lösungen bieten einen Assistenten, der dich durch den Prozess führt.</p>
+            
+            <!-- CTA mitten im Artikel -->
+            <div class="cta-box">
+              <h3>Bereit für deinen Shopify-Plan?</h3>
+              <p>Lass uns gemeinsam deinen Shopify-Shop optimieren und mit PlentyOne verbinden. Ich helfe dir bei der Einrichtung und beantworte alle deine Fragen.</p>
+              <a href="#" class="cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt kostenloses Erstgespräch vereinbaren</a>
+            </div>
+            
+            <h3>Schritt 3: Produktdaten synchronisieren</h3>
+            <p>Nach erfolgreicher Verbindung kannst du die Produktdaten synchronisieren. Achte darauf, dass die Synchronisation zunächst im Testmodus läuft, um Fehler zu vermeiden.</p>
+            
+            <h2 id="produktsynchronisation">Produktsynchronisation konfigurieren</h2>
+            <p>Die Produktsynchronisation ist das Herzstück der Integration. Hier musst du genau definieren, welche Daten in welche Richtung synchronisiert werden sollen.</p>
+            
+            <h3>Richtungen der Synchronisation</h3>
+            <ul>
+              <li><strong>Shopify → PlentyOne:</strong> Bestellungen, Kunden, Produktverkäufe</li>
+              <li><strong>PlentyOne → Shopify:</strong> Produktdaten, Lagerbestände, Preise</li>
+              <li><strong>Bidirektional:</strong> Bestimmte Daten können in beide Richtungen synchronisiert werden</li>
+            </ul>
+            
+            <h3>Wichtige Einstellungen</h3>
+            <p>Bei der Konfiguration solltest du folgende Punkte beachten:</p>
+            <ul>
+              <li>Synchronisationsintervall (Echtzeit, stündlich, täglich)</li>
+              <li>Konfliktlösung bei unterschiedlichen Daten</li>
+              <li>Automatische Lagerbestandsaktualisierung</li>
+              <li>Preissynchronisation</li>
+              <li>Produktbilder und -beschreibungen</li>
+            </ul>
+            
+            <h2 id="bestellungen">Bestellungsabwicklung</h2>
+            <p>Eine der wichtigsten Funktionen ist die automatische Übertragung von Bestellungen von Shopify zu PlentyOne. Dies ermöglicht eine nahtlose Abwicklung deines E-Commerce-Geschäfts.</p>
+            
+            <h3>Automatische Bestellungsübertragung</h3>
+            <p>Wenn eine Bestellung in Shopify eingeht, wird diese automatisch an PlentyOne übertragen. Dabei werden folgende Daten synchronisiert:</p>
+            <ul>
+              <li>Bestellnummer und Datum</li>
+              <li>Kundendaten (Name, Adresse, E-Mail)</li>
+              <li>Bestellte Produkte und Mengen</li>
+              <li>Versandinformationen</li>
+              <li>Zahlungsstatus</li>
+            </ul>
+            
+            <h2 id="lagerbestand">Lagerbestandsverwaltung</h2>
+            <p>Die automatische Synchronisation des Lagerbestands ist entscheidend, um Fehlbestände zu vermeiden und deine Kunden zufriedenzustellen.</p>
+            
+            <h3>Echtzeit-Synchronisation</h3>
+            <p>Mit der Echtzeit-Synchronisation wird der Lagerbestand sofort aktualisiert, sobald eine Bestellung eingeht oder ein Produkt verkauft wird. Dies verhindert Überverkäufe und sorgt für aktuelle Bestandsdaten.</p>
+            
+            <h2 id="fehlerbehebung">Häufige Probleme und Lösungen</h2>
+            <p>Trotz sorgfältiger Einrichtung können Probleme auftreten. Hier sind die häufigsten Probleme und wie du sie löst:</p>
+            
+            <h3>Problem: Synchronisation funktioniert nicht</h3>
+            <ul>
+              <li>Prüfe die API-Zugangsdaten in beiden Systemen</li>
+              <li>Stelle sicher, dass die Internetverbindung stabil ist</li>
+              <li>Überprüfe die Logs auf Fehlermeldungen</li>
+              <li>Kontaktiere den Support der verwendeten App</li>
+            </ul>
+            
+            <h3>Problem: Falsche Produktdaten werden synchronisiert</h3>
+            <ul>
+              <li>Überprüfe die Produkt-IDs und SKUs auf Konsistenz</li>
+              <li>Prüfe die Zuordnungsregeln in der App</li>
+              <li>Führe eine manuelle Zuordnung durch, falls nötig</li>
+            </ul>
+            
+            <h2 id="best-practices">Best Practices</h2>
+            <p>Um das Beste aus der Integration herauszuholen, solltest du folgende Best Practices befolgen:</p>
+            
+            <ul>
+              <li><strong>Regelmäßige Überprüfung:</strong> Prüfe wöchentlich die Synchronisationslogs auf Fehler</li>
+              <li><strong>Backup erstellen:</strong> Erstelle regelmäßig Backups deiner Produktdaten</li>
+              <li><strong>Testumgebung nutzen:</strong> Teste Änderungen zunächst in einer Testumgebung</li>
+              <li><strong>Dokumentation:</strong> Dokumentiere alle Anpassungen und Einstellungen</li>
+              <li><strong>Support kontaktieren:</strong> Bei Problemen zögere nicht, den Support zu kontaktieren</li>
+            </ul>
+            
+            <h2 id="fazit">Fazit</h2>
+            <p>Die Verbindung zwischen Shopify und PlentyOne kann deinen E-Commerce-Workflow erheblich verbessern. Mit der richtigen Einrichtung und Konfiguration sparst du Zeit und reduzierst Fehler. Folge dieser Anleitung Schritt für Schritt, und du wirst eine reibungslose Integration erreichen.</p>
+            
+            <p>Hast du Fragen zur Integration oder brauchst du Unterstützung? Kontaktiere mich gerne für ein kostenloses Erstgespräch!</p>
+          </div>
+        </div>
+        
+        <!-- Autorenbox -->
+        <div class="author-box">
+          <div class="author-avatar">
+            <img src="images/Maik_Blog.jpg" alt="Maik Gossen">
+          </div>
+          <div class="author-info">
+            <h3 class="author-name">Maik Gossen</h3>
+            <p class="author-title">Shopify Entwickler</p>
+            <p class="author-description">Ich helfe Unternehmen dabei, ihre Shopify-Shops zu optimieren und erfolgreich online zu verkaufen.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
   <script src="blog.js"></script>
+  <script src="../script.js"></script>
+  <script>
+    // Inhaltsverzeichnis automatisch generieren
+    document.addEventListener('DOMContentLoaded', function() {
+      const articleContent = document.querySelector('.article-content');
+      const tocList = document.getElementById('toc-list');
+      
+      if (articleContent && tocList) {
+        const headings = articleContent.querySelectorAll('h2, h3');
+        
+        headings.forEach((heading, index) => {
+          // ID hinzufügen falls nicht vorhanden
+          if (!heading.id) {
+            heading.id = 'heading-' + index;
+          }
+          
+          // Link erstellen
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = '#' + heading.id;
+          a.textContent = heading.textContent;
+          a.addEventListener('click', function(e) {
+            e.preventDefault();
+            heading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Aktive Klasse setzen
+            document.querySelectorAll('.toc-list a').forEach(link => link.classList.remove('active'));
+            a.classList.add('active');
+          });
+          li.appendChild(a);
+          tocList.appendChild(li);
+        });
+        
+        // Scroll-Tracking für aktive Sektion
+        const observerOptions = {
+          root: null,
+          rootMargin: '-20% 0px -70% 0px',
+          threshold: 0
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const id = entry.target.id;
+              document.querySelectorAll('.toc-list a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + id) {
+                  link.classList.add('active');
+                }
+              });
+            }
+          });
+        }, observerOptions);
+        
+        headings.forEach(heading => observer.observe(heading));
+      }
+    });
+  </script>
+  
+  <!-- Cal element-click embed code begins -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+
+    // Initialize Cal.com UI
+    function initCalUI() {
+      if (window.Cal && window.Cal.ns && window.Cal.ns.erstgespraech) {
+        Cal.ns.erstgespraech("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      } else {
+        setTimeout(initCalUI, 100);
+      }
+    }
+    
+    // Prevent scrolling but allow Cal.com to work
+    document.addEventListener('click', function(e) {
+      const calButton = e.target.closest('[data-cal-link]');
+      if (calButton) {
+        // Only prevent default scroll behavior, let Cal.com handle the click
+        e.preventDefault();
+      }
+    }, false);
+    
+    // Start initialization
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCalUI);
+    } else {
+      initCalUI();
+    }
+  </script>
+  <!-- Cal element-click embed code ends -->
 </body>
 </html>
