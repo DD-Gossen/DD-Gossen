@@ -1,6 +1,27 @@
 // Main functionality
 document.addEventListener('DOMContentLoaded', function() {
 
+    // Copy-to-clipboard for contact info
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', async function(e) {
+            e.preventDefault();
+            const copyable = this.closest('.copyable-contact');
+            const text = copyable?.getAttribute('data-copy') || '';
+            try {
+                await navigator.clipboard.writeText(text);
+                this.classList.add('copied');
+                const originalTitle = this.getAttribute('title');
+                this.setAttribute('title', 'Kopiert!');
+                setTimeout(() => {
+                    this.classList.remove('copied');
+                    this.setAttribute('title', originalTitle);
+                }, 1500);
+            } catch (err) {
+                console.warn('Kopieren fehlgeschlagen:', err);
+            }
+        });
+    });
+
     // Language choice tracking
     const languageFlags = document.querySelectorAll('.language-flag');
     languageFlags.forEach(flag => {

@@ -4,10 +4,19 @@
   <!-- German Pages -->
   <url>
     <loc>https://dd-gossen.com/</loc>
-    <lastmod>2025-01-27</lastmod>
+    <lastmod>2025-02-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/" />
+  </url>
+  
+  <url>
+    <loc>https://dd-gossen.com/shopify-freelancer/</loc>
+    <lastmod>2025-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-freelancer/" />
         <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/" />
   </url>
   
