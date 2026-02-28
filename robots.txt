@@ -13,9 +13,3 @@ Allow: /
 
 User-agent: Bingbot
 Allow: /
-
-# Disallow crawling of certain file types (optional)
-Disallow: *.css$
-Disallow: *.js$
-Disallow: /script.js
-Disallow: /styles.css 

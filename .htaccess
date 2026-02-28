@@ -1,6 +1,9 @@
 # Remove .html extension from URLs
 RewriteEngine On
 
+# Prevent Apache from redirecting directories to trailing slash
+DirectorySlash Off
+
 # Remove .html extension
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
