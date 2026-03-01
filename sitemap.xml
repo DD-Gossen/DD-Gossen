@@ -37,4 +37,18 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-freelancer/" />
   </url>
 
+  <url>
+    <loc>https://dd-gossen.com/blog/</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://dd-gossen.com/blog/shopify-freelancer-deutschland/</loc>
+    <lastmod>2026-03-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
