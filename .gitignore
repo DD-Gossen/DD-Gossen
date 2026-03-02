@@ -26,6 +26,10 @@ npm-debug.log*
 google-my-business-info.txt
 google-search-console-setup.txt
 
+# Google Service Account (NIEMALS committen!)
+*-service-account*.json
+google-credentials.json
+
 # Generated files
 blog/posts.json
 
