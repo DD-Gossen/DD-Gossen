@@ -65,6 +65,13 @@ body {
   box-shadow: 0 8px 30px rgba(0,0,0,0.2);
 }
 
+/* Hero-Bild: oben/unten beschnitten, fester Höhe */
+.article-card .article-hero-img {
+  height: 220px !important;
+  object-fit: cover !important;
+  object-position: center center;
+}
+
 /* Article Title */
 .article-title {
   font-family: 'Barlow Condensed', sans-serif;
@@ -88,6 +95,11 @@ body {
   padding: 0 1rem;
   font-weight: 500;
   opacity: 0.9;
+}
+
+/* Tags ausblenden (Shopify, E-Commerce etc.) */
+.article-meta .meta-tag {
+  display: none;
 }
 
 /* Article Content */
@@ -503,7 +515,8 @@ a.cta-button {
         line-height: 1.4;
     }
 
-    .article-hero-img {
+    .article-card .article-hero-img {
+        height: 180px !important;
         margin-bottom: 0.6rem;
     }
 

@@ -346,11 +346,11 @@
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 20px;
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 0.75rem;
         }
         
         .contact-title {
@@ -358,12 +358,12 @@
             font-size: 1.5rem;
             font-weight: 600;
             color: #0f172a;
-            margin: 0;
+            margin: 0 0 0.25rem 0;
         }
         
         .contact-icons {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
             flex-wrap: wrap;
             justify-content: flex-start;
         }
@@ -456,7 +456,7 @@
             <div class="bento-grid">
                 
                 <!-- COL 1: Profile Card -->
-                <div class="profile-card-large animate-on-scroll fade-in-up">
+                <a href="/shopify-freelancer/en/" class="profile-card-large animate-on-scroll fade-in-up" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; cursor: pointer;">
                     <div class="profile-header">
                         <h1 class="profile-name">MAIK GOSSEN</h1>
                         <div class="profile-badge">Available</div>
@@ -465,7 +465,7 @@
                         <img src="../Maik-Gossen-ShopifyFreelancer.png" alt="Maik Gossen - Shopify Freelancer" class="profile-image">
                     </div>
                     <div class="profile-role">Shopify Freelancer | Developer</div>
-                </div>
+                </a>
                 
                 <!-- COL 2 TOP: Shopify Services Card -->
                 <div class="feature-card feature-card-blue animate-on-scroll fade-in-up stagger-delay-1" onclick="window.location.href='/shopify-freelancer/en/'">
@@ -507,7 +507,8 @@
                 <!-- COL 3 TOP: Blog Card -->
                 <div class="feature-card feature-card-dark animate-on-scroll fade-in-up stagger-delay-2">
                     <h3 class="feature-heading">DD-Gossen Shopify Blog</h3>
-                    <p class="feature-text">Coming soon</p>
+                    <p class="feature-text">Articles on Shopify, E-Commerce and store optimization</p>
+                    <a href="/blog/" class="btn-card-cta" style="margin-top: 0.75rem;">To Blog</a>
                 </div>
                 
                 <!-- COL 1 BOTTOM: Stats Cards -->
@@ -566,6 +567,10 @@
                             </svg>
                         </a>
                     </div>
+                    <div class="contact-copy-text">
+                        <span class="copyable-contact" data-copy="+4915168487847">+49 151 68487847 <button type="button" class="copy-btn" title="Copy" aria-label="Copy phone number"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button></span>
+                        <span class="copyable-contact" data-copy="info@dd-gossen.com">info@dd-gossen.com <button type="button" class="copy-btn" title="Copy" aria-label="Copy email"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button></span>
+                    </div>
                 </div>
                 
                 <!-- COL 3 BOTTOM: Shop Analysis Card -->
@@ -580,24 +585,55 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="/en/">Home</a>
-                    <a href="/shopify-freelancer/en/">My Services</a>
-                    <a href="/blog/shopify-freelancer-deutschland/">Shopify Freelancer Deutschland</a>
-                    <a href="/en/legal-notice.html">Legal Notice</a>
-                    <a href="/en/privacy-policy.html">Privacy Policy</a>
-                    <a href="/en/terms.html">Terms</a>
-                    <a href="#" id="openCookieSettings">Cookie Settings</a>
-                </div>
-                <div class="footer-language">
-                    <a href="/">Deutsch</a><span>|</span><a href="/en/">English</a>
-                </div>
-                <div class="footer-copyright">
-                    <p>© 2025 Maik Gossen - All rights reserved</p>
+        <div class="footer-grid">
+            <div class="footer-col footer-col-brand">
+                <div class="footer-brand-name">MAIK GOSSEN</div>
+                <div class="footer-contact-label">Contact:</div>
+                <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+                <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+                <div class="footer-social">
+                    <a href="mailto:info@dd-gossen.com" title="Email" aria-label="Email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                    <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+                    <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
                 </div>
             </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Menu</div>
+                <ul>
+                    <li><a href="/en/">Home</a></li>
+                    <li><a href="/shopify-freelancer/en/">My Services</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/shopify-freelancer/en/#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Content</div>
+                <ul>
+                    <li><a href="/blog/shopify-freelancer-deutschland/">Shopify Freelancer Germany</a></li>
+                    <li><a href="/shopify-freelancer/en/">Shop Setup & Optimization</a></li>
+                    <li><a href="/shopify-freelancer/en/#competencies">Competencies</a></li>
+                    <li><a href="/shopify-freelancer/en/#projects">Portfolio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Quick Links</div>
+                <ul>
+                    <li><a href="/shopify-freelancer/en/#contact">Free Initial Consultation</a></li>
+                    <li><a href="/shopify-freelancer/en/#about-me">About Me</a></li>
+                    <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a href="/en/legal-notice.html">Legal Notice</a>
+            <span class="footer-sep">|</span>
+            <a href="/en/privacy-policy.html">Privacy Policy</a>
+            <span class="footer-sep">|</span>
+            <a href="/en/terms.html">Terms</a>
+            <span class="footer-sep">|</span>
+            <a href="#" id="openCookieSettings">Cookie Settings</a>
+            <span class="footer-sep">|</span>
+            <span>© 2025 Maik Gossen</span>
         </div>
     </footer>
 
