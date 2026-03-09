@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="de" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboarding – Shop Setup | DD-Gossen</title>
+    <meta name="description" content="Onboarding-Formular für den Shop Setup. Alle benötigten Informationen für die technische Einrichtung deines Online-Shops.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <link rel="canonical" href="https://dd-gossen.com/onboarding/">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="../styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        .onboarding-main { min-height: 100vh; padding: 9rem 2rem 4rem; }
+        .onboarding-form { max-width: 700px; margin: 0 auto; }
+        .form-section { margin-bottom: 2.5rem; }
+        .form-section-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 600; color: #0f172a; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid rgba(0, 123, 255, 0.3); }
+        .form-section-hint { font-size: 0.85rem; color: #334155; margin-bottom: 1rem; }
+        .form-section-hint a { color: #007bff; }
+        .checkbox-group { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; }
+        .checkbox-group label { display: flex; align-items: center; gap: 0.5rem; font-weight: 400; cursor: pointer; }
+        .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; }
+        @media (max-width: 768px) {
+            .onboarding-main { padding: 5rem 1rem 3rem; }
+            .form-row { grid-template-columns: 1fr !important; }
+        }
+    </style>
+</head>
+<body data-lang="de">
+    <header class="header">
+        <a href="/" class="logo">
+            <img src="../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+        </a>
+        <div class="header-right-container">
+            <div class="header-cta-container">
+                <a href="#" class="header-cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt anfragen</a>
+            </div>
+            <div class="language-container">
+                <a href="/shopify-kostenrechner/en/" class="language-flag flag-uk" title="English"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="onboarding-main">
+        <section class="section">
+            <div class="container">
+                <h1 class="section-title">Onboarding – Shop Setup</h1>
+                <p class="section-subtitle">Diese Informationen werden benötigt, um deinen neuen Online-Shop technisch einzurichten. Bitte füll das Formular vollständig aus.</p>
+
+                <form class="contact-form onboarding-form" action="https://formspree.io/f/xrbkaojw" method="POST">
+                    <input type="hidden" name="_subject" value="Shop Setup Onboarding – Neue Anfrage">
+                    <input type="hidden" name="_language" value="de">
+                    <input type="hidden" name="_next" value="https://dd-gossen.com/onboarding/?submitted=1">
+
+                    <!-- 1. Unternehmensdaten -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">1. Unternehmensdaten</h2>
+                        <div class="form-group">
+                            <label for="firmenname">Firmenname *</label>
+                            <input type="text" id="firmenname" name="Firmenname" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="rechtsform">Rechtsform *</label>
+                                <input type="text" id="rechtsform" name="Rechtsform" placeholder="z. B. GmbH, UG, Einzelunternehmen" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="strasse">Straße und Hausnummer *</label>
+                                <input type="text" id="strasse" name="Straße Hausnummer" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="plz">PLZ *</label>
+                                <input type="text" id="plz" name="PLZ" placeholder="z. B. 10115" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="ort">Ort *</label>
+                                <input type="text" id="ort" name="Ort" placeholder="z. B. Berlin" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email-kontakt">E-Mail-Adresse für Kundenkontakt *</label>
+                                <input type="email" id="email-kontakt" name="E-Mail Kundenkontakt" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefon">Telefonnummer *</label>
+                                <input type="tel" id="telefon" name="Telefonnummer" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ust-id">Umsatzsteuer-ID (falls vorhanden)</label>
+                                <input type="text" id="ust-id" name="Umsatzsteuer-ID" placeholder="DE123456789">
+                            </div>
+                            <div class="form-group">
+                                <label for="handelsregister">Handelsregisternummer (falls vorhanden)</label>
+                                <input type="text" id="handelsregister" name="Handelsregisternummer" placeholder="HRB 12345">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="verantwortlich">Name der verantwortlichen Person / Geschäftsführer *</label>
+                            <input type="text" id="verantwortlich" name="Verantwortliche Person" required>
+                        </div>
+                    </div>
+
+                    <!-- 2. Shop-Grunddaten -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">2. Shop-Grunddaten</h2>
+                        <div class="form-group">
+                            <label for="shopname">Gewünschter Shopname *</label>
+                            <input type="text" id="shopname" name="Shopname" required>
+                        </div>
+                    </div>
+
+                    <!-- 3. Domain -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">3. Domain</h2>
+                        <p class="form-section-hint">Falls bereits vorhanden:</p>
+                        <div class="form-group">
+                            <label for="domain">Domain, auf die der Shop veröffentlicht werden soll</label>
+                            <input type="text" id="domain" name="Domain Shop Veröffentlichung" placeholder="z. B. www.meinshop.de">
+                        </div>
+                        <div class="form-group">
+                            <label for="domain-provider">Domain Provider</label>
+                            <p class="form-section-hint" style="margin-bottom: 0.5rem;">Falls die Domain bereits erworben wurde:</p>
+                            <input type="text" id="domain-provider" name="Domain Provider" placeholder="z. B. IONOS, Strato, GoDaddy">
+                        </div>
+                    </div>
+
+                    <!-- 4. Logo -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">4. Logo</h2>
+                        <p class="form-section-hint">Sende dein Unternehmenslogo (idealerweise SVG oder PNG) an <a href="mailto:info@dd-gossen.com">info@dd-gossen.com</a> oder füge hier einen Link ein:</p>
+                        <div class="form-group">
+                            <label for="logo-link">Logo-Link</label>
+                            <input type="url" id="logo-link" name="Logo Link" placeholder="z. B. https://meinewebsite.de/logo.png">
+                        </div>
+                    </div>
+
+                    <!-- 5. Zahlungsarten -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">5. Zahlungsarten</h2>
+                        <p class="form-section-hint">Welche Zahlungsmethoden sollen angeboten werden? (Die Einrichtung der Accounts erfolgt durch dich.)</p>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="Zahlung PayPal" value="Ja"> PayPal</label>
+                            <label><input type="checkbox" name="Zahlung Klarna" value="Ja"> Klarna</label>
+                            <label><input type="checkbox" name="Zahlung Kreditkarte" value="Ja"> Kreditkarte</label>
+                            <label><input type="checkbox" name="Zahlung Apple Pay" value="Ja"> Apple Pay</label>
+                            <label><input type="checkbox" name="Zahlung Google Pay" value="Ja"> Google Pay</label>
+                            <label><input type="checkbox" name="Zahlung Rechnung" value="Ja"> Rechnung</label>
+                            <label><input type="checkbox" name="Zahlung Vorkasse" value="Ja"> Vorkasse</label>
+                        </div>
+                        <div class="form-group" style="margin-top: 1rem;">
+                            <label for="zahlung-sonstige">Andere Zahlungsarten</label>
+                            <input type="text" id="zahlung-sonstige" name="Zahlung Sonstige" placeholder="z. B. SEPA, Buy Now Pay Later">
+                        </div>
+                    </div>
+
+                    <!-- 6. Steuerliche Grundeinstellungen -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">6. Steuerliche Grundeinstellungen</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="land">Land des Unternehmens *</label>
+                                <input type="text" id="land" name="Land Unternehmen" placeholder="z. B. Deutschland" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mwst-standard">Standard-Mehrwertsteuersatz (%) *</label>
+                                <input type="number" id="mwst-standard" name="MWSt Standard" placeholder="19" step="0.01" min="0" max="100" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="mwst-ermaessigt">Ermäßigter Mehrwertsteuersatz (%) – falls relevant</label>
+                            <input type="number" id="mwst-ermaessigt" name="MWSt ermäßigt" placeholder="7" step="0.01" min="0" max="100">
+                        </div>
+                    </div>
+
+                    <!-- 7. Zugriff & Verwaltung -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">7. Zugriff & Verwaltung</h2>
+                        <div class="form-group">
+                            <label for="admin-email">E-Mail-Adresse des Shop-Inhabers (für Admin-Zugang) *</label>
+                            <p class="form-section-hint" style="margin-bottom: 0.5rem;">Dies ist die E-Mail-Adresse, die du zukünftig für den Admin-Zugang zum Shop verwenden wirst. An diese Adresse wird die Einladung zum Shopify-Shop gesendet.</p>
+                            <input type="email" id="admin-email" name="Admin E-Mail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rechnungs-email">E-Mail-Adresse für Rechnungen *</label>
+                            <p class="form-section-hint" style="margin-bottom: 0.5rem;">An diese Adresse sende ich meine Rechnungen für die geleisteten Arbeiten.</p>
+                            <input type="email" id="rechnungs-email" name="E-Mail Rechnungen" required>
+                        </div>
+                    </div>
+
+                    <!-- 8. Corporate Design -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">8. Corporate Design</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="schriftart-ueberschriften">Schriftart Überschriften</label>
+                                <input type="text" id="schriftart-ueberschriften" name="Schriftart Überschriften" placeholder="z. B. Barlow Condensed, Helvetica">
+                            </div>
+                            <div class="form-group">
+                                <label for="schriftart-fliesstext">Schriftart Fließtext</label>
+                                <input type="text" id="schriftart-fliesstext" name="Schriftart Fließtext" placeholder="z. B. Inter, Arial">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="farbe-primaer">Primärfarbe (Hex-Code)</label>
+                                <input type="text" id="farbe-primaer" name="Farbe Primär" placeholder="z. B. #007bff">
+                            </div>
+                            <div class="form-group">
+                                <label for="farbe-sekundaer">Sekundärfarbe (Hex-Code)</label>
+                                <input type="text" id="farbe-sekundaer" name="Farbe Sekundär" placeholder="z. B. #0f172a">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="farbe-akzent">Akzentfarbe (Hex-Code) – optional</label>
+                            <input type="text" id="farbe-akzent" name="Farbe Akzent" placeholder="z. B. #0056b3">
+                        </div>
+                        <div class="form-group">
+                            <label for="design-hinweise">Weitere Design-Hinweise</label>
+                            <textarea id="design-hinweise" name="Design Hinweise" rows="3" placeholder="z. B. minimalistisch, verspielt, Corporate-Design-Richtlinien, Referenz-Websites"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2 class="form-section-title">Kommentare & Fragen</h2>
+                        <div class="form-group">
+                            <label for="kommentare">Generelle Kommentare oder Fragen</label>
+                            <textarea id="kommentare" name="Kommentare Fragen" rows="4" placeholder="Hast du noch weitere Anmerkungen, Wünsche oder Fragen?"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-button">Onboarding absenden</button>
+                </form>
+
+                <div id="onboarding-success" style="display: none; text-align: center; padding: 3rem; background: rgba(0, 123, 255, 0.1); border-radius: 20px; margin-top: 2rem;">
+                    <h2 style="color: #0f172a; margin-bottom: 1rem;">Vielen Dank!</h2>
+                    <p style="color: #0f172a; opacity: 0.9;">Deine Angaben wurden übermittelt. Ich melde mich in Kürze bei dir.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col footer-col-brand">
+                <div class="footer-brand-name">MAIK GOSSEN</div>
+                <div class="footer-contact-label">Kontakt:</div>
+                <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+                <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+                <div class="footer-social">
+                    <a href="mailto:info@dd-gossen.com" title="E-Mail" aria-label="E-Mail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                    <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+                    <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-col footer-col-toggle">
+                <div class="footer-col-title">Menü</div>
+                <ul>
+                    <li><a href="/">Übersicht</a></li>
+                    <li><a href="/shopify-freelancer">Meine Services</a></li>
+                    <li><a href="/shopify-kostenrechner/">Kostenrechner</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/shopify-freelancer/#contact">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-col-toggle">
+                <div class="footer-col-title">Content</div>
+                <ul>
+                    <li><a href="/blog/shopify-freelancer-deutschland/">Shopify Freelancer Deutschland</a></li>
+                    <li><a href="/shopify-freelancer">Shop-Setup & Shop-Optimierung</a></li>
+                    <li><a href="/shopify-freelancer#competencies">Kompetenzen</a></li>
+                    <li><a href="/shopify-freelancer#projects">Portfolio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-col-toggle">
+                <div class="footer-col-title">Schnellzugriff</div>
+                <ul>
+                    <li><a href="/shopify-freelancer/#contact">Kostenloses Erstgespräch</a></li>
+                    <li><a href="/shopify-freelancer#about-me">Über mich</a></li>
+                    <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a href="/impressum.html">Impressum</a>
+            <span class="footer-sep">|</span>
+            <a href="/datenschutz.html">Datenschutz</a>
+            <span class="footer-sep">|</span>
+            <a href="/agb.html">AGB</a>
+            <span class="footer-sep">|</span>
+            <a href="#" id="openCookieSettings">Cookie-Einstellungen</a>
+            <span class="footer-sep">|</span>
+            <span>© 2025 Maik Gossen</span>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('submitted') === '1') {
+                document.querySelector('.onboarding-form').style.display = 'none';
+                document.getElementById('onboarding-success').style.display = 'block';
+            }
+        })();
+    </script>
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+      function initCalUI() { if (window.Cal && window.Cal.ns && window.Cal.ns.erstgespraech) { Cal.ns.erstgespraech("ui", {"hideEventTypeDetails":false,"layout":"month_view"}); } else { setTimeout(initCalUI, 100); } }
+      document.addEventListener('click', function(e) { if (e.target.closest('[data-cal-link]')) e.preventDefault(); }, false);
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initCalUI); else initCalUI();
+    </script>
+</body>
+</html>
