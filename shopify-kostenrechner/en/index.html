@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify Costs – Calculate Monthly & Running Costs 2025 | DD-Gossen</title>
+    <meta name="description" content="Shopify costs at a glance: Calculate your monthly Shopify expenses with our cost calculator. Plan, transaction fees, running costs – fully transparent. Free Shopify cost calculator.">
+    
+    <link rel="canonical" href="https://dd-gossen.com/shopify-kostenrechner/en/">
+    <link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-kostenrechner/">
+    <link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-kostenrechner/en/">
+    <link rel="alternate" hreflang="x-default" href="https://dd-gossen.com/shopify-kostenrechner/">
+    <meta name="keywords" content="Shopify costs, Shopify cost calculator, Shopify running costs, Shopify pricing, Shopify transaction fees, Shopify plan, Shopify monthly costs">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "How much does Shopify cost per month?", "acceptedAnswer": {"@type": "Answer", "text": "Monthly Shopify costs start at 33 € for the Basic plan. The Grow plan costs 88 €/month, the Advanced plan 384 €. Transaction fees per order plus optional apps, agency, or POS Pro add to your running costs."}},
+        {"@type": "Question", "name": "Which Shopify plan is right for me?", "acceptedAnswer": {"@type": "Answer", "text": "For solopreneurs, the Basic plan usually suffices. With growing volume, the Grow plan offers lower transaction fees. The Advanced plan suits high-volume businesses."}},
+        {"@type": "Question", "name": "What are the running costs of a Shopify store?", "acceptedAnswer": {"@type": "Answer", "text": "Running Shopify costs include: plan fee, transaction fees, optional apps, agency support, and Shopify POS Pro. Small shops often pay 150–400 €/month."}},
+        {"@type": "Question", "name": "How high are Shopify transaction fees?", "acceptedAnswer": {"@type": "Answer", "text": "With Shopify Payments: Basic 2.9 % + €0.30, Grow 2.7 % + €0.30, Advanced 2.5 % + €0.30. External providers add 2 % to 0.5 % depending on plan."}},
+        {"@type": "Question", "name": "Is Shopify worth it for small shops?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The Basic plan at 33 €/month suits beginners. Hosting, SSL, updates, and support are included."}},
+        {"@type": "Question", "name": "How much does Shopify Plus cost?", "acceptedAnswer": {"@type": "Answer", "text": "Shopify Plus starts at around 2,300 €/month for high-volume businesses."}},
+        {"@type": "Question", "name": "Are there hidden Shopify costs?", "acceptedAnswer": {"@type": "Answer", "text": "Main costs are transparent. Additional expenses may come from apps, premium themes, agency fees, or Shopify POS Pro. Our cost calculator includes these optional items."}}
+      ]
+    }
+    </script>
+    <link rel="icon" type="image/png" href="../../favicon.png">
+    <link rel="stylesheet" href="../../styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        .calc-main { min-height: 100vh; padding: 9rem 2rem 3rem; }
+        .calc-hero { text-align: center; margin-bottom: 3rem; }
+        .calc-wrapper { max-width: 1100px; margin: 0 auto; }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+        @media (max-width: 900px) { .calc-grid { grid-template-columns: 1fr; } }
+        .calc-card { background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.5); border-radius: 20px; padding: 2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
+        .calc-card h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.25rem; font-weight: 600; color: #0f172a; margin: 0 0 1.25rem; }
+        .calc-field { margin-bottom: 1.25rem; }
+        .calc-field label { display: block; font-size: 0.9rem; font-weight: 500; color: #0f172a; margin-bottom: 0.4rem; }
+        .calc-plan-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+        .calc-plan-btn { flex: 1; min-width: 100px; padding: 0.9rem 1rem; border: 2px solid #e2e8f0; border-radius: 12px; background: #fff; cursor: pointer; font-size: 0.95rem; font-weight: 600; color: #0f172a; transition: all 0.2s; }
+        .calc-plan-btn:hover { border-color: #007bff; background: rgba(0,123,255,0.08); }
+        .calc-plan-btn.active { border-color: #007bff; background: rgba(0,123,255,0.15); }
+        .calc-plan-btn .price { display: block; font-size: 0.8rem; font-weight: 500; opacity: 0.8; margin-top: 0.25rem; }
+        .calc-input-wrap { display: flex; align-items: center; gap: 0.5rem; }
+        .calc-input-wrap input { flex: 1; padding: 0.65rem 1rem; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem; color: #0f172a; }
+        .calc-input-wrap .suffix { font-size: 0.85rem; color: #64748b; background: rgba(0,123,255,0.12); padding: 0.35rem 0.6rem; border-radius: 8px; font-weight: 500; }
+        .calc-slider-group { margin-bottom: 1rem; }
+        .calc-slider-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+        .calc-slider-row span:first-child { font-size: 0.9rem; color: #0f172a; min-width: 140px; }
+        .calc-slider-row .pct { font-weight: 600; min-width: 40px; text-align: right; }
+        .calc-slider-row input[type="range"] { flex: 1; height: 8px; -webkit-appearance: none; background: #e2e8f0; border-radius: 4px; }
+        .calc-slider-row input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; background: #007bff; border-radius: 50%; cursor: pointer; box-shadow: 0 2px 6px rgba(0,123,255,0.4); }
+        .calc-toggle-card { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; padding: 1rem; background: #f8fafc; border-radius: 12px; margin-bottom: 0.75rem; }
+        .calc-toggle-card .text h4 { font-size: 0.95rem; font-weight: 600; color: #0f172a; margin: 0 0 0.25rem; }
+        .calc-toggle-card .text p { font-size: 0.8rem; color: #64748b; margin: 0; }
+        .calc-toggle { width: 48px; height: 26px; background: #cbd5e1; border-radius: 13px; position: relative; cursor: pointer; flex-shrink: 0; transition: background 0.2s; }
+        .calc-toggle.on { background: #007bff; }
+        .calc-toggle::after { content: ''; position: absolute; width: 20px; height: 20px; background: #fff; border-radius: 50%; top: 3px; left: 3px; transition: transform 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .calc-toggle.on::after { transform: translateX(22px); }
+        .calc-result-total { font-size: 2rem; font-weight: 700; color: #0f172a; margin: 0.5rem 0 1rem; }
+        .calc-result-total span { font-size: 1rem; font-weight: 500; opacity: 0.8; }
+        .calc-result-recommend { color: #007bff; font-size: 0.95rem; font-weight: 600; margin-bottom: 1rem; }
+        .calc-result-revenue { font-size: 0.9rem; color: #64748b; margin-bottom: 1.5rem; }
+        .calc-cta-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 1.5rem; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); color: #fff; border: none; border-radius: 12px; font-size: 1rem; font-weight: 600; text-decoration: none; cursor: pointer; transition: all 0.2s; width: 100%; justify-content: center; box-shadow: 0 4px 15px rgba(0,123,255,0.3); }
+        .calc-cta-btn:hover { background: linear-gradient(135deg, #0066e6 0%, #004999 100%); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,123,255,0.4); }
+        .calc-cta-sub { font-size: 0.8rem; opacity: 0.9; margin-top: 0.35rem; }
+        .calc-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+        .calc-table th { text-align: left; font-size: 0.75rem; font-weight: 600; color: #64748b; text-transform: uppercase; padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0; }
+        .calc-table td { padding: 0.6rem 0; border-bottom: 1px solid #f1f5f9; font-size: 0.95rem; }
+        .calc-table td:last-child { text-align: right; font-weight: 600; }
+        .calc-note { background: rgba(0,123,255,0.1); border-left: 4px solid #007bff; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; font-size: 0.85rem; color: #0f172a; margin-top: 1.5rem; }
+        .calc-note a { color: #007bff; font-weight: 600; text-decoration: none; }
+        .calc-billing-select { padding: 0.65rem 1rem; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem; color: #0f172a; background: #fff; cursor: pointer; }
+    </style>
+</head>
+<body data-lang="en">
+    <header class="header">
+        <a href="/en/" class="logo">
+            <img src="../../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+        </a>
+        <div class="header-right-container">
+            <div class="header-cta-container">
+                <a href="#" class="header-cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Get in touch</a>
+            </div>
+            <div class="language-container">
+                <a href="/shopify-kostenrechner/" class="language-flag flag-de" title="Switch to German"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="calc-main">
+        <section class="calc-hero section">
+            <div class="container">
+                <h1 class="section-title">Shopify Costs – Calculate Your Running Expenses</h1>
+                <p class="section-subtitle">Your <strong>Shopify costs</strong> consist of several factors: the chosen Shopify plan (Basic, Grow, or Advanced), transaction fees per order, and optional items like apps, agency support, or Shopify POS Pro. Our <strong>Shopify cost calculator</strong> helps you estimate your monthly expenses realistically – ideal for planning your e-commerce budget.</p>
+            </div>
+        </section>
+
+        <div class="calc-wrapper">
+            <div class="calc-grid">
+                <div class="calc-card">
+                    <h3>Calculate Shopify Costs – Settings</h3>
+                    <div class="calc-field">
+                        <label>Billing period:</label>
+                        <select id="billingPeriod" class="calc-billing-select">
+                            <option value="monthly">Monthly</option>
+                            <option value="yearly">Yearly (25% off)</option>
+                        </select>
+                    </div>
+                    <div class="calc-field">
+                        <label>Shopify Plan:</label>
+                        <div class="calc-plan-btns">
+                            <button type="button" class="calc-plan-btn active" data-plan="basic">Basic<span class="price">33 €/month</span></button>
+                            <button type="button" class="calc-plan-btn" data-plan="grow">Grow<span class="price">88 €/month</span></button>
+                            <button type="button" class="calc-plan-btn" data-plan="advanced">Advanced<span class="price">384 €/month</span></button>
+                        </div>
+                    </div>
+                    <div class="calc-field">
+                        <label>Order volume (units/month):</label>
+                        <div class="calc-input-wrap">
+                            <input type="number" id="orderVolume" placeholder="200" min="1" max="100000" value="200">
+                            <span class="suffix">units</span>
+                        </div>
+                    </div>
+                    <div class="calc-field">
+                        <label>Avg. cart value (€):</label>
+                        <div class="calc-input-wrap">
+                            <input type="number" id="avgCart" placeholder="50" min="1" max="100000" value="50">
+                            <span class="suffix">€</span>
+                        </div>
+                    </div>
+                    <div class="calc-field">
+                        <label>Payment provider distribution:</label>
+                        <div class="calc-slider-group">
+                            <div class="calc-slider-row">
+                                <span>PayPal</span>
+                                <input type="range" id="sliderPayPal" min="0" max="100" value="33">
+                                <span class="pct" id="pctPayPal">33 %</span>
+                            </div>
+                            <div class="calc-slider-row">
+                                <span>Shopify Payment</span>
+                                <input type="range" id="sliderShopify" min="0" max="100" value="33">
+                                <span class="pct" id="pctShopify">33 %</span>
+                            </div>
+                            <div class="calc-slider-row">
+                                <span>Klarna</span>
+                                <input type="range" id="sliderKlarna" min="0" max="100" value="34">
+                                <span class="pct" id="pctKlarna">34 %</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc-field">
+                        <div class="calc-toggle-card">
+                            <div class="text">
+                                <h4>Agency support costs</h4>
+                                <p>Costs for support by an external agency.</p>
+                            </div>
+                            <div class="calc-toggle" id="toggleAgency" role="button" tabindex="0" aria-pressed="false"></div>
+                        </div>
+                    </div>
+                    <div class="calc-field">
+                        <div class="calc-toggle-card">
+                            <div class="text">
+                                <h4>Apps & Plugins</h4>
+                                <p>Costs for additional apps from the Shopify App Store.</p>
+                            </div>
+                            <div class="calc-toggle" id="toggleApps" role="button" tabindex="0" aria-pressed="false"></div>
+                        </div>
+                    </div>
+                    <div class="calc-field">
+                        <div class="calc-toggle-card">
+                            <div class="text">
+                                <h4>Shopify POS Pro</h4>
+                                <p>Point-of-sale system for in-store sales. 79 €/month per location.</p>
+                            </div>
+                            <div class="calc-toggle" id="togglePOS" role="button" tabindex="0" aria-pressed="false"></div>
+                        </div>
+                    </div>
+                    <div class="calc-field">
+                        <div class="calc-toggle-card">
+                            <div class="text">
+                                <h4>Shopify Plus (Enterprise)</h4>
+                                <p>For high-volume businesses. From 2,300 €/month.</p>
+                            </div>
+                            <div class="calc-toggle" id="togglePlus" role="button" tabindex="0" aria-pressed="false"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calc-card">
+                    <h3>Your Shopify Costs – Cost Estimate</h3>
+                    <p style="font-size: 0.9rem; color: #0f172a; margin: 0 0 0.5rem; opacity: 0.85;">Estimated costs:</p>
+                    <div class="calc-result-total" id="totalCost">470,33 <span>€/month</span></div>
+                    <div class="calc-result-recommend" id="recommendPlan">Recommended plan: Grow (448,43 €/month)</div>
+                    <div class="calc-result-revenue" id="revenueText">Revenue: 10,000.00 € (200 orders × 50.00 € per order)</div>
+                    <a href="https://www.shopify.com/pricing" target="_blank" rel="noopener" class="calc-cta-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+                        View Shopify plan details
+                    </a>
+                    <p class="calc-cta-sub">Try 3 months for just €1</p>
+                    <table class="calc-table">
+                        <thead>
+                            <tr>
+                                <th>Cost item</th>
+                                <th>Amount (€)</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Shopify Plan (Basic)</td>
+                                <td id="costPlan">33,00</td>
+                                <td>€</td>
+                            </tr>
+                            <tr>
+                                <td>Transaction fees</td>
+                                <td id="costTx">437,33</td>
+                                <td>€</td>
+                            </tr>
+                            <tr>
+                                <td>Agency costs</td>
+                                <td id="costAgency">0,00</td>
+                                <td>€</td>
+                            </tr>
+                            <tr>
+                                <td>Apps & Plugins</td>
+                                <td id="costApps">0,00</td>
+                                <td>€</td>
+                            </tr>
+                            <tr>
+                                <td>Shopify POS Pro</td>
+                                <td id="costPOS">0,00</td>
+                                <td>€</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="calc-note">
+                        <strong>Note:</strong> All information without guarantee. As of 02/2025. Prices may change. Current prices and offers can be found on the <a href="https://www.shopify.com/pricing" target="_blank" rel="noopener">official Shopify website</a>. Current offer: 3 months for just €1/month for new customers.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section faq-section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll slide-in-down">Frequently Asked Questions About Shopify Costs</h2>
+                <div class="faq-card animate-on-scroll fade-in-up">
+                    <div class="faq-accordion">
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>How much does Shopify cost per month?</span>
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Monthly Shopify costs start at 33 € for the Basic plan. The Grow plan costs 88 €/month, the Advanced plan 384 €. Transaction fees per order plus optional apps, agency, or POS Pro add to your running costs. Use our Shopify cost calculator to estimate your total.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>Which Shopify plan is right for me?</span>
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>For solopreneurs and small shops, the Basic plan usually suffices. With growing volume, the Grow plan offers lower transaction fees. The Advanced plan suits high-volume businesses. Our cost calculator recommends a plan based on your inputs.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>What are the running costs of a Shopify store?</span>
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Running Shopify costs include: plan fee, transaction fees (depending on payment provider and plan), optional apps, agency support, and Shopify POS Pro for in-store sales. Small shops often pay 150–400 €/month in total.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>How high are Shopify transaction fees?</span>
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>With Shopify Payments: Basic 2.9 % + €0.30, Grow 2.7 % + €0.30, Advanced 2.5 % + €0.30 per transaction. External providers (PayPal, Klarna) add 2 % (Basic), 1 % (Grow), or 0.5 % (Advanced). Our calculator shows exact fees based on your payment mix.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>Is Shopify worth it for small shops?</span>
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Yes. The Basic plan at 33 €/month suits beginners. Hosting, SSL, updates, and support are included – with open-source solutions these running costs often apply separately. Use our cost calculator to plan your budget.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>How much does Shopify Plus cost?</span>
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Shopify Plus starts at around 2,300 €/month for high-volume businesses. It includes advanced B2B features, custom checkout, priority support, and more. You can enable Shopify Plus in our cost calculator to include it in your planning.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" aria-expanded="false">
+                                <span>Are there hidden Shopify costs?</span>
+                                <svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <p>Main costs are transparent: plan price and transaction fees. Additional expenses may come from apps, premium themes, agency fees, or Shopify POS Pro. Our cost calculator includes these optional items so you can plan your total running costs realistically.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="calc-cta-section">
+            <div class="container">
+                <h2 class="section-title">Discuss Shopify Costs – Free Initial Consultation</h2>
+                <p style="max-width: 600px; margin: 0 auto 1.5rem; color: #0f172a; opacity: 0.9; font-size: 1.05rem;">Have questions about your Shopify costs or want to optimize your store with an expert? Book a no-obligation call.</p>
+                <a href="#" class="calc-cta-booking" title="Book appointment" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z" fill="currentColor"/>
+                    </svg>
+                    <span>Book appointment</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col footer-col-brand">
+                <div class="footer-brand-name">MAIK GOSSEN</div>
+                <div class="footer-contact-label">Contact:</div>
+                <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+                <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+                <div class="footer-social">
+                    <a href="mailto:info@dd-gossen.com" title="Email" aria-label="Email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                    <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+                    <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Menu</div>
+                <ul>
+                    <li><a href="/en/">Home</a></li>
+                    <li><a href="/shopify-freelancer/en/">My Services</a></li>
+                    <li><a href="/shopify-kostenrechner/en/">Cost Calculator</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/shopify-freelancer/en/#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Content</div>
+                <ul>
+                    <li><a href="/blog/shopify-freelancer-deutschland/">Shopify Freelancer Germany</a></li>
+                    <li><a href="/shopify-freelancer/en/">Shop Setup & Optimization</a></li>
+                    <li><a href="/shopify-freelancer/en/#competencies">Competencies</a></li>
+                    <li><a href="/shopify-freelancer/en/#projects">Portfolio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <div class="footer-col-title">Quick Links</div>
+                <ul>
+                    <li><a href="/shopify-freelancer/en/#contact">Free Initial Consultation</a></li>
+                    <li><a href="/shopify-freelancer/en/#about-me">About Me</a></li>
+                    <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a href="/en/legal-notice.html">Legal Notice</a>
+            <span class="footer-sep">|</span>
+            <a href="/en/privacy-policy.html">Privacy Policy</a>
+            <span class="footer-sep">|</span>
+            <a href="/en/terms.html">Terms</a>
+            <span class="footer-sep">|</span>
+            <a href="#" id="openCookieSettings">Cookie Settings</a>
+            <span class="footer-sep">|</span>
+            <span>© 2025 Maik Gossen</span>
+        </div>
+    </footer>
+
+    <div id="cookieBanner" class="cookie-banner" style="display: none;">
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-header">
+                <h3>Cookie Settings</h3>
+                <p>We use cookies to provide the best experience. See our <a href="/en/privacy-policy.html" class="cookie-link">Privacy Policy</a> and <a href="/en/legal-notice.html" class="cookie-link">Legal Notice</a>.</p>
+            </div>
+            <div class="cookie-settings" id="cookieSettings" style="display: none;">
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <label><input type="checkbox" id="cookieNecessary" checked disabled><span>Necessary Cookies</span></label>
+                        <span class="cookie-status">Always active</span>
+                    </div>
+                </div>
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <label><input type="checkbox" id="cookieAnalytics"><span>Analytics Cookies</span></label>
+                        <span class="cookie-status" id="analyticsStatus">Inactive</span>
+                    </div>
+                </div>
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <label><input type="checkbox" id="cookieMarketing"><span>Marketing Cookies</span></label>
+                        <span class="cookie-status" id="marketingStatus">Inactive</span>
+                    </div>
+                </div>
+            </div>
+            <div class="cookie-banner-actions">
+                <button class="cookie-btn cookie-btn-secondary" id="cookieSettingsBtn">Settings</button>
+                <button class="cookie-btn cookie-btn-reject" id="cookieRejectAll">Reject all</button>
+                <button class="cookie-btn cookie-btn-primary" id="cookieAcceptAll">Accept all</button>
+                <button class="cookie-btn cookie-btn-primary" id="cookieAcceptSelected" style="display: none;">Save selection</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../script.js"></script>
+    <script>
+    (function() {
+        const PLANS = { basic: { monthly: 33, yearly: 24.75 }, grow: { monthly: 88, yearly: 66 }, advanced: { monthly: 384, yearly: 288 } };
+        const PLAN_NAMES = { basic: 'Basic', grow: 'Grow', advanced: 'Advanced' };
+        const POS_PRO = 79, AGENCY_EST = 500, APPS_EST = 150, PLUS_MIN = 2300;
+        const TX_FEES = {
+            basic: { shopifyPayments: { pct: 0.029, fix: 0.30 }, paypal: { pct: 0.0249, fix: 0.35, shopifyExtra: 0.02 }, klarna: { pct: 0.0169, fix: 0.25, shopifyExtra: 0.02 } },
+            grow: { shopifyPayments: { pct: 0.027, fix: 0.30 }, paypal: { pct: 0.0249, fix: 0.35, shopifyExtra: 0.01 }, klarna: { pct: 0.0169, fix: 0.25, shopifyExtra: 0.01 } },
+            advanced: { shopifyPayments: { pct: 0.025, fix: 0.30 }, paypal: { pct: 0.0249, fix: 0.35, shopifyExtra: 0.005 }, klarna: { pct: 0.0169, fix: 0.25, shopifyExtra: 0.005 } }
+        };
+        const els = { billing: document.getElementById('billingPeriod'), planBtns: document.querySelectorAll('.calc-plan-btn'), orderVolume: document.getElementById('orderVolume'), avgCart: document.getElementById('avgCart'), sliderPayPal: document.getElementById('sliderPayPal'), sliderShopify: document.getElementById('sliderShopify'), sliderKlarna: document.getElementById('sliderKlarna'), pctPayPal: document.getElementById('pctPayPal'), pctShopify: document.getElementById('pctShopify'), pctKlarna: document.getElementById('pctKlarna'), toggleAgency: document.getElementById('toggleAgency'), toggleApps: document.getElementById('toggleApps'), togglePOS: document.getElementById('togglePOS'), togglePlus: document.getElementById('togglePlus'), totalCost: document.getElementById('totalCost'), recommendPlan: document.getElementById('recommendPlan'), revenueText: document.getElementById('revenueText'), costPlan: document.getElementById('costPlan'), costTx: document.getElementById('costTx'), costAgency: document.getElementById('costAgency'), costApps: document.getElementById('costApps'), costPOS: document.getElementById('costPOS') };
+        let state = { plan: 'basic', billing: 'monthly', orders: 200, avgCart: 50, pctPayPal: 33, pctShopify: 33, pctKlarna: 34, agency: false, apps: false, pos: false, plus: false };
+        function fmt(n) { return n.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+        function syncSlidersFromState() { els.sliderPayPal.value = state.pctPayPal; els.sliderShopify.value = state.pctShopify; els.sliderKlarna.value = state.pctKlarna; els.pctPayPal.textContent = state.pctPayPal + ' %'; els.pctShopify.textContent = state.pctShopify + ' %'; els.pctKlarna.textContent = state.pctKlarna + ' %'; }
+        function adjustSliders(changed) { let a = state.pctPayPal, b = state.pctShopify, c = state.pctKlarna; const total = a + b + c; if (total === 100) return; const diff = 100 - total; if (changed === 'paypal') { const rest = b + c; if (rest > 0) { const ratio = (rest + diff) / rest; state.pctShopify = Math.round(b * ratio); state.pctKlarna = 100 - state.pctPayPal - state.pctShopify; } else { state.pctShopify = Math.abs(diff) / 2; state.pctKlarna = 100 - state.pctPayPal - state.pctShopify; } } else if (changed === 'shopify') { const rest = a + c; if (rest > 0) { const ratio = (rest + diff) / rest; state.pctPayPal = Math.round(a * ratio); state.pctKlarna = 100 - state.pctShopify - state.pctPayPal; } else { state.pctPayPal = Math.abs(diff) / 2; state.pctKlarna = 100 - state.pctShopify - state.pctPayPal; } } else { const rest = a + b; if (rest > 0) { const ratio = (rest + diff) / rest; state.pctPayPal = Math.round(a * ratio); state.pctShopify = 100 - state.pctKlarna - state.pctPayPal; } else { state.pctPayPal = Math.abs(diff) / 2; state.pctShopify = 100 - state.pctKlarna - state.pctPayPal; } } state.pctPayPal = Math.max(0, Math.min(100, state.pctPayPal)); state.pctShopify = Math.max(0, Math.min(100, state.pctShopify)); state.pctKlarna = 100 - state.pctPayPal - state.pctShopify; syncSlidersFromState(); }
+        function calcTxFees() { const fees = TX_FEES[state.plan]; const orders = state.orders, cart = state.avgCart; const ordPayPal = Math.round(orders * state.pctPayPal / 100), ordShopify = Math.round(orders * state.pctShopify / 100), ordKlarna = Math.round(orders * state.pctKlarna / 100); return ordPayPal * (cart * (fees.paypal.pct + fees.paypal.shopifyExtra) + fees.paypal.fix) + ordShopify * (cart * fees.shopifyPayments.pct + fees.shopifyPayments.fix) + ordKlarna * (cart * (fees.klarna.pct + fees.klarna.shopifyExtra) + fees.klarna.fix); }
+        function getPlanCost() { const p = PLANS[state.plan]; return state.billing === 'yearly' ? p.yearly : p.monthly; }
+        function recommendPlan() { const revenue = state.orders * state.avgCart; if (revenue > 50000) return 'advanced'; if (revenue > 15000 || state.orders > 300) return 'grow'; return 'basic'; }
+        function update() { const planCost = state.plus ? PLUS_MIN : getPlanCost(); const txCost = calcTxFees(); const agencyCost = state.agency ? AGENCY_EST : 0; const appsCost = state.apps ? APPS_EST : 0; const posCost = state.pos ? POS_PRO : 0; const total = planCost + txCost + agencyCost + appsCost + posCost; const rec = recommendPlan(); const recCost = state.plus ? PLUS_MIN : (state.billing === 'yearly' ? PLANS[rec].yearly : PLANS[rec].monthly); const recTotal = recCost + txCost + agencyCost + appsCost + posCost; els.totalCost.innerHTML = fmt(total) + ' <span>€/month</span>'; els.recommendPlan.textContent = 'Recommended plan: ' + PLAN_NAMES[rec] + ' (' + fmt(recTotal) + ' €/month)'; els.revenueText.textContent = 'Revenue: ' + fmt(state.orders * state.avgCart) + ' € (' + state.orders + ' orders × ' + fmt(state.avgCart) + ' € per order)'; els.costPlan.textContent = fmt(planCost); els.costTx.textContent = fmt(txCost); els.costAgency.textContent = fmt(agencyCost); els.costApps.textContent = fmt(appsCost); els.costPOS.textContent = fmt(posCost); const planLabel = state.plus ? 'Shopify Plus' : ('Shopify Plan (' + PLAN_NAMES[state.plan] + ')'); els.costPlan.closest('tr').querySelector('td:first-child').textContent = planLabel; }
+        function bind() { els.planBtns.forEach(btn => { btn.addEventListener('click', () => { els.planBtns.forEach(b => b.classList.remove('active')); btn.classList.add('active'); state.plan = btn.dataset.plan; update(); }); }); els.billing.addEventListener('change', () => { state.billing = els.billing.value; update(); }); els.orderVolume.addEventListener('input', () => { state.orders = Math.max(1, parseInt(els.orderVolume.value) || 0); els.orderVolume.value = state.orders; update(); }); els.avgCart.addEventListener('input', () => { state.avgCart = Math.max(1, parseFloat(els.avgCart.value) || 0); els.avgCart.value = state.avgCart; update(); }); function onSlider(id, key, changed) { const el = document.getElementById(id); el.addEventListener('input', () => { state[key] = parseInt(el.value) || 0; adjustSliders(changed); update(); }); } onSlider('sliderPayPal', 'pctPayPal', 'paypal'); onSlider('sliderShopify', 'pctShopify', 'shopify'); onSlider('sliderKlarna', 'pctKlarna', 'klarna'); function onToggle(el, key) { el.addEventListener('click', () => { state[key] = !state[key]; el.classList.toggle('on', state[key]); el.setAttribute('aria-pressed', state[key]); update(); }); el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); } }); } onToggle(els.toggleAgency, 'agency'); onToggle(els.toggleApps, 'apps'); onToggle(els.togglePOS, 'pos'); onToggle(els.togglePlus, 'plus'); }
+        bind(); update();
+    })();
+    </script>
+    <script>
+        (function(){var K='cookieConsent';function g(){var c=localStorage.getItem(K);return c?JSON.parse(c):null;}
+        function s(c){localStorage.setItem(K,JSON.stringify(c));}
+        function ga(){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7NKPTGC34K');var sc=document.createElement('script');sc.async=true;sc.src='https://www.googletagmanager.com/gtag/js?id=G-7NKPTGC34K';document.head.appendChild(sc);}
+        function init(){var b=document.getElementById('cookieBanner'),p=document.getElementById('cookieSettings'),sb=document.getElementById('cookieSettingsBtn'),rb=document.getElementById('cookieRejectAll'),ab=document.getElementById('cookieAcceptAll'),selb=document.getElementById('cookieAcceptSelected'),ac=document.getElementById('cookieAnalytics'),mc=document.getElementById('cookieMarketing'),as=document.getElementById('analyticsStatus'),ms=document.getElementById('marketingStatus');
+        if(!b)return;var c=g();if(!c)b.style.display='';else if(c.analytics)ga();
+        sb.onclick=function(){p.style.display=p.style.display==='none'?'block':'none';ab.style.display=p.style.display==='block'?'none':'block';rb.style.display=p.style.display==='block'?'none':'block';selb.style.display=p.style.display==='block'?'block':'none';};
+        ac.onchange=function(){as.textContent=this.checked?'Active':'Inactive';};mc.onchange=function(){ms.textContent=this.checked?'Active':'Inactive';};
+        rb.onclick=function(){s({necessary:true,analytics:false,marketing:false,timestamp:new Date().toISOString()});b.style.display='none';};
+        ab.onclick=function(){s({necessary:true,analytics:true,marketing:true,timestamp:new Date().toISOString()});b.style.display='none';ga();};
+        selb.onclick=function(){var c={necessary:true,analytics:ac.checked,marketing:mc.checked,timestamp:new Date().toISOString()};s(c);b.style.display='none';if(c.analytics)ga();};}
+        if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+        document.getElementById('openCookieSettings')?.addEventListener('click',function(e){e.preventDefault();var b=document.getElementById('cookieBanner');if(b)b.style.display='flex';});
+    </script>
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+      function initCalUI() { if (window.Cal && window.Cal.ns && window.Cal.ns.erstgespraech) { Cal.ns.erstgespraech("ui", {"hideEventTypeDetails":false,"layout":"month_view"}); } else { setTimeout(initCalUI, 100); } }
+      document.addEventListener('click', function(e) { if (e.target.closest('[data-cal-link]')) e.preventDefault(); }, false);
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initCalUI); else initCalUI();
+    </script>
+</body>
+</html>

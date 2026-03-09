@@ -3669,6 +3669,100 @@ body:not(.legal-page) header .mobile-menu-toggle {
     }
 }
 
+/* Calculator Page - Cards, Inputs, Buttons */
+.calc-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+.calc-plan-btn:hover {
+    border-color: #007bff;
+    background: rgba(0, 123, 255, 0.08);
+}
+.calc-plan-btn.active {
+    border-color: #007bff;
+    background: rgba(0, 123, 255, 0.15);
+}
+.calc-input-wrap .suffix {
+    background: rgba(0, 123, 255, 0.12);
+}
+.calc-slider-row input[type="range"]::-webkit-slider-thumb {
+    background: #007bff;
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.4);
+}
+.calc-slider-row input[type="range"]::-moz-range-thumb {
+    background: #007bff;
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.4);
+}
+.calc-toggle.on {
+    background: #007bff;
+}
+.calc-cta-btn {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+.calc-cta-btn:hover {
+    background: linear-gradient(135deg, #0066e6 0%, #004999 100%);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+.calc-note {
+    background: rgba(0, 123, 255, 0.1);
+    border-left: 4px solid #007bff;
+}
+.calc-note a {
+    color: #007bff;
+}
+.calc-result-recommend {
+    color: #007bff;
+}
+
+/* Calculator Page - Intro, CTA */
+.calc-intro {
+    padding: 2rem 0 1rem;
+}
+.calc-intro-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #0f172a;
+    opacity: 0.9;
+}
+.calc-cta-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+.calc-cta-booking {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background: #0f172a;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
+}
+.calc-cta-booking:hover {
+    background: #1e293b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.4);
+}
+.calc-cta-booking svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
 /* FAQ Section */
 .faq-section {
     padding: 5rem 0;
