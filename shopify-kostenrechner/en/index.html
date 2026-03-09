@@ -36,12 +36,22 @@
     <style>
         .calc-main { min-height: 100vh; padding: 9rem 2rem 3rem; }
         @media (max-width: 768px) {
-            .calc-main { padding: 5rem 1rem 3rem; }
-            .calc-wrapper { padding: 0 0.5rem; max-width: 100%; box-sizing: border-box; }
-            .calc-grid { padding: 0; }
-            .calc-card { margin: 0; }
+            .calc-main { padding: 5rem 1.25rem 3rem; overflow-x: hidden; }
+            .calc-wrapper { padding: 0 1rem; max-width: 100%; box-sizing: border-box; }
+            .calc-grid { padding: 0; gap: 1rem; }
+            .calc-card { margin: 0; padding: 1.5rem; min-width: 0; }
+            .calc-plan-btns { min-width: 0; }
+            .calc-plan-btn { min-width: 0; flex: 1 1 0; }
+            .calc-input-wrap { min-width: 0; }
+            .calc-input-wrap input { min-width: 0; }
+            .calc-slider-row { min-width: 0; }
+            .calc-slider-row span:first-child { min-width: 80px; font-size: 0.85rem; }
+            .calc-slider-row input[type="range"] { min-width: 0; }
+            .calc-table { table-layout: fixed; font-size: 0.85rem; }
         }
-        .calc-hero { text-align: center; margin-bottom: 3rem; }
+        .calc-hero { text-align: center; margin-bottom: 1rem; }
+        .calc-hero.section { padding-bottom: 1.5rem; margin-bottom: 0; }
+        .calc-hero .section-subtitle { margin-bottom: 1rem; }
         .calc-wrapper { max-width: 1100px; margin: 0 auto; }
         .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
         @media (max-width: 900px) { .calc-grid { grid-template-columns: 1fr; } }
@@ -80,7 +90,11 @@
         .calc-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
         .calc-table th { text-align: left; font-size: 0.75rem; font-weight: 600; color: #64748b; text-transform: uppercase; padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0; }
         .calc-table td { padding: 0.6rem 0; border-bottom: 1px solid #f1f5f9; font-size: 0.95rem; }
-        .calc-table td:last-child { text-align: right; font-weight: 600; }
+        .calc-table td:nth-child(2), .calc-table td:last-child { text-align: right; white-space: nowrap; }
+        .calc-table td:nth-child(2) { padding-left: 1.5rem; min-width: 90px; }
+        .calc-table td:last-child { font-weight: 600; padding-left: 0.1em; }
+        .calc-table th:nth-child(2), .calc-table th:last-child { text-align: right; padding-right: 0.5rem; }
+        .calc-table th:last-child, .calc-table td:last-child { width: 1%; }
         .calc-note { background: rgba(0,123,255,0.1); border-left: 4px solid #007bff; padding: 1rem 1.25rem; border-radius: 0 10px 10px 0; font-size: 0.85rem; color: #0f172a; margin-top: 1.5rem; }
         .calc-note a { color: #007bff; font-weight: 600; text-decoration: none; }
         .calc-billing-select { padding: 0.65rem 1rem; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem; color: #0f172a; background: #fff; cursor: pointer; }

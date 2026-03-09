@@ -2021,8 +2021,10 @@ a.profile-card-large:hover {
     }
     
     .footer-bottom {
-        flex-direction: column;
-        gap: 0.25rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
+        justify-content: center;
         text-align: center;
     }
 }
@@ -3779,8 +3781,12 @@ body:not(.legal-page) header .mobile-menu-toggle {
     opacity: 0.9;
 }
 .calc-cta-section {
-    padding: 4rem 2rem;
+    padding: 4rem 1rem;
     text-align: center;
+}
+.calc-cta-section .calc-cta-container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 .calc-cta-booking {
     display: inline-flex;
@@ -3815,9 +3821,12 @@ body:not(.legal-page) header .mobile-menu-toggle {
         max-width: 100%;
         min-width: 0;
     }
+    .calc-cta-section {
+        padding: 4rem 0.5rem;
+    }
     .calc-cta-section .container,
     .calc-cta-section .calc-cta-container {
-        padding: 0 1rem;
+        padding: 0 0.75rem;
         max-width: 100%;
     }
 }
