@@ -823,4 +823,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+
+// Footer Mobile Accordion
+document.addEventListener('DOMContentLoaded', function() {
+    const footerToggles = document.querySelectorAll('.footer-col-toggle');
+    footerToggles.forEach(col => {
+        const title = col.querySelector('.footer-col-title');
+        if (title) {
+            title.addEventListener('click', function() {
+                col.classList.toggle('footer-col-open');
+            });
+        }
+    });
 }); 

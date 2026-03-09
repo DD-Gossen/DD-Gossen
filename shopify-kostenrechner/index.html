@@ -38,6 +38,12 @@
             min-height: 100vh;
             padding: 9rem 2rem 3rem;
         }
+        @media (max-width: 768px) {
+            .calc-main { padding: 5rem 1rem 3rem; }
+            .calc-wrapper { padding: 0 0.5rem; max-width: 100%; box-sizing: border-box; }
+            .calc-grid { padding: 0; }
+            .calc-card { margin: 0; }
+        }
         .calc-hero {
             text-align: center;
             margin-bottom: 3rem;
@@ -609,7 +615,7 @@
 
         <!-- CTA Section -->
         <section class="calc-cta-section">
-            <div class="container">
+            <div class="container calc-cta-container">
                 <h2 class="section-title">Shopify Kosten besprechen – kostenloses Erstgespräch</h2>
                 <p style="max-width: 600px; margin: 0 auto 1.5rem; color: #0f172a; opacity: 0.9; font-size: 1.05rem;">Sie haben Fragen zu Ihren Shopify Kosten oder möchten Ihren Shop mit einem Experten optimieren? Vereinbaren Sie ein unverbindliches Gespräch.</p>
                 <a href="#" class="calc-cta-booking" title="Termin buchen" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>
@@ -635,7 +641,7 @@
                     <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
                 </div>
             </div>
-            <div class="footer-col">
+            <div class="footer-col footer-col-toggle">
                 <div class="footer-col-title">Menü</div>
                 <ul>
                     <li><a href="/">Übersicht</a></li>
@@ -645,7 +651,7 @@
                     <li><a href="/shopify-freelancer/#contact">Kontakt</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
+            <div class="footer-col footer-col-toggle">
                 <div class="footer-col-title">Content</div>
                 <ul>
                     <li><a href="/blog/shopify-freelancer-deutschland/">Shopify Freelancer Deutschland</a></li>
@@ -654,7 +660,7 @@
                     <li><a href="/shopify-freelancer#projects">Portfolio</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
+            <div class="footer-col footer-col-toggle">
                 <div class="footer-col-title">Schnellzugriff</div>
                 <ul>
                     <li><a href="/shopify-freelancer/#contact">Kostenloses Erstgespräch</a></li>
