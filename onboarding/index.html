@@ -25,6 +25,9 @@
         .checkbox-group { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; }
         .checkbox-group label { display: flex; align-items: center; gap: 0.5rem; font-weight: 400; cursor: pointer; }
         .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; }
+        .form-error { font-size: 0.8rem; color: #dc2626; margin-top: 0.35rem; display: none; }
+        .form-group.has-error .form-error { display: block; }
+        .form-group.has-error input { border-color: #dc2626; }
         @media (max-width: 768px) {
             .onboarding-main { padding: 5rem 1rem 3rem; }
             .form-row { grid-template-columns: 1fr !important; }
@@ -52,7 +55,7 @@
                 <h1 class="section-title">Onboarding – Shop Setup</h1>
                 <p class="section-subtitle">Diese Informationen werden benötigt, um deinen neuen Online-Shop technisch einzurichten. Bitte füll das Formular vollständig aus.</p>
 
-                <form class="contact-form onboarding-form" action="https://formspree.io/f/xrbkaojw" method="POST">
+                <form class="contact-form onboarding-form" action="https://formspree.io/f/xrbkaojw" method="POST" novalidate>
                     <input type="hidden" name="_subject" value="Shop Setup Onboarding – Neue Anfrage">
                     <input type="hidden" name="_language" value="de">
                     <input type="hidden" name="_next" value="https://dd-gossen.com/onboarding/?submitted=1">
@@ -87,7 +90,8 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="email-kontakt">E-Mail-Adresse für Kundenkontakt</label>
-                                <input type="email" id="email-kontakt" name="E-Mail Kundenkontakt">
+                                <input type="email" id="email-kontakt" name="E-Mail Kundenkontakt" data-errormsg="Bitte gib eine gültige E-Mail-Adresse ein (z.B. name@beispiel.de)">
+                                <span class="form-error" id="email-kontakt-error"></span>
                             </div>
                             <div class="form-group">
                                 <label for="telefon">Telefonnummer *</label>
@@ -189,12 +193,14 @@
                         <div class="form-group">
                             <label for="admin-email">E-Mail-Adresse des Shop-Inhabers (für Admin-Zugang) *</label>
                             <p class="form-section-hint" style="margin-bottom: 0.5rem;">Dies ist die E-Mail-Adresse, die du zukünftig für den Admin-Zugang zum Shop verwenden wirst. An diese Adresse wird die Einladung zum Shopify-Shop gesendet.</p>
-                            <input type="email" id="admin-email" name="Admin E-Mail" required>
+                            <input type="email" id="admin-email" name="Admin E-Mail" required data-errormsg="Bitte gib eine gültige E-Mail-Adresse ein (z.B. name@beispiel.de)">
+                            <span class="form-error" id="admin-email-error"></span>
                         </div>
                         <div class="form-group">
                             <label for="rechnungs-email">E-Mail-Adresse für Rechnungen *</label>
                             <p class="form-section-hint" style="margin-bottom: 0.5rem;">An diese Adresse sende ich meine Rechnungen für die geleisteten Arbeiten.</p>
-                            <input type="email" id="rechnungs-email" name="E-Mail Rechnungen" required>
+                            <input type="email" id="rechnungs-email" name="E-Mail Rechnungen" required data-errormsg="Bitte gib eine gültige E-Mail-Adresse ein (z.B. name@beispiel.de)">
+                            <span class="form-error" id="rechnungs-email-error"></span>
                         </div>
                     </div>
 
@@ -312,6 +318,88 @@
                 document.querySelector('.onboarding-form').style.display = 'none';
                 document.getElementById('onboarding-success').style.display = 'block';
             }
+        })();
+
+        // Formular-Validierung mit deutschen Fehlermeldungen
+        (function() {
+            var form = document.querySelector('.onboarding-form');
+            if (!form) return;
+
+            var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var urlRe = /^https?:\/\/.+/;
+
+            function showError(input, msg) {
+                var group = input.closest('.form-group');
+                var errEl = document.getElementById(input.id + '-error');
+                if (!errEl && group) {
+                    errEl = document.createElement('span');
+                    errEl.className = 'form-error';
+                    errEl.id = input.id + '-error';
+                    input.parentNode.insertBefore(errEl, input.nextSibling);
+                }
+                if (group) group.classList.add('has-error');
+                if (errEl) errEl.textContent = msg;
+            }
+
+            function clearError(input) {
+                var group = input.closest('.form-group');
+                var errEl = document.getElementById(input.id + '-error');
+                if (group) group.classList.remove('has-error');
+                if (errEl) errEl.textContent = '';
+            }
+
+            function validateEmail(input) {
+                var val = (input.value || '').trim();
+                if (input.hasAttribute('required') && !val) return 'Bitte füll dieses Pflichtfeld aus.';
+                if (val && !emailRe.test(val)) return input.dataset.errormsg || 'Bitte gib eine gültige E-Mail-Adresse ein.';
+                return '';
+            }
+
+            function validateUrl(input) {
+                var val = (input.value || '').trim();
+                if (val && !urlRe.test(val)) return input.dataset.errormsg || 'Bitte gib eine gültige URL ein (z.B. https://...)';
+                return '';
+            }
+
+            form.addEventListener('input', function(e) {
+                if (e.target.matches('input, textarea')) clearError(e.target);
+            });
+            form.addEventListener('change', function(e) {
+                if (e.target.matches('input, textarea')) clearError(e.target);
+            });
+            var logoInput = document.getElementById('logo-link');
+
+            form.addEventListener('submit', function(e) {
+                var invalid = false;
+                form.querySelectorAll('.has-error').forEach(function(el) { el.classList.remove('has-error'); });
+                form.querySelectorAll('.form-error').forEach(function(el) { el.textContent = ''; });
+
+                ['email-kontakt', 'admin-email', 'rechnungs-email'].forEach(function(id) {
+                    var input = document.getElementById(id);
+                    if (!input) return;
+                    var msg = validateEmail(input);
+                    if (msg) { showError(input, msg); invalid = true; }
+                });
+                if (logoInput) {
+                    var msg = validateUrl(logoInput);
+                    if (msg) { showError(logoInput, msg); invalid = true; }
+                }
+
+                form.querySelectorAll('[required]').forEach(function(input) {
+                    var val = (input.value || '').trim();
+                    var isEmail = input.type === 'email';
+                    if (!val && !isEmail) {
+                        showError(input, 'Bitte füll dieses Pflichtfeld aus.');
+                        invalid = true;
+                    }
+                });
+
+                if (invalid) {
+                    e.preventDefault();
+                    var first = form.querySelector('.has-error');
+                    if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
         })();
     </script>
     <script type="text/javascript">
