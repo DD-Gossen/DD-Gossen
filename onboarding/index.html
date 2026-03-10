@@ -43,6 +43,12 @@
         }
         .success-card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem; font-weight: 600; color: #0f172a; margin-bottom: 1rem; }
         .success-card-text { color: #0f172a; opacity: 0.9; font-size: 1.05rem; margin: 0; }
+        .draft-banner { background: rgba(0, 123, 255, 0.95); color: white; padding: 1rem 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+        .draft-banner-text { font-size: 0.95rem; }
+        .draft-banner-btns { display: flex; gap: 0.5rem; }
+        .draft-banner-btns button { padding: 0.5rem 1rem; border-radius: 8px; font-weight: 500; cursor: pointer; border: none; font-size: 0.9rem; }
+        .draft-banner-btns .btn-restore { background: white; color: #007bff; }
+        .draft-banner-btns .btn-discard { background: rgba(255,255,255,0.2); color: white; }
         @media (max-width: 768px) {
             .onboarding-main { padding: 5rem 1rem 3rem; }
             .form-row { grid-template-columns: 1fr !important; }
@@ -70,6 +76,14 @@
             <div class="container">
                 <h1 class="section-title">Onboarding – Shop Setup</h1>
                 <p class="section-subtitle">Diese Informationen werden benötigt, um deinen neuen Online-Shop technisch einzurichten. Bitte füll das Formular vollständig aus.</p>
+
+                <div id="onboarding-draft-banner" class="draft-banner" style="display: none;">
+                    <span class="draft-banner-text">Ein gespeicherter Entwurf wurde gefunden. Wiederherstellen?</span>
+                    <div class="draft-banner-btns">
+                        <button type="button" class="btn-restore" id="onboarding-draft-restore">Wiederherstellen</button>
+                        <button type="button" class="btn-discard" id="onboarding-draft-discard">Verwerfen</button>
+                    </div>
+                </div>
 
                 <form class="contact-form onboarding-form" action="https://formspree.io/f/xrbkaojw" method="POST" novalidate>
                     <input type="hidden" name="_subject" value="Shop Setup Onboarding – Neue Anfrage">
@@ -343,6 +357,72 @@
             }
         })();
 
+        // Auto-Save Draft (localStorage)
+        (function() {
+            var STORAGE_KEY = 'onboarding-draft';
+            var form = document.querySelector('.onboarding-form');
+            var banner = document.getElementById('onboarding-draft-banner');
+            if (!form || !banner) return;
+
+            function getFormData() {
+                var data = {};
+                form.querySelectorAll('input:not([type="hidden"]), textarea').forEach(function(el) {
+                    var key = el.id || el.name;
+                    if (!key) return;
+                    if (el.type === 'checkbox') data[key] = el.checked;
+                    else data[key] = el.value;
+                });
+                return data;
+            }
+
+            function setFormData(data) {
+                Object.keys(data || {}).forEach(function(key) {
+                    var el = form.querySelector('[id="' + key + '"]') || form.querySelector('[name="' + key + '"]');
+                    if (!el) return;
+                    if (el.type === 'checkbox') el.checked = !!data[key];
+                    else el.value = data[key];
+                });
+            }
+
+            function saveDraft() {
+                try { localStorage.setItem(STORAGE_KEY, JSON.stringify(getFormData())); } catch (e) {}
+            }
+
+            function loadDraft() {
+                try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) { return {}; }
+            }
+
+            function clearDraft() {
+                try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+            }
+
+            function hasContent(data) {
+                return Object.keys(data).some(function(k) {
+                    var v = data[k];
+                    return (typeof v === 'boolean' && v) || (typeof v === 'string' && v.trim());
+                });
+            }
+
+            var saveTimeout;
+            form.addEventListener('input', function() { clearTimeout(saveTimeout); saveTimeout = setTimeout(saveDraft, 500); });
+            form.addEventListener('change', function() { clearTimeout(saveTimeout); saveTimeout = setTimeout(saveDraft, 500); });
+
+            document.getElementById('onboarding-draft-restore').addEventListener('click', function() {
+                setFormData(loadDraft());
+                banner.style.display = 'none';
+            });
+            document.getElementById('onboarding-draft-discard').addEventListener('click', function() {
+                clearDraft();
+                banner.style.display = 'none';
+            });
+
+            var draft = loadDraft();
+            var successEl = document.getElementById('onboarding-success');
+            if (hasContent(draft) && (!successEl || successEl.style.display !== 'block')) {
+                banner.style.display = 'flex';
+            }
+        })();
+
         // Formular-Validierung mit deutschen Fehlermeldungen
         (function() {
             var form = document.querySelector('.onboarding-form');
@@ -436,6 +516,7 @@
                         form.dataset.submitting = 'false';
                         form.style.display = 'none';
                         document.getElementById('onboarding-success').style.display = 'block';
+                        try { localStorage.removeItem('onboarding-draft'); } catch (e) {}
                     } else { throw new Error('Fehler'); }
                 }).catch(function() {
                     form.dataset.submitting = 'false';

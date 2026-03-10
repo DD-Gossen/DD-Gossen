@@ -36,6 +36,12 @@
         }
         .success-card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem; font-weight: 600; color: #0f172a; margin-bottom: 1rem; }
         .success-card-text { color: #0f172a; opacity: 0.9; font-size: 1.05rem; margin: 0; }
+        .draft-banner { background: rgba(0, 123, 255, 0.95); color: white; padding: 1rem 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+        .draft-banner-text { font-size: 0.95rem; }
+        .draft-banner-btns { display: flex; gap: 0.5rem; }
+        .draft-banner-btns button { padding: 0.5rem 1rem; border-radius: 8px; font-weight: 500; cursor: pointer; border: none; font-size: 0.9rem; }
+        .draft-banner-btns .btn-restore { background: white; color: #007bff; }
+        .draft-banner-btns .btn-discard { background: rgba(255,255,255,0.2); color: white; }
         @media (max-width: 768px) {
             .projektstart-main { padding: 5rem 1rem 3rem; }
             .success-card { padding: 2rem 1.5rem; }
@@ -62,6 +68,14 @@
             <div class="container">
                 <h1 class="section-title">Projektstart – Shop Setup Fragebogen</h1>
                 <p class="section-subtitle">Bitte beantworte alle Fragen so ausführlich wie möglich. Alle Felder sind mehrzeilig für ausführliche Antworten.</p>
+
+                <div id="projektstart-draft-banner" class="draft-banner" style="display: none;">
+                    <span class="draft-banner-text">Ein gespeicherter Entwurf wurde gefunden. Wiederherstellen?</span>
+                    <div class="draft-banner-btns">
+                        <button type="button" class="btn-restore" id="projektstart-draft-restore">Wiederherstellen</button>
+                        <button type="button" class="btn-discard" id="projektstart-draft-discard">Verwerfen</button>
+                    </div>
+                </div>
 
                 <form class="contact-form projektstart-form" action="https://formspree.io/f/xrbkaojw" method="POST" novalidate>
                     <input type="hidden" name="_subject" value="Projektstart Fragebogen – Neue Anfrage">
@@ -305,6 +319,59 @@
 
     <script src="../script.js"></script>
     <script>
+        // Auto-Save Draft (localStorage)
+        (function() {
+            var STORAGE_KEY = 'projektstart-draft';
+            var form = document.querySelector('.projektstart-form');
+            var banner = document.getElementById('projektstart-draft-banner');
+            if (!form || !banner) return;
+
+            function getFormData() {
+                var data = {};
+                form.querySelectorAll('textarea').forEach(function(el) {
+                    if (el.id) data[el.id] = el.value;
+                    else if (el.name) data[el.name] = el.value;
+                });
+                return data;
+            }
+
+            function setFormData(data) {
+                Object.keys(data || {}).forEach(function(key) {
+                    var el = document.getElementById(key) || form.querySelector('[name="' + key + '"]');
+                    if (el) el.value = data[key];
+                });
+            }
+
+            function loadDraft() {
+                try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) { return {}; }
+            }
+
+            function hasContent(data) {
+                return Object.keys(data).some(function(k) {
+                    var v = data[k];
+                    return typeof v === 'string' && v.trim();
+                });
+            }
+
+            var saveTimeout;
+            form.addEventListener('input', function() { clearTimeout(saveTimeout); saveTimeout = setTimeout(function() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(getFormData())); } catch (e) {} }, 500); });
+
+            document.getElementById('projektstart-draft-restore').addEventListener('click', function() {
+                setFormData(loadDraft());
+                banner.style.display = 'none';
+            });
+            document.getElementById('projektstart-draft-discard').addEventListener('click', function() {
+                try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+                banner.style.display = 'none';
+            });
+
+            var draft = loadDraft();
+            var successEl = document.getElementById('projektstart-success');
+            if (hasContent(draft) && (!successEl || successEl.style.display !== 'block')) {
+                banner.style.display = 'flex';
+            }
+        })();
+
         (function() {
             var form = document.querySelector('.projektstart-form');
             if (!form) return;
@@ -324,6 +391,7 @@
                         form.dataset.submitting = 'false';
                         form.style.display = 'none';
                         document.getElementById('projektstart-success').style.display = 'block';
+                        try { localStorage.removeItem('projektstart-draft'); } catch (e) {}
                     } else { throw new Error('Fehler'); }
                 }).catch(function() {
                     form.dataset.submitting = 'false';
