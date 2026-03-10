@@ -610,8 +610,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 250);
     });
 
-    // Contact form handling
-    const form = document.querySelector('.contact-form');
+    // Contact form handling (Onboarding-Formular ausgenommen – hat eigene Validierung)
+    const form = document.querySelector('.contact-form:not(.onboarding-form)');
     if (form) {
         const submitButton = form.querySelector('.submit-button');
         const originalButtonText = submitButton.textContent;
