@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="de" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projektstart – Shop Setup Fragebogen | DD-Gossen</title>
+    <meta name="description" content="Projektstart-Fragebogen für den Shop Setup. Alle Fragen zu Produkten, Print-on-Demand, Bildern, Seiten, Support, Versand und Integrationen.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <link rel="canonical" href="https://dd-gossen.com/projektstart/">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="../styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        .projektstart-main { min-height: 100vh; padding: 9rem 2rem 4rem; }
+        .projektstart-form { max-width: 700px; margin: 0 auto; }
+        .form-section { margin-bottom: 2.5rem; }
+        .form-section-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 600; color: #0f172a; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid rgba(0, 123, 255, 0.3); }
+        .form-section-hint { font-size: 0.85rem; color: #334155; margin-bottom: 1rem; }
+        .success-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            margin-top: 2rem;
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .success-card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem; font-weight: 600; color: #0f172a; margin-bottom: 1rem; }
+        .success-card-text { color: #0f172a; opacity: 0.9; font-size: 1.05rem; margin: 0; }
+        @media (max-width: 768px) {
+            .projektstart-main { padding: 5rem 1rem 3rem; }
+            .success-card { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body data-lang="de">
+    <header class="header">
+        <a href="/" class="logo">
+            <img src="../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+        </a>
+        <div class="header-right-container">
+            <div class="header-cta-container">
+                <a href="#" class="header-cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt anfragen</a>
+            </div>
+            <div class="language-container">
+                <a href="/shopify-kostenrechner/en/" class="language-flag flag-uk" title="English"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="projektstart-main">
+        <section class="section">
+            <div class="container">
+                <h1 class="section-title">Projektstart – Shop Setup Fragebogen</h1>
+                <p class="section-subtitle">Bitte beantworte alle Fragen so ausführlich wie möglich. Alle Felder sind mehrzeilig für ausführliche Antworten.</p>
+
+                <form class="contact-form projektstart-form" action="https://formspree.io/f/xrbkaojw" method="POST" novalidate>
+                    <input type="hidden" name="_subject" value="Projektstart Fragebogen – Neue Anfrage">
+                    <input type="hidden" name="_language" value="de">
+
+                    <!-- 01 Produkte & Sortiment -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">01 Produkte & Sortiment</h2>
+                        <div class="form-group">
+                            <label for="p1">1. Welche Produkte und damit verbundene Funktionen wollt ihr zukünftig alle anbieten?</label>
+                            <textarea id="p1" name="Produkte Funktionen" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="p2">2. Welche Produktkategorien plant ihr? (z.B. Poster, Tassen, Kleidung oder andere Merchandise-Artikel)</label>
+                            <textarea id="p2" name="Produktkategorien" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="p3">3. Gibt es bereits eine Produktliste oder Übersicht der Artikel, die importiert werden sollen?</label>
+                            <textarea id="p3" name="Produktliste Import" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="p4">4. Welche Produkte haben für den Start Priorität?</label>
+                            <textarea id="p4" name="Produkte Priorität" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="p5">5. Welche Produkte sollen jetzt schon angelegt werden und welche eventuell erst später?</label>
+                            <textarea id="p5" name="Produkte Jetzt Später" rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- 02 Print-on-Demand -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">02 Print-on-Demand</h2>
+                        <div class="form-group">
+                            <label for="pod1">1. Plant ihr Print-on-Demand-Produkte mit vorbereiteten Motiven oder Tierbildern?</label>
+                            <textarea id="pod1" name="POD Produkte" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="pod2">2. Welche Produktarten sollen dafür genutzt werden?</label>
+                            <textarea id="pod2" name="POD Produktarten" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="pod3">3. Existieren bereits fertige Designs oder Bildmotive für diese Produkte?</label>
+                            <textarea id="pod3" name="POD Designs" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="pod4">4. Falls ja: Wo sind diese Dateien gespeichert? Gibt es einen Ordner oder eine Cloud-Ablage?</label>
+                            <textarea id="pod4" name="POD Dateien Speicherort" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="pod5">5. Wäre es möglich, Zugang zu eurem aktuellen Shop zu bekommen?</label>
+                            <textarea id="pod5" name="POD Shop Zugang" rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- 03 Bilder, Medien & Assets -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">03 Bilder, Medien & Assets</h2>
+                        <div class="form-group">
+                            <label for="b1">1. Gibt es bereits einen zentralen Ordner mit Bildern und visuellen Assets? Falls nicht, könnten alle vorhandenen Visuals mir bereitgestellt werden?</label>
+                            <textarea id="b1" name="Bilder Zentraler Ordner" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="b2">2. Sind bereits Produktbilder vorhanden?</label>
+                            <textarea id="b2" name="Produktbilder" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="b3">3. Gibt es zusätzliche Bilder für Banner, Startseite oder kleinere Sektionen?</label>
+                            <textarea id="b3" name="Bilder Banner Startseite" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="b4">4. Gibt es eine bestimmte Bildsprache oder Stilrichtung, an der sich der Shop orientieren soll?</label>
+                            <textarea id="b4" name="Bildsprache Stil" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="b5">5. Inwiefern arbeitet ihr bei Bildern mit KI? Was ist da euer Ansatz?</label>
+                            <textarea id="b5" name="Bilder KI" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="b6">6. Welche bestehenden Visuals können direkt verwendet werden?</label>
+                            <textarea id="b6" name="Visuals Direkt Verwendbar" rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- 04 Shopseiten & Inhalte -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">04 Shopseiten & Inhalte</h2>
+                        <div class="form-group">
+                            <label for="s1">1. Welche Seiten sollen im Shop enthalten sein? (z.B. Über uns, FAQ, Kontakt oder weitere Informationsseiten)</label>
+                            <textarea id="s1" name="Shopseiten" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="s2">2. Soll es einen Blog oder andere redaktionelle Inhalte geben?</label>
+                            <textarea id="s2" name="Blog Redaktion" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="s3">3. Welche Inhalte dürfen auf der Webseite auf keinen Fall fehlen?</label>
+                            <textarea id="s3" name="Inhalte Pflicht" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="s4">4. Gibt es bereits Texte für die Seiten oder müssen diese noch erstellt werden?</label>
+                            <textarea id="s4" name="Texte Vorhanden" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="s5">5. Gibt es rechtliche oder vertrauensbildende Inhalte, die besonders sichtbar platziert werden sollen?</label>
+                            <textarea id="s5" name="Rechtliche Inhalte" rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- 05 Kundensupport -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">05 Kundensupport</h2>
+                        <div class="form-group">
+                            <label for="k1">1. Wie soll der Kundensupport organisiert werden?</label>
+                            <textarea id="k1" name="Support Organisation" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="k2">2. Welche Support-Kanäle sollen angeboten werden? (z.B. E-Mail, Kontaktformular, Live-Chat oder Telefon)</label>
+                            <textarea id="k2" name="Support Kanäle" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="k3">3. Soll es irgendwelche besonderen Formulare geben? (Anmeldung zum Fotoshooting oder ähnliches)</label>
+                            <textarea id="k3" name="Besondere Formulare" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="k4">4. Welche häufig gestellten Fragen der Kunden sollen in einer allgemeinen FAQ-Seite beantwortet werden?</label>
+                            <textarea id="k4" name="FAQ Inhalte" rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- 06 Versand & Logistik -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">06 Versand & Logistik</h2>
+                        <div class="form-group">
+                            <label for="v1">1. Welche Versandmethoden sollen angeboten werden?</label>
+                            <textarea id="v1" name="Versandmethoden" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="v2">2. Mit welchen Versanddienstleistern möchtet ihr arbeiten?</label>
+                            <textarea id="v2" name="Versanddienstleister" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="v3">3. Gibt es spezielle Versandregeln? (z.B. kostenloser Versand ab einem bestimmten Bestellwert)</label>
+                            <textarea id="v3" name="Versandregeln" rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- 07 Integrationen & Sonstiges -->
+                    <div class="form-section">
+                        <h2 class="form-section-title">07 Integrationen & Sonstiges</h2>
+                        <div class="form-group">
+                            <label for="i1">1. Gibt es Funktionen oder Features, die euch besonders wichtig sind?</label>
+                            <textarea id="i1" name="Features Wichtig" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="i2">2. Plant ihr Integrationen wie Newsletter-Tools, Tracking oder andere Apps?</label>
+                            <textarea id="i2" name="Integrationen Apps" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="i3">3. Gibt es technische Anforderungen, die früh berücksichtigt werden sollten?</label>
+                            <textarea id="i3" name="Technische Anforderungen" rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="i4">4. Wie macht ihr eure Buchhaltung? Sollen Rechnungen automatisch erstellt werden?</label>
+                            <textarea id="i4" name="Buchhaltung Rechnungen" rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h2 class="form-section-title">Sonstiges</h2>
+                        <div class="form-group">
+                            <label for="sonstiges">Weitere Anmerkungen, Wünsche oder Fragen</label>
+                            <textarea id="sonstiges" name="Sonstiges" rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-button">Fragebogen absenden</button>
+                </form>
+
+                <div id="projektstart-success" class="success-card" style="display: none;">
+                    <h2 class="success-card-title">Vielen Dank!</h2>
+                    <p class="success-card-text">Deine Angaben wurden übermittelt. Ich melde mich in Kürze bei dir.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col footer-col-brand">
+                <div class="footer-brand-name">MAIK GOSSEN</div>
+                <div class="footer-contact-label">Kontakt:</div>
+                <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+                <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+                <div class="footer-social">
+                    <a href="mailto:info@dd-gossen.com" title="E-Mail" aria-label="E-Mail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                    <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+                    <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-col footer-col-toggle">
+                <div class="footer-col-title">Menü</div>
+                <ul>
+                    <li><a href="/">Übersicht</a></li>
+                    <li><a href="/shopify-freelancer">Meine Services</a></li>
+                    <li><a href="/shopify-kostenrechner/">Kostenrechner</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/shopify-freelancer/#contact">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-col-toggle">
+                <div class="footer-col-title">Content</div>
+                <ul>
+                    <li><a href="/blog/shopify-freelancer-deutschland/">Shopify Freelancer Deutschland</a></li>
+                    <li><a href="/shopify-freelancer">Shop-Setup & Shop-Optimierung</a></li>
+                    <li><a href="/shopify-freelancer#competencies">Kompetenzen</a></li>
+                    <li><a href="/shopify-freelancer#projects">Portfolio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-col-toggle">
+                <div class="footer-col-title">Schnellzugriff</div>
+                <ul>
+                    <li><a href="/shopify-freelancer/#contact">Kostenloses Erstgespräch</a></li>
+                    <li><a href="/shopify-freelancer#about-me">Über mich</a></li>
+                    <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a href="/impressum.html">Impressum</a>
+            <span class="footer-sep">|</span>
+            <a href="/datenschutz.html">Datenschutz</a>
+            <span class="footer-sep">|</span>
+            <a href="/agb.html">AGB</a>
+            <span class="footer-sep">|</span>
+            <a href="#" id="openCookieSettings">Cookie-Einstellungen</a>
+            <span class="footer-sep">|</span>
+            <span>© 2025 Maik Gossen</span>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        (function() {
+            var form = document.querySelector('.projektstart-form');
+            if (!form) return;
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (form.dataset.submitting === 'true') return;
+                form.dataset.submitting = 'true';
+                var btn = form.querySelector('.submit-button');
+                if (btn) { btn.disabled = true; btn.textContent = 'Wird gesendet...'; }
+                fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                }).then(function(r) {
+                    if (r.ok) {
+                        form.dataset.submitting = 'false';
+                        form.style.display = 'none';
+                        document.getElementById('projektstart-success').style.display = 'block';
+                    } else { throw new Error('Fehler'); }
+                }).catch(function() {
+                    form.dataset.submitting = 'false';
+                    if (btn) { btn.disabled = false; btn.textContent = 'Fragebogen absenden'; }
+                    alert('Beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut.');
+                });
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+      function initCalUI() { if (window.Cal && window.Cal.ns && window.Cal.ns.erstgespraech) { Cal.ns.erstgespraech("ui", {"hideEventTypeDetails":false,"layout":"month_view"}); } else { setTimeout(initCalUI, 100); } }
+      document.addEventListener('click', function(e) { if (e.target.closest('[data-cal-link]')) e.preventDefault(); }, false);
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initCalUI); else initCalUI();
+    </script>
+</body>
+</html>

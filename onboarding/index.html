@@ -28,9 +28,25 @@
         .form-error { font-size: 0.8rem; color: #dc2626; margin-top: 0.35rem; display: none; }
         .form-group.has-error .form-error { display: block; }
         .form-group.has-error input { border-color: #dc2626; }
+        .success-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            margin-top: 2rem;
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .success-card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem; font-weight: 600; color: #0f172a; margin-bottom: 1rem; }
+        .success-card-text { color: #0f172a; opacity: 0.9; font-size: 1.05rem; margin: 0; }
         @media (max-width: 768px) {
             .onboarding-main { padding: 5rem 1rem 3rem; }
             .form-row { grid-template-columns: 1fr !important; }
+            .success-card { padding: 2rem 1.5rem; }
         }
     </style>
 </head>
@@ -255,9 +271,9 @@
                     <button type="submit" class="submit-button">Onboarding absenden</button>
                 </form>
 
-                <div id="onboarding-success" style="display: none; text-align: center; padding: 3rem; background: rgba(0, 123, 255, 0.1); border-radius: 20px; margin-top: 2rem;">
-                    <h2 style="color: #0f172a; margin-bottom: 1rem;">Vielen Dank!</h2>
-                    <p style="color: #0f172a; opacity: 0.9;">Deine Angaben wurden übermittelt. Ich melde mich in Kürze bei dir.</p>
+                <div id="onboarding-success" class="success-card" style="display: none;">
+                    <h2 class="success-card-title">Vielen Dank!</h2>
+                    <p class="success-card-text">Deine Angaben wurden übermittelt. Ich melde mich in Kürze bei dir.</p>
                 </div>
             </div>
         </section>
@@ -378,6 +394,7 @@
 
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
+                if (form.dataset.submitting === 'true') return;
                 var invalid = false;
                 form.querySelectorAll('.has-error').forEach(function(el) { el.classList.remove('has-error'); });
                 form.querySelectorAll('.form-error').forEach(function(el) { el.textContent = ''; });
@@ -416,10 +433,12 @@
                     headers: { 'Accept': 'application/json' }
                 }).then(function(r) {
                     if (r.ok) {
+                        form.dataset.submitting = 'false';
                         form.style.display = 'none';
                         document.getElementById('onboarding-success').style.display = 'block';
                     } else { throw new Error('Fehler'); }
                 }).catch(function() {
+                    form.dataset.submitting = 'false';
                     if (btn) { btn.disabled = false; btn.textContent = 'Onboarding absenden'; }
                     alert('Beim Senden ist ein Fehler aufgetreten. Bitte versuche es erneut.');
                 });

@@ -611,13 +611,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Contact form handling (Onboarding-Formular ausgenommen – hat eigene Validierung)
-    const form = document.querySelector('.contact-form:not(.onboarding-form)');
+    const form = document.querySelector('.contact-form:not(.onboarding-form):not(.projektstart-form)');
     if (form) {
         const submitButton = form.querySelector('.submit-button');
         const originalButtonText = submitButton.textContent;
         
         form.addEventListener('submit', function(e) {
             e.preventDefault();
+            if (form.dataset.submitting === 'true') return;
+            form.dataset.submitting = 'true';
             
             // Change button text based on page language
             const isEnglish = window.location.pathname.includes('/en/');
@@ -650,6 +652,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 showFormMessage(errorMessage, 'error');
             }).finally(() => {
                 // Reset button
+                form.dataset.submitting = 'false';
                 submitButton.textContent = originalButtonText;
                 submitButton.disabled = false;
             });

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projektablauf PetPix | DD-Gossen</title>
+    <meta name="description" content="Projektablauf für das PetPix Shopify Shop Setup. Detaillierter Zeitstrahl mit allen Meilensteinen und Aufgaben.">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <link rel="canonical" href="https://dd-gossen.com/projektablauf/">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="../styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        .projektablauf-main { min-height: 100vh; padding: 9rem 2rem 5rem; }
+        .projektablauf-intro { max-width: 700px; margin: 0 auto 3rem; text-align: center; }
+        .projektablauf-intro p { color: #334155; font-size: 1.05rem; line-height: 1.6; }
+        .timeline { max-width: 720px; margin: 0 auto; position: relative; }
+        .timeline::before { content: ''; position: absolute; left: 19px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, rgba(0, 123, 255, 0.5), rgba(0, 123, 255, 0.2)); border-radius: 2px; }
+        .timeline-item { position: relative; padding-left: 60px; padding-bottom: 2rem; opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .timeline-item.visible { opacity: 1; transform: translateY(0); }
+        .timeline-item.done .timeline-node { background: #22c55e; border-color: #22c55e; }
+        .timeline-item.done .timeline-node::after { content: '✓'; color: white; font-size: 12px; font-weight: bold; }
+        .timeline-node { position: absolute; left: 0; top: 4px; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.9); border: 3px solid #007bff; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; z-index: 2; }
+        .timeline-card { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 16px; padding: 1.25rem 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; }
+        .timeline-card:hover { background: rgba(255, 255, 255, 0.55); box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
+        .timeline-item.done .timeline-card { opacity: 0.85; }
+        .timeline-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; font-weight: 600; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.75rem; }
+        .timeline-check { display: inline-block; width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; border: 2px solid #007bff; border-radius: 4px; background: rgba(255,255,255,0.9); }
+        .timeline-title .timeline-check { width: 20px; height: 20px; }
+        .timeline-sub-item .timeline-check { width: 18px; height: 18px; }
+        .timeline-item.done .timeline-title .timeline-check,
+        .timeline-sub-item.done .timeline-check { background: #22c55e; border-color: #22c55e; }
+        .timeline-item.done .timeline-title .timeline-check::after { content: '✓'; display: block; color: white; font-size: 11px; font-weight: bold; text-align: center; line-height: 20px; }
+        .timeline-sub-item.done .timeline-check::after { content: '✓'; display: block; color: white; font-size: 11px; font-weight: bold; text-align: center; line-height: 18px; }
+        .timeline-item.done .timeline-title,
+        .timeline-title.done { text-decoration: line-through; color: #64748b; }
+        .timeline-sub { margin-top: 0.75rem; padding-left: 1.75rem; border-left: 2px solid rgba(0, 123, 255, 0.3); }
+        .timeline-sub-item { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.5rem; font-size: 0.95rem; color: #334155; }
+        .timeline-sub-item:last-child { margin-bottom: 0; }
+        .timeline-sub-item.done { text-decoration: line-through; color: #94a3b8; }
+        .timeline-part { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 700; color: #0f172a; margin: 3rem 0 1.5rem; padding-left: 60px; border-bottom: 3px solid #007bff; padding-bottom: 0.5rem; }
+        .timeline-cut { text-align: center; margin: 2rem 0; padding: 1rem; color: #64748b; font-style: italic; }
+        @media (max-width: 768px) {
+            .projektablauf-main { padding: 5rem 1rem 3rem; }
+            .timeline::before { left: 14px; }
+            .timeline-item { padding-left: 50px; }
+            .timeline-node { width: 28px; height: 28px; left: 0; top: 6px; }
+            .timeline-part { padding-left: 50px; font-size: 1.25rem; }
+        }
+    </style>
+</head>
+<body data-lang="de">
+    <header class="header">
+        <a href="/" class="logo">
+            <img src="../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+        </a>
+        <div class="header-right-container">
+            <div class="header-cta-container">
+                <a href="#" class="header-cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt anfragen</a>
+            </div>
+            <div class="language-container">
+                <a href="/shopify-kostenrechner/en/" class="language-flag flag-uk" title="English"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="projektablauf-main">
+        <section class="section">
+            <div class="container">
+                <div class="projektablauf-intro">
+                    <h1 class="section-title">Projektablauf PetPix</h1>
+                    <p>Übersicht aller Meilensteine und Aufgaben für das Shopify Shop Setup inkl. Print-on-Demand.</p>
+                </div>
+
+                <div class="timeline" id="timeline">
+                    <div class="timeline-part">Part 1: Shop aufsetzen</div>
+
+                    <!-- 1. Shop grundlegend aufsetzen -->
+                    <div class="timeline-item" data-id="shop-setup">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-title"><span class="timeline-check" data-parent="shop-setup"></span> Online-Shop und Webseite grundlegend aufsetzen (inkl. Kundenmails, Versand, Steuern, Sprachen, Geschäftsdaten, Rechnung)</div>
+                            <div class="timeline-sub">
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="shop-1"></span> Shopify Account anlegen & Plan auswählen</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="shop-2"></span> Domain verbinden oder Subdomain einrichten</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="shop-3"></span> Geschäftsdaten hinterlegen (Firmenname, Adresse, USt-ID)</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="shop-4"></span> Steuereinstellungen konfigurieren (Land, Steuersätze, Steuerbefreiungen)</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="shop-5"></span> Währung und Sprachen einrichten</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="shop-6"></span> E-Mail-Vorlagen anpassen (Bestellbestätigung, Versand, Kunden-E-Mails)</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="shop-7"></span> Versand & Lieferzeiten konfigurieren</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="shop-8"></span> Zahlungsanbieter einrichten (Shopify Payments, PayPal, etc.)</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="shop-9"></span> Rechnungen & Belege einrichten</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="shop-10"></span> Rechtliche Seiten (Impressum, Datenschutz, AGB) anlegen</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Branding & Design -->
+                    <div class="timeline-item" data-id="branding">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-title"><span class="timeline-check" data-parent="branding"></span> Branding & Design</div>
+                            <div class="timeline-sub">
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="brand-1"></span> Logo integrieren</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="brand-2"></span> Farbpalette & Schriftarten festlegen</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="brand-3"></span> Favicon & App-Icon erstellen</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Erster Webseitenentwurf -->
+                    <div class="timeline-item" data-id="entwurf">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-title"><span class="timeline-check" data-parent="entwurf"></span> Erster Webseitenentwurf</div>
+                            <div class="timeline-sub">
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="entwurf-1"></span> Theme auswählen und anpassen</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="entwurf-2"></span> Startseite-Layout gestalten</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="entwurf-3"></span> Navigation & Menüstruktur festlegen</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="entwurf-4"></span> Header & Footer konfigurieren</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Metadaten -->
+                    <div class="timeline-item" data-id="metadaten">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-title"><span class="timeline-check" data-parent="metadaten"></span> Metadaten & SEO-Grundlagen</div>
+                            <div class="timeline-sub">
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="meta-1"></span> Seitentitel & Meta-Beschreibungen</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="meta-2"></span> Open Graph & Social Sharing</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="meta-3"></span> robots.txt & Sitemap prüfen</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Produkte & Kollektionen -->
+                    <div class="timeline-item" data-id="produkte">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-title"><span class="timeline-check" data-parent="produkte"></span> Produkte, Kundendaten und Kollektionen anlegen bzw. importieren</div>
+                            <div class="timeline-sub">
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="prod-1"></span> Produktstruktur planen (Varianten, Optionen)</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="prod-2"></span> Produkte manuell anlegen oder CSV-Import vorbereiten</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="prod-3"></span> Produktbilder hochladen und optimieren</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="prod-4"></span> Produktbeschreibungen & Metadaten</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="prod-5"></span> Kollektionen erstellen und zuordnen</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="prod-6"></span> Kundengruppen (falls relevant) anlegen</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="prod-7"></span> Bestehende Kundendaten importieren (falls vorhanden)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Wichtige Seiten -->
+                    <div class="timeline-item" data-id="seiten">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-title"><span class="timeline-check" data-parent="seiten"></span> Wichtige Seiten erstellen und mit ersten Inhalten füllen</div>
+                            <div class="timeline-sub">
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="seiten-1"></span> Über-uns-Seite</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="seiten-2"></span> Kontaktseite</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="seiten-3"></span> FAQ-Seite</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="seiten-4"></span> Versand & Rückgabe</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="seiten-5"></span> Weitere Informationsseiten nach Bedarf</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Call KW 12 -->
+                    <div class="timeline-item" data-id="call-kw12">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-title"><span class="timeline-check" data-parent="call-kw12"></span> Call in KW 12 – Abstimmung & Zwischenstand</div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Erste Übergabe -->
+                    <div class="timeline-item" data-id="uebergabe1">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-title"><span class="timeline-check" data-parent="uebergabe1"></span> Erste Übergabe des Shops – damit ihr mit reinschauen könnt</div>
+                            <div class="timeline-sub">
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="ueb1-1"></span> Admin-Zugang für euch einrichten</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="ueb1-2"></span> Zugangsdaten übermitteln</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. Feedbackschleife -->
+                    <div class="timeline-item" data-id="feedback">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-title"><span class="timeline-check" data-parent="feedback"></span> Feedbackschleife zur Webseite</div>
+                            <div class="timeline-sub">
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="fb-1"></span> Feedback zum Design und zur Struktur sammeln</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="fb-2"></span> Feedback-Punkte priorisieren</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="fb-3"></span> Umsetzung des Feedbacks</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="fb-4"></span> Abnahme des überarbeiteten Designs</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 10. SEO & CRO -->
+                    <div class="timeline-item" data-id="seo">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-title"><span class="timeline-check" data-parent="seo"></span> Besprechung SEO-Maßnahmen und Conversion Rate Optimierung</div>
+                            <div class="timeline-sub">
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="seo-1"></span> SEO-Audit & Keyword-Strategie</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="seo-2"></span> On-Page-Optimierungen umsetzen</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="seo-3"></span> Conversion-Optimierungen (Checkout, CTAs, Trust-Elemente)</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="seo-4"></span> Weitere Optimierungen für Conversions</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-cut">— Ende Part 1 —</div>
+
+                    <div class="timeline-part">Part 2: Print-on-Demand (POD)</div>
+
+                    <!-- 11. POD Call -->
+                    <div class="timeline-item" data-id="pod-call">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-title"><span class="timeline-check" data-parent="pod-call"></span> Print-on-Demand (POD) Call – Eure Vorstellungen der POD-Produkte</div>
+                            <div class="timeline-sub">
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="pod-1"></span> POD-Anbieter auswählen (Printful, Printify, etc.)</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="pod-2"></span> Produktkatalog für POD festlegen</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="pod-3"></span> Design-Vorlagen und Motive besprechen</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 12. Planung Fotografie-Lösungen -->
+                    <div class="timeline-item" data-id="pod-planung">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-title"><span class="timeline-check" data-parent="pod-planung"></span> Erklärung und Planung der individuellen Lösungen für eure Fotografie</div>
+                            <div class="timeline-sub">
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="podp-1"></span> Fotoshooting-Workflow planen</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="podp-2"></span> Upload-Prozess für Kunden definieren</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="podp-3"></span> Individuelle Produktkonfiguration (Rahmen, Formate, etc.)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 13. Umsetzung POD-Struktur -->
+                    <div class="timeline-item" data-id="pod-umsetzung">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-title"><span class="timeline-check" data-parent="pod-umsetzung"></span> Umsetzung der POD-Struktur</div>
+                            <div class="timeline-sub">
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="podu-1"></span> POD-App integrieren</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="podu-2"></span> Produkt-Templates anlegen</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="podu-3"></span> Design-Upload und Varianten konfigurieren</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="podu-4"></span> Preiskalkulation & Versandkosten</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="podu-5"></span> Testbestellungen durchführen</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 14. Individuelle Fotografie-Lösungen -->
+                    <div class="timeline-item" data-id="pod-foto">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-title"><span class="timeline-check" data-parent="pod-foto"></span> Umsetzung der individuellen Fotografie-Lösungen</div>
+                            <div class="timeline-sub">
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="podf-1"></span> Customizer oder Upload-Tool einrichten</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="podf-2"></span> Workflow für personalisierte Produkte</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="podf-3"></span> Qualitätssicherung & Abnahme</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 15. Finale Übergabe -->
+                    <div class="timeline-item" data-id="uebergabe2">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-title"><span class="timeline-check" data-parent="uebergabe2"></span> Finale Übergabe + kleine Schulung in Shopify und POD</div>
+                            <div class="timeline-sub">
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="ueb2-1"></span> Admin-Schulung (Produkte, Bestellungen, Einstellungen)</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="ueb2-2"></span> POD-Workflow-Schulung</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="ueb2-3"></span> Dokumentation übergeben</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 16. Launch -->
+                    <div class="timeline-item" data-id="launch">
+                        <div class="timeline-node"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-title"><span class="timeline-check" data-parent="launch"></span> Launch</div>
+                            <div class="timeline-sub">
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="launch-1"></span> Domain live schalten</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="launch-2"></span> Passwortschutz entfernen</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="launch-3"></span> Google Search Console einrichten</div>
+                                <div class="timeline-sub-item"><span class="timeline-check" data-id="launch-4"></span> Launch-Checkliste abarbeiten</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col footer-col-brand">
+                <div class="footer-brand-name">MAIK GOSSEN</div>
+                <div class="footer-contact-label">Kontakt:</div>
+                <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+                <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+                <div class="footer-social">
+                    <a href="mailto:info@dd-gossen.com" title="E-Mail" aria-label="E-Mail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+                    <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+                    <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-col footer-col-toggle">
+                <div class="footer-col-title">Menü</div>
+                <ul>
+                    <li><a href="/">Übersicht</a></li>
+                    <li><a href="/shopify-freelancer">Meine Services</a></li>
+                    <li><a href="/shopify-kostenrechner/">Kostenrechner</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/shopify-freelancer/#contact">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-col-toggle">
+                <div class="footer-col-title">Content</div>
+                <ul>
+                    <li><a href="/blog/shopify-freelancer-deutschland/">Shopify Freelancer Deutschland</a></li>
+                    <li><a href="/shopify-freelancer">Shop-Setup & Shop-Optimierung</a></li>
+                    <li><a href="/shopify-freelancer#competencies">Kompetenzen</a></li>
+                    <li><a href="/shopify-freelancer#projects">Portfolio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-col-toggle">
+                <div class="footer-col-title">Schnellzugriff</div>
+                <ul>
+                    <li><a href="/shopify-freelancer/#contact">Kostenloses Erstgespräch</a></li>
+                    <li><a href="/shopify-freelancer#about-me">Über mich</a></li>
+                    <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <a href="/impressum.html">Impressum</a>
+            <span class="footer-sep">|</span>
+            <a href="/datenschutz.html">Datenschutz</a>
+            <span class="footer-sep">|</span>
+            <a href="/agb.html">AGB</a>
+            <span class="footer-sep">|</span>
+            <a href="#" id="openCookieSettings">Cookie-Einstellungen</a>
+            <span class="footer-sep">|</span>
+            <span>© 2025 Maik Gossen</span>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        (function() {
+            var timeline = document.getElementById('timeline');
+            if (!timeline) return;
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+            timeline.querySelectorAll('.timeline-item').forEach(function(el) { observer.observe(el); });
+        })();
+    </script>
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+      function initCalUI() { if (window.Cal && window.Cal.ns && window.Cal.ns.erstgespraech) { Cal.ns.erstgespraech("ui", {"hideEventTypeDetails":false,"layout":"month_view"}); } else { setTimeout(initCalUI, 100); } }
+      document.addEventListener('click', function(e) { if (e.target.closest('[data-cal-link]')) e.preventDefault(); }, false);
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initCalUI); else initCalUI();
+    </script>
+</body>
+</html>

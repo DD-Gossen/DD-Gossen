@@ -43,7 +43,7 @@ Schnellreferenz für das Erstellen von Formularen. Design, Funktionen und gelern
 
 ```javascript
 // script.js – Contact form handling
-const form = document.querySelector('.contact-form:not(.onboarding-form)');
+const form = document.querySelector('.contact-form:not(.onboarding-form):not(.projektstart-form)');
 ```
 
 **Grund:** script.js fängt alle `.contact-form` ab und sendet per `fetch` – ohne Validierung. Formulare mit `onboarding-form` (oder eigener Klasse) werden ausgenommen und machen normalen POST.
