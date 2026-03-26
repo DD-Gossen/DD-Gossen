@@ -4035,7 +4035,8 @@ body:not(.legal-page) header .mobile-menu-toggle {
     margin: 3rem auto;
 }
 
-.services-cta-card h2 {
+.services-cta-card h2,
+.services-cta-card h3 {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     font-size: 1.8rem;
@@ -4069,8 +4070,16 @@ body:not(.legal-page) header .mobile-menu-toggle {
     opacity: 0.85;
 }
 
+.services-cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
 .services-cta-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     background: rgba(255, 255, 255, 0.15);
     color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -4085,6 +4094,15 @@ body:not(.legal-page) header .mobile-menu-toggle {
 .services-cta-btn:hover {
     background: rgba(255, 255, 255, 0.25);
     transform: translateY(-1px);
+}
+
+.services-cta-btn-dark {
+    background: rgba(0, 0, 0, 0.7);
+    border-color: rgba(0, 0, 0, 0.8);
+}
+
+.services-cta-btn-dark:hover {
+    background: rgba(0, 0, 0, 0.85);
 }
 
 /* Impressum subtle service link */
