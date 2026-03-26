@@ -4105,6 +4105,46 @@ body:not(.legal-page) header .mobile-menu-toggle {
     background: rgba(0, 0, 0, 0.85);
 }
 
+/* Shopify Services Slim Banner (Blog) */
+.services-cta-slim {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background: linear-gradient(135deg, #1a3fc7 0%, #2d5be6 100%);
+    border-radius: 12px;
+    padding: 1.2rem 2rem;
+    max-width: 800px;
+    margin: 1.5rem auto 2.5rem;
+}
+
+.services-cta-slim-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.services-cta-slim-btn {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    padding: 0.55rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.services-cta-slim-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
 /* Impressum subtle service link */
 .impressum-service-hint {
     margin-top: 2rem;
