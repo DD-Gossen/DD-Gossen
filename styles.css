@@ -4025,3 +4025,83 @@ body:not(.legal-page) header .mobile-menu-toggle {
         font-size: 0.7rem;
     }
 }
+
+/* Shopify Services CTA Card */
+.services-cta-card {
+    background: linear-gradient(135deg, #1a3fc7 0%, #2d5be6 50%, #1a3fc7 100%);
+    border-radius: 16px;
+    padding: 2.5rem;
+    max-width: 480px;
+    margin: 3rem auto;
+}
+
+.services-cta-card h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.services-cta-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.services-cta-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.services-cta-list li svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    opacity: 0.85;
+}
+
+.services-cta-btn {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.services-cta-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+/* Impressum subtle service link */
+.impressum-service-hint {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.impressum-service-hint a {
+    color: #2d5be6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.impressum-service-hint a:hover {
+    text-decoration: underline;
+}
