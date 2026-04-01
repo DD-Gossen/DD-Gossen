@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neues Widerrufsrecht ab Juni 2026: Was Shopify-Shopbetreiber jetzt wissen müssen | DD-Gossen</title>
+  <meta name="description" content="Ab Juni 2026 gelten neue Anforderungen an das Widerrufsrecht im Online-Handel. Was sich ändert, was du in deinem Shopify-Shop anpassen musst – und wie du auf der sicheren Seite bleibst.">
+  <link rel="canonical" href="https://dd-gossen.com/blog/widerrufsrecht-shopify-2026/">
+  <meta property="og:title" content="Neues Widerrufsrecht ab Juni 2026: Was Shopify-Shopbetreiber jetzt wissen müssen">
+  <meta property="og:description" content="Ab Juni 2026 gelten neue Anforderungen an das Widerrufsrecht im Online-Handel. Was sich ändert, was du in deinem Shopify-Shop anpassen musst – und wie du auf der sicheren Seite bleibst.">
+  <meta property="og:url" content="https://dd-gossen.com/blog/widerrufsrecht-shopify-2026/">
+  <meta property="og:type" content="article">
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../article-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    .article-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+    .sidebar-column { align-self: stretch; }
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      position: sticky;
+      top: var(--sidebar-top, 110px);
+      transition: top 0.3s ease;
+    }
+    .article-main { align-self: start; min-width: 0; width: 100%; }
+    .sidebar-toc {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .sidebar-toc h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid rgba(35,126,181,0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .sidebar-toc ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+    .sidebar-toc a {
+      display: block;
+      font-size: 0.88rem;
+      color: #374151;
+      text-decoration: none;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      line-height: 1.4;
+    }
+    .sidebar-toc a:hover, .sidebar-toc a.active { background: rgba(35,126,181,0.1); color: #237eb5; }
+    .sidebar-cta {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(15,23,42,0.25);
+    }
+    .sidebar-cta p { font-size: 0.9rem; color: rgba(255,255,255,0.85); margin: 0 0 1rem 0; line-height: 1.5; }
+    .sidebar-cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+      padding: 0.65rem 1.2rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .sidebar-cta a:hover { background: linear-gradient(135deg, #0066e6 0%, #004999 100%); color: white; text-decoration: none; }
+    .article-card {
+      max-width: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-sizing: border-box;
+    }
+    .article-card .article-hero-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 220px !important;
+      object-fit: cover !important;
+      object-position: center center;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      display: block;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .inline-cta {
+      background: linear-gradient(135deg, rgba(35,126,181,0.08) 0%, rgba(35,126,181,0.15) 100%);
+      border: 1px solid rgba(35,126,181,0.25);
+      border-left: 4px solid #237eb5;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .inline-cta-text { flex: 1; }
+    .inline-cta-text strong { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; color: #0f172a; margin-bottom: 0.3rem; }
+    .inline-cta-text span { font-size: 0.9rem; color: #374151; }
+    .inline-cta a {
+      display: inline-block;
+      background: #0f172a;
+      color: white !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none !important;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+      flex-shrink: 0;
+    }
+    .inline-cta a:hover { background: #1e293b; }
+    .author-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: transparent !important;
+      border: 1px solid rgba(35,126,181,0.15);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+      width: 100%;
+    }
+    .author-box-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 600; color: #333; margin: 0 0 0.75rem 0; }
+    .author-bio { font-size: 0.9rem; color: #555; line-height: 1.5; margin: 0 0 1rem 0; }
+    .author-details { display: flex; align-items: center; gap: 1rem; }
+    .author-name-link { color: #333; text-decoration: none; font-weight: inherit; }
+    .author-name-link:hover { color: #333; text-decoration: none; }
+    .article-summary { margin: 0 0 2rem 0; padding: 0; width: 100%; }
+    .article-summary summary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #64748b;
+      padding: 0.25rem 0 0.4rem 0;
+      cursor: pointer;
+      list-style: none;
+      border-bottom: 1px solid rgba(35,126,181,0.15);
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+    .article-summary summary::-webkit-details-marker { display: none; }
+    .article-summary summary::after { content: '▼'; float: right; font-size: 0.6rem; opacity: 0.4; }
+    .article-summary[open] summary::after { content: '▲'; }
+    .article-summary ul { margin: 0.5rem 0 0 0; padding: 0; list-style: none; width: 100%; }
+    .article-summary li { padding: 0.3rem 0; font-size: 0.9rem; line-height: 1.5; color: #64748b; border-bottom: 1px solid rgba(35,126,181,0.06); }
+    .article-summary li:last-child { border-bottom: none; }
+    .article-faq {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(35,126,181,0.15);
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+    .faq-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 600; color: #0f172a; margin: 0 0 1.5rem 0; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; width: 100%; min-width: 0; }
+    .faq-item { padding: 0; margin: 0; border-bottom: 1px solid rgba(35,126,181,0.12); width: 100%; min-width: 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item summary { font-weight: 600; color: #0f172a; padding: 1rem 0; cursor: pointer; list-style: none; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; float: right; font-size: 1.2rem; color: #237eb5; }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item p { margin: 0 0 1rem 0; padding: 0 0 1rem 0; line-height: 1.6; color: #374151; overflow-wrap: break-word; word-wrap: break-word; }
+    .author-avatar { width: 48px !important; height: 48px !important; max-width: 48px !important; border-radius: 50%; object-fit: cover; object-position: top center; flex-shrink: 0; border: none; margin: 0 !important; }
+    .author-info { display: flex; flex-direction: column; gap: 0.25rem; }
+    .author-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.125rem; font-weight: 600; color: #333; margin: 0; }
+    .author-role { font-size: 0.875rem; color: #777; font-weight: 400; margin: 0; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; font-size: 0.88rem; color: #6b7280; margin-bottom: 0rem; flex-wrap: wrap; }
+    .meta-item { display: flex; align-items: center; gap: 0.3rem; }
+    .meta-tag { background: rgba(35,126,181,0.1); color: #237eb5; padding: 0.2rem 0.7rem; border-radius: 50px; font-size: 0.8rem; font-weight: 500; }
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; padding: 0 0.2rem; gap: 0.8rem; }
+      .article-sidebar { position: static; top: auto; transition: none; flex-direction: column; gap: 0; }
+      .sidebar-toc { padding: 0.8rem 1rem; border-radius: 12px; margin-bottom: 0; background: rgba(255,255,255,0.55); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+      .sidebar-toc h3 { font-size: 0.78rem; margin-bottom: 0.35rem; color: #0f172a; }
+      .sidebar-toc ul { display: flex; flex-direction: column; flex-wrap: wrap; gap: 0.05rem 0; margin: 0; }
+      .sidebar-toc li { margin: 0; padding: 0; }
+      .sidebar-toc a { font-size: 0.85rem; padding: 0.15rem 0; background: none !important; border: none; border-radius: 0; white-space: normal; color: #0f172a !important; text-decoration: none; opacity: 0.75; }
+      .sidebar-toc a:hover { background: none !important; border: none; color: #0f172a !important; text-decoration: none; opacity: 0.9; }
+      .sidebar-cta { display: none; }
+    }
+    @media (max-width: 600px) {
+      .inline-cta { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+      .author-box { padding: 1rem 1.25rem; }
+      .author-box-title { font-size: 1rem; margin-bottom: 0.6rem; }
+      .author-bio { font-size: 0.93rem; margin-bottom: 1.5rem; }
+      .article-card .article-hero-img { height: 180px !important; border-radius: 12px; margin-bottom: 0.8rem; }
+      .article-faq { margin-top: 1.5rem; padding-top: 1rem; }
+      .faq-title { font-size: 1.2rem; margin-bottom: 0.6rem; }
+      .faq-item summary { padding: 0.5rem 0; font-size: 0.9rem; }
+      .faq-item p { margin: 0 0 0.5rem 0; padding: 0 0 0.5rem 0; font-size: 0.88rem; line-height: 1.45; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dd-gossen.com/#organization",
+        "name": "DD-Gossen",
+        "url": "https://dd-gossen.com",
+        "logo": { "@type": "ImageObject", "url": "https://dd-gossen.com/Logo.png" },
+        "sameAs": ["https://www.linkedin.com/in/maik-gossen"]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dd-gossen.com/#author",
+        "name": "Maik Gossen",
+        "url": "https://dd-gossen.com/shopify-freelancer/",
+        "image": { "@type": "ImageObject", "url": "https://dd-gossen.com/Maik-Gossen-ShopifyFreelancer.png", "width": 400, "height": 400 },
+        "jobTitle": "Shopify Freelancer",
+        "worksFor": { "@id": "https://dd-gossen.com/#organization" }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://dd-gossen.com/blog/widerrufsrecht-shopify-2026/#article",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://dd-gossen.com/blog/widerrufsrecht-shopify-2026/" },
+        "headline": "Neues Widerrufsrecht ab Juni 2026: Was Shopify-Shopbetreiber jetzt wissen müssen",
+        "description": "Ab Juni 2026 gelten neue Anforderungen an das Widerrufsrecht im Online-Handel. Was sich ändert, was du in deinem Shopify-Shop anpassen musst – und wie du auf der sicheren Seite bleibst.",
+        "image": { "@type": "ImageObject", "url": "https://dd-gossen.com/blog/images/Widerrufsrecht-Shopify-2026.png", "width": 1200, "height": 630 },
+        "datePublished": "2026-04-01",
+        "dateModified": "2026-04-01",
+        "author": { "@id": "https://dd-gossen.com/#author" },
+        "publisher": { "@id": "https://dd-gossen.com/#organization", "name": "DD-Gossen", "logo": { "@type": "ImageObject", "url": "https://dd-gossen.com/Logo.png", "width": 600, "height": 60 } },
+        "articleSection": "Shopify",
+        "keywords": "Widerrufsrecht 2026, Shopify Widerrufsrecht, Online-Shop Widerrufsrecht, Widerrufsbelehrung Shopify, neues Widerrufsrecht Online-Handel",
+        "wordCount": 1300
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dd-gossen.com/blog/widerrufsrecht-shopify-2026/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Was ändert sich beim Widerrufsrecht ab Juni 2026?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ab Juni 2026 gelten verschärfte Anforderungen an Widerrufsbelehrung, Widerrufsformular und die technische Umsetzung des Widerrufsrechts im Online-Handel – insbesondere für digitale Produkte, Abonnements und Marktplatzhändler." }
+          },
+          {
+            "@type": "Question",
+            "name": "Was muss ich in meinem Shopify-Shop anpassen?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Widerrufsbelehrung aktualisieren, Widerrufsformular korrekt einbinden, Bestätigungs-E-Mails anpassen, bei digitalen Produkten die Einwilligung zur sofortigen Ausführung korrekt abfragen und dokumentieren." }
+          },
+          {
+            "@type": "Question",
+            "name": "Gilt das neue Widerrufsrecht auch für kleine Shops?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ja. Die Anforderungen gelten für alle Onlinehändler, die an Verbraucher (B2C) in der EU verkaufen – unabhängig von der Unternehmensgröße." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="https://dd-gossen.com/" class="logo">
+      <img src="../../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+    </a>
+    <div class="header-right-container">
+      <div class="header-cta-container">
+        <a href="#" class="header-cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt anfragen</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main" style="margin-top: 0; padding: 8rem 1rem 4rem;">
+
+    <div class="article-layout">
+
+      <div class="sidebar-column">
+      <aside class="article-sidebar">
+        <div class="sidebar-toc">
+          <h3>Inhaltsverzeichnis</h3>
+          <ul>
+            <li><a href="#was-aendert-sich">Was sich ab Juni 2026 ändert</a></li>
+            <li><a href="#widerrufsbelehrung">Widerrufsbelehrung aktualisieren</a></li>
+            <li><a href="#digitale-produkte">Digitale Produkte und Abonnements</a></li>
+            <li><a href="#shopify-umsetzung">Konkrete Umsetzung in Shopify</a></li>
+            <li><a href="#dokumentation">Dokumentation und Nachweispflicht</a></li>
+            <li><a href="#abmahnrisiko">Abmahnrisiko realistisch einschätzen</a></li>
+            <li><a href="#fazit">Fazit</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-cta">
+          <p>Shopify-Shop rechtssicher anpassen lassen?</p>
+          <a href="https://dd-gossen.com/shopify-freelancer/#contact">Jetzt anfragen →</a>
+        </div>
+      </aside>
+      </div>
+
+      <div class="article-main">
+        <div class="article-card">
+
+          <div class="article-meta">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              01.04.26
+            </span>
+            <span class="meta-item meta-lesezeit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              7 Min. Lesezeit
+            </span>
+            <span class="meta-tag">Recht & Compliance</span>
+          </div>
+
+          <h1 class="article-title" style="text-align: left; margin: 0 0 1.5rem 0; font-size: 2.4rem; max-width: 100%; padding: 0;">Neues Widerrufsrecht ab Juni 2026: Was Shopify-Shopbetreiber jetzt wissen müssen</h1>
+
+          <img src="../images/Widerrufsrecht-Shopify-2026.png" alt="Neues Widerrufsrecht 2026 – Was Shopify-Shops anpassen müssen" class="article-hero-img">
+
+          <details class="article-summary">
+            <summary>Artikel in Kürze</summary>
+            <ul>
+              <li><strong>Was ändert sich?</strong> Ab Juni 2026 greifen verschärfte EU-Anforderungen an Widerrufsbelehrung, Widerrufsformular und Dokumentationspflicht im Online-Handel.</li>
+              <li><strong>Digitale Produkte:</strong> Neue Regeln für die Einwilligung zur sofortigen Ausführung – ohne korrekte Abfrage entfällt der Widerrufsausschluss nicht.</li>
+              <li><strong>Abonnements:</strong> Erhöhte Transparenzpflichten beim Checkout; Laufzeit, Kündigungsbedingungen und Widerrufsrecht müssen klar kommuniziert werden.</li>
+              <li><strong>Shopify-Anpassungen:</strong> Widerrufsbelehrung, Checkout-Texte, Bestätigungs-E-Mails und ggf. Checkout-Extensions müssen aktualisiert werden.</li>
+              <li><strong>Abmahnrisiko:</strong> Veraltete Widerrufsbelehrungen gehören zu den häufigsten Abmahngründen im E-Commerce. Jetzt handeln lohnt sich.</li>
+            </ul>
+          </details>
+
+          <div class="article-content" style="width: 100%; max-width: 100%; padding: 0; box-sizing: border-box; margin: 0;">
+
+            <p>Das Widerrufsrecht ist für Online-Shopbetreiber kein Thema, das man einmal löst und dann vergisst. Die Anforderungen ändern sich – und ab Juni 2026 stehen erneut Anpassungen an.</p>
+
+            <p>Hintergrund sind die Umsetzungspflichten aus der EU-Verbraucherrechterichtlinie sowie nachgelagerte Änderungen durch die Omnibus-Richtlinie, die in deutsches Recht überführt wurden. Wer seinen Shopify-Shop noch nicht angepasst hat, sollte das jetzt tun – bevor der Stichtag kommt.</p>
+
+            <p>Was genau sich ändert, was das konkret für deinen Shop bedeutet und wie du die Anpassungen in Shopify umsetzt, erfährst du in diesem Artikel.</p>
+
+            <h2 id="was-aendert-sich">Was sich ab Juni 2026 ändert</h2>
+
+            <p>Die Änderungen betreffen mehrere Bereiche gleichzeitig. Es geht nicht um eine einzelne neue Regel, sondern um eine Verschärfung bestehender Anforderungen an mehreren Stellen.</p>
+
+            <p><strong>Widerrufsbelehrung:</strong> Die gesetzliche Musterwiderrufsbelehrung wurde überarbeitet. Shops, die noch die alte Version verwenden, sind formal nicht mehr konform. Das klingt technisch – hat aber praktische Konsequenzen: Eine fehlerhafte oder veraltete Widerrufsbelehrung kann die Widerrufsfrist von 14 Tagen auf bis zu 12 Monate verlängern.</p>
+
+            <p><strong>Widerrufsformular:</strong> Das Muster-Widerrufsformular, das du Kunden zur Verfügung stellen musst, erhält ebenfalls eine aktualisierte Fassung. Es muss barrierefrei zugänglich sein und darf nicht nur in der AGB versteckt werden.</p>
+
+            <p><strong>Transparenzpflichten beim Checkout:</strong> Kunden müssen vor dem Kauf klar und verständlich über das Widerrufsrecht informiert werden – nicht erst in der Bestätigungs-E-Mail. Das betrifft insbesondere die Darstellung im Checkout-Bereich.</p>
+
+            <p><strong>Nachweispflicht:</strong> Shopbetreiber müssen nachweisen können, dass sie den Kunden korrekt belehrt haben. Wer keine entsprechenden Protokolle führt, hat im Streitfall schlechte Karten.</p>
+
+            <h2 id="widerrufsbelehrung">Widerrufsbelehrung aktualisieren – was genau zu tun ist</h2>
+
+            <p>Die Widerrufsbelehrung ist das Kernelement. Sie muss an prominenter Stelle im Shop platziert sein – nicht nur in den AGB, sondern auch im Bestellprozess selbst auffindbar.</p>
+
+            <p>Konkret bedeutet das: Die Belehrung muss vor Abschluss des Kaufvertrags klar und verständlich angezeigt werden. In Shopify wird das typischerweise über den Checkout-Bereich gelöst, entweder durch Textbausteine im Checkout oder durch einen gut platzierten Link direkt beim Bestellabschluss.</p>
+
+            <p>Was viele Shopbetreiber übersehen: Die Belehrung muss auch in der Auftragsbestätigung enthalten sein – und zwar vollständig, nicht als reiner Verweis auf eine externe Seite. Ein Link auf „Widerrufsbelehrung" ohne den eigentlichen Text reicht formal nicht aus.</p>
+
+            <p>Prüfe außerdem, ob deine aktuelle Widerrufsbelehrung die aktualisierten Fristen und Ausnahmetatbestände korrekt abbildet. Insbesondere bei Sonderanfertigungen, verderblichen Waren und digitalen Inhalten gibt es spezifische Formulierungen, die stimmen müssen.</p>
+
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Shopify-Shop rechtssicher anpassen?</strong>
+                <span>Ich helfe dir beim technischen Update deines Shops – Checkout-Texte, Bestätigungs-E-Mails und Widerrufsbelehrung korrekt eingebunden.</span>
+              </div>
+              <a href="https://dd-gossen.com/shopify-freelancer/#contact">Kostenlos anfragen</a>
+            </div>
+
+            <h2 id="digitale-produkte">Digitale Produkte und Abonnements: Besondere Anforderungen</h2>
+
+            <p>Wer digitale Produkte verkauft – Downloads, Software-Lizenzen, digitale Inhalte oder Mitgliedschaften – steht vor einer besonderen Herausforderung. Grundsätzlich kann das Widerrufsrecht bei digitalen Produkten ausgeschlossen werden, sobald mit der Ausführung begonnen wurde. Aber: Dafür müssen zwei Bedingungen erfüllt sein.</p>
+
+            <p>Erstens muss der Kunde ausdrücklich eingewilligt haben, dass die Ausführung sofort beginnen soll. Zweitens muss er bestätigt haben, dass er dadurch sein Widerrufsrecht verliert. Beide Punkte müssen aktiv, nicht passiv, abgefragt werden – ein vorausgefülltes Häkchen genügt nicht.</p>
+
+            <p>Ab Juni 2026 wird die Anforderung an die Dokumentation dieser Einwilligung verschärft. Der Shopbetreiber muss nachweisen können, dass die Einwilligung tatsächlich erteilt wurde – und wann. In Shopify bedeutet das, dass du eine entsprechende Checkbox mit Zeitstempel-Protokollierung im Checkout implementieren musst. Das ist ohne Anpassung nicht out-of-the-box gelöst.</p>
+
+            <p>Bei Abonnements gelten zusätzliche Transparenzpflichten. Die Laufzeit, die Kündigungsfristen und die Konsequenzen des Widerrufs müssen klar und vor dem Kauf kommuniziert werden. Versteckte Hinweise in langen AGB-Texten reichen nicht mehr aus.</p>
+
+            <h2 id="shopify-umsetzung">Konkrete Umsetzung in Shopify</h2>
+
+            <p>Shopify bietet grundsätzlich gute Möglichkeiten, die gesetzlichen Anforderungen umzusetzen – aber nicht alles ist automatisch korrekt konfiguriert. Diese Stellen musst du prüfen und anpassen:</p>
+
+            <p><strong>Checkout-Texte:</strong> In den Shopify-Einstellungen unter „Checkout" kannst du Zusatztexte und Hinweise einbinden. Nutze diesen Bereich, um auf das Widerrufsrecht hinzuweisen und einen direkten Link zur aktualisierten Widerrufsbelehrung zu setzen.</p>
+
+            <p><strong>Bestätigungs-E-Mails:</strong> Die Auftragsbestätigung muss die vollständige Widerrufsbelehrung enthalten oder klar und direkt auf sie verweisen. In den Shopify-Benachrichtigungsvorlagen kannst du den entsprechenden Textblock ergänzen. Prüfe alle transaktionalen E-Mails – nicht nur die Bestellbestätigung, sondern auch Versandbestätigung und Rechnungs-E-Mails.</p>
+
+            <p><strong>Widerrufsformular:</strong> Das Formular muss für Kunden leicht auffindbar sein. Platziere es im Footer, auf der Bestellseite und in der Bestätigungs-E-Mail. Wenn du eine eigene Rückgabeseite in Shopify betreibst, prüfe, ob das Formular dort korrekt eingebunden ist.</p>
+
+            <p><strong>Digitale Produkte und Checkboxen:</strong> Wenn du digitale Inhalte verkaufst, benötigst du eine explizite Einwilligungs-Checkbox im Checkout. Shopify erlaubt das über Checkout-Extensions oder – je nach Plan – über angepasste Checkout-Skripte. Wer auf dem Basic-Plan ist, braucht hier unter Umständen eine App-Lösung.</p>
+
+            <p><strong>AGB und Widerrufsbelehrung als eigene Seiten:</strong> Stelle sicher, dass beide Dokumente als eigenständige Seiten im Shop vorhanden und aktuell sind – und dass sie aus dem Checkout heraus erreichbar sind.</p>
+
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Checkout, E-Mails und Belehrungstexte anpassen lassen?</strong>
+                <span>Ich übernehme die technische Umsetzung in deinem Shopify-Shop – sauber, nachvollziehbar und ready für Juni 2026.</span>
+              </div>
+              <a href="https://dd-gossen.com/shopify-freelancer/#contact">Jetzt anfragen</a>
+            </div>
+
+            <h2 id="dokumentation">Dokumentation und Nachweispflicht</h2>
+
+            <p>Ein oft unterschätzter Punkt: Die verschärften Regelungen ab Juni 2026 erhöhen auch die Dokumentationspflicht. Es reicht nicht mehr, die richtigen Texte im Shop zu haben. Du musst im Streitfall nachweisen können, dass ein bestimmter Kunde zu einem bestimmten Zeitpunkt korrekt belehrt wurde.</p>
+
+            <p>In der Praxis bedeutet das: Protokolliere, welche Version deiner Widerrufsbelehrung zu welchem Zeitpunkt aktiv war. Wenn du die Belehrung im Laufe der Zeit angepasst hast, solltest du frühere Versionen archivieren – mit dem Datum der jeweiligen Gültigkeit. Das ist vor allem dann relevant, wenn ein Kunde später eine erweiterte Widerrufsfrist beansprucht und du nachweisen musst, dass zum Zeitpunkt seines Kaufs die korrekte Version aktiv war.</p>
+
+            <p>Für die Praxis empfiehlt sich: Änderungen an rechtlich relevanten Seiten (AGB, Widerrufsbelehrung, Datenschutz) mit Datum dokumentieren – zum Beispiel in einem einfachen internen Changelog oder über die Versionierungsfunktion in Shopify-Seiten.</p>
+
+            <h2 id="abmahnrisiko">Abmahnrisiko realistisch einschätzen</h2>
+
+            <p>Fehlerhafte Widerrufsbelehrungen gehören seit Jahren zu den häufigsten Abmahngründen im deutschen E-Commerce. Das hat sich nicht geändert. Mit den neuen Anforderungen ab Juni 2026 entstehen neue Ansatzpunkte für Abmahner.</p>
+
+            <p>Besonders gefährdet sind Shops, die ihre Widerrufsbelehrung seit längerer Zeit nicht aktualisiert haben, die digitale Produkte ohne korrekte Einwilligungs-Abfrage verkaufen, oder die Abonnements anbieten ohne ausreichende Transparenz im Checkout.</p>
+
+            <p>Ein Abmahnanwalt benötigt keine Einzelfallprüfung. Automatisierte Tools durchsuchen Online-Shops systematisch nach formalen Fehlern. Wer eine veraltete Belehrung hat oder das Widerrufsformular nicht auffindbar platziert, ist angreifbar – unabhängig davon, wie gut der Rest des Shops aufgestellt ist.</p>
+
+            <p>Das bedeutet nicht, dass jeder Shop täglich damit rechnen muss, abgemahnt zu werden. Aber es bedeutet, dass eine saubere Umsetzung kein Nice-to-have ist. Es ist eine Grundvoraussetzung für sicheren Betrieb.</p>
+
+            <h2 id="fazit">Fazit</h2>
+
+            <p>Die Änderungen beim Widerrufsrecht ab Juni 2026 sind keine Revolution, aber sie erfordern konkrete Anpassungen in jedem Online-Shop. Wer jetzt handelt, kann in Ruhe vorgehen. Wer bis kurz vor dem Stichtag wartet, wird unter Zeitdruck arbeiten.</p>
+
+            <p>Besonders wichtig: Lass die Anpassungen nicht nur auf dem Papier stattfinden. Prüfe, ob Checkout-Texte, Bestätigungs-E-Mails und Widerrufsformular technisch korrekt eingebunden sind. Ein Text in der AGB allein ist kein Schutz.</p>
+
+            <p>Wenn du Unterstützung bei der technischen Umsetzung in deinem Shopify-Shop brauchst – ich helfe dir gerne. Kein langer Vorlauf, keine Bürokratie.</p>
+
+            <div class="cta-box">
+              <h3>Shopify-Shop fit für Juni 2026 machen</h3>
+              <p>Du möchtest deinen Shopify-Shop rechtssicher auf die neuen Anforderungen beim Widerrufsrecht vorbereiten? Ich übernehme Checkout-Texte, Bestätigungs-E-Mails, Widerrufsformular und die technische Einbindung – sauber und nachvollziehbar.</p>
+              <a href="#" class="cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt kostenloses Erstgespräch buchen</a>
+            </div>
+
+          </div>
+
+          <section class="article-faq" itemscope itemtype="https://schema.org/FAQPage">
+            <h2 class="faq-title">Häufige Fragen zum neuen Widerrufsrecht 2026</h2>
+            <div class="faq-list">
+              <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary itemprop="name">Was ändert sich beim Widerrufsrecht ab Juni 2026?</summary>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <p itemprop="text">Ab Juni 2026 gelten verschärfte Anforderungen an Widerrufsbelehrung, Widerrufsformular und die technische Umsetzung des Widerrufsrechts im Online-Handel – insbesondere für digitale Produkte, Abonnements und die Dokumentationspflicht.</p>
+                </div>
+              </details>
+              <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary itemprop="name">Was muss ich in meinem Shopify-Shop konkret anpassen?</summary>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <p itemprop="text">Widerrufsbelehrung auf aktuelle Fassung aktualisieren, Widerrufsformular gut sichtbar platzieren, Bestätigungs-E-Mails anpassen und bei digitalen Produkten die Einwilligung zur sofortigen Ausführung korrekt abfragen und dokumentieren.</p>
+                </div>
+              </details>
+              <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary itemprop="name">Gilt das neue Widerrufsrecht auch für kleine Shops?</summary>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <p itemprop="text">Ja. Die Anforderungen gelten für alle Onlinehändler, die an Verbraucher (B2C) in der EU verkaufen – unabhängig von der Unternehmensgröße oder dem Umsatz.</p>
+                </div>
+              </details>
+              <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary itemprop="name">Was passiert, wenn ich die Anpassungen nicht vornehme?</summary>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <p itemprop="text">Eine fehlerhafte oder veraltete Widerrufsbelehrung kann die Widerrufsfrist von 14 Tagen auf bis zu 12 Monate verlängern. Außerdem besteht ein erhöhtes Abmahnrisiko, da veraltete Belehrungen zu den häufigsten Abmahngründen im E-Commerce gehören.</p>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <div class="author-box">
+            <h3 class="author-box-title">Über den Autor</h3>
+            <p class="author-bio">Ich arbeite als Shopify Freelancer aus Deutschland und unterstütze Shopbetreiber bei technischer Umsetzung, rechtssicherer Konfiguration und langfristiger Optimierung ihrer Shops.</p>
+            <div class="author-details">
+              <img src="../../Maik-Gossen-ShopifyFreelancer.png" alt="Maik Gossen" class="author-avatar">
+              <div class="author-info">
+                <p class="author-name"><a href="https://dd-gossen.com/shopify-freelancer/" class="author-name-link">Maik Gossen</a></p>
+                <p class="author-role">Shopify Freelancer & Entwickler</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-name">MAIK GOSSEN</div>
+        <div class="footer-contact-label">Kontakt:</div>
+        <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+        <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+        <div class="footer-social">
+          <a href="mailto:info@dd-gossen.com" title="E-Mail" aria-label="E-Mail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Menü</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/">Übersicht</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/">Meine Services</a></li>
+          <li><a href="https://dd-gossen.com/blog/">Blog</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Content</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/blog/widerrufsrecht-shopify-2026/">Widerrufsrecht 2026</a></li>
+          <li><a href="https://dd-gossen.com/blog/shopify-freelancer-deutschland/">Shopify Freelancer Deutschland</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/">Shop-Setup & Shop-Optimierung</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/#projects">Portfolio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Schnellzugriff</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/#contact">Kostenloses Erstgespräch</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/#about-me">Über mich</a></li>
+          <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://dd-gossen.com/impressum.html">Impressum</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/datenschutz.html">Datenschutz</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/agb.html">AGB</a>
+      <span class="footer-sep">|</span>
+      <a href="#" id="openCookieSettings">Cookie-Einstellungen</a>
+      <span class="footer-sep">|</span>
+      <span>© 2025 Maik Gossen</span>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var header = document.querySelector('.header');
+      if (!header) return;
+      let lastScrollTop = 0;
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        header.style.background = scrollTop > 100 ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.15)';
+        if (scrollTop > 100) {
+          header.classList.toggle('hidden', scrollTop > lastScrollTop);
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+      });
+    })();
+
+    (function() {
+      const header = document.querySelector('.header');
+      if (!header) return;
+      const root = document.documentElement;
+      function update() {
+        root.style.setProperty('--sidebar-top', header.classList.contains('hidden') ? '24px' : '110px');
+      }
+      new MutationObserver(update).observe(header, { attributes: true, attributeFilter: ['class'] });
+      update();
+    })();
+
+    (function() {
+      const sections = document.querySelectorAll('.article-content h2[id]');
+      const tocLinks = document.querySelectorAll('.sidebar-toc a');
+      if (!sections.length || !tocLinks.length) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.sidebar-toc a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+      sections.forEach(section => observer.observe(section));
+    })();
+  </script>
+
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+    function initCalUI() {
+      if (window.Cal && window.Cal.ns && window.Cal.ns.erstgespraech) {
+        Cal.ns.erstgespraech("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      } else { setTimeout(initCalUI, 100); }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCalUI);
+    } else { initCalUI(); }
+  </script>
+
+</body>
+</html>
