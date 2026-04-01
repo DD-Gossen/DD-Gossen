@@ -8,6 +8,7 @@ on:
       - 'blog/**'
       - 'index.html'
       - 'shopify-freelancer/**'
+      - 'shopify-kostenrechner/**'
       - 'en/**'
   workflow_dispatch:
 
