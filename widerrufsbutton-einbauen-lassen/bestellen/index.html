@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Widerrufsbutton beauftragen – Auftragsformular | DD-Gossen</title>
+  <meta name="description" content="Widerrufsbutton in Shopify einbauen lassen: Auftragsformular ausfüllen und in 3 Werktagen ist alles eingerichtet. Einmalig 150 €.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/bestellen/">
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body { background-image: url('../../DD-background.webp'); }
+    .form-page { max-width: 680px; margin: 0 auto; padding: 8rem 1rem 5rem; }
+    .form-header { text-align: center; margin-bottom: 2.5rem; }
+    .form-tag {
+      display: inline-block;
+      background: rgba(35,126,181,0.12);
+      color: #237eb5;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.3rem 0.9rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+    .form-h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 0.75rem 0;
+      line-height: 1.15;
+    }
+    .form-subtitle { font-size: 1rem; color: #374151; margin: 0; line-height: 1.6; }
+    .form-card {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.25);
+      margin-bottom: 1.5rem;
+    }
+    .form-card h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 1.5rem 0;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid rgba(35,126,181,0.2);
+    }
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group:last-child { margin-bottom: 0; }
+    .form-label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 0.4rem;
+    }
+    .form-label .req { color: #e53e3e; margin-left: 2px; }
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      border: 1.5px solid rgba(35,126,181,0.25);
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.93rem;
+      color: #0f172a;
+      background: rgba(255,255,255,0.7);
+      box-sizing: border-box;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    .form-input:focus, .form-textarea:focus {
+      border-color: #237eb5;
+      box-shadow: 0 0 0 3px rgba(35,126,181,0.12);
+    }
+    .form-textarea { resize: vertical; min-height: 80px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-hint {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-top: 0.3rem;
+      line-height: 1.4;
+    }
+    .collaborator-box {
+      background: rgba(250,204,21,0.08);
+      border: 1px solid rgba(250,204,21,0.35);
+      border-left: 4px solid #ca8a04;
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .collaborator-box strong { color: #92400e; display: block; margin-bottom: 0.3rem; font-size: 0.9rem; }
+    .collaborator-box p { font-size: 0.85rem; color: #374151; margin: 0; line-height: 1.5; }
+    .collaborator-box a { color: #237eb5; }
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+      transition: opacity 0.2s;
+      margin-top: 0.5rem;
+    }
+    .submit-btn:hover { opacity: 0.88; }
+    .form-legal {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      text-align: center;
+      margin-top: 1rem;
+      line-height: 1.5;
+    }
+    .form-legal a { color: #9ca3af; }
+    .price-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(15,23,42,0.06);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .price-summary-label { font-size: 0.9rem; color: #374151; font-weight: 500; }
+    .price-summary-amount { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 700; color: #0f172a; }
+    .success-box {
+      display: none;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.3);
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .success-box h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; color: #16a34a; margin: 0 0 0.5rem 0; }
+    .success-box p { font-size: 0.93rem; color: #374151; margin: 0; }
+    @media (max-width: 600px) {
+      .form-page { padding: 6rem 0.75rem 4rem; }
+      .form-card { padding: 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a href="https://dd-gossen.com/" class="logo">
+      <img src="../../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+    </a>
+    <div class="header-right-container">
+      <div class="header-cta-container">
+        <a href="../" class="header-cta-button">← Zurück zum Angebot</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="form-page">
+
+    <div class="form-header">
+      <span class="form-tag">Auftragsformular</span>
+      <h1 class="form-h1">Widerrufsbutton beauftragen</h1>
+      <p class="form-subtitle">Formular ausfüllen, Zugang bereitstellen — ich melde mich innerhalb eines Werktags.</p>
+    </div>
+
+    <div class="collaborator-box">
+      <strong>Collaborator-Code bereithalten</strong>
+      <p>Du brauchst deinen Shopify <strong>Collaborator-Anfragecode</strong>. Zu finden unter:<br>
+      Shopify-Admin → <strong>Einstellungen → Benutzer und Berechtigungen → Collaborator-Anfragen</strong><br>
+      Dort findest du einen 8-stelligen Code. Den trägst du unten ein.</p>
+    </div>
+
+    <!-- HINWEIS: Formular-Backend via Formspree.
+         Kostenloser Account auf formspree.io erstellen, neues Formular anlegen,
+         dann die action-URL unten mit der eigenen Formspree-ID ersetzen:
+         z. B. action="https://formspree.io/f/DEINE_ID"                        -->
+    <form
+      action="https://formspree.io/f/DEINE_FORMSPREE_ID"
+      method="POST"
+      id="orderForm"
+    >
+      <input type="hidden" name="_subject" value="Neuer Auftrag: Widerrufsbutton einbauen">
+      <input type="hidden" name="_language" value="de">
+      <input type="text" name="_gotcha" style="display:none">
+
+      <!-- Shop -->
+      <div class="form-card">
+        <h2>Shop-Informationen</h2>
+        <div class="form-group">
+          <label class="form-label" for="shopUrl">Shop-URL <span class="req">*</span></label>
+          <input class="form-input" type="url" id="shopUrl" name="shop_url" placeholder="https://mein-shop.myshopify.com" required>
+          <p class="form-hint">Die myshopify.com-URL deines Shops (zu finden in den Shopify-Einstellungen).</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="collaboratorCode">Collaborator-Anfragecode <span class="req">*</span></label>
+          <input class="form-input" type="text" id="collaboratorCode" name="collaborator_code" placeholder="12345678" maxlength="8" required>
+          <p class="form-hint">8-stelliger Code aus Shopify-Admin → Einstellungen → Benutzer und Berechtigungen → Collaborator-Anfragen.</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="shopifyTheme">Verwendetes Theme (optional)</label>
+          <input class="form-input" type="text" id="shopifyTheme" name="shopify_theme" placeholder="z. B. Dawn, Debut, eigenes Theme …">
+        </div>
+      </div>
+
+      <!-- Kontakt -->
+      <div class="form-card">
+        <h2>Kontakt & Unternehmen</h2>
+        <div class="form-group">
+          <label class="form-label" for="contactName">Name / Unternehmensname <span class="req">*</span></label>
+          <input class="form-input" type="text" id="contactName" name="contact_name" placeholder="Max Mustermann / Musterfirma GmbH" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="contactEmail">E-Mail-Adresse <span class="req">*</span></label>
+          <input class="form-input" type="email" id="contactEmail" name="contact_email" placeholder="max@musterfirma.de" required>
+          <p class="form-hint">An diese Adresse senden wir Rückfragen und die Fertigstellungsmeldung.</p>
+        </div>
+      </div>
+
+      <!-- Rechnungsadresse -->
+      <div class="form-card">
+        <h2>Rechnungsadresse</h2>
+        <div class="form-group">
+          <label class="form-label" for="invoiceName">Rechnungsempfänger <span class="req">*</span></label>
+          <input class="form-input" type="text" id="invoiceName" name="invoice_name" placeholder="Max Mustermann / Musterfirma GmbH" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="invoiceStreet">Straße & Hausnummer <span class="req">*</span></label>
+          <input class="form-input" type="text" id="invoiceStreet" name="invoice_street" placeholder="Musterstraße 1" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="invoicePostal">PLZ <span class="req">*</span></label>
+            <input class="form-input" type="text" id="invoicePostal" name="invoice_postal" placeholder="12345" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="invoiceCity">Stadt <span class="req">*</span></label>
+            <input class="form-input" type="text" id="invoiceCity" name="invoice_city" placeholder="Berlin" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="invoiceCountry">Land <span class="req">*</span></label>
+          <input class="form-input" type="text" id="invoiceCountry" name="invoice_country" placeholder="Deutschland" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="vatId">USt-IdNr. (optional)</label>
+          <input class="form-input" type="text" id="vatId" name="vat_id" placeholder="DE123456789">
+        </div>
+      </div>
+
+      <!-- Anmerkungen -->
+      <div class="form-card">
+        <h2>Anmerkungen</h2>
+        <div class="form-group">
+          <label class="form-label" for="notes">Besonderheiten / Hinweise (optional)</label>
+          <textarea class="form-textarea" id="notes" name="notes" placeholder="z. B. besondere Theme-Anpassungen, abweichende E-Mail-Adresse für Kundenbestätigungen, …"></textarea>
+        </div>
+
+        <div class="price-summary">
+          <span class="price-summary-label">Paketpreis (einmalig, zzgl. MwSt.)</span>
+          <span class="price-summary-amount">150 €</span>
+        </div>
+
+        <button type="submit" class="submit-btn">Jetzt verbindlich beauftragen →</button>
+        <p class="form-legal">
+          Mit dem Absenden erteilst du einen verbindlichen Auftrag über 150 € zzgl. MwSt.<br>
+          Die Rechnung wird nach erfolgreicher Implementierung und Test ausgestellt.<br>
+          Es gelten die <a href="https://dd-gossen.com/agb.html">AGB</a> und <a href="https://dd-gossen.com/datenschutz.html">Datenschutzbestimmungen</a>.
+        </p>
+      </div>
+
+    </form>
+
+    <div class="success-box" id="successBox">
+      <h3>Auftrag eingegangen ✓</h3>
+      <p>Ich melde mich innerhalb eines Werktags bei dir. Halte den Collaborator-Code bereit, falls du ihn noch nicht angegeben hast.</p>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-name">MAIK GOSSEN</div>
+        <div class="footer-contact-label">Kontakt:</div>
+        <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+        <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Menü</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/">Übersicht</a></li>
+          <li><a href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/">Widerrufsbutton Service</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/">Alle Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Rechtliches</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/impressum.html">Impressum</a></li>
+          <li><a href="https://dd-gossen.com/datenschutz.html">Datenschutz</a></li>
+          <li><a href="https://dd-gossen.com/agb.html">AGB</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://dd-gossen.com/impressum.html">Impressum</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/datenschutz.html">Datenschutz</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/agb.html">AGB</a>
+      <span class="footer-sep">|</span>
+      <span>© 2025 Maik Gossen</span>
+    </div>
+  </footer>
+
+  <script src="../../script.js"></script>
+  <script>
+    const form = document.getElementById('orderForm');
+    const successBox = document.getElementById('successBox');
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = form.querySelector('.submit-btn');
+        btn.textContent = 'Wird gesendet …';
+        btn.disabled = true;
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            form.style.display = 'none';
+            successBox.style.display = 'block';
+          } else {
+            btn.textContent = 'Fehler — bitte per E-Mail kontaktieren';
+            btn.disabled = false;
+          }
+        } catch {
+          btn.textContent = 'Fehler — bitte per E-Mail kontaktieren';
+          btn.disabled = false;
+        }
+      });
+    }
+  </script>
+</body>
+</html>

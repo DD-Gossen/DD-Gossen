@@ -114,4 +114,23 @@
     <priority>0.7</priority>
   </url>
 
+
+  <url>
+    <loc>https://dd-gossen.com/widerrufsbutton-einbauen-lassen/</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/shopify-withdrawal-button-service/" />
+  </url>
+
+  <url>
+    <loc>https://dd-gossen.com/en/shopify-withdrawal-button-service/</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/shopify-withdrawal-button-service/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/" />
+  </url>
+
 </urlset>
