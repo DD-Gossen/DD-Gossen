@@ -428,7 +428,7 @@
           <details class="article-summary">
             <summary>What to expect</summary>
             <ul>
-              <li><strong>Free solution:</strong> Shopify Forms, Shopify Flow and Flow Mail — all tools are free and available directly in Shopify.</li>
+              <li><strong>Free solution:</strong> Shopify Forms, Shopify Flow and Flow Mail. All tools are free and available directly in Shopify.</li>
               <li><strong>Form:</strong> You create a complete withdrawal form with required fields and a success message.</li>
               <li><strong>Confirmation email:</strong> The customer automatically receives an email confirming their withdrawal request was received.</li>
               <li><strong>Button:</strong> You place the withdrawal button visibly in the footer and in the customer account.</li>
@@ -438,24 +438,24 @@
 
           <div class="article-content" style="width: 100%; max-width: 100%; padding: 0; box-sizing: border-box; margin: 0;">
 
-            <p>Many store owners know they need a withdrawal button — but aren't sure how to set it up technically. The good news: you don't need a paid app or a developer. The entire solution runs on free, Shopify-native tools.</p>
+            <p>Many store owners know they need a withdrawal button but aren't sure how to set it up technically. The good news: you don't need a paid app or a developer. The entire solution runs on free, Shopify-native tools.</p>
 
             <p>This guide walks you through each step: creating a withdrawal form, building a dedicated page, setting up an automated confirmation email, and placing the button visibly in your store.</p>
 
             <div class="hint-box">
-              <strong>Note:</strong> This is a technical implementation guide, not legal advice. Please verify that the wording and placement are legally appropriate for your store — ideally with a lawyer specialising in e-commerce law.
+              <strong>Note:</strong> This is a technical implementation guide, not legal advice. Please verify that the wording and placement are legally appropriate for your store, ideally with a lawyer specialising in e-commerce law.
             </div>
 
             <h2 id="prerequisites">Prerequisites & tools required</h2>
 
-            <p>All you need is your Shopify admin access and three free apps — all available in the Shopify App Store.</p>
+            <p>All you need is your Shopify admin access and three free apps, all available in the Shopify App Store.</p>
 
             <div class="tools-box">
               <h4>Tools used</h4>
               <ul>
-                <li><strong>Shopify Forms</strong> — by Shopify, free. Creates the withdrawal form.</li>
-                <li><strong>Shopify Flow</strong> — by Shopify, free. Automates the process after form submission.</li>
-                <li><strong>Flow Mail</strong> — free. Sends the automated confirmation email to the customer.</li>
+                <li><strong>Shopify Forms</strong> by Shopify, free. Creates the withdrawal form.</li>
+                <li><strong>Shopify Flow</strong> by Shopify, free. Automates the process after form submission.</li>
+                <li><strong>Flow Mail</strong>, free. Sends the automated confirmation email to the customer.</li>
               </ul>
             </div>
 
@@ -487,7 +487,7 @@
                 <li>Add these <strong>required fields</strong>: First Name, Last Name, Email, Order Number</li>
                 <li>For <strong>Order Number</strong>: single-line text field, required, hint text: "Please include the # sign"</li>
                 <li>Optional: multi-line text field for additional notes (not required)</li>
-                <li>Make sure the form is <strong>not a newsletter form</strong> — marketing must be disabled</li>
+                <li>Make sure the form is <strong>not a newsletter form</strong>; marketing must be disabled</li>
                 <li>Set a <strong>success message</strong>, e.g.: "Your withdrawal request has been submitted. We will send you a confirmation by email."</li>
                 <li>Enable the option to receive a notification when the form is submitted</li>
                 <li>Save and <strong>activate</strong> the form</li>
@@ -495,13 +495,13 @@
             </div>
 
             <div class="hint-box">
-              <strong>Important:</strong> The <strong>Form ID</strong> is only shown after saving. Copy it immediately — you'll need it in the next step.
+              <strong>Important:</strong> The <strong>Form ID</strong> is only shown after saving. Copy it immediately; you'll need it in the next step.
             </div>
 
             <div class="inline-cta">
               <div class="inline-cta-text">
                 <strong>No time to set this up?</strong>
-                <span>I set up the withdrawal form, confirmation email and button for your Shopify store — fast and clean.</span>
+                <span>I set up the withdrawal form, confirmation email and button for your Shopify store: fast and clean.</span>
               </div>
               <a href="https://dd-gossen.com/shopify-freelancer/#contact">Get in touch</a>
             </div>
@@ -519,7 +519,7 @@
                 <li>URL: <code>/pages/withdrawal-form</code></li>
                 <li>Set the page to <strong>visible</strong></li>
                 <li>Fill in the metadata cleanly (page title + description)</li>
-                <li><strong>Don't</strong> assign a template yet — that happens in Step 5</li>
+                <li><strong>Don't</strong> assign a template yet; that happens in Step 5</li>
               </ul>
             </div>
 
@@ -532,7 +532,7 @@
               </div>
               <ul>
                 <li>Go to <strong>Online Store → Themes → Customise</strong></li>
-                <li>In the Theme Editor, open page templates and create a new template based on the default page — e.g.: <code>page.withdrawal-form</code></li>
+                <li>In the Theme Editor, open page templates and create a new template based on the default page, e.g. <code>page.withdrawal-form</code></li>
                 <li>Make sure you're editing the new template (not the default page)</li>
                 <li>Add a <strong>text or rich text block</strong> and set the page heading as H1: <em>Withdrawal Form</em></li>
                 <li>Add an <strong>app block</strong>: Apps → Shopify Forms</li>
@@ -568,7 +568,7 @@
                 <li>Set the <strong>trigger</strong>: <em>Metaobject Entry Created</em></li>
                 <li>Select the metaobject type matching your withdrawal form</li>
               </ul>
-              <p style="margin-top: 0.75rem;">Background: Shopify Forms saves submissions as metaobjects. As soon as someone submits the form, a new metaobject entry is created — and your workflow starts automatically.</p>
+              <p style="margin-top: 0.75rem;">Background: Shopify Forms saves submissions as metaobjects. As soon as someone submits the form, a new metaobject entry is created, and your workflow starts automatically.</p>
             </div>
 
             <div class="step-box">
@@ -578,7 +578,7 @@
               </div>
               <ul>
                 <li>As the <strong>action</strong> select: <em>Send transactional email by Flow Mail</em></li>
-                <li><strong>Recipient</strong>: insert the email address from the form using a variable — the email goes directly to the customer</li>
+                <li><strong>Recipient</strong>: insert the email address from the form using a variable; the email goes directly to the customer</li>
                 <li><strong>Email content</strong>: confirmation of receipt, reference to the order, next steps, contact option for questions</li>
                 <li>Include your legal notice and relevant policy information</li>
                 <li>Name the workflow, e.g.: <em>Withdrawal Confirmation</em></li>
@@ -695,7 +695,7 @@
 
             <div class="cta-box">
               <h3>No time to set it up yourself?</h3>
-              <p>I set up the withdrawal form, automated confirmation email and withdrawal button in your Shopify store — fast, clean, and without back-and-forth.</p>
+              <p>I set up the withdrawal form, automated confirmation email and withdrawal button in your Shopify store: fast, clean, and without back-and-forth.</p>
               <a href="#" class="cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Book a free intro call</a>
             </div>
 
@@ -722,7 +722,7 @@
               </details>
               <details class="faq-item">
                 <summary>Where should the withdrawal button be placed in the store?</summary>
-                <p>At minimum in the footer. Additionally, it is recommended to place it in the customer account. The button must be easy to find and clearly clickable — not a hidden link in long texts.</p>
+                <p>At minimum in the footer. Additionally, it is recommended to place it in the customer account. The button must be easy to find and clearly clickable, not a hidden link in long texts.</p>
               </details>
             </div>
           </section>

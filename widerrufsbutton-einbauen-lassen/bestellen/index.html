@@ -102,7 +102,8 @@
       padding: 1.25rem 1.5rem;
       margin-bottom: 1.5rem;
     }
-    .collaborator-box strong { color: #0f172a; display: block; margin-bottom: 0.4rem; font-size: 0.95rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.02em; }
+    .collaborator-box > strong { color: #0f172a; display: block; margin-bottom: 0.4rem; font-size: 0.95rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.02em; }
+    .collaborator-box p strong { display: inline; margin-bottom: 0; font-size: 0.95rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; letter-spacing: 0.02em; color: #0f172a; }
     .collaborator-box p { font-size: 0.88rem; color: #374151; margin: 0; line-height: 1.6; }
     .collaborator-box a { color: #237eb5; }
     .submit-btn {
@@ -195,7 +196,7 @@
     </div>
 
     <div class="collaborator-box">
-      <strong>Collaborator-Code — kommt per Mail</strong>
+      <strong>Collaborator-Code: kommt per Mail</strong>
       <p>Den Shopify Collaborator-Anfragecode (vierstellig) frage ich nach Auftragseingang per Mail an. Du findest ihn unter:<br>
       <strong>Shopify-Admin</strong> → <strong>Einstellungen → Benutzer und Berechtigungen → Collaborator-Anfragen</strong></p>
     </div>
@@ -292,7 +293,7 @@
 
         <button type="submit" class="submit-btn">Anfrage absenden →</button>
         <p class="form-legal">
-          Kein verbindlicher Kauf — ich melde mich per Mail und wir klären alles Weitere.<br>
+          Kein verbindlicher Kauf. Ich melde mich per Mail und wir klären alles Weitere.<br>
           Die Rechnung wird nach erfolgreicher Implementierung und Test ausgestellt.<br>
           Es gelten die <a href="https://dd-gossen.com/agb.html">AGB</a> und <a href="https://dd-gossen.com/datenschutz.html">Datenschutzbestimmungen</a>.
         </p>
@@ -371,11 +372,11 @@
               successWrapper.style.display = 'block';
             }
           } else {
-            btn.textContent = 'Fehler — bitte per E-Mail kontaktieren';
+            btn.textContent = 'Fehler. Bitte per E-Mail kontaktieren';
             btn.disabled = false;
           }
         } catch {
-          btn.textContent = 'Fehler — bitte per E-Mail kontaktieren';
+          btn.textContent = 'Fehler. Bitte per E-Mail kontaktieren';
           btn.disabled = false;
         }
       });
