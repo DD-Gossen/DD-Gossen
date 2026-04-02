@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Widerrufsbutton in Shopify einbauen: Kostenlose Schritt-für-Schritt-Anleitung | DD-Gossen</title>
+  <meta name="description" content="Widerrufsbutton in Shopify kostenlos einbauen: Widerrufsformular mit Shopify Forms erstellen, Eingangsbestätigung per Flow Mail einrichten und Button sichtbar im Shop platzieren.">
+  <link rel="canonical" href="https://dd-gossen.com/blog/widerrufsbutton-shopify-einbauen/">
+  <meta property="og:title" content="Widerrufsbutton in Shopify einbauen: Kostenlose Schritt-für-Schritt-Anleitung">
+  <meta property="og:description" content="Widerrufsbutton in Shopify kostenlos einbauen: Widerrufsformular mit Shopify Forms erstellen, Eingangsbestätigung per Flow Mail einrichten und Button sichtbar im Shop platzieren.">
+  <meta property="og:url" content="https://dd-gossen.com/blog/widerrufsbutton-shopify-einbauen/">
+  <meta property="og:type" content="article">
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../article-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    .article-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+    .sidebar-column { align-self: stretch; }
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      position: sticky;
+      top: var(--sidebar-top, 110px);
+      transition: top 0.3s ease;
+    }
+    .article-main { align-self: start; min-width: 0; width: 100%; }
+    .sidebar-toc {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .sidebar-toc h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid rgba(35,126,181,0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .sidebar-toc ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+    .sidebar-toc a {
+      display: block;
+      font-size: 0.88rem;
+      color: #374151;
+      text-decoration: none;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      line-height: 1.4;
+    }
+    .sidebar-toc a:hover, .sidebar-toc a.active { background: rgba(35,126,181,0.1); color: #237eb5; }
+    .sidebar-cta {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(15,23,42,0.25);
+    }
+    .sidebar-cta p { font-size: 0.9rem; color: rgba(255,255,255,0.85); margin: 0 0 1rem 0; line-height: 1.5; }
+    .sidebar-cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+      padding: 0.65rem 1.2rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .sidebar-cta a:hover { background: linear-gradient(135deg, #0066e6 0%, #004999 100%); color: white; text-decoration: none; }
+    .article-card {
+      max-width: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-sizing: border-box;
+    }
+    .article-card .article-hero-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 220px !important;
+      object-fit: cover !important;
+      object-position: center center;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      display: block;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .inline-cta {
+      background: linear-gradient(135deg, rgba(35,126,181,0.08) 0%, rgba(35,126,181,0.15) 100%);
+      border: 1px solid rgba(35,126,181,0.25);
+      border-left: 4px solid #237eb5;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .inline-cta-text { flex: 1; }
+    .inline-cta-text strong { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; color: #0f172a; margin-bottom: 0.3rem; }
+    .inline-cta-text span { font-size: 0.9rem; color: #374151; }
+    .inline-cta a {
+      display: inline-block;
+      background: #0f172a;
+      color: white !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none !important;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+      flex-shrink: 0;
+    }
+    .inline-cta a:hover { background: #1e293b; }
+    /* Step boxes */
+    .step-box {
+      background: rgba(255,255,255,0.6);
+      border: 1px solid rgba(35,126,181,0.2);
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+    }
+    .step-box-header {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .step-number {
+      background: #0f172a;
+      color: white;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-box-header h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0;
+    }
+    .step-box ul { margin: 0.5rem 0 0 0; padding-left: 1.3rem; }
+    .step-box li { font-size: 0.93rem; line-height: 1.6; color: #374151; margin-bottom: 0.25rem; }
+    .step-box p { font-size: 0.93rem; line-height: 1.6; color: #374151; margin: 0.4rem 0 0 0; }
+    .hint-box {
+      background: rgba(250,204,21,0.1);
+      border: 1px solid rgba(250,204,21,0.4);
+      border-left: 4px solid #ca8a04;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+      color: #374151;
+      line-height: 1.6;
+    }
+    .hint-box strong { color: #92400e; }
+    .tools-box {
+      background: rgba(35,126,181,0.06);
+      border: 1px solid rgba(35,126,181,0.2);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .tools-box h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; color: #0f172a; margin: 0 0 0.6rem 0; text-transform: uppercase; letter-spacing: 0.05em; }
+    .tools-box ul { margin: 0; padding-left: 1.2rem; }
+    .tools-box li { font-size: 0.9rem; color: #374151; line-height: 1.6; }
+    .related-articles {
+      background: rgba(255,255,255,0.6);
+      border: 1px solid rgba(35,126,181,0.15);
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem;
+      margin: 2.5rem 0;
+    }
+    .related-articles h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; color: #0f172a; margin: 0 0 0.8rem 0; text-transform: uppercase; letter-spacing: 0.05em; }
+    .related-articles ul { margin: 0; padding: 0; list-style: none; }
+    .related-articles li { padding: 0.35rem 0; border-bottom: 1px solid rgba(35,126,181,0.08); }
+    .related-articles li:last-child { border-bottom: none; }
+    .related-articles a { color: #237eb5; text-decoration: none; font-size: 0.93rem; font-weight: 500; }
+    .related-articles a:hover { text-decoration: underline; }
+    .author-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: transparent !important;
+      border: 1px solid rgba(35,126,181,0.15);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+      width: 100%;
+    }
+    .author-box-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 600; color: #333; margin: 0 0 0.75rem 0; }
+    .author-bio { font-size: 0.9rem; color: #555; line-height: 1.5; margin: 0 0 1rem 0; }
+    .author-details { display: flex; align-items: center; gap: 1rem; }
+    .author-name-link { color: #333; text-decoration: none; font-weight: inherit; }
+    .author-name-link:hover { color: #333; text-decoration: none; }
+    .article-summary { margin: 0 0 2rem 0; padding: 0; width: 100%; }
+    .article-summary summary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #64748b;
+      padding: 0.25rem 0 0.4rem 0;
+      cursor: pointer;
+      list-style: none;
+      border-bottom: 1px solid rgba(35,126,181,0.15);
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+    .article-summary summary::-webkit-details-marker { display: none; }
+    .article-summary summary::after { content: '▼'; float: right; font-size: 0.6rem; opacity: 0.4; }
+    .article-summary[open] summary::after { content: '▲'; }
+    .article-summary ul { margin: 0.5rem 0 0 0; padding: 0; list-style: none; width: 100%; }
+    .article-summary li { padding: 0.3rem 0; font-size: 0.9rem; line-height: 1.5; color: #64748b; border-bottom: 1px solid rgba(35,126,181,0.06); }
+    .article-summary li:last-child { border-bottom: none; }
+    .article-faq {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(35,126,181,0.15);
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+    .faq-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 600; color: #0f172a; margin: 0 0 1.5rem 0; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; width: 100%; min-width: 0; }
+    .faq-item { padding: 0; margin: 0; border-bottom: 1px solid rgba(35,126,181,0.12); width: 100%; min-width: 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item summary { font-weight: 600; color: #0f172a; padding: 1rem 0; cursor: pointer; list-style: none; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; float: right; font-size: 1.2rem; color: #237eb5; }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item p { margin: 0 0 1rem 0; padding: 0 0 1rem 0; line-height: 1.6; color: #374151; overflow-wrap: break-word; word-wrap: break-word; }
+    .author-avatar { width: 48px !important; height: 48px !important; max-width: 48px !important; border-radius: 50%; object-fit: cover; object-position: top center; flex-shrink: 0; border: none; margin: 0 !important; }
+    .author-info { display: flex; flex-direction: column; gap: 0.25rem; }
+    .author-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.125rem; font-weight: 600; color: #333; margin: 0; }
+    .author-role { font-size: 0.875rem; color: #777; font-weight: 400; margin: 0; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; font-size: 0.88rem; color: #6b7280; margin-bottom: 0rem; flex-wrap: wrap; }
+    .meta-item { display: flex; align-items: center; gap: 0.3rem; }
+    .meta-tag { background: rgba(35,126,181,0.1); color: #237eb5; padding: 0.2rem 0.7rem; border-radius: 50px; font-size: 0.8rem; font-weight: 500; }
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; padding: 0 0.2rem; gap: 0.8rem; }
+      .article-sidebar { position: static; top: auto; transition: none; flex-direction: column; gap: 0; }
+      .sidebar-toc { padding: 0.8rem 1rem; border-radius: 12px; margin-bottom: 0; background: rgba(255,255,255,0.55); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+      .sidebar-toc h3 { font-size: 0.78rem; margin-bottom: 0.35rem; color: #0f172a; }
+      .sidebar-toc ul { display: flex; flex-direction: column; gap: 0.05rem 0; }
+      .sidebar-toc a { font-size: 0.85rem; padding: 0.15rem 0; background: none !important; border: none; border-radius: 0; white-space: normal; color: #0f172a !important; text-decoration: none; opacity: 0.75; }
+      .sidebar-toc a:hover { opacity: 0.9; }
+      .sidebar-cta { display: none; }
+    }
+    @media (max-width: 600px) {
+      .inline-cta { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+      .author-box { padding: 1rem 1.25rem; }
+      .article-card .article-hero-img { height: 180px !important; border-radius: 12px; margin-bottom: 0.8rem; }
+      .article-faq { margin-top: 1.5rem; padding-top: 1rem; }
+      .faq-item summary { padding: 0.5rem 0; font-size: 0.9rem; }
+      .faq-item p { margin: 0 0 0.5rem 0; padding: 0 0 0.5rem 0; font-size: 0.88rem; }
+      .step-box { padding: 1.1rem 1.2rem; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dd-gossen.com/#organization",
+        "name": "DD-Gossen",
+        "url": "https://dd-gossen.com",
+        "logo": { "@type": "ImageObject", "url": "https://dd-gossen.com/Logo.png" },
+        "sameAs": ["https://www.linkedin.com/in/maik-gossen"]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dd-gossen.com/#author",
+        "name": "Maik Gossen",
+        "url": "https://dd-gossen.com/shopify-freelancer/",
+        "image": { "@type": "ImageObject", "url": "https://dd-gossen.com/Maik-Gossen-ShopifyFreelancer.png" },
+        "jobTitle": "Shopify Freelancer",
+        "worksFor": { "@id": "https://dd-gossen.com/#organization" }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://dd-gossen.com/blog/widerrufsbutton-shopify-einbauen/#article",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://dd-gossen.com/blog/widerrufsbutton-shopify-einbauen/" },
+        "headline": "Widerrufsbutton in Shopify einbauen: Kostenlose Schritt-für-Schritt-Anleitung",
+        "description": "Widerrufsbutton in Shopify kostenlos einbauen: Widerrufsformular mit Shopify Forms erstellen, Eingangsbestätigung per Flow Mail einrichten und Button sichtbar im Shop platzieren.",
+        "image": { "@type": "ImageObject", "url": "https://dd-gossen.com/blog/images/Widerrufsbutton-Shopify-Anleitung.png", "width": 1200, "height": 630 },
+        "datePublished": "2026-04-01",
+        "dateModified": "2026-04-01",
+        "author": { "@id": "https://dd-gossen.com/#author" },
+        "publisher": { "@id": "https://dd-gossen.com/#organization", "name": "DD-Gossen", "logo": { "@type": "ImageObject", "url": "https://dd-gossen.com/Logo.png" } },
+        "articleSection": "Shopify Anleitungen",
+        "keywords": "Widerrufsbutton Shopify einbauen, Shopify Widerrufsformular, Shopify Forms Widerruf, Shopify Flow Widerruf, Widerrufsbutton kostenlos Shopify",
+        "wordCount": 1500
+      },
+      {
+        "@type": "HowTo",
+        "name": "Widerrufsbutton kostenlos in Shopify einbauen",
+        "description": "Mit dieser Anleitung baust du in Shopify kostenlos einen funktionierenden Widerrufsprozess auf.",
+        "totalTime": "PT45M",
+        "tool": [
+          { "@type": "HowToTool", "name": "Shopify Forms" },
+          { "@type": "HowToTool", "name": "Shopify Flow" },
+          { "@type": "HowToTool", "name": "Flow Mail" }
+        ],
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Shopify Forms installieren", "text": "Shopify Forms aus dem App Store installieren und ein neues Inline-Formular anlegen." },
+          { "@type": "HowToStep", "position": 2, "name": "Widerrufsformular erstellen", "text": "Felder anlegen: Vorname, Nachname, E-Mail, Bestellnummer. Marketing deaktivieren, Erfolgsnachricht festlegen, Formular aktivieren." },
+          { "@type": "HowToStep", "position": 3, "name": "Neue Seite für das Formular anlegen", "text": "Unter Onlineshop → Seiten eine neue Seite anlegen, z. B. mit URL /pages/widerrufsformular." },
+          { "@type": "HowToStep", "position": 4, "name": "Eigenes Seiten-Template erstellen", "text": "Im Theme-Editor ein neues Template erstellen, Formular-App-Block einfügen, Formular-ID eintragen." },
+          { "@type": "HowToStep", "position": 5, "name": "Eingangsbestätigung einrichten", "text": "Shopify Flow und Flow Mail installieren, Workflow mit Trigger Metaobject Entry Created anlegen, E-Mail an Kunden versenden." },
+          { "@type": "HowToStep", "position": 6, "name": "Testen", "text": "Formular selbst ausfüllen und prüfen: interne Benachrichtigung, Metaobjekt-Eintrag, Eingangsbestätigung und Darstellung." },
+          { "@type": "HowToStep", "position": 7, "name": "Widerrufsbutton sichtbar platzieren", "text": "Menüpunkt anlegen und im Footer sowie im Kundenkonto sichtbar verlinken." }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dd-gossen.com/blog/widerrufsbutton-shopify-einbauen/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "Kostet der Widerrufsbutton in Shopify etwas?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Die Lösung mit Shopify Forms, Shopify Flow und Flow Mail ist kostenlos. Alle drei Apps sind entweder von Shopify selbst oder in der Grundversion gratis." } },
+          { "@type": "Question", "name": "Welche Apps brauche ich für den Widerrufsbutton in Shopify?", "acceptedAnswer": { "@type": "Answer", "text": "Du brauchst drei Apps: Shopify Forms (für das Formular), Shopify Flow (für die Automatisierung) und Flow Mail (für die Eingangsbestätigung per E-Mail)." } },
+          { "@type": "Question", "name": "Muss ich als Shopify-Shopbetreiber einen Widerrufsbutton anbieten?", "acceptedAnswer": { "@type": "Answer", "text": "Ja, wenn du B2C in der EU verkaufst. Kunden müssen das Widerrufsrecht einfach ausüben können. Ein klarer, leicht auffindbarer Button oder Link auf das Widerrufsformular ist Pflicht." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="https://dd-gossen.com/" class="logo">
+      <img src="../../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+    </a>
+    <div class="header-right-container">
+      <div class="header-cta-container">
+        <a href="#" class="header-cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt anfragen</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main" style="margin-top: 0; padding: 8rem 1rem 4rem;">
+
+    <div class="article-layout">
+
+      <div class="sidebar-column">
+      <aside class="article-sidebar">
+        <div class="sidebar-toc">
+          <h3>Inhaltsverzeichnis</h3>
+          <ul>
+            <li><a href="#voraussetzungen">Voraussetzungen & Tools</a></li>
+            <li><a href="#schritt-1">1. Shopify Forms installieren</a></li>
+            <li><a href="#schritt-2">2. Widerrufsformular erstellen</a></li>
+            <li><a href="#schritt-3">3. Seite für das Formular anlegen</a></li>
+            <li><a href="#schritt-4">4. Eigenes Seiten-Template erstellen</a></li>
+            <li><a href="#schritt-5">5. Eingangsbestätigung einrichten</a></li>
+            <li><a href="#schritt-6">6. Alles testen</a></li>
+            <li><a href="#schritt-7">7. Widerrufsbutton sichtbar platzieren</a></li>
+            <li><a href="#schritt-8">8. Widerrufsbelehrung ergänzen</a></li>
+            <li><a href="#zusammenfassung">Zusammenfassung</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-cta">
+          <p>Keine Zeit für die Umsetzung selbst?</p>
+          <a href="https://dd-gossen.com/shopify-freelancer/#contact">Ich erledige das für dich →</a>
+        </div>
+      </aside>
+      </div>
+
+      <div class="article-main">
+        <div class="article-card">
+
+          <div class="article-meta">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              01.04.26
+            </span>
+            <span class="meta-item meta-lesezeit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              10 Min. Lesezeit
+            </span>
+            <span class="meta-tag">Anleitung</span>
+          </div>
+
+          <h1 class="article-title" style="text-align: left; margin: 0 0 1.5rem 0; font-size: 2.4rem; max-width: 100%; padding: 0;">Widerrufsbutton in Shopify einbauen: Kostenlose Schritt-für-Schritt-Anleitung</h1>
+
+          <img src="../images/Widerrufsbutton-Shopify-Anleitung.png" alt="Widerrufsbutton in Shopify einbauen – Schritt-für-Schritt-Anleitung" class="article-hero-img">
+
+          <details class="article-summary">
+            <summary>Was dich erwartet</summary>
+            <ul>
+              <li><strong>Kostenlose Lösung:</strong> Shopify Forms, Shopify Flow und Flow Mail – alle Tools sind kostenlos und direkt in Shopify verfügbar.</li>
+              <li><strong>Formular:</strong> Du erstellst ein vollständiges Widerrufsformular mit Pflichtfeldern und Erfolgsnachricht.</li>
+              <li><strong>Eingangsbestätigung:</strong> Der Kunde bekommt automatisch eine E-Mail-Bestätigung, dass sein Widerruf eingegangen ist.</li>
+              <li><strong>Button:</strong> Du platzierst den Widerrufsbutton sichtbar im Footer und im Kundenkonto.</li>
+              <li><strong>Hinweis:</strong> Dies ist eine technische Anleitung, keine Rechtsberatung. Prüfe die Formulierungen bitte mit deinem Anwalt oder Rechtsdienstleister.</li>
+            </ul>
+          </details>
+
+          <div class="article-content" style="width: 100%; max-width: 100%; padding: 0; box-sizing: border-box; margin: 0;">
+
+            <p>Viele Shopbetreiber wissen, dass sie einen Widerrufsbutton brauchen – aber nicht wie er technisch umgesetzt wird. Die gute Nachricht: Du brauchst dafür keine kostenpflichtige App und keinen Entwickler. Die Lösung läuft komplett über kostenlose Shopify-eigene Tools.</p>
+
+            <p>Diese Anleitung zeigt dir Schritt für Schritt, wie du ein funktionierendes Widerrufsformular erstellst, eine automatische Eingangsbestätigung einrichtest und den Button sichtbar in deinem Shop platzierst.</p>
+
+            <div class="hint-box">
+              <strong>Hinweis:</strong> Dies ist eine technische Umsetzungsanleitung, keine Rechtsberatung. Prüfe am Ende bitte, ob die Formulierungen und die Platzierung für deinen Shop rechtlich passen – idealerweise mit einem auf E-Commerce spezialisierten Anwalt oder Rechtsdienstleister.
+            </div>
+
+            <h2 id="voraussetzungen">Voraussetzungen & benötigte Tools</h2>
+
+            <p>Du brauchst nichts weiter als deinen Shopify-Admin-Zugang und drei kostenlose Apps. Alle werden im Shopify App Store installiert.</p>
+
+            <div class="tools-box">
+              <h4>Verwendete Tools</h4>
+              <ul>
+                <li><strong>Shopify Forms</strong> – von Shopify selbst, kostenlos. Erstellt das Widerrufsformular.</li>
+                <li><strong>Shopify Flow</strong> – von Shopify selbst, kostenlos. Automatisiert den Ablauf nach dem Formularversand.</li>
+                <li><strong>Flow Mail</strong> – kostenlos. Versendet die automatische Eingangsbestätigung per E-Mail.</li>
+              </ul>
+            </div>
+
+            <p>Die gesamte Einrichtung dauert erfahrungsgemäß etwa 30–45 Minuten, wenn du alle Schritte einmal durchgehst.</p>
+
+            <h2 id="schritt-1">Schritt 1: Shopify Forms installieren</h2>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">1</div>
+                <h3>Shopify Forms aus dem App Store installieren</h3>
+              </div>
+              <ul>
+                <li>Gehe im Shopify App Store zu <strong>Shopify Forms</strong> und installiere die App.</li>
+                <li>Nach der Installation öffnest du die App und klickst auf <strong>Formular erstellen</strong>.</li>
+                <li>Wähle dort <strong>Inline-Formular</strong> aus.</li>
+                <li>Vergib einen Namen, z. B.: <em>Widerrufsformular</em></li>
+              </ul>
+            </div>
+
+            <h2 id="schritt-2">Schritt 2: Widerrufsformular erstellen</h2>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">2</div>
+                <h3>Felder, Einstellungen und Erfolgsnachricht konfigurieren</h3>
+              </div>
+              <ul>
+                <li>Lege diese <strong>Pflichtfelder</strong> an: Vorname, Nachname, E-Mail, Bestellnummer</li>
+                <li>Für die <strong>Bestellnummer</strong>: einzeiliges Textfeld, Pflichtfeld, Hinweistext: „Bitte mit # angeben"</li>
+                <li>Optional: mehrzeiliges Textfeld für zusätzliche Angaben (nicht als Pflichtfeld)</li>
+                <li>Stelle sicher, dass das Formular <strong>kein Newsletter-Formular</strong> ist – Marketing muss deaktiviert sein</li>
+                <li>Lege eine <strong>Erfolgsnachricht</strong> fest, z. B.: „Dein Widerruf wurde übermittelt. Wir bestätigen dir den Eingang zusätzlich per E-Mail."</li>
+                <li>Aktiviere die Option, dass du als Shopbetreiber per E-Mail benachrichtigt wirst</li>
+                <li>Formular speichern und <strong>aktivieren</strong></li>
+              </ul>
+            </div>
+
+            <div class="hint-box">
+              <strong>Wichtig:</strong> Die <strong>Formular-ID</strong> wird erst nach dem Speichern angezeigt. Kopiere sie direkt – du brauchst sie im nächsten Schritt.
+            </div>
+
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Keine Zeit für die Einrichtung?</strong>
+                <span>Ich richte Widerrufsformular, Eingangsbestätigung und Button für deinen Shop ein – schnell und sauber.</span>
+              </div>
+              <a href="https://dd-gossen.com/shopify-freelancer/#contact">Jetzt anfragen</a>
+            </div>
+
+            <h2 id="schritt-3">Schritt 3: Neue Seite für das Widerrufsformular anlegen</h2>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">3</div>
+                <h3>Seite in Shopify anlegen</h3>
+              </div>
+              <ul>
+                <li>Gehe zu <strong>Onlineshop → Seiten → Seite hinzufügen</strong></li>
+                <li>Titel der Seite: z. B. <em>Widerrufsformular</em></li>
+                <li>URL: <code>/pages/widerrufsformular</code></li>
+                <li>Seite auf <strong>sichtbar</strong> stellen</li>
+                <li>Metadaten sauber befüllen (Seitentitel + Beschreibung)</li>
+                <li>Seite <strong>noch nicht</strong> einem Template zuweisen – das passiert in Schritt 5</li>
+              </ul>
+            </div>
+
+            <h2 id="schritt-4">Schritt 4: Eigenes Seiten-Template im Theme erstellen</h2>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">4</div>
+                <h3>Template anlegen und Formular einbinden</h3>
+              </div>
+              <ul>
+                <li>Gehe zu <strong>Onlineshop → Themes → Anpassen</strong></li>
+                <li>Öffne oben im Theme-Editor die Seiten-Vorlagen und erstelle ein neues Template auf Basis der Standardseite – z. B.: <code>page.widerrufsformular</code></li>
+                <li>Achte darauf, dass du das neue Template bearbeitest (nicht die Standardseite)</li>
+                <li>Füge einen <strong>Text- oder Rich-Text-Block</strong> ein und setze den Seitentitel als H1: <em>Widerrufsformular</em></li>
+                <li>Füge einen <strong>App-Block</strong> hinzu: Apps → Shopify Forms</li>
+                <li>Trage dort die <strong>Formular-ID</strong> aus Schritt 2 ein</li>
+                <li>Farben, Abstände und Gestaltung ans Theme anpassen</li>
+                <li>Template speichern</li>
+              </ul>
+              <p>Gehe danach zurück zur Seite aus Schritt 3 und weise ihr das neue Template zu: unten bei <strong>Vorlage</strong> das neue Seiten-Template auswählen und speichern.</p>
+            </div>
+
+            <h2 id="schritt-5">Schritt 5: Eingangsbestätigung einrichten</h2>
+
+            <p>Der Kunde braucht eine automatische E-Mail-Bestätigung, dass sein Widerruf eingegangen ist. Das läuft über Shopify Flow und Flow Mail.</p>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">5a</div>
+                <h3>Shopify Flow & Flow Mail installieren</h3>
+              </div>
+              <ul>
+                <li>Beide Apps im App Store installieren: <strong>Shopify Flow</strong> und <strong>Flow Mail</strong></li>
+                <li>In Flow Mail: E-Mail-Versand aktivieren, Branding anpassen (Logo, Farben, Absenderadresse)</li>
+              </ul>
+            </div>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">5b</div>
+                <h3>Workflow in Shopify Flow anlegen</h3>
+              </div>
+              <ul>
+                <li>Shopify Flow öffnen → <strong>Neuen Workflow erstellen</strong></li>
+                <li><strong>Trigger</strong> festlegen: <em>Metaobject Entry Created</em></li>
+                <li>Das passende Metaobjekt für dein Widerrufsformular auswählen</li>
+              </ul>
+              <p style="margin-top: 0.75rem;">Hintergrund: Shopify Forms speichert Formular-Einsendungen als Metaobjekte. Sobald jemand das Formular abschickt, startet der Workflow automatisch.</p>
+            </div>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">5c</div>
+                <h3>Eingangsbestätigungs-E-Mail erstellen</h3>
+              </div>
+              <ul>
+                <li>Als <strong>Aktion</strong> auswählen: <em>Send transactional email by Flow Mail</em></li>
+                <li><strong>Empfänger</strong>: E-Mail-Adresse aus dem Formular per Variable eintragen – die E-Mail geht direkt an den Kunden</li>
+                <li><strong>Inhalt</strong> der E-Mail: Eingangsbestätigung, Bezug auf die Bestellung, Hinweis auf Bearbeitungsprozess, Kontaktmöglichkeit bei Rückfragen</li>
+                <li>Impressum und relevante Rechtstexte berücksichtigen</li>
+                <li>Workflow benennen, z. B.: <em>Flow Widerruf</em></li>
+                <li>Workflow <strong>aktivieren</strong></li>
+              </ul>
+            </div>
+
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Hintergrundwissen zum Widerrufsrecht 2026</strong>
+                <span>Was sich rechtlich ab Juni 2026 ändert und was das für deinen Shop bedeutet.</span>
+              </div>
+              <a href="https://dd-gossen.com/blog/widerrufsrecht-shopify-2026/">Artikel lesen →</a>
+            </div>
+
+            <h2 id="schritt-6">Schritt 6: Alles testen</h2>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">6</div>
+                <h3>Vor dem Livegang vollständig testen</h3>
+              </div>
+              <ul>
+                <li>Formular einmal selbst ausfüllen und abschicken</li>
+                <li>Kommt die <strong>interne Benachrichtigung</strong> bei dir an?</li>
+                <li>Wird der <strong>Metaobjekt-Eintrag</strong> in Shopify erstellt?</li>
+                <li>Wird die <strong>automatische Eingangsbestätigung</strong> an die eingetragene E-Mail versendet?</li>
+                <li>Ist die <strong>Darstellung der Formularseite</strong> im Frontend sauber?</li>
+                <li>Sind alle Pflichtfelder korrekt als Pflichtfelder angelegt?</li>
+              </ul>
+              <p>Erst wenn alle Punkte funktionieren, den Widerrufsbutton öffentlich sichtbar schalten.</p>
+            </div>
+
+            <h2 id="schritt-7">Schritt 7: Widerrufsbutton sichtbar im Shop platzieren</h2>
+
+            <p>Der Button muss leicht auffindbar sein. Ein Link irgendwo versteckt in den AGB zählt nicht. Platziere ihn an mindestens zwei Stellen.</p>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">7a</div>
+                <h3>Menüpunkt anlegen</h3>
+              </div>
+              <ul>
+                <li>Gehe zu <strong>Inhalte → Menüs</strong></li>
+                <li>Neuen Menüpunkt anlegen mit Verlinkung auf <code>/pages/widerrufsformular</code></li>
+                <li>Mögliche Bezeichnungen: <em>Widerruf</em>, <em>Kauf widerrufen</em>, <em>Vertrag widerrufen</em></li>
+                <li>Welche Formulierung rechtlich korrekt ist, bitte prüfen lassen</li>
+              </ul>
+            </div>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">7b</div>
+                <h3>Im Footer platzieren</h3>
+              </div>
+              <ul>
+                <li>Menüpunkt dem Footer-Menü hinzufügen</li>
+                <li>Falls dein Theme einen <strong>Button-Block im Footer</strong> unterstützt: direkt als echten Button einbinden</li>
+                <li>Falls nicht: Menüpunkt anlegen und per CSS optisch als Button hervorheben (klare Fläche, deutlich klickbar, hebt sich von normalen Footer-Links ab)</li>
+                <li>Nach dem Speichern im Frontend prüfen: Button sichtbar und klickbar?</li>
+              </ul>
+            </div>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">7c</div>
+                <h3>Im Kundenkonto platzieren</h3>
+              </div>
+              <ul>
+                <li>Falls Kundenkonten aktiviert: unter <strong>Inhalte → Menüs</strong> einen Menüpunkt anlegen, der auf die Widerrufsformular-Seite verweist</li>
+                <li>Kunden finden den Button damit direkt nach dem Login</li>
+              </ul>
+            </div>
+
+            <h2 id="schritt-8">Schritt 8: Widerrufsbelehrung in den Richtlinien ergänzen</h2>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">8</div>
+                <h3>Hinweis in den Shopify-Richtlinien einbauen</h3>
+              </div>
+              <ul>
+                <li>Gehe zu <strong>Einstellungen → Richtlinien</strong></li>
+                <li>In der Widerrufsbelehrung ergänzen, dass Kunden den Widerruf auch über den Widerrufsbutton bzw. das Widerrufsformular erklären können</li>
+                <li>Link auf die Formularseite direkt in den Text einbauen</li>
+              </ul>
+              <p>So ist der Prozess nicht nur technisch eingebaut, sondern auch in deinen Rechtstexten nachvollziehbar verankert.</p>
+            </div>
+
+            <h2 id="zusammenfassung">Zusammenfassung</h2>
+
+            <p>Mit diesen acht Schritten hast du in Shopify einen vollständigen, kostenlosen Widerrufsprozess eingerichtet:</p>
+
+            <ol style="padding-left: 1.3rem; line-height: 2; color: #374151;">
+              <li>Shopify Forms installieren und Formular erstellen</li>
+              <li>Felder konfigurieren, Marketing deaktivieren, Erfolgsnachricht festlegen</li>
+              <li>Neue Seite anlegen und Formular-ID notieren</li>
+              <li>Eigenes Template im Theme erstellen, Formular einbinden</li>
+              <li>Shopify Flow + Flow Mail einrichten, Eingangsbestätigung automatisieren</li>
+              <li>Gesamten Ablauf testen</li>
+              <li>Widerrufsbutton im Footer und Kundenkonto sichtbar platzieren</li>
+              <li>Widerrufsbelehrung in den Richtlinien ergänzen</li>
+            </ol>
+
+            <p>Das kostet keine laufenden App-Gebühren und ist ohne Entwickler-Kenntnisse umsetzbar. Wer Zeit sparen möchte, kann die Einrichtung auch auslagern.</p>
+
+            <div class="related-articles">
+              <h4>Weiterführende Artikel</h4>
+              <ul>
+                <li><a href="https://dd-gossen.com/blog/widerrufsrecht-shopify-2026/">Widerrufsbutton Shopify: Was rechtlich gilt + Was sich ab Juni 2026 ändert →</a></li>
+              </ul>
+            </div>
+
+            <div class="cta-box">
+              <h3>Keine Zeit für die Einrichtung selbst?</h3>
+              <p>Ich richte Widerrufsformular, automatische Eingangsbestätigung und Widerrufsbutton in deinem Shopify-Shop ein – schnell, sauber und ohne Rückfragen.</p>
+              <a href="#" class="cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt kostenloses Erstgespräch buchen</a>
+            </div>
+
+          </div>
+
+          <section class="article-faq" itemscope itemtype="https://schema.org/FAQPage">
+            <h2 class="faq-title">Häufige Fragen zum Widerrufsbutton in Shopify</h2>
+            <div class="faq-list">
+              <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary itemprop="name">Kostet der Widerrufsbutton in Shopify etwas?</summary>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <p itemprop="text">Nein. Die Lösung mit Shopify Forms, Shopify Flow und Flow Mail ist vollständig kostenlos. Alle drei Apps sind entweder von Shopify selbst oder in der Grundversion gratis verfügbar.</p>
+                </div>
+              </details>
+              <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary itemprop="name">Welche Apps brauche ich für den Widerrufsbutton in Shopify?</summary>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <p itemprop="text">Du brauchst drei Apps: Shopify Forms für das Formular, Shopify Flow für die Automatisierung und Flow Mail für die Eingangsbestätigung per E-Mail. Alle sind kostenlos und im Shopify App Store verfügbar.</p>
+                </div>
+              </details>
+              <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary itemprop="name">Muss ich als Shopify-Shopbetreiber einen Widerrufsbutton anbieten?</summary>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <p itemprop="text">Ja, wenn du B2C in der EU verkaufst. Kunden müssen ihr Widerrufsrecht einfach ausüben können. Ein klar sichtbarer, leicht auffindbarer Button oder Link auf das Widerrufsformular ist Pflicht. Ein versteckter Link in den AGB reicht nicht.</p>
+                </div>
+              </details>
+              <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary itemprop="name">Wie lange dauert die Einrichtung?</summary>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <p itemprop="text">Die Einrichtung dauert erfahrungsgemäß 30–45 Minuten, wenn du alle Schritte einmal durchgehst. Wer wenig Erfahrung mit dem Shopify Theme-Editor hat, sollte etwas mehr Zeit einplanen.</p>
+                </div>
+              </details>
+              <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary itemprop="name">Wo soll der Widerrufsbutton im Shop platziert werden?</summary>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <p itemprop="text">Mindestens im Footer. Zusätzlich empfiehlt sich eine Platzierung im Kundenkonto. Der Button muss leicht auffindbar und deutlich klickbar sein – kein versteckter Link in langen Texten.</p>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <div class="author-box">
+            <h3 class="author-box-title">Über den Autor</h3>
+            <p class="author-bio">Ich arbeite als Shopify Freelancer aus Deutschland und unterstütze Shopbetreiber bei technischer Umsetzung, rechtssicherer Konfiguration und langfristiger Optimierung ihrer Shops.</p>
+            <div class="author-details">
+              <img src="../../Maik-Gossen-ShopifyFreelancer.png" alt="Maik Gossen" class="author-avatar">
+              <div class="author-info">
+                <p class="author-name"><a href="https://dd-gossen.com/shopify-freelancer/" class="author-name-link">Maik Gossen</a></p>
+                <p class="author-role">Shopify Freelancer & Entwickler</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-name">MAIK GOSSEN</div>
+        <div class="footer-contact-label">Kontakt:</div>
+        <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+        <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+        <div class="footer-social">
+          <a href="mailto:info@dd-gossen.com" title="E-Mail" aria-label="E-Mail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Menü</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/">Übersicht</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/">Meine Services</a></li>
+          <li><a href="https://dd-gossen.com/blog/">Blog</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Content</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/blog/widerrufsbutton-shopify-einbauen/">Widerrufsbutton einbauen</a></li>
+          <li><a href="https://dd-gossen.com/blog/widerrufsrecht-shopify-2026/">Widerrufsbutton Shopify</a></li>
+          <li><a href="https://dd-gossen.com/blog/shopify-freelancer-deutschland/">Shopify Freelancer Deutschland</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/">Shop-Setup & Shop-Optimierung</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Schnellzugriff</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/#contact">Kostenloses Erstgespräch</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/#about-me">Über mich</a></li>
+          <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://dd-gossen.com/impressum.html">Impressum</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/datenschutz.html">Datenschutz</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/agb.html">AGB</a>
+      <span class="footer-sep">|</span>
+      <a href="#" id="openCookieSettings">Cookie-Einstellungen</a>
+      <span class="footer-sep">|</span>
+      <span>© 2025 Maik Gossen</span>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var header = document.querySelector('.header');
+      if (!header) return;
+      let lastScrollTop = 0;
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        header.style.background = scrollTop > 100 ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.15)';
+        if (scrollTop > 100) {
+          header.classList.toggle('hidden', scrollTop > lastScrollTop);
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+      });
+    })();
+    (function() {
+      const header = document.querySelector('.header');
+      if (!header) return;
+      const root = document.documentElement;
+      function update() {
+        root.style.setProperty('--sidebar-top', header.classList.contains('hidden') ? '24px' : '110px');
+      }
+      new MutationObserver(update).observe(header, { attributes: true, attributeFilter: ['class'] });
+      update();
+    })();
+    (function() {
+      const sections = document.querySelectorAll('.article-content h2[id]');
+      const tocLinks = document.querySelectorAll('.sidebar-toc a');
+      if (!sections.length || !tocLinks.length) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.sidebar-toc a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+      sections.forEach(section => observer.observe(section));
+    })();
+  </script>
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+    function initCalUI() {
+      if (window.Cal && window.Cal.ns && window.Cal.ns.erstgespraech) {
+        Cal.ns.erstgespraech("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      } else { setTimeout(initCalUI, 100); }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCalUI);
+    } else { initCalUI(); }
+  </script>
+</body>
+</html>
