@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Add a Withdrawal Button to Shopify for Free: Step-by-Step Guide | DD-Gossen</title>
+  <meta name="description" content="Add a withdrawal button to Shopify for free: create a cancellation form with Shopify Forms, set up an automated confirmation email via Flow Mail, and place the button visibly in your store.">
+  <link rel="canonical" href="https://dd-gossen.com/blog/en/shopify-withdrawal-button-guide/">
+  <link rel="alternate" hreflang="en" href="https://dd-gossen.com/blog/en/shopify-withdrawal-button-guide/">
+  <link rel="alternate" hreflang="de" href="https://dd-gossen.com/blog/widerrufsbutton-shopify-einbauen/">
+  <link rel="alternate" hreflang="x-default" href="https://dd-gossen.com/blog/en/shopify-withdrawal-button-guide/">
+  <meta property="og:title" content="How to Add a Withdrawal Button to Shopify for Free: Step-by-Step Guide">
+  <meta property="og:description" content="Add a withdrawal button to Shopify for free: create a cancellation form with Shopify Forms, set up an automated confirmation email via Flow Mail, and place the button visibly in your store.">
+  <meta property="og:url" content="https://dd-gossen.com/blog/en/shopify-withdrawal-button-guide/">
+  <meta property="og:type" content="article">
+  <link rel="icon" type="image/png" href="../../../favicon.png">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../article-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    .article-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+    .sidebar-column { align-self: stretch; }
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      position: sticky;
+      top: var(--sidebar-top, 110px);
+      transition: top 0.3s ease;
+    }
+    .article-main { align-self: start; min-width: 0; width: 100%; }
+    .sidebar-toc {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .sidebar-toc h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid rgba(35,126,181,0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .sidebar-toc ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+    .sidebar-toc a {
+      display: block;
+      font-size: 0.88rem;
+      color: #374151;
+      text-decoration: none;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      line-height: 1.4;
+    }
+    .sidebar-toc a:hover, .sidebar-toc a.active { background: rgba(35,126,181,0.1); color: #237eb5; }
+    .sidebar-cta {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(15,23,42,0.25);
+    }
+    .sidebar-cta p { font-size: 0.9rem; color: rgba(255,255,255,0.85); margin: 0 0 1rem 0; line-height: 1.5; }
+    .sidebar-cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+      padding: 0.65rem 1.2rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .sidebar-cta a:hover { background: linear-gradient(135deg, #0066e6 0%, #004999 100%); color: white; text-decoration: none; }
+    .article-card {
+      max-width: 100%;
+      width: 100%;
+      background: rgba(255,255,255,0.52);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-sizing: border-box;
+    }
+    .article-card .article-hero-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 220px !important;
+      object-fit: cover !important;
+      object-position: center center;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      display: block;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .inline-cta {
+      background: linear-gradient(135deg, rgba(35,126,181,0.08) 0%, rgba(35,126,181,0.15) 100%);
+      border: 1px solid rgba(35,126,181,0.25);
+      border-left: 4px solid #237eb5;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .inline-cta-text { flex: 1; }
+    .inline-cta-text strong { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; color: #0f172a; margin-bottom: 0.3rem; }
+    .inline-cta-text span { font-size: 0.9rem; color: #374151; }
+    .inline-cta a {
+      display: inline-block;
+      background: #0f172a;
+      color: white !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none !important;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+      flex-shrink: 0;
+    }
+    .inline-cta a:hover { background: #1e293b; }
+    .step-box {
+      background: rgba(255,255,255,0.6);
+      border: 1px solid rgba(35,126,181,0.2);
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+    }
+    .step-box-header {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 1rem;
+    }
+    .step-number {
+      background: #0f172a;
+      color: white;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-box-header h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0;
+    }
+    .step-box ul { margin: 0.5rem 0 0 0; padding-left: 1.3rem; }
+    .step-box li { font-size: 0.93rem; line-height: 1.6; color: #374151; margin-bottom: 0.25rem; }
+    .step-box p { font-size: 0.93rem; line-height: 1.6; color: #374151; margin: 0.4rem 0 0 0; }
+    .hint-box {
+      background: rgba(250,204,21,0.1);
+      border: 1px solid rgba(250,204,21,0.4);
+      border-left: 4px solid #ca8a04;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      font-size: 0.9rem;
+      color: #374151;
+      line-height: 1.6;
+    }
+    .hint-box strong { color: #92400e; }
+    .tools-box {
+      background: rgba(35,126,181,0.06);
+      border: 1px solid rgba(35,126,181,0.2);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+    .tools-box h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; color: #0f172a; margin: 0 0 0.6rem 0; text-transform: uppercase; letter-spacing: 0.05em; }
+    .tools-box ul { margin: 0; padding-left: 1.2rem; }
+    .tools-box li { font-size: 0.9rem; color: #374151; line-height: 1.6; }
+    .related-articles {
+      background: rgba(255,255,255,0.6);
+      border: 1px solid rgba(35,126,181,0.15);
+      border-radius: 14px;
+      padding: 1.5rem 1.75rem;
+      margin: 2.5rem 0;
+    }
+    .related-articles h4 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; color: #0f172a; margin: 0 0 0.8rem 0; text-transform: uppercase; letter-spacing: 0.05em; }
+    .related-articles ul { margin: 0; padding: 0; list-style: none; }
+    .related-articles li { padding: 0.35rem 0; border-bottom: 1px solid rgba(35,126,181,0.08); }
+    .related-articles li:last-child { border-bottom: none; }
+    .related-articles a { color: #237eb5; text-decoration: none; font-size: 0.93rem; font-weight: 500; }
+    .related-articles a:hover { text-decoration: underline; }
+    .author-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: transparent !important;
+      border: 1px solid rgba(35,126,181,0.15);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+      width: 100%;
+    }
+    .author-box-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 600; color: #333; margin: 0 0 0.75rem 0; }
+    .author-bio { font-size: 0.9rem; color: #555; line-height: 1.5; margin: 0 0 1rem 0; }
+    .author-details { display: flex; align-items: center; gap: 1rem; }
+    .author-name-link { color: #333; text-decoration: none; font-weight: inherit; }
+    .article-summary { margin: 0 0 2rem 0; padding: 0; width: 100%; }
+    .article-summary summary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #64748b;
+      padding: 0.25rem 0 0.4rem 0;
+      cursor: pointer;
+      list-style: none;
+      border-bottom: 1px solid rgba(35,126,181,0.15);
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+    .article-summary summary::-webkit-details-marker { display: none; }
+    .article-summary summary::after { content: '▼'; float: right; font-size: 0.6rem; opacity: 0.4; }
+    .article-summary[open] summary::after { content: '▲'; }
+    .article-summary ul { margin: 0.5rem 0 0 0; padding: 0; list-style: none; width: 100%; }
+    .article-summary li { padding: 0.3rem 0; font-size: 0.9rem; line-height: 1.5; color: #64748b; border-bottom: 1px solid rgba(35,126,181,0.06); }
+    .article-summary li:last-child { border-bottom: none; }
+    .article-faq {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(35,126,181,0.15);
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+    .faq-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 600; color: #0f172a; margin: 0 0 1.5rem 0; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; width: 100%; min-width: 0; }
+    .faq-item { padding: 0; margin: 0; border-bottom: 1px solid rgba(35,126,181,0.12); width: 100%; min-width: 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item summary { font-weight: 600; color: #0f172a; padding: 1rem 0; cursor: pointer; list-style: none; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; float: right; font-size: 1.2rem; color: #237eb5; }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item p { margin: 0 0 1rem 0; padding: 0 0 1rem 0; line-height: 1.6; color: #374151; overflow-wrap: break-word; word-wrap: break-word; }
+    .author-avatar { width: 48px !important; height: 48px !important; max-width: 48px !important; border-radius: 50%; object-fit: cover; object-position: top center; flex-shrink: 0; border: none; margin: 0 !important; }
+    .author-info { display: flex; flex-direction: column; gap: 0.25rem; }
+    .author-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.125rem; font-weight: 600; color: #333; margin: 0; }
+    .author-role { font-size: 0.875rem; color: #777; font-weight: 400; margin: 0; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; font-size: 0.88rem; color: #6b7280; margin-bottom: 0rem; flex-wrap: wrap; }
+    .meta-item { display: flex; align-items: center; gap: 0.3rem; }
+    .meta-tag { background: rgba(35,126,181,0.1); color: #237eb5; padding: 0.2rem 0.7rem; border-radius: 50px; font-size: 0.8rem; font-weight: 500; }
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; padding: 0 0.2rem; gap: 0.8rem; }
+      .article-sidebar { position: static; top: auto; transition: none; flex-direction: column; gap: 0; }
+      .sidebar-toc { padding: 0.8rem 1rem; border-radius: 12px; margin-bottom: 0; }
+      .sidebar-toc h3 { font-size: 0.78rem; margin-bottom: 0.35rem; }
+      .sidebar-toc ul { display: flex; flex-direction: column; gap: 0.05rem 0; }
+      .sidebar-toc a { font-size: 0.85rem; padding: 0.15rem 0; background: none !important; opacity: 0.75; }
+      .sidebar-cta { display: none; }
+    }
+    @media (max-width: 600px) {
+      .inline-cta { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+      .article-card .article-hero-img { height: 180px !important; border-radius: 12px; margin-bottom: 0.8rem; }
+      .step-box { padding: 1.1rem 1.2rem; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dd-gossen.com/#organization",
+        "name": "DD-Gossen",
+        "url": "https://dd-gossen.com",
+        "logo": { "@type": "ImageObject", "url": "https://dd-gossen.com/Logo.png" },
+        "sameAs": ["https://www.linkedin.com/in/maik-gossen"]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dd-gossen.com/#author",
+        "name": "Maik Gossen",
+        "url": "https://dd-gossen.com/shopify-freelancer/",
+        "image": { "@type": "ImageObject", "url": "https://dd-gossen.com/Maik-Gossen-ShopifyFreelancer.png" },
+        "jobTitle": "Shopify Freelancer",
+        "worksFor": { "@id": "https://dd-gossen.com/#organization" }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://dd-gossen.com/blog/en/shopify-withdrawal-button-guide/#article",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://dd-gossen.com/blog/en/shopify-withdrawal-button-guide/" },
+        "headline": "How to Add a Withdrawal Button to Shopify for Free: Step-by-Step Guide",
+        "description": "Add a withdrawal button to Shopify for free: create a cancellation form with Shopify Forms, set up an automated confirmation email via Flow Mail, and place the button visibly in your store.",
+        "image": { "@type": "ImageObject", "url": "https://dd-gossen.com/blog/images/Shopify-Withdrawal-Button-Guide-EN.png", "width": 1200, "height": 630 },
+        "datePublished": "2026-04-01",
+        "dateModified": "2026-04-01",
+        "author": { "@id": "https://dd-gossen.com/#author" },
+        "publisher": { "@id": "https://dd-gossen.com/#organization", "name": "DD-Gossen", "logo": { "@type": "ImageObject", "url": "https://dd-gossen.com/Logo.png" } },
+        "articleSection": "Shopify Tutorials",
+        "keywords": "Shopify withdrawal button setup, Shopify cancellation form, Shopify Forms withdrawal, Shopify Flow automation, withdrawal button Shopify free",
+        "inLanguage": "en",
+        "wordCount": 1500
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Add a Withdrawal Button to Shopify for Free",
+        "description": "Step-by-step guide to set up a working withdrawal process in Shopify using free built-in tools.",
+        "totalTime": "PT45M",
+        "tool": [
+          { "@type": "HowToTool", "name": "Shopify Forms" },
+          { "@type": "HowToTool", "name": "Shopify Flow" },
+          { "@type": "HowToTool", "name": "Flow Mail" }
+        ],
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Install Shopify Forms", "text": "Install Shopify Forms from the App Store and create a new inline form." },
+          { "@type": "HowToStep", "position": 2, "name": "Create the withdrawal form", "text": "Add fields: first name, last name, email, order number. Disable marketing, set a success message, activate the form." },
+          { "@type": "HowToStep", "position": 3, "name": "Create a new page for the form", "text": "Go to Online Store → Pages → Add Page. Set URL to /pages/withdrawal-form." },
+          { "@type": "HowToStep", "position": 4, "name": "Create a custom page template", "text": "In the Theme Editor, create a new template, add the Forms app block, enter the form ID." },
+          { "@type": "HowToStep", "position": 5, "name": "Set up the confirmation email", "text": "Install Shopify Flow and Flow Mail. Create a workflow with Metaobject Entry Created trigger and send a transactional email to the customer." },
+          { "@type": "HowToStep", "position": 6, "name": "Test everything", "text": "Fill out the form yourself and check: internal notification, metaobject entry, confirmation email, and page display." },
+          { "@type": "HowToStep", "position": 7, "name": "Place the withdrawal button visibly", "text": "Create a menu item and add it to the footer and customer account." }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dd-gossen.com/blog/en/shopify-withdrawal-button-guide/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "Does the withdrawal button in Shopify cost anything?", "acceptedAnswer": { "@type": "Answer", "text": "No. The solution using Shopify Forms, Shopify Flow, and Flow Mail is completely free. All three apps are either made by Shopify or free in their basic version." } },
+          { "@type": "Question", "name": "Which apps do I need for the Shopify withdrawal button?", "acceptedAnswer": { "@type": "Answer", "text": "You need three apps: Shopify Forms for the form, Shopify Flow for automation, and Flow Mail for the confirmation email. All are free and available in the Shopify App Store." } },
+          { "@type": "Question", "name": "Do I need to offer a withdrawal button as a Shopify store owner?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, if you sell B2C within the EU. Customers must be able to exercise their right of withdrawal easily. A clearly visible, easy-to-find button or link to the withdrawal form is mandatory." } }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body data-lang="en">
+
+  <header class="header">
+    <a href="https://dd-gossen.com/" class="logo">
+      <img src="../../../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+    </a>
+    <div class="header-right-container">
+      <div class="header-cta-container">
+        <a href="#" class="header-cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Get in touch</a>
+      </div>
+      <div class="language-container">
+        <a href="https://dd-gossen.com/blog/widerrufsbutton-shopify-einbauen/" class="language-flag flag-de" title="Auf Deutsch lesen"></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main" style="margin-top: 0; padding: 8rem 1rem 4rem;">
+
+    <div class="article-layout">
+
+      <div class="sidebar-column">
+      <aside class="article-sidebar">
+        <div class="sidebar-toc">
+          <h3>Contents</h3>
+          <ul>
+            <li><a href="#prerequisites">Prerequisites & Tools</a></li>
+            <li><a href="#step-1">1. Install Shopify Forms</a></li>
+            <li><a href="#step-2">2. Create the withdrawal form</a></li>
+            <li><a href="#step-3">3. Create a page for the form</a></li>
+            <li><a href="#step-4">4. Create a custom page template</a></li>
+            <li><a href="#step-5">5. Set up the confirmation email</a></li>
+            <li><a href="#step-6">6. Test everything</a></li>
+            <li><a href="#step-7">7. Place the withdrawal button</a></li>
+            <li><a href="#step-8">8. Update your policies</a></li>
+            <li><a href="#summary">Summary</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-cta">
+          <p>No time to set this up yourself?</p>
+          <a href="https://dd-gossen.com/shopify-freelancer/#contact">I'll handle it for you →</a>
+        </div>
+      </aside>
+      </div>
+
+      <div class="article-main">
+        <div class="article-card">
+
+          <div class="article-meta">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Apr 1, 2026
+            </span>
+            <span class="meta-item meta-lesezeit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              10 min read
+            </span>
+            <span class="meta-tag">Tutorial</span>
+          </div>
+
+          <h1 class="article-title" style="text-align: left; margin: 0 0 1.5rem 0; font-size: 2.4rem; max-width: 100%; padding: 0;">How to Add a Withdrawal Button to Shopify for Free: Step-by-Step Guide</h1>
+
+          <img src="../../images/Shopify-Withdrawal-Button-Guide-EN.png" alt="How to add a withdrawal button to Shopify – Step-by-Step Guide" class="article-hero-img">
+
+          <details class="article-summary">
+            <summary>What to expect</summary>
+            <ul>
+              <li><strong>Free solution:</strong> Shopify Forms, Shopify Flow and Flow Mail — all tools are free and available directly in Shopify.</li>
+              <li><strong>Form:</strong> You create a complete withdrawal form with required fields and a success message.</li>
+              <li><strong>Confirmation email:</strong> The customer automatically receives an email confirming their withdrawal request was received.</li>
+              <li><strong>Button:</strong> You place the withdrawal button visibly in the footer and in the customer account.</li>
+              <li><strong>Note:</strong> This is a technical guide, not legal advice. Please verify the wording and placement with your legal advisor.</li>
+            </ul>
+          </details>
+
+          <div class="article-content" style="width: 100%; max-width: 100%; padding: 0; box-sizing: border-box; margin: 0;">
+
+            <p>Many store owners know they need a withdrawal button — but aren't sure how to set it up technically. The good news: you don't need a paid app or a developer. The entire solution runs on free, Shopify-native tools.</p>
+
+            <p>This guide walks you through each step: creating a withdrawal form, building a dedicated page, setting up an automated confirmation email, and placing the button visibly in your store.</p>
+
+            <div class="hint-box">
+              <strong>Note:</strong> This is a technical implementation guide, not legal advice. Please verify that the wording and placement are legally appropriate for your store — ideally with a lawyer specialising in e-commerce law.
+            </div>
+
+            <h2 id="prerequisites">Prerequisites & tools required</h2>
+
+            <p>All you need is your Shopify admin access and three free apps — all available in the Shopify App Store.</p>
+
+            <div class="tools-box">
+              <h4>Tools used</h4>
+              <ul>
+                <li><strong>Shopify Forms</strong> — by Shopify, free. Creates the withdrawal form.</li>
+                <li><strong>Shopify Flow</strong> — by Shopify, free. Automates the process after form submission.</li>
+                <li><strong>Flow Mail</strong> — free. Sends the automated confirmation email to the customer.</li>
+              </ul>
+            </div>
+
+            <p>The full setup takes around 30–45 minutes when going through all steps for the first time.</p>
+
+            <h2 id="step-1">Step 1: Install Shopify Forms</h2>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">1</div>
+                <h3>Install Shopify Forms from the App Store</h3>
+              </div>
+              <ul>
+                <li>Go to the Shopify App Store and install <strong>Shopify Forms</strong>.</li>
+                <li>After installation, open the app and click <strong>Create form</strong>.</li>
+                <li>Choose <strong>Inline form</strong>.</li>
+                <li>Give it a name, e.g. <em>Withdrawal Form</em></li>
+              </ul>
+            </div>
+
+            <h2 id="step-2">Step 2: Create the withdrawal form</h2>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">2</div>
+                <h3>Configure fields, settings and success message</h3>
+              </div>
+              <ul>
+                <li>Add these <strong>required fields</strong>: First Name, Last Name, Email, Order Number</li>
+                <li>For <strong>Order Number</strong>: single-line text field, required, hint text: "Please include the # sign"</li>
+                <li>Optional: multi-line text field for additional notes (not required)</li>
+                <li>Make sure the form is <strong>not a newsletter form</strong> — marketing must be disabled</li>
+                <li>Set a <strong>success message</strong>, e.g.: "Your withdrawal request has been submitted. We will send you a confirmation by email."</li>
+                <li>Enable the option to receive a notification when the form is submitted</li>
+                <li>Save and <strong>activate</strong> the form</li>
+              </ul>
+            </div>
+
+            <div class="hint-box">
+              <strong>Important:</strong> The <strong>Form ID</strong> is only shown after saving. Copy it immediately — you'll need it in the next step.
+            </div>
+
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>No time to set this up?</strong>
+                <span>I set up the withdrawal form, confirmation email and button for your Shopify store — fast and clean.</span>
+              </div>
+              <a href="https://dd-gossen.com/shopify-freelancer/#contact">Get in touch</a>
+            </div>
+
+            <h2 id="step-3">Step 3: Create a new page for the withdrawal form</h2>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">3</div>
+                <h3>Create the page in Shopify</h3>
+              </div>
+              <ul>
+                <li>Go to <strong>Online Store → Pages → Add Page</strong></li>
+                <li>Page title: e.g. <em>Withdrawal Form</em></li>
+                <li>URL: <code>/pages/withdrawal-form</code></li>
+                <li>Set the page to <strong>visible</strong></li>
+                <li>Fill in the metadata cleanly (page title + description)</li>
+                <li><strong>Don't</strong> assign a template yet — that happens in Step 5</li>
+              </ul>
+            </div>
+
+            <h2 id="step-4">Step 4: Create a custom page template in your theme</h2>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">4</div>
+                <h3>Create a template and embed the form</h3>
+              </div>
+              <ul>
+                <li>Go to <strong>Online Store → Themes → Customise</strong></li>
+                <li>In the Theme Editor, open page templates and create a new template based on the default page — e.g.: <code>page.withdrawal-form</code></li>
+                <li>Make sure you're editing the new template (not the default page)</li>
+                <li>Add a <strong>text or rich text block</strong> and set the page heading as H1: <em>Withdrawal Form</em></li>
+                <li>Add an <strong>app block</strong>: Apps → Shopify Forms</li>
+                <li>Enter the <strong>Form ID</strong> from Step 2</li>
+                <li>Adjust colours, spacing and styling to match your theme</li>
+                <li>Save the template</li>
+              </ul>
+              <p>Then go back to the page from Step 3 and assign the new template: scroll down to <strong>Template</strong> and select the new page template, then save.</p>
+            </div>
+
+            <h2 id="step-5">Step 5: Set up the confirmation email</h2>
+
+            <p>Customers need an automatic email confirming their withdrawal request was received. This runs through Shopify Flow and Flow Mail.</p>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">5a</div>
+                <h3>Install Shopify Flow & Flow Mail</h3>
+              </div>
+              <ul>
+                <li>Install both apps from the App Store: <strong>Shopify Flow</strong> and <strong>Flow Mail</strong></li>
+                <li>In Flow Mail: enable email sending, customise branding (logo, colours, sender address)</li>
+              </ul>
+            </div>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">5b</div>
+                <h3>Create a workflow in Shopify Flow</h3>
+              </div>
+              <ul>
+                <li>Open Shopify Flow → <strong>Create workflow</strong></li>
+                <li>Set the <strong>trigger</strong>: <em>Metaobject Entry Created</em></li>
+                <li>Select the metaobject type matching your withdrawal form</li>
+              </ul>
+              <p style="margin-top: 0.75rem;">Background: Shopify Forms saves submissions as metaobjects. As soon as someone submits the form, a new metaobject entry is created — and your workflow starts automatically.</p>
+            </div>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">5c</div>
+                <h3>Create the confirmation email</h3>
+              </div>
+              <ul>
+                <li>As the <strong>action</strong> select: <em>Send transactional email by Flow Mail</em></li>
+                <li><strong>Recipient</strong>: insert the email address from the form using a variable — the email goes directly to the customer</li>
+                <li><strong>Email content</strong>: confirmation of receipt, reference to the order, next steps, contact option for questions</li>
+                <li>Include your legal notice and relevant policy information</li>
+                <li>Name the workflow, e.g.: <em>Withdrawal Confirmation</em></li>
+                <li><strong>Activate</strong> the workflow</li>
+              </ul>
+            </div>
+
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Legal background: EU withdrawal rights in 2026</strong>
+                <span>What changes from June 2026 and what that means for your Shopify store.</span>
+              </div>
+              <a href="https://dd-gossen.com/blog/en/shopify-withdrawal-button/">Read article →</a>
+            </div>
+
+            <h2 id="step-6">Step 6: Test everything</h2>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">6</div>
+                <h3>Run a full test before going live</h3>
+              </div>
+              <ul>
+                <li>Fill out the withdrawal form yourself and submit it</li>
+                <li>Does your <strong>internal notification</strong> arrive?</li>
+                <li>Is the <strong>metaobject entry</strong> created in Shopify?</li>
+                <li>Is the <strong>automatic confirmation email</strong> sent to the submitted address?</li>
+                <li>Does the <strong>form page display correctly</strong> on the frontend?</li>
+                <li>Are all required fields properly marked as required?</li>
+              </ul>
+              <p>Only make the withdrawal button publicly visible once everything works correctly.</p>
+            </div>
+
+            <h2 id="step-7">Step 7: Place the withdrawal button visibly in your store</h2>
+
+            <p>The button must be easy to find. A hidden link buried in your terms is not enough. Place it in at least two locations.</p>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">7a</div>
+                <h3>Create a menu item</h3>
+              </div>
+              <ul>
+                <li>Go to <strong>Content → Menus</strong></li>
+                <li>Add a new menu item linking to <code>/pages/withdrawal-form</code></li>
+                <li>Possible labels: <em>Withdraw</em>, <em>Cancel purchase</em>, <em>Right of withdrawal</em></li>
+                <li>Verify the correct wording with your legal advisor</li>
+              </ul>
+            </div>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">7b</div>
+                <h3>Add to the footer</h3>
+              </div>
+              <ul>
+                <li>Add the menu item to your footer navigation</li>
+                <li>If your theme supports a <strong>button block in the footer</strong>: embed it directly as a button</li>
+                <li>If not: add the menu item and style it as a button using CSS (clear background, clearly clickable, stands out from regular footer links)</li>
+                <li>After saving, check the frontend: is the button visible and clickable?</li>
+              </ul>
+            </div>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">7c</div>
+                <h3>Add to the customer account</h3>
+              </div>
+              <ul>
+                <li>If customer accounts are enabled: go to <strong>Content → Menus</strong> and add a menu item linking to the withdrawal form page</li>
+                <li>Customers will find the button directly after logging in</li>
+              </ul>
+            </div>
+
+            <h2 id="step-8">Step 8: Update your withdrawal policy</h2>
+
+            <div class="step-box">
+              <div class="step-box-header">
+                <div class="step-number">8</div>
+                <h3>Add a note to your Shopify policies</h3>
+              </div>
+              <ul>
+                <li>Go to <strong>Settings → Policies</strong></li>
+                <li>In your Refund/Withdrawal Policy, add a note that customers can also submit their withdrawal via the withdrawal button or form</li>
+                <li>Include a direct link to the form page in the text</li>
+              </ul>
+              <p>This ensures the process is not just technically set up, but also clearly referenced in your legal documents.</p>
+            </div>
+
+            <h2 id="summary">Summary</h2>
+
+            <p>With these eight steps you have set up a complete, free withdrawal process in Shopify:</p>
+
+            <ol style="padding-left: 1.3rem; line-height: 2; color: #374151;">
+              <li>Install Shopify Forms and create the form</li>
+              <li>Configure fields, disable marketing, set a success message</li>
+              <li>Create a new page and note the form ID</li>
+              <li>Create a custom template in your theme, embed the form</li>
+              <li>Set up Shopify Flow + Flow Mail, automate the confirmation email</li>
+              <li>Test the full process end-to-end</li>
+              <li>Place the withdrawal button visibly in footer and customer account</li>
+              <li>Update your withdrawal policy to reference the form</li>
+            </ol>
+
+            <p>No ongoing app costs, no developer needed. Those who prefer to save time can outsource the setup.</p>
+
+            <div class="related-articles">
+              <h4>Related Articles</h4>
+              <ul>
+                <li><a href="https://dd-gossen.com/blog/en/shopify-withdrawal-button/">Shopify Withdrawal Button: Legal requirements + what changes in June 2026 →</a></li>
+              </ul>
+            </div>
+
+            <div class="cta-box">
+              <h3>No time to set it up yourself?</h3>
+              <p>I set up the withdrawal form, automated confirmation email and withdrawal button in your Shopify store — fast, clean, and without back-and-forth.</p>
+              <a href="#" class="cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Book a free intro call</a>
+            </div>
+
+          </div>
+
+          <section class="article-faq">
+            <h2 class="faq-title">Frequently asked questions about the Shopify withdrawal button</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>Does the withdrawal button in Shopify cost anything?</summary>
+                <p>No. The solution using Shopify Forms, Shopify Flow and Flow Mail is completely free. All three apps are either made by Shopify or available for free in their basic version.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Which apps do I need for the Shopify withdrawal button?</summary>
+                <p>You need three apps: Shopify Forms for the form, Shopify Flow for automation, and Flow Mail for the confirmation email. All are free and available in the Shopify App Store.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Do I need to offer a withdrawal button as a Shopify store owner?</summary>
+                <p>Yes, if you sell B2C within the EU. Customers must be able to easily exercise their right of withdrawal. A clearly visible, easy-to-find button or link to the withdrawal form is mandatory. A hidden link buried in your terms is not sufficient.</p>
+              </details>
+              <details class="faq-item">
+                <summary>How long does the setup take?</summary>
+                <p>The setup takes around 30–45 minutes when going through all steps for the first time. Store owners with less experience in the Shopify Theme Editor should allow a bit more time.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Where should the withdrawal button be placed in the store?</summary>
+                <p>At minimum in the footer. Additionally, it is recommended to place it in the customer account. The button must be easy to find and clearly clickable — not a hidden link in long texts.</p>
+              </details>
+            </div>
+          </section>
+
+          <div class="author-box">
+            <h3 class="author-box-title">About the author</h3>
+            <p class="author-bio">I work as a Shopify Freelancer based in Germany, helping store owners with technical implementation, legally compliant configuration, and long-term optimisation of their Shopify stores.</p>
+            <div class="author-details">
+              <img src="../../../Maik-Gossen-ShopifyFreelancer.png" alt="Maik Gossen" class="author-avatar">
+              <div class="author-info">
+                <p class="author-name"><a href="https://dd-gossen.com/shopify-freelancer/" class="author-name-link">Maik Gossen</a></p>
+                <p class="author-role">Shopify Freelancer & Developer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-name">MAIK GOSSEN</div>
+        <div class="footer-contact-label">Contact:</div>
+        <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+        <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+        <div class="footer-social">
+          <a href="mailto:info@dd-gossen.com" title="Email" aria-label="Email"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Menu</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/en/">Overview</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/en/">My Services</a></li>
+          <li><a href="https://dd-gossen.com/blog/en/">Blog</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Content</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/blog/en/shopify-withdrawal-button-guide/">Withdrawal Button Guide</a></li>
+          <li><a href="https://dd-gossen.com/blog/en/shopify-withdrawal-button/">Shopify Withdrawal Button</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/en/">Shop Setup & Optimisation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Quick Access</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/#contact">Free intro call</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/#about-me">About me</a></li>
+          <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://dd-gossen.com/impressum.html">Imprint</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/datenschutz.html">Privacy Policy</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/agb.html">Terms</a>
+      <span class="footer-sep">|</span>
+      <a href="#" id="openCookieSettings">Cookie Settings</a>
+      <span class="footer-sep">|</span>
+      <span>© 2025 Maik Gossen</span>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var header = document.querySelector('.header');
+      if (!header) return;
+      let lastScrollTop = 0;
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        header.style.background = scrollTop > 100 ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.15)';
+        if (scrollTop > 100) {
+          header.classList.toggle('hidden', scrollTop > lastScrollTop);
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+      });
+    })();
+    (function() {
+      const header = document.querySelector('.header');
+      if (!header) return;
+      const root = document.documentElement;
+      function update() {
+        root.style.setProperty('--sidebar-top', header.classList.contains('hidden') ? '24px' : '110px');
+      }
+      new MutationObserver(update).observe(header, { attributes: true, attributeFilter: ['class'] });
+      update();
+    })();
+    (function() {
+      const sections = document.querySelectorAll('.article-content h2[id]');
+      const tocLinks = document.querySelectorAll('.sidebar-toc a');
+      if (!sections.length || !tocLinks.length) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.sidebar-toc a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+      sections.forEach(section => observer.observe(section));
+    })();
+  </script>
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+    function initCalUI() {
+      if (window.Cal && window.Cal.ns && window.Cal.ns.erstgespraech) {
+        Cal.ns.erstgespraech("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      } else { setTimeout(initCalUI, 100); }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCalUI);
+    } else { initCalUI(); }
+  </script>
+</body>
+</html>
