@@ -126,13 +126,13 @@
       box-shadow: 0 8px 24px rgba(0, 123, 255, 0.35);
     }
     .form-legal {
-      font-size: 0.78rem;
-      color: #9ca3af;
+      font-size: 0.8rem;
+      color: #4b5563;
       text-align: center;
       margin-top: 1rem;
-      line-height: 1.5;
+      line-height: 1.55;
     }
-    .form-legal a { color: #9ca3af; }
+    .form-legal a { color: #237eb5; text-decoration: underline; }
     .price-summary {
       display: flex;
       align-items: center;
@@ -144,20 +144,29 @@
     }
     .price-summary-label { font-size: 0.9rem; color: #374151; font-weight: 500; }
     .price-summary-amount { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 700; color: #0f172a; }
-    .success-box {
+    .success-wrapper {
       display: none;
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.25);
+      margin-bottom: 1.5rem;
+    }
+    .success-box {
       background: rgba(34,197,94,0.1);
       border: 1px solid rgba(34,197,94,0.3);
       border-radius: 14px;
-      padding: 2rem;
+      padding: 1.75rem 1.5rem;
       text-align: center;
-      margin-top: 1.5rem;
     }
     .success-box h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; color: #16a34a; margin: 0 0 0.5rem 0; }
     .success-box p { font-size: 0.93rem; color: #374151; margin: 0; }
     @media (max-width: 600px) {
       .form-page { padding: 6rem 0.75rem 4rem; }
       .form-card { padding: 1.5rem; }
+      .success-wrapper { padding: 1.5rem; }
       .form-row { grid-template-columns: 1fr; }
     }
   </style>
@@ -177,6 +186,8 @@
 
   <main class="form-page">
 
+    <div id="orderFlow">
+
     <div class="form-header">
       <span class="form-tag">Auftragsformular</span>
       <h1 class="form-h1">Widerrufsbutton beauftragen</h1>
@@ -186,7 +197,7 @@
     <div class="collaborator-box">
       <strong>Collaborator-Code — kommt per Mail</strong>
       <p>Den Shopify Collaborator-Anfragecode (vierstellig) frage ich nach Auftragseingang per Mail an. Du findest ihn unter:<br>
-      Shopify-Admin → <strong>Einstellungen → Benutzer und Berechtigungen → Collaborator-Anfragen</strong></p>
+      <strong>Shopify-Admin</strong> → <strong>Einstellungen → Benutzer und Berechtigungen → Collaborator-Anfragen</strong></p>
     </div>
 
     <!-- HINWEIS: Formular-Backend via Formspree.
@@ -207,8 +218,13 @@
         <h2>Shop-Informationen</h2>
         <div class="form-group">
           <label class="form-label" for="shopUrl">Shop-URL <span class="req">*</span></label>
-          <input class="form-input" type="url" id="shopUrl" name="shop_url" placeholder="https://www.mein-shop.de" required>
-          <p class="form-hint">Die normale URL deines Shops, z. B. www.mein-shop.de</p>
+          <input class="form-input" type="text" id="shopUrl" name="shop_url" placeholder="z. B. mein-shop.de oder www.mein-shop.de" required autocomplete="url" inputmode="url">
+          <p class="form-hint">Einfach Domain eingeben, mit oder ohne www — https:// ist nicht nötig.</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="withdrawalSenderEmail">Absender-E-Mail für die Widerrufsbestätigung <span class="req">*</span></label>
+          <input class="form-input" type="email" id="withdrawalSenderEmail" name="withdrawal_confirmation_sender_email" placeholder="z. B. noreply@mein-shop.de" required>
+          <p class="form-hint">Von welcher Adresse sollen Kunden die Bestätigung nach Widerrufseingang erhalten (z. B. noreply- oder Support-Adresse)?</p>
         </div>
         <div class="form-group">
           <label class="form-label" for="shopifyTheme">Verwendetes Theme (optional)</label>
@@ -284,9 +300,13 @@
 
     </form>
 
-    <div class="success-box" id="successBox">
-      <h3>Auftrag eingegangen ✓</h3>
-      <p>Ich melde mich innerhalb eines Werktags bei dir. Halte den vierstelligen Collaborator-Anfragecode bereit, den ich dir per Mail abfrage.</p>
+    </div>
+
+    <div class="success-wrapper" id="successWrapper" hidden>
+      <div class="success-box" id="successBox">
+        <h3>Auftrag eingegangen ✓</h3>
+        <p>Ich melde mich innerhalb eines Werktags bei dir. Halte den vierstelligen Collaborator-Anfragecode bereit, den ich dir per Mail abfrage.</p>
+      </div>
     </div>
 
   </main>
@@ -330,7 +350,8 @@
   <script src="../../script.js"></script>
   <script>
     const form = document.getElementById('orderForm');
-    const successBox = document.getElementById('successBox');
+    const orderFlow = document.getElementById('orderFlow');
+    const successWrapper = document.getElementById('successWrapper');
     if (form) {
       form.addEventListener('submit', async function(e) {
         e.preventDefault();
@@ -344,8 +365,11 @@
             headers: { 'Accept': 'application/json' }
           });
           if (res.ok) {
-            form.style.display = 'none';
-            successBox.style.display = 'block';
+            if (orderFlow) orderFlow.style.display = 'none';
+            if (successWrapper) {
+              successWrapper.hidden = false;
+              successWrapper.style.display = 'block';
+            }
           } else {
             btn.textContent = 'Fehler — bitte per E-Mail kontaktieren';
             btn.disabled = false;
