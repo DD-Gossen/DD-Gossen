@@ -710,17 +710,10 @@ body[data-lang="en"] .flag-de {
     padding: 1.5rem 2.5rem;
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.revenue-loss-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .revenue-loss-icon {
@@ -788,21 +781,11 @@ body[data-lang="en"] .flag-de {
     padding: 2.5rem;
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .service-card h3 {
     text-align: center;
     margin-bottom: 1.5rem;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-}
-
-.service-card h3 {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
@@ -859,12 +842,6 @@ body[data-lang="en"] .flag-de {
     border-radius: 20px;
     padding: 2.5rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.about-me-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .about-me-image {
@@ -1549,14 +1526,7 @@ body[data-lang="en"] .flag-de {
     padding: 2.5rem;
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
     text-align: center;
-}
-
-.benefit-item:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-    background: rgba(255, 255, 255, 0.25);
 }
 
 .benefit-content h4 {
@@ -1807,14 +1777,6 @@ body[data-lang="en"] .flag-de {
 }
 
 /* Overview page: profile card link, contact copy */
-a.profile-card-large {
-    transition: all 0.3s ease;
-}
-a.profile-card-large:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.25);
-    transform: translateY(-2px);
-}
 .contact-copy-text {
     display: flex;
     flex-direction: column;
@@ -3290,7 +3252,6 @@ body:not(.legal-page) header .mobile-menu-toggle {
     padding: 1.5rem;
     border-radius: 20px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     position: relative;
     z-index: 1;
 }
@@ -3306,12 +3267,6 @@ body:not(.legal-page) header .mobile-menu-toggle {
     z-index: 1;
 }
 
-.comparison-column-negative:hover {
-    opacity: 0.7;
-    transform: scale(0.97);
-    background: rgba(255, 255, 255, 0.12);
-}
-
 /* Positive Column (MAIK GOSSEN) - hervorgehoben */
 .comparison-column-positive {
     opacity: 1;
@@ -3321,12 +3276,6 @@ body:not(.legal-page) header .mobile-menu-toggle {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
     margin-left: -2rem;
     z-index: 2;
-}
-
-.comparison-column-positive:hover {
-    transform: translateY(-5px) scale(1.02);
-    background: rgba(255, 255, 255, 0.3);
-    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.2);
 }
 
 .comparison-column-title {

@@ -222,10 +222,14 @@
       font-weight: 700;
       padding: 0.9rem 2.5rem;
       border-radius: 50px;
-      transition: opacity 0.2s;
+      transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
       letter-spacing: 0.03em;
     }
-    .cta-main-btn:hover { opacity: 0.88; }
+    .cta-main-btn:hover {
+      opacity: 0.95;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 123, 255, 0.35);
+    }
     .delivery-badge {
       display: inline-flex;
       align-items: center;
@@ -240,7 +244,8 @@
     }
     .faq-item { border-bottom: 1px solid rgba(35,126,181,0.12); }
     .faq-item:last-child { border-bottom: none; }
-    .faq-item summary { font-weight: 600; color: #0f172a; padding: 1rem 0; cursor: pointer; list-style: none; font-size: 0.97rem; }
+    .faq-item summary { font-weight: 600; color: #0f172a; padding: 1rem 0; cursor: pointer; list-style: none; font-size: 0.97rem; transition: color 0.2s ease; }
+    .faq-item summary:hover { color: #237eb5; }
     .faq-item summary::-webkit-details-marker { display: none; }
     .faq-item summary::after { content: '+'; float: right; font-size: 1.2rem; color: #237eb5; }
     .faq-item[open] summary::after { content: '−'; }
@@ -249,7 +254,7 @@
       .service-page { padding: 6rem 0.75rem 4rem; }
       .service-card { padding: 1.5rem; }
       .vs-box { grid-template-columns: 1fr; }
-      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
       .cta-section { padding: 1.75rem 1.25rem; }
       .price-amount { font-size: 2.4rem; }
     }
@@ -320,7 +325,7 @@
           {
             "@type": "Question",
             "name": "Was brauche ich um zu starten?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Du brauchst den Collaborator-Zugangscode aus deinem Shopify-Admin sowie deine Rechnungsadresse für die Rechnung. Der Rest läuft über das Auftragsformular." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Nur Shop-URL, E-Mail und Rechnungsadresse — alles im Auftragsformular. Den vierstelligen Collaborator-Anfragecode frage ich nach Auftragseingang sicher per Mail an." }
           }
         ]
       }
@@ -336,7 +341,7 @@
     </a>
     <div class="header-right-container">
       <div class="header-cta-container">
-        <a href="bestellen/" class="header-cta-button">Jetzt beauftragen</a>
+        <a href="bestellen/" class="header-cta-button">Auftrag anfragen</a>
       </div>
       <div class="language-container">
         <a href="https://dd-gossen.com/en/shopify-withdrawal-button-service/" class="language-flag flag-uk" title="Read in English"></a>
@@ -348,7 +353,7 @@
 
     <div class="service-hero">
       <h1 class="service-h1">Widerrufsbutton in Shopify<br>einbauen lassen</h1>
-      <p class="service-subtitle">Formular ausfüllen — ich melde mich per Mail. Komplett umgesetzt in 3 Werktagen, Rechnung erst nach erfolgreichem Test.</p>
+      <p class="service-subtitle">Formular ausfüllen, ich melde mich per Mail. Komplett umgesetzt in 3 Werktagen, Rechnung erst nach erfolgreichem Test.</p>
       <div class="price-badge">
         <span class="price-amount">150 €</span>
         <span class="price-label">einmalig · zzgl. MwSt.</span>
@@ -374,8 +379,8 @@
       <div class="steps-grid">
         <div class="step-item">
           <div class="step-num">1</div>
-          <div class="step-title">Auftrag erteilen</div>
-          <div class="step-desc">Formular ausfüllen: Shop-URL, E-Mail, Rechnungsadresse & Collaborator-Code bereitstellen</div>
+          <div class="step-title">Auftrag anfragen</div>
+          <div class="step-desc">Formular ausfüllen: Shop-URL, E-Mail und Rechnungsadresse — den vierstelligen Collaborator-Anfragecode schickst du per Mail nach Rückfrage</div>
         </div>
         <div class="step-item">
           <div class="step-num">2</div>
@@ -436,7 +441,7 @@
     <div class="cta-section">
       <h2>Jetzt Widerrufsbutton einbauen lassen</h2>
       <p>Formular ausfüllen — ich melde mich per Mail und bestätige den Auftrag.<br>Fertig in 3 Werktagen. Rechnung erst nach Abschluss.</p>
-      <a href="bestellen/" class="cta-main-btn">Jetzt beauftragen →</a>
+      <a href="bestellen/" class="cta-main-btn">Auftrag anfragen →</a>
       <br>
       <span class="delivery-badge">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -457,7 +462,7 @@
       </details>
       <details class="faq-item">
         <summary>Was brauche ich zum Starten?</summary>
-        <p>Du brauchst den Collaborator-Zugangscode aus deinem Shopify-Admin (zu finden unter Einstellungen → Benutzer und Berechtigungen → Collaborator-Anfragen) sowie deine Rechnungsadresse. Den Rest gibst du im Auftragsformular an.</p>
+        <p>Nur Shop-URL, E-Mail und Rechnungsadresse — alles im Auftragsformular. Den vierstelligen Collaborator-Anfragecode frage ich nach Auftragseingang sicher per Mail an.</p>
       </details>
       <details class="faq-item">
         <summary>Wie bekommt ihr Zugang zu meinem Shop?</summary>
@@ -509,7 +514,7 @@
       <div class="footer-col">
         <div class="footer-col-title">Schnellzugriff</div>
         <ul>
-          <li><a href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/bestellen/">Widerrufsbutton beauftragen</a></li>
+          <li><a href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/bestellen/">Widerrufsbutton anfragen</a></li>
           <li><a href="https://dd-gossen.com/shopify-freelancer/#contact">Kostenloses Erstgespräch</a></li>
           <li><a href="https://dd-gossen.com/shopify-freelancer/#about-me">Über mich</a></li>
         </ul>

@@ -78,6 +78,9 @@
       transition: border-color 0.2s, box-shadow 0.2s;
       outline: none;
     }
+    .form-input:hover, .form-textarea:hover {
+      border-color: rgba(35,126,181,0.45);
+    }
     .form-input:focus, .form-textarea:focus {
       border-color: #237eb5;
       box-shadow: 0 0 0 3px rgba(35,126,181,0.12);
@@ -114,10 +117,14 @@
       font-weight: 700;
       cursor: pointer;
       letter-spacing: 0.03em;
-      transition: opacity 0.2s;
+      transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
       margin-top: 0.5rem;
     }
-    .submit-btn:hover { opacity: 0.88; }
+    .submit-btn:hover {
+      opacity: 0.95;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 123, 255, 0.35);
+    }
     .form-legal {
       font-size: 0.78rem;
       color: #9ca3af;
@@ -173,14 +180,13 @@
     <div class="form-header">
       <span class="form-tag">Auftragsformular</span>
       <h1 class="form-h1">Widerrufsbutton beauftragen</h1>
-      <p class="form-subtitle">Formular ausfüllen, Zugang bereitstellen — ich melde mich innerhalb eines Werktags.</p>
+      <p class="form-subtitle">Formular ausfüllen, Zugang bereitstellen, ich melde mich innerhalb eines Werktags.</p>
     </div>
 
     <div class="collaborator-box">
-      <strong>Collaborator-Code bereithalten</strong>
-      <p>Du brauchst deinen Shopify <strong>Collaborator-Anfragecode</strong>. Zu finden unter:<br>
-      Shopify-Admin → <strong>Einstellungen → Benutzer und Berechtigungen → Collaborator-Anfragen</strong><br>
-      Dort findest du einen 8-stelligen Code. Den trägst du unten ein.</p>
+      <strong>Collaborator-Code — kommt per Mail</strong>
+      <p>Den Shopify Collaborator-Anfragecode (vierstellig) frage ich nach Auftragseingang per Mail an. Du findest ihn unter:<br>
+      Shopify-Admin → <strong>Einstellungen → Benutzer und Berechtigungen → Collaborator-Anfragen</strong></p>
     </div>
 
     <!-- HINWEIS: Formular-Backend via Formspree.
@@ -203,11 +209,6 @@
           <label class="form-label" for="shopUrl">Shop-URL <span class="req">*</span></label>
           <input class="form-input" type="url" id="shopUrl" name="shop_url" placeholder="https://www.mein-shop.de" required>
           <p class="form-hint">Die normale URL deines Shops, z. B. www.mein-shop.de</p>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="collaboratorCode">Collaborator-Anfragecode <span class="req">*</span></label>
-          <input class="form-input" type="text" id="collaboratorCode" name="collaborator_code" placeholder="12345678" maxlength="8" required>
-          <p class="form-hint">8-stelliger Code aus Shopify-Admin → Einstellungen → Benutzer und Berechtigungen → Collaborator-Anfragen.</p>
         </div>
         <div class="form-group">
           <label class="form-label" for="shopifyTheme">Verwendetes Theme (optional)</label>
@@ -273,9 +274,9 @@
           <span class="price-summary-amount">150 €</span>
         </div>
 
-        <button type="submit" class="submit-btn">Jetzt verbindlich beauftragen →</button>
+        <button type="submit" class="submit-btn">Anfrage absenden →</button>
         <p class="form-legal">
-          Mit dem Absenden erteilst du einen verbindlichen Auftrag über 150 € zzgl. MwSt.<br>
+          Kein verbindlicher Kauf — ich melde mich per Mail und wir klären alles Weitere.<br>
           Die Rechnung wird nach erfolgreicher Implementierung und Test ausgestellt.<br>
           Es gelten die <a href="https://dd-gossen.com/agb.html">AGB</a> und <a href="https://dd-gossen.com/datenschutz.html">Datenschutzbestimmungen</a>.
         </p>
@@ -285,7 +286,7 @@
 
     <div class="success-box" id="successBox">
       <h3>Auftrag eingegangen ✓</h3>
-      <p>Ich melde mich innerhalb eines Werktags bei dir. Halte den Collaborator-Code bereit, falls du ihn noch nicht angegeben hast.</p>
+      <p>Ich melde mich innerhalb eines Werktags bei dir. Halte den vierstelligen Collaborator-Anfragecode bereit, den ich dir per Mail abfrage.</p>
     </div>
 
   </main>

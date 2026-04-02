@@ -57,12 +57,6 @@ body {
   object-fit: cover;
   display: block;
   box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.article-card img:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
 }
 
 /* Hero-Bild: oben/unten beschnitten, fester Höhe */

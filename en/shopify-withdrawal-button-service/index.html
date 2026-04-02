@@ -55,12 +55,13 @@
     .cta-section { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 20px; padding: 2.5rem; text-align: center; margin-bottom: 2rem; }
     .cta-section h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 2rem; font-weight: 700; color: white; margin: 0 0 0.75rem 0; }
     .cta-section p { color: rgba(255,255,255,0.75); margin: 0 0 1.75rem 0; font-size: 1rem; line-height: 1.6; }
-    .cta-main-btn { display: inline-block; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); color: white !important; text-decoration: none !important; font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; font-weight: 700; padding: 0.9rem 2.5rem; border-radius: 50px; transition: opacity 0.2s; letter-spacing: 0.03em; }
-    .cta-main-btn:hover { opacity: 0.88; }
+    .cta-main-btn { display: inline-block; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); color: white !important; text-decoration: none !important; font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; font-weight: 700; padding: 0.9rem 2.5rem; border-radius: 50px; transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; letter-spacing: 0.03em; }
+    .cta-main-btn:hover { opacity: 0.95; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0, 123, 255, 0.35); }
     .delivery-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50px; padding: 0.4rem 1rem; font-size: 0.85rem; color: rgba(255,255,255,0.85); margin-top: 1.25rem; }
     .faq-item { border-bottom: 1px solid rgba(35,126,181,0.12); }
     .faq-item:last-child { border-bottom: none; }
-    .faq-item summary { font-weight: 600; color: #0f172a; padding: 1rem 0; cursor: pointer; list-style: none; font-size: 0.97rem; }
+    .faq-item summary { font-weight: 600; color: #0f172a; padding: 1rem 0; cursor: pointer; list-style: none; font-size: 0.97rem; transition: color 0.2s ease; }
+    .faq-item summary:hover { color: #237eb5; }
     .faq-item summary::-webkit-details-marker { display: none; }
     .faq-item summary::after { content: '+'; float: right; font-size: 1.2rem; color: #237eb5; }
     .faq-item[open] summary::after { content: '−'; }
@@ -69,7 +70,7 @@
       .service-page { padding: 6rem 0.75rem 4rem; }
       .service-card { padding: 1.5rem; }
       .vs-box { grid-template-columns: 1fr; }
-      .steps-grid { grid-template-columns: 1fr 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
       .cta-section { padding: 1.75rem 1.25rem; }
       .price-amount { font-size: 2.4rem; }
     }
@@ -121,7 +122,7 @@
           { "@type": "Question", "name": "What is included in the package?", "acceptedAnswer": { "@type": "Answer", "text": "Included: withdrawal form creation and embedding, legal notice update, checkout button label fix, automated confirmation email setup, and complete testing of the implementation." } },
           { "@type": "Question", "name": "How long does the setup take?", "acceptedAnswer": { "@type": "Answer", "text": "The implementation is completed within 3 business days after receiving shop access." } },
           { "@type": "Question", "name": "When is the invoice issued?", "acceptedAnswer": { "@type": "Answer", "text": "The invoice is issued only after the implementation is completed and successfully tested." } },
-          { "@type": "Question", "name": "What do I need to get started?", "acceptedAnswer": { "@type": "Answer", "text": "You need your Shopify collaborator request code (found in Shopify Admin → Settings → Users and Permissions → Collaborator requests) and your billing address. Everything else goes through the order form." } }
+          { "@type": "Question", "name": "What do I need to get started?", "acceptedAnswer": { "@type": "Answer", "text": "Just your shop URL, email, and billing address — all entered in the order form. I'll request the four-digit collaborator request code by email after receiving your order." } }
         ]
       }
     ]
@@ -136,7 +137,7 @@
     </a>
     <div class="header-right-container">
       <div class="header-cta-container">
-        <a href="order/" class="header-cta-button">Order now</a>
+        <a href="order/" class="header-cta-button">Request service</a>
       </div>
       <div class="language-container">
         <a href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/" class="language-flag flag-de" title="Auf Deutsch lesen"></a>
@@ -148,7 +149,7 @@
 
     <div class="service-hero">
       <h1 class="service-h1">Shopify Withdrawal Button<br>Setup Service</h1>
-      <p class="service-subtitle">Fill in the form — I'll get in touch by email. Fully set up in 3 business days, invoice only after successful testing.</p>
+      <p class="service-subtitle">Fill in the form, I'll get in touch by email. Fully set up in 3 business days, invoice only after successful testing.</p>
       <div class="price-badge">
         <span class="price-amount">€150</span>
         <span class="price-label">one-time · plus VAT</span>
@@ -172,8 +173,8 @@
       <div class="steps-grid">
         <div class="step-item">
           <div class="step-num">1</div>
-          <div class="step-title">Place order</div>
-          <div class="step-desc">Fill in the form: shop URL, email, billing address & collaborator code</div>
+          <div class="step-title">Send request</div>
+          <div class="step-desc">Fill in the form: shop URL, email & billing address</div>
         </div>
         <div class="step-item">
           <div class="step-num">2</div>
@@ -232,7 +233,7 @@
     <div class="cta-section">
       <h2>Get your withdrawal button set up</h2>
       <p>Fill in the form, provide access — I'll handle the rest.<br>Done in 3 business days. Invoice only after completion.</p>
-      <a href="order/" class="cta-main-btn">Order now →</a>
+      <a href="order/" class="cta-main-btn">Request service →</a>
       <br>
       <span class="delivery-badge">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -252,7 +253,7 @@
       </details>
       <details class="faq-item">
         <summary>What do I need to get started?</summary>
-        <p>You need the collaborator request code from your Shopify Admin (found under Settings → Users and Permissions → Collaborator requests) and your billing address. Enter everything in the order form.</p>
+        <p>Enter your shop URL, email, and billing address in the order form. I'll ask you by email for the four-digit collaborator request code from Shopify Admin (Settings → Users and Permissions → Collaborator requests) after your inquiry.</p>
       </details>
       <details class="faq-item">
         <summary>How does the shop access work?</summary>
