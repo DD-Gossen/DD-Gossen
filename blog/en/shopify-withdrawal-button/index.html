@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopify Withdrawal Button: How to Set It Up Correctly + 2026 Changes | DD-Gossen</title>
+  <meta name="description" content="Set up the Shopify withdrawal button correctly: what the German right of withdrawal requires, what changes in June 2026, and how to implement it in your shop – without risk of legal warnings.">
+  <link rel="canonical" href="https://dd-gossen.com/blog/en/shopify-withdrawal-button/">
+  <link rel="alternate" hreflang="en" href="https://dd-gossen.com/blog/en/shopify-withdrawal-button/">
+  <link rel="alternate" hreflang="de" href="https://dd-gossen.com/blog/widerrufsrecht-shopify-2026/">
+  <link rel="alternate" hreflang="x-default" href="https://dd-gossen.com/blog/widerrufsrecht-shopify-2026/">
+  <meta property="og:title" content="Shopify Withdrawal Button: How to Set It Up Correctly + 2026 Changes">
+  <meta property="og:description" content="Set up the Shopify withdrawal button correctly: what the German right of withdrawal requires, what changes in June 2026, and how to implement it in your shop.">
+  <meta property="og:url" content="https://dd-gossen.com/blog/en/shopify-withdrawal-button/">
+  <meta property="og:type" content="article">
+  <link rel="icon" type="image/png" href="../../../favicon.png">
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="stylesheet" href="../../article-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    .article-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+    .sidebar-column { align-self: stretch; }
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      position: sticky;
+      top: var(--sidebar-top, 110px);
+      transition: top 0.3s ease;
+    }
+    .article-main { align-self: start; min-width: 0; width: 100%; }
+    .sidebar-toc {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .sidebar-toc h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid rgba(35,126,181,0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .sidebar-toc ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+    .sidebar-toc a {
+      display: block;
+      font-size: 0.88rem;
+      color: #374151;
+      text-decoration: none;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      line-height: 1.4;
+    }
+    .sidebar-toc a:hover, .sidebar-toc a.active { background: rgba(35,126,181,0.1); color: #237eb5; }
+    .sidebar-cta {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(15,23,42,0.25);
+    }
+    .sidebar-cta p { font-size: 0.9rem; color: rgba(255,255,255,0.85); margin: 0 0 1rem 0; line-height: 1.5; }
+    .sidebar-cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+      padding: 0.65rem 1.2rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .sidebar-cta a:hover { background: linear-gradient(135deg, #0066e6 0%, #004999 100%); color: white; text-decoration: none; }
+    .article-card {
+      max-width: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-sizing: border-box;
+    }
+    .article-card .article-hero-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 220px !important;
+      object-fit: cover !important;
+      object-position: center center;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      display: block;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .inline-cta {
+      background: linear-gradient(135deg, rgba(35,126,181,0.08) 0%, rgba(35,126,181,0.15) 100%);
+      border: 1px solid rgba(35,126,181,0.25);
+      border-left: 4px solid #237eb5;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .inline-cta-text { flex: 1; }
+    .inline-cta-text strong { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; color: #0f172a; margin-bottom: 0.3rem; }
+    .inline-cta-text span { font-size: 0.9rem; color: #374151; }
+    .inline-cta a {
+      display: inline-block;
+      background: #0f172a;
+      color: white !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none !important;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+      flex-shrink: 0;
+    }
+    .inline-cta a:hover { background: #1e293b; }
+    .author-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: transparent !important;
+      border: 1px solid rgba(35,126,181,0.15);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+      width: 100%;
+    }
+    .author-box-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 600; color: #333; margin: 0 0 0.75rem 0; }
+    .author-bio { font-size: 0.9rem; color: #555; line-height: 1.5; margin: 0 0 1rem 0; }
+    .author-details { display: flex; align-items: center; gap: 1rem; }
+    .author-name-link { color: #333; text-decoration: none; font-weight: inherit; }
+    .author-name-link:hover { color: #333; text-decoration: none; }
+    .article-summary { margin: 0 0 2rem 0; padding: 0; width: 100%; }
+    .article-summary summary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #64748b;
+      padding: 0.25rem 0 0.4rem 0;
+      cursor: pointer;
+      list-style: none;
+      border-bottom: 1px solid rgba(35,126,181,0.15);
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+    .article-summary summary::-webkit-details-marker { display: none; }
+    .article-summary summary::after { content: '▼'; float: right; font-size: 0.6rem; opacity: 0.4; }
+    .article-summary[open] summary::after { content: '▲'; }
+    .article-summary ul { margin: 0.5rem 0 0 0; padding: 0; list-style: none; width: 100%; }
+    .article-summary li { padding: 0.3rem 0; font-size: 0.9rem; line-height: 1.5; color: #64748b; border-bottom: 1px solid rgba(35,126,181,0.06); }
+    .article-summary li:last-child { border-bottom: none; }
+    .article-faq {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(35,126,181,0.15);
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+    .faq-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 600; color: #0f172a; margin: 0 0 1.5rem 0; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; width: 100%; min-width: 0; }
+    .faq-item { padding: 0; margin: 0; border-bottom: 1px solid rgba(35,126,181,0.12); width: 100%; min-width: 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item summary { font-weight: 600; color: #0f172a; padding: 1rem 0; cursor: pointer; list-style: none; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; float: right; font-size: 1.2rem; color: #237eb5; }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item p { margin: 0 0 1rem 0; padding: 0 0 1rem 0; line-height: 1.6; color: #374151; overflow-wrap: break-word; word-wrap: break-word; }
+    .author-avatar { width: 48px !important; height: 48px !important; max-width: 48px !important; border-radius: 50%; object-fit: cover; object-position: top center; flex-shrink: 0; border: none; margin: 0 !important; }
+    .author-info { display: flex; flex-direction: column; gap: 0.25rem; }
+    .author-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.125rem; font-weight: 600; color: #333; margin: 0; }
+    .author-role { font-size: 0.875rem; color: #777; font-weight: 400; margin: 0; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; font-size: 0.88rem; color: #6b7280; margin-bottom: 0rem; flex-wrap: wrap; }
+    .meta-item { display: flex; align-items: center; gap: 0.3rem; }
+    .meta-tag { background: rgba(35,126,181,0.1); color: #237eb5; padding: 0.2rem 0.7rem; border-radius: 50px; font-size: 0.8rem; font-weight: 500; }
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; padding: 0 0.2rem; gap: 0.8rem; }
+      .article-sidebar { position: static; top: auto; transition: none; flex-direction: column; gap: 0; }
+      .sidebar-toc { padding: 0.8rem 1rem; border-radius: 12px; margin-bottom: 0; }
+      .sidebar-toc h3 { font-size: 0.78rem; margin-bottom: 0.35rem; }
+      .sidebar-toc ul { display: flex; flex-direction: column; gap: 0.05rem 0; }
+      .sidebar-toc a { font-size: 0.85rem; padding: 0.15rem 0; background: none !important; border: none; opacity: 0.75; }
+      .sidebar-cta { display: none; }
+    }
+    @media (max-width: 600px) {
+      .inline-cta { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+      .article-card .article-hero-img { height: 180px !important; border-radius: 12px; margin-bottom: 0.8rem; }
+      .article-faq { margin-top: 1.5rem; padding-top: 1rem; }
+      .faq-item summary { padding: 0.5rem 0; font-size: 0.9rem; }
+      .faq-item p { margin: 0 0 0.5rem 0; padding: 0 0 0.5rem 0; font-size: 0.88rem; line-height: 1.45; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dd-gossen.com/#organization",
+        "name": "DD-Gossen",
+        "url": "https://dd-gossen.com",
+        "logo": { "@type": "ImageObject", "url": "https://dd-gossen.com/Logo.png" },
+        "sameAs": ["https://www.linkedin.com/in/maik-gossen"]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dd-gossen.com/#author",
+        "name": "Maik Gossen",
+        "url": "https://dd-gossen.com/shopify-freelancer/en/",
+        "image": { "@type": "ImageObject", "url": "https://dd-gossen.com/Maik-Gossen-ShopifyFreelancer.png", "width": 400, "height": 400 },
+        "jobTitle": "Shopify Freelancer",
+        "worksFor": { "@id": "https://dd-gossen.com/#organization" }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://dd-gossen.com/blog/en/shopify-withdrawal-button/#article",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://dd-gossen.com/blog/en/shopify-withdrawal-button/" },
+        "headline": "Shopify Withdrawal Button: How to Set It Up Correctly + What Changes in 2026",
+        "description": "Set up the Shopify withdrawal button correctly: what the German right of withdrawal requires, what changes in June 2026, and how to implement it in your shop without legal risk.",
+        "image": { "@type": "ImageObject", "url": "https://dd-gossen.com/blog/images/Widerrufsrecht-Shopify-2026.png", "width": 1200, "height": 630 },
+        "datePublished": "2026-04-01",
+        "dateModified": "2026-04-01",
+        "author": { "@id": "https://dd-gossen.com/#author" },
+        "publisher": { "@id": "https://dd-gossen.com/#organization", "name": "DD-Gossen", "logo": { "@type": "ImageObject", "url": "https://dd-gossen.com/Logo.png", "width": 600, "height": 60 } },
+        "articleSection": "Shopify",
+        "keywords": "Shopify withdrawal button, right of withdrawal Shopify, Shopify withdrawal notice, German withdrawal law 2026, Widerrufsbutton Shopify",
+        "wordCount": 1300,
+        "inLanguage": "en"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dd-gossen.com/blog/en/shopify-withdrawal-button/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the Shopify withdrawal button?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The Shopify withdrawal button covers two things: a clearly visible button for customers to declare their withdrawal, and the correctly labelled checkout button required by German law (§ 312j BGB – the 'button solution')." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I set up the withdrawal button in Shopify?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Adjust the checkout button label via Shopify > Settings > Languages. Create a dedicated withdrawal form page and link it prominently in the footer, checkout and order confirmation email." }
+          },
+          {
+            "@type": "Question",
+            "name": "What changes for German Shopify shops in June 2026?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Stricter requirements for withdrawal notices, withdrawal forms and documentation obligations come into force – especially for digital products, subscriptions and proof of customer notification." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="https://dd-gossen.com/" class="logo">
+      <img src="../../../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+    </a>
+    <div class="header-right-container">
+      <div class="header-cta-container">
+        <a href="#" class="header-cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Get in touch</a>
+      </div>
+      <div class="language-container">
+        <a href="https://dd-gossen.com/blog/widerrufsrecht-shopify-2026/" class="language-flag flag-de" title="Zur deutschen Version wechseln"></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main" style="margin-top: 0; padding: 8rem 1rem 4rem;">
+
+    <div class="article-layout">
+
+      <div class="sidebar-column">
+      <aside class="article-sidebar">
+        <div class="sidebar-toc">
+          <h3>Contents</h3>
+          <ul>
+            <li><a href="#what-changes">What changes from June 2026</a></li>
+            <li><a href="#withdrawal-button">The Shopify withdrawal button explained</a></li>
+            <li><a href="#withdrawal-notice">Updating your withdrawal notice</a></li>
+            <li><a href="#digital-products">Digital products and subscriptions</a></li>
+            <li><a href="#shopify-implementation">Practical implementation in Shopify</a></li>
+            <li><a href="#documentation">Documentation and proof obligations</a></li>
+            <li><a href="#legal-risk">Legal warning risk realistically assessed</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-cta">
+          <p>Need your Shopify shop made legally compliant?</p>
+          <a href="https://dd-gossen.com/shopify-freelancer/en/#contact">Get in touch →</a>
+        </div>
+      </aside>
+      </div>
+
+      <div class="article-main">
+        <div class="article-card">
+
+          <div class="article-meta">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              01 Apr 2026
+            </span>
+            <span class="meta-item meta-lesezeit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              7 min read
+            </span>
+            <span class="meta-tag">Law & Compliance</span>
+          </div>
+
+          <h1 class="article-title" style="text-align: left; margin: 0 0 1.5rem 0; font-size: 2.4rem; max-width: 100%; padding: 0;">Shopify Withdrawal Button: How to Set It Up Correctly + What Changes in 2026</h1>
+
+          <img src="../../images/Widerrufsrecht-Shopify-2026.png" alt="Shopify Withdrawal Button – Set up correctly for German law" class="article-hero-img">
+
+          <details class="article-summary">
+            <summary>Article summary</summary>
+            <ul>
+              <li><strong>Withdrawal button:</strong> Shopify shops need a clearly visible withdrawal button or form – not just buried in the terms and conditions.</li>
+              <li><strong>What changes?</strong> From June 2026, stricter EU requirements apply to withdrawal notices, forms and documentation obligations in online retail.</li>
+              <li><strong>Digital products:</strong> New rules for consent to immediate execution – without the correct opt-in, the withdrawal exclusion does not apply.</li>
+              <li><strong>Subscriptions:</strong> Increased transparency obligations at checkout; contract duration, cancellation conditions and right of withdrawal must be clearly communicated.</li>
+              <li><strong>Shopify adjustments:</strong> Withdrawal button, checkout texts, confirmation emails and possibly checkout extensions need updating.</li>
+              <li><strong>Legal risk:</strong> A missing or incorrectly placed withdrawal button is one of the most common grounds for legal warnings in e-commerce.</li>
+            </ul>
+          </details>
+
+          <div class="article-content" style="width: 100%; max-width: 100%; padding: 0; box-sizing: border-box; margin: 0;">
+
+            <p>The Shopify withdrawal button is one of the most common grounds for legal warnings in German e-commerce – and at the same time one of the most underestimated. Many shops either don't have one at all, have it incorrectly labelled, or have it so well hidden that it doesn't count legally.</p>
+
+            <p>On top of that, new requirements from the EU Consumer Rights Directive and the Omnibus Directive, transposed into German law, come into force from June 2026. If you haven't yet adjusted your Shopify shop, now is the time to act – before the deadline arrives and before the next legal warning lands in your inbox.</p>
+
+            <p>This article explains exactly what the withdrawal button in Shopify means, what changes from June 2026, and how to implement everything cleanly.</p>
+
+            <h2 id="what-changes">What changes from June 2026</h2>
+
+            <p>The changes affect several areas simultaneously. It's not one single new rule, but a tightening of existing requirements at multiple points.</p>
+
+            <p><strong>Withdrawal notice:</strong> The statutory model withdrawal notice has been revised. Shops still using the old version are formally non-compliant. This sounds technical – but has practical consequences: an incorrect or outdated withdrawal notice can extend the withdrawal period from 14 days to up to 12 months.</p>
+
+            <p><strong>Withdrawal form:</strong> The model withdrawal form you must provide to customers also gets an updated version. It must be accessibly available and must not be hidden only within the terms and conditions.</p>
+
+            <p><strong>Transparency obligations at checkout:</strong> Customers must be clearly and comprehensibly informed about the right of withdrawal before purchasing – not just in the confirmation email. This particularly affects how information is presented in the checkout area.</p>
+
+            <p><strong>Documentation obligation:</strong> Shop operators must be able to prove that they correctly informed the customer. Anyone without corresponding records is in a weak position in the event of a dispute.</p>
+
+            <h2 id="withdrawal-button">The Shopify withdrawal button explained</h2>
+
+            <p>When people talk about the "Shopify withdrawal button", they usually mean one of two things – and both are relevant.</p>
+
+            <p><strong>First: The withdrawal button for customers.</strong> This is a clearly visible, clickable button or link through which the buyer can actively declare their withdrawal – without having to search through lengthy terms and conditions. Since the tightening of the EU Consumer Rights Directive, the rule is: the withdrawal form must be easily findable and barrier-free. A hidden link in the footer is not sufficient. The button must be functional – either as a direct online form or as a clearly labelled link to the model withdrawal form.</p>
+
+            <p><strong>Second: The checkout button with purchase obligation notice.</strong> In Germany, the so-called "button solution" applies (§ 312j para. 3 BGB): the order button must be unambiguously labelled – "Order with obligation to pay", "Buy now" or similar. "Continue", "Confirm" or "Submit" are not permitted and can render the purchase contract void.</p>
+
+            <p>In Shopify, the checkout button is set to something generic by default – that is not sufficient for the German market. You need to customise it to "Jetzt kaufen" (Buy now) or "Zahlungspflichtig bestellen" (Order with obligation to pay). This is done via Shopify Settings > Languages > Theme language, or on Shopify Plus directly through the checkout editor.</p>
+
+            <p>The customer-facing withdrawal button must be set up separately. In Shopify you have several options: create a dedicated page with the withdrawal form and link it prominently, or use an app that makes the form directly accessible in the customer account area.</p>
+
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Need your Shopify withdrawal button set up correctly?</strong>
+                <span>I set up the checkout button, withdrawal form and legal notice texts for your shop – clean and legally secure.</span>
+              </div>
+              <a href="https://dd-gossen.com/shopify-freelancer/en/#contact">Get in touch free</a>
+            </div>
+
+            <h2 id="withdrawal-notice">Updating your withdrawal notice – what exactly needs doing</h2>
+
+            <p>The withdrawal notice is the core element. It must be placed prominently in the shop – not just in the terms and conditions, but also findable during the ordering process itself.</p>
+
+            <p>Concretely: the notice must be displayed clearly and comprehensibly before the purchase contract is concluded. In Shopify this is typically handled via the checkout area, either through text blocks in the checkout or through a well-placed link directly at the point of order completion.</p>
+
+            <p>What many shop operators overlook: the notice must also be included in the order confirmation – completely, not merely as a reference to an external page. A link to "withdrawal notice" without the actual text is not formally sufficient.</p>
+
+            <p>Also check whether your current withdrawal notice correctly covers the updated deadlines and exceptions. For custom-made items, perishable goods and digital content in particular, there are specific formulations that must be correct.</p>
+
+            <h2 id="digital-products">Digital products and subscriptions: special requirements</h2>
+
+            <p>Anyone selling digital products – downloads, software licences, digital content or memberships – faces a particular challenge. The right of withdrawal for digital products can in principle be excluded as soon as execution has begun. But: two conditions must be met.</p>
+
+            <p>First, the customer must have expressly consented to execution beginning immediately. Second, they must have confirmed that they thereby lose their right of withdrawal. Both points must be actively – not passively – requested. A pre-ticked checkbox is not sufficient.</p>
+
+            <p>From June 2026, the documentation requirements for this consent are being tightened. The shop operator must be able to prove that consent was actually given – and when. In Shopify this means you need a corresponding checkbox with timestamp logging in the checkout. This is not solved out of the box without customisation.</p>
+
+            <p>For subscriptions, additional transparency obligations apply. Contract duration, cancellation periods and the consequences of withdrawal must be clearly communicated before purchase. Hidden references in lengthy terms and conditions texts are no longer sufficient.</p>
+
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Checkout, emails and legal texts updated?</strong>
+                <span>I handle the technical implementation in your Shopify shop – clean, traceable and ready for June 2026.</span>
+              </div>
+              <a href="https://dd-gossen.com/shopify-freelancer/en/#contact">Get in touch now</a>
+            </div>
+
+            <h2 id="shopify-implementation">Practical implementation in Shopify</h2>
+
+            <p>Shopify offers good options to implement the legal requirements – but not everything is correctly configured by default. These are the areas you need to check and adjust:</p>
+
+            <p><strong>Checkout button label:</strong> In Shopify under Settings > Languages, translate the checkout button to comply with the German "button solution". "Zahlungspflichtig bestellen" or "Jetzt kaufen" are the accepted formulations.</p>
+
+            <p><strong>Checkout texts:</strong> In Shopify Settings under "Checkout" you can add additional text and notes. Use this area to reference the right of withdrawal and add a direct link to the updated withdrawal notice.</p>
+
+            <p><strong>Confirmation emails:</strong> The order confirmation must contain the complete withdrawal notice or clearly and directly reference it. In the Shopify notification templates you can add the relevant text block. Check all transactional emails – not just the order confirmation, but also shipping confirmation and invoice emails.</p>
+
+            <p><strong>Withdrawal form:</strong> The form must be easy for customers to find. Place it in the footer, on the order page and in the confirmation email. If you run a dedicated returns page in Shopify, check that the form is correctly embedded there.</p>
+
+            <p><strong>Digital products and checkboxes:</strong> If you sell digital content, you need an explicit consent checkbox in the checkout. Shopify allows this via checkout extensions or – depending on your plan – via customised checkout scripts. Those on the Basic plan may need an app-based solution here.</p>
+
+            <h2 id="documentation">Documentation and proof obligations</h2>
+
+            <p>An often underestimated point: the tightened rules from June 2026 also increase documentation obligations. It's no longer enough to have the right texts in your shop. In the event of a dispute, you must be able to prove that a specific customer was correctly informed at a specific point in time.</p>
+
+            <p>In practice this means: document which version of your withdrawal notice was active at which point in time. If you've adjusted the notice over time, you should archive earlier versions – with the date of respective validity. This is particularly relevant when a customer later claims an extended withdrawal period and you need to prove that the correct version was active at the time of their purchase.</p>
+
+            <p>A practical recommendation: document changes to legally relevant pages (terms, withdrawal notice, privacy policy) with a date – for example in a simple internal changelog or via the version history in Shopify pages.</p>
+
+            <h2 id="legal-risk">Legal warning risk realistically assessed</h2>
+
+            <p>Incorrect withdrawal notices have been among the most common grounds for legal warnings in German e-commerce for years. That hasn't changed. The new requirements from June 2026 create new attack points.</p>
+
+            <p>Particularly at risk are shops that haven't updated their withdrawal notice for a long time, that sell digital products without the correct consent request, or that offer subscriptions without sufficient checkout transparency.</p>
+
+            <p>A solicitor specialising in legal warnings doesn't need individual case review. Automated tools systematically scan online shops for formal errors. Anyone with an outdated notice or a withdrawal form that isn't prominently placed is vulnerable – regardless of how well the rest of the shop is set up.</p>
+
+            <h2 id="conclusion">Conclusion</h2>
+
+            <p>The Shopify withdrawal button is not a nice-to-have. It's a legal requirement – and from June 2026 the requirements become even more specific. Those who act now can proceed calmly. Those who wait will work under time pressure or receive a legal warning.</p>
+
+            <p>Check specifically: is the checkout button correctly labelled? Is the withdrawal form easy to find? Are checkout texts and confirmation emails up to date? Text only in the terms and conditions is not sufficient protection.</p>
+
+            <p>If you need support with the technical implementation in your Shopify shop – I'm happy to help. No lengthy lead time, no bureaucracy.</p>
+
+            <div class="cta-box">
+              <h3>Make your Shopify shop compliant for June 2026</h3>
+              <p>Do you want your Shopify shop technically prepared for the new right of withdrawal requirements? I handle the checkout button, withdrawal form, confirmation emails and technical implementation – clean and traceable.</p>
+              <a href="#" class="cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Book a free initial consultation</a>
+            </div>
+
+          </div>
+
+          <section class="article-faq" itemscope itemtype="https://schema.org/FAQPage">
+            <h2 class="faq-title">Frequently asked questions about the Shopify withdrawal button</h2>
+            <div class="faq-list">
+              <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary itemprop="name">What is the Shopify withdrawal button?</summary>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <p itemprop="text">The Shopify withdrawal button covers two things: a clearly visible button for customers to declare their withdrawal, and the correctly labelled checkout button required by German law (§ 312j BGB – the "button solution"). Both are legally required for German online shops.</p>
+                </div>
+              </details>
+              <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary itemprop="name">How do I set up the withdrawal button in Shopify?</summary>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <p itemprop="text">Adjust the checkout button label via Shopify > Settings > Languages > Theme language. Create a dedicated withdrawal form page and link it prominently in the footer, in the checkout, and in the order confirmation email.</p>
+                </div>
+              </details>
+              <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary itemprop="name">What changes for German Shopify shops in June 2026?</summary>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <p itemprop="text">Stricter requirements for withdrawal notices, withdrawal forms and documentation obligations come into force – especially for digital products, subscriptions and proof of customer notification.</p>
+                </div>
+              </details>
+              <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary itemprop="name">What happens without a correct withdrawal button?</summary>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <p itemprop="text">Without a correctly labelled checkout button, the purchase contract can be void. A missing or hidden withdrawal link leads to increased legal warning risk and extends the withdrawal period for the customer to up to 12 months.</p>
+                </div>
+              </details>
+              <details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <summary itemprop="name">Does this apply to small Shopify shops too?</summary>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                  <p itemprop="text">Yes. The requirements apply to all online retailers selling to consumers (B2C) in the EU – regardless of company size or turnover.</p>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <div class="author-box">
+            <h3 class="author-box-title">About the author</h3>
+            <p class="author-bio">I work as a Shopify freelancer based in Germany, helping existing shop operators with technical implementation, legally compliant configuration and long-term shop optimisation.</p>
+            <div class="author-details">
+              <img src="../../../Maik-Gossen-ShopifyFreelancer.png" alt="Maik Gossen" class="author-avatar">
+              <div class="author-info">
+                <p class="author-name"><a href="https://dd-gossen.com/shopify-freelancer/en/" class="author-name-link">Maik Gossen</a></p>
+                <p class="author-role">Shopify Freelancer & Developer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-name">MAIK GOSSEN</div>
+        <div class="footer-contact-label">Contact:</div>
+        <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+        <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+        <div class="footer-social">
+          <a href="mailto:info@dd-gossen.com" title="E-Mail" aria-label="E-Mail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Menu</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/en/">Overview</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/en/">My Services</a></li>
+          <li><a href="https://dd-gossen.com/blog/en/">Blog</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/en/#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Content</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/blog/en/shopify-withdrawal-button/">Shopify Withdrawal Button</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/en/">Shop Setup & Optimisation</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/en/#competencies">Competencies</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/en/#projects">Portfolio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Quick Access</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/en/#contact">Free Initial Consultation</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/en/#about-me">About Me</a></li>
+          <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://dd-gossen.com/impressum.html">Imprint</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/datenschutz.html">Privacy Policy</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/agb.html">Terms</a>
+      <span class="footer-sep">|</span>
+      <a href="#" id="openCookieSettings">Cookie Settings</a>
+      <span class="footer-sep">|</span>
+      <span>© 2025 Maik Gossen</span>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      var header = document.querySelector('.header');
+      if (!header) return;
+      let lastScrollTop = 0;
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        header.style.background = scrollTop > 100 ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.15)';
+        if (scrollTop > 100) {
+          header.classList.toggle('hidden', scrollTop > lastScrollTop);
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+      });
+    })();
+
+    (function() {
+      const header = document.querySelector('.header');
+      if (!header) return;
+      const root = document.documentElement;
+      function update() {
+        root.style.setProperty('--sidebar-top', header.classList.contains('hidden') ? '24px' : '110px');
+      }
+      new MutationObserver(update).observe(header, { attributes: true, attributeFilter: ['class'] });
+      update();
+    })();
+
+    (function() {
+      const sections = document.querySelectorAll('.article-content h2[id]');
+      const tocLinks = document.querySelectorAll('.sidebar-toc a');
+      if (!sections.length || !tocLinks.length) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.sidebar-toc a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+      sections.forEach(section => observer.observe(section));
+    })();
+  </script>
+
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+    function initCalUI() {
+      if (window.Cal && window.Cal.ns && window.Cal.ns.erstgespraech) {
+        Cal.ns.erstgespraech("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      } else { setTimeout(initCalUI, 100); }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCalUI);
+    } else { initCalUI(); }
+  </script>
+
+</body>
+</html>

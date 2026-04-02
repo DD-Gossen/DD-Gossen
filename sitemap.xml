@@ -67,6 +67,26 @@
     <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/blog/widerrufsrecht-shopify-2026/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/blog/en/shopify-withdrawal-button/" />
+  </url>
+
+  <url>
+    <loc>https://dd-gossen.com/blog/en/</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/blog/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/blog/" />
+  </url>
+
+  <url>
+    <loc>https://dd-gossen.com/blog/en/shopify-withdrawal-button/</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/blog/en/shopify-withdrawal-button/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/blog/widerrufsrecht-shopify-2026/" />
   </url>
 
   <url>
