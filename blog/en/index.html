@@ -141,7 +141,7 @@
     </a>
     <div class="header-right-container">
       <div class="header-cta-container">
-        <a href="#" class="header-cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Get in touch</a>
+        <a href="https://dd-gossen.com/en/shopify-withdrawal-button-service/" class="header-cta-button">Withdrawal button package</a>
       </div>
       <div class="language-container">
         <a href="../" class="language-flag flag-de" title="Zur deutschen Version wechseln"></a>
@@ -200,28 +200,29 @@
           <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
         </div>
       </div>
-      <div class="footer-col">
+      <div class="footer-col footer-col-toggle">
         <div class="footer-col-title">Menu</div>
         <ul>
-          <li><a href="https://dd-gossen.com/en/">Overview</a></li>
+          <li><a href="https://dd-gossen.com/en/">Home</a></li>
           <li><a href="https://dd-gossen.com/shopify-freelancer/en/">My Services</a></li>
-          <li><a href="https://dd-gossen.com/blog/en/">Blog</a></li>
+          <li><a href="https://dd-gossen.com/shopify-kostenrechner/en/">Cost Calculator</a></li>
+          <li><a href="https://dd-gossen.com/blog/">Blog</a></li>
           <li><a href="https://dd-gossen.com/shopify-freelancer/en/#contact">Contact</a></li>
         </ul>
       </div>
-      <div class="footer-col">
+      <div class="footer-col footer-col-toggle">
         <div class="footer-col-title">Content</div>
         <ul>
-          <li><a href="https://dd-gossen.com/blog/en/shopify-withdrawal-button-guide/">Withdrawal Button Guide</a></li>
           <li><a href="https://dd-gossen.com/en/shopify-withdrawal-button-service/">Withdrawal Button Service</a></li>
           <li><a href="https://dd-gossen.com/blog/en/shopify-withdrawal-button/">Shopify Withdrawal Button</a></li>
-          <li><a href="https://dd-gossen.com/shopify-freelancer/en/">Shop Setup & Optimisation</a></li>
+          <li><a href="https://dd-gossen.com/blog/shopify-freelancer-deutschland/">Shopify Freelancer Germany</a></li>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/en/">Shop Setup &amp; Optimization</a></li>
           <li><a href="https://dd-gossen.com/shopify-freelancer/en/#competencies">Competencies</a></li>
           <li><a href="https://dd-gossen.com/shopify-freelancer/en/#projects">Portfolio</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Quick Access</div>
+      <div class="footer-col footer-col-toggle">
+        <div class="footer-col-title">Quick Links</div>
         <ul>
           <li><a href="https://dd-gossen.com/shopify-freelancer/en/#contact">Free Initial Consultation</a></li>
           <li><a href="https://dd-gossen.com/shopify-freelancer/en/#about-me">About Me</a></li>
@@ -230,21 +231,28 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <a href="https://dd-gossen.com/impressum.html">Imprint</a>
+      <a href="https://dd-gossen.com/en/legal-notice.html">Legal Notice</a>
       <span class="footer-sep">|</span>
-      <a href="https://dd-gossen.com/datenschutz.html">Privacy Policy</a>
+      <a href="https://dd-gossen.com/en/privacy-policy.html">Privacy Policy</a>
       <span class="footer-sep">|</span>
-      <a href="https://dd-gossen.com/agb.html">Terms</a>
+      <a href="https://dd-gossen.com/en/terms.html">Terms</a>
       <span class="footer-sep">|</span>
-      <a href="#" id="openCookieSettings">Cookie Settings</a>
+      <button type="button" id="openCookieSettings" class="footer-cookie-btn">Cookie Settings</button>
       <span class="footer-sep">|</span>
       <span>© 2025 Maik Gossen</span>
     </div>
   </footer>
 
-  <script type="text/javascript">
-    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-    Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+  <script src="../../script.js"></script>
+  <script>
+    document.getElementById('openCookieSettings')?.addEventListener('click', function(e) {
+      e.preventDefault();
+      const cookieBanner = document.getElementById('cookieBanner');
+      if (cookieBanner) {
+        cookieBanner.style.display = '';
+        cookieBanner.style.removeProperty('display');
+      }
+    });
   </script>
 </body>
 </html>
