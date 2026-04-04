@@ -81,7 +81,7 @@
 
 - **Keyword:** Im Titel, in der ersten H2, in der Meta-Description, 1–2× im Fließtext
 - **LSI-Keywords:** Verwandte Begriffe natürlich einbauen
-- **Interne Verlinkung:** Wo sinnvoll auf /shopify-freelancer/ verlinken
+- **Interne Verlinkung:** Wo sinnvoll auf die Service-Landing `/` oder den Hub `/shopify-freelancer/` verlinken (je nach Kontext)
 - **Externe Links:** 1–2 zu seriösen Quellen (Shopify Docs, etc.) – optional
 - **Bilder:** Alt-Text mit Keyword oder beschreibend
 - **URL:** Kurz, lesbar, Keyword enthalten (z.B. `/blog/shopify-migration-tipps/`)

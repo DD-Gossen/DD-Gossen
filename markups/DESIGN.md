@@ -155,15 +155,15 @@ box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 **Social Icons:** E-Mail, YouTube, LinkedIn (SVG-Icons)
 
 **Menü-Links:**
-- `/` – Übersicht
-- `/shopify-freelancer` – Meine Services
+- `/shopify-freelancer/` – Übersicht (Hub)
+- `/` – Meine Services (lange Service-Landing)
 - `/shopify-kostenrechner/` – Kostenrechner
 - `/blog/` – Blog
-- `/shopify-freelancer/#contact` – Kontakt
+- `/#contact` – Kontakt
 
 **Schnellzugriff:**
-- `/shopify-freelancer/#contact` – Kostenloses Erstgespräch
-- `/shopify-freelancer#about-me` – Über mich
+- `/#contact` – Kostenloses Erstgespräch
+- `/#about-me` – Über mich
 - Shopexperts (extern)
 
 **Legal:**

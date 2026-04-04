@@ -6,8 +6,14 @@ Neue Seiten sollen den Footer **immer** wie die Startseite aufbauen, damit Layou
 
 | Sprache | Vorlage im Repo |
 |--------|------------------|
-| Deutsch | `index.html` – Block ab `<footer class="footer">` bis `</footer>` |
+| Deutsch | `index.html` (Root) – Block ab `<footer class="footer">` bis `</footer>` |
 | Englisch | `en/index.html` – derselbe Block |
+
+### URL-Rollen (Stand Umstellung)
+
+- **`https://dd-gossen.com/`** (Root `index.html`): Deutsche **Service-Landing** (ehem. Inhalt von `/shopify-freelancer/`).
+- **`https://dd-gossen.com/shopify-freelancer/`**: Deutsche **Übersicht / Hub** (ehem. Root-Startseite).
+- Im Footer-Menü: **„Meine Services“** → Root `/`, **„Übersicht“** → `/shopify-freelancer/`. Logo in Unterseiten oft → `/shopify-freelancer/`.
 
 Die optische Ausgestaltung kommt aus `styles.css` (Klasse `.footer`). Ab ca. Viewportbreite 600px kollabieren die Spalten mit `footer-col-toggle` zu klickbaren Bereichen (Chevron an der Überschrift).
 
@@ -53,7 +59,7 @@ Keine EN-Unterseiten mit deutschen Pfaden (`impressum.html` nur für DE) in der 
 ## Linkliste in den drei Spalten
 
 - **Nicht** pro Unterseite eine eigene Mini-Navigation erfinden (z. B. nur „Legal“ als vierte Spalte oder weniger als drei Link-Spalten).
-- Inhalt der drei Spalten an die **jeweilige Startseite** anlehnen (Menü / Content / Schnellzugriff bzw. Menu / Content / Quick Links).  
+- Inhalt der drei Spalten an die **aktuelle Root-Landing** (`index.html`) bzw. EN-Hub (`en/index.html`) anlehnen; dabei **Übersicht** = `/shopify-freelancer/`, **Services/Kontakt-Anker** = `/` (DE).  
   Bei thematischen Landingpages dürfen einzelne Links in **Content** sinnvoll ergänzt werden (z. B. aktueller Artikel), die **Struktur** (4 Spalten, 3× Toggle) bleibt gleich.
 
 ## Checkliste vor Publish

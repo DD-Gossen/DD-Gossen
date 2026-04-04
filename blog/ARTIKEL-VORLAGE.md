@@ -53,7 +53,7 @@ Kopiere diese Struktur und fülle sie aus. Du kannst Abschnitte weglassen, die d
 - **Rolle:** [z.B. Shopify Freelancer & Entwickler]
 - **Bio:** [Kurzer Text]
 - **Bild:** [Pfad oder Standard]
-- **Link:** [z.B. /shopify-freelancer/]
+- **Link:** [z.B. `/` für Services oder `/shopify-freelancer/` für Übersicht]
 ```
 
 ---
@@ -78,8 +78,8 @@ Kopiere diese Struktur und fülle sie aus. Du kannst Abschnitte weglassen, die d
 
 - **Autor:** Maik Gossen, Shopify Freelancer & Entwickler
 - **Autor-Bild:** `Maik-Gossen-ShopifyFreelancer.png`
-- **Autor-Link:** `/shopify-freelancer/`
-- **CTA-Link:** Cal.com (Erstgespräch) oder `/shopify-freelancer/#contact`
+- **Autor-Link:** `/` (Service-Landing) oder `/shopify-freelancer/` (Hub)
+- **CTA-Link:** Cal.com (Erstgespräch) oder `/#contact`
 - **Strukturierte Daten:** Werden aus Metadaten + FAQ automatisch erzeugt
 
 ---
