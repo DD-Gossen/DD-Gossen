@@ -3,7 +3,7 @@
 
   <url>
     <loc>https://dd-gossen.com/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/" />
@@ -12,45 +12,45 @@
 
   <url>
     <loc>https://dd-gossen.com/en/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-freelancer/" />
   </url>
 
   <url>
     <loc>https://dd-gossen.com/shopify-freelancer/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-freelancer/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/" />
   </url>
 
   <url>
     <loc>https://dd-gossen.com/shopify-freelancer/en/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-freelancer/en/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/" />
   </url>
 
   <url>
     <loc>https://dd-gossen.com/shopify-kostenrechner/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-kostenrechner/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-kostenrechner/en/" />
   </url>
 
   <url>
     <loc>https://dd-gossen.com/shopify-kostenrechner/en/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-kostenrechner/en/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-kostenrechner/" />
   </url>
@@ -109,26 +109,26 @@
 
   <url>
     <loc>https://dd-gossen.com/blog/shopify-freelancer-deutschland/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.65</priority>
   </url>
 
 
   <url>
     <loc>https://dd-gossen.com/widerrufsbutton-einbauen-lassen/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/shopify-withdrawal-button-service/" />
   </url>
 
   <url>
     <loc>https://dd-gossen.com/en/shopify-withdrawal-button-service/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-04-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/shopify-withdrawal-button-service/" />
     <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/" />
   </url>
