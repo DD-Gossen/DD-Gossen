@@ -188,4 +188,199 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-optimierung/" />
   </url>
 
+  <!-- Shopify Hilfe -->
+  <url>
+    <loc>https://dd-gossen.com/shopify-hilfe/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-hilfe/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-hilfe/en/" />
+  </url>
+
+  <url>
+    <loc>https://dd-gossen.com/shopify-hilfe/en/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-hilfe/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-hilfe/" />
+  </url>
+
+  <!-- Lokale Landingpages -->
+  <url>
+    <loc>https://dd-gossen.com/shopify-freelancer-berlin/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-freelancer-berlin/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-freelancer-berlin/en/" />
+  </url>
+  <url>
+    <loc>https://dd-gossen.com/shopify-freelancer-berlin/en/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-freelancer-berlin/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-freelancer-berlin/" />
+  </url>
+
+  <url>
+    <loc>https://dd-gossen.com/shopify-freelancer-hamburg/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-freelancer-hamburg/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-freelancer-hamburg/en/" />
+  </url>
+  <url>
+    <loc>https://dd-gossen.com/shopify-freelancer-hamburg/en/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-freelancer-hamburg/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-freelancer-hamburg/" />
+  </url>
+
+  <url>
+    <loc>https://dd-gossen.com/shopify-freelancer-muenchen/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-freelancer-muenchen/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-freelancer-muenchen/en/" />
+  </url>
+  <url>
+    <loc>https://dd-gossen.com/shopify-freelancer-muenchen/en/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-freelancer-muenchen/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-freelancer-muenchen/" />
+  </url>
+
+  <url>
+    <loc>https://dd-gossen.com/shopify-freelancer-frankfurt/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-freelancer-frankfurt/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-freelancer-frankfurt/en/" />
+  </url>
+  <url>
+    <loc>https://dd-gossen.com/shopify-freelancer-frankfurt/en/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-freelancer-frankfurt/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-freelancer-frankfurt/" />
+  </url>
+
+  <url>
+    <loc>https://dd-gossen.com/shopify-freelancer-koeln/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-freelancer-koeln/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-freelancer-koeln/en/" />
+  </url>
+  <url>
+    <loc>https://dd-gossen.com/shopify-freelancer-koeln/en/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-freelancer-koeln/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-freelancer-koeln/" />
+  </url>
+
+  <url>
+    <loc>https://dd-gossen.com/shopify-freelancer-duesseldorf/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-freelancer-duesseldorf/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-freelancer-duesseldorf/en/" />
+  </url>
+  <url>
+    <loc>https://dd-gossen.com/shopify-freelancer-duesseldorf/en/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-freelancer-duesseldorf/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-freelancer-duesseldorf/" />
+  </url>
+
+  <url>
+    <loc>https://dd-gossen.com/shopify-freelancer-stuttgart/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-freelancer-stuttgart/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-freelancer-stuttgart/en/" />
+  </url>
+  <url>
+    <loc>https://dd-gossen.com/shopify-freelancer-stuttgart/en/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/shopify-freelancer-stuttgart/en/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/shopify-freelancer-stuttgart/" />
+  </url>
+
+  <!-- Case Studies / Projekte -->
+  <url>
+    <loc>https://dd-gossen.com/projekte/uhren2000/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dd-gossen.com/projekte/niegeloh-solingen/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dd-gossen.com/projekte/holzbrueder/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dd-gossen.com/projekte/7vintage/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dd-gossen.com/projekte/verbum-medien/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dd-gossen.com/projekte/die-gardine/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dd-gossen.com/projekte/newniche/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dd-gossen.com/projekte/hanoju/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://dd-gossen.com/projekte/cerena/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
