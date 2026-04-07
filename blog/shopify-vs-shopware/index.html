@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopify vs. Shopware: Der ehrliche Vergleich für den DACH-Markt (2026) | DD-Gossen</title>
+  <meta name="description" content="Shopify vs. Shopware im Vergleich ✓ Kosten, Performance, Apps & Skalierbarkeit ✓ Welches System passt zu deinem Business? ✓ Ehrliche Einschätzung 2026">
+  <meta name="keywords" content="Shopify vs Shopware, Shopify oder Shopware, Shopware Alternative, E-Commerce Plattform Vergleich">
+  <meta name="author" content="Maik Gossen">
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../article-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Shopify vs. Shopware: Der ehrliche Vergleich für den DACH-Markt (2026) | DD-Gossen">
+  <meta property="og:description" content="Shopify vs. Shopware im Vergleich ✓ Kosten, Performance, Apps & Skalierbarkeit ✓ Welches System passt zu deinem Business? ✓ Ehrliche Einschätzung 2026">
+  <meta property="og:url" content="https://dd-gossen.com/blog/shopify-vs-shopware/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="DD-Gossen">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shopify vs. Shopware: Der ehrliche Vergleich für den DACH-Markt (2026) | DD-Gossen">
+  <meta name="twitter:description" content="Shopify vs. Shopware im Vergleich ✓ Kosten, Performance, Apps & Skalierbarkeit ✓ Welches System passt zu deinem Business? ✓ Ehrliche Einschätzung 2026">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://dd-gossen.com/blog/shopify-vs-shopware/">
+
+  <style>
+    /* Two-column layout */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+
+    /* Grid column wrapper – stretches to full row height so sticky works */
+    .sidebar-column {
+      align-self: stretch;
+    }
+
+    /* Sidebar – sticky inside the full-height column */
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      position: sticky;
+      top: var(--sidebar-top, 110px);
+      transition: top 0.3s ease;
+    }
+
+    /* Content column starts at top, not stretched */
+    .article-main {
+      align-self: start;
+      min-width: 0;
+      width: 100%;
+    }
+
+    .sidebar-toc {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .sidebar-toc h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid rgba(35,126,181,0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sidebar-toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .sidebar-toc a {
+      display: block;
+      font-size: 0.88rem;
+      color: #374151;
+      text-decoration: none;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      line-height: 1.4;
+    }
+
+    .sidebar-toc a:hover,
+    .sidebar-toc a.active {
+      background: rgba(35,126,181,0.1);
+      color: #237eb5;
+    }
+
+    .sidebar-cta {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(15,23,42,0.25);
+    }
+
+    .sidebar-cta p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
+      margin: 0 0 1rem 0;
+      line-height: 1.5;
+    }
+
+    .sidebar-cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+      padding: 0.65rem 1.2rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .sidebar-cta a:hover {
+      background: linear-gradient(135deg, #0066e6 0%, #004999 100%);
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Main article area */
+    .article-main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Restore card styling */
+    .article-card {
+      max-width: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-sizing: border-box;
+    }
+
+    /* Hero image – override article-styles.css max-width:600px */
+    .article-hero-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      display: block;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Inline CTA */
+    .inline-cta {
+      background: linear-gradient(135deg, rgba(35,126,181,0.08) 0%, rgba(35,126,181,0.15) 100%);
+      border: 1px solid rgba(35,126,181,0.25);
+      border-left: 4px solid #237eb5;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .inline-cta-text {
+      flex: 1;
+    }
+
+    .inline-cta-text strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem;
+      color: #0f172a;
+      margin-bottom: 0.3rem;
+    }
+
+    .inline-cta-text span {
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    .inline-cta a {
+      display: inline-block;
+      background: #0f172a;
+      color: white !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none !important;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .inline-cta a:hover {
+      background: #1e293b;
+    }
+
+    /* Author box – kleine Karte unter FAQ, ohne Hintergrund */
+    .author-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: transparent !important;
+      border: 1px solid rgba(35,126,181,0.15);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    .author-box-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .author-bio {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.5;
+      margin: 0 0 1rem 0;
+    }
+
+    .author-details {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-name-link {
+      color: #333;
+      text-decoration: none;
+      font-weight: inherit;
+    }
+
+    .author-name-link:hover {
+      color: #333;
+      text-decoration: none;
+    }
+
+    /* In Kürze – linksbündig, unscheinbar, volle Breite */
+    .article-summary {
+      margin: 0 0 2rem 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .article-summary summary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #64748b;
+      padding: 0.25rem 0 0.4rem 0;
+      cursor: pointer;
+      list-style: none;
+      border-bottom: 1px solid rgba(35,126,181,0.15);
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+
+    .article-summary summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .article-summary summary::after {
+      content: '▼';
+      float: right;
+      font-size: 0.6rem;
+      opacity: 0.4;
+    }
+
+    .article-summary[open] summary::after {
+      content: '▲';
+    }
+
+    .article-summary ul {
+      margin: 0.5rem 0 0 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+    }
+
+    .article-summary li {
+      padding: 0.3rem 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #64748b;
+      border-bottom: 1px solid rgba(35,126,181,0.06);
+    }
+
+    .article-summary li:last-child {
+      border-bottom: none;
+    }
+
+    /* FAQ Section */
+    .article-faq {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(35,126,181,0.15);
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+
+    .faq-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .faq-item {
+      padding: 0;
+      margin: 0;
+      border-bottom: 1px solid rgba(35,126,181,0.12);
+      width: 100%;
+      min-width: 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item summary {
+      font-weight: 600;
+      color: #0f172a;
+      padding: 1rem 0;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      float: right;
+      font-size: 1.2rem;
+      color: #237eb5;
+    }
+
+    .faq-item[open] summary::after {
+      content: '−';
+    }
+
+    .faq-item p {
+      margin: 0 0 1rem 0;
+      padding: 0 0 1rem 0;
+      line-height: 1.6;
+      color: #374151;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    .author-avatar {
+      width: 48px !important;
+      height: 48px !important;
+      max-width: 48px !important;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      flex-shrink: 0;
+      border: none;
+      margin: 0 !important;
+    }
+
+    .author-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .author-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+    }
+
+    .author-role {
+      font-size: 0.875rem;
+      color: #777;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    /* Blog meta info */
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.88rem;
+      color: #6b7280;
+      margin-bottom: 0rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .meta-tag {
+      background: rgba(35,126,181,0.1);
+      color: #237eb5;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Comparison table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+    }
+
+    .comparison-table thead th {
+      background: #0f172a;
+      color: #fff;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      padding: 0.8rem 1rem;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table thead th:first-child {
+      border-radius: 8px 0 0 0;
+    }
+
+    .comparison-table thead th:last-child {
+      border-radius: 0 8px 0 0;
+    }
+
+    .comparison-table tbody td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid rgba(35,126,181,0.1);
+      color: #374151;
+      line-height: 1.5;
+    }
+
+    .comparison-table tbody tr:last-child td:first-child {
+      border-radius: 0 0 0 8px;
+    }
+
+    .comparison-table tbody tr:last-child td:last-child {
+      border-radius: 0 0 8px 0;
+    }
+
+    .comparison-table tbody tr:nth-child(even) {
+      background: rgba(35,126,181,0.04);
+    }
+
+    .comparison-table tbody td:first-child {
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        padding: 0 0.2rem;
+        gap: 0.8rem;
+      }
+
+      /* Disable sticky on mobile */
+      .article-sidebar {
+        position: static;
+        top: auto;
+        transition: none;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      /* Compact TOC on mobile */
+      .sidebar-toc {
+        padding: 0.8rem 1rem;
+        border-radius: 12px;
+        margin-bottom: 0;
+      }
+
+      .sidebar-toc h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .sidebar-toc ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem 0;
+        margin: 0;
+      }
+
+      .sidebar-toc li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .sidebar-toc li::before {
+        display: none;
+      }
+
+      .sidebar-toc a {
+        font-size: 0.88rem;
+        padding: 0.25rem 0;
+        background: transparent;
+        border-radius: 0;
+        white-space: normal;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      .sidebar-toc a:hover {
+        background: transparent;
+        text-decoration: underline;
+      }
+
+      /* Hide CTA on mobile */
+      .sidebar-cta {
+        display: none;
+      }
+
+      .comparison-table {
+        font-size: 0.82rem;
+      }
+
+      .comparison-table thead th,
+      .comparison-table tbody td {
+        padding: 0.5rem 0.6rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .inline-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+
+      .author-box {
+        padding: 1rem 1.25rem;
+      }
+
+      .author-box-title {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .author-bio {
+        font-size: 0.93rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .author-details {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .article-hero-img {
+        border-radius: 12px;
+        margin-bottom: 0.8rem;
+      }
+
+      .article-meta {
+        justify-content: flex-start;
+        text-align: left;
+        align-self: flex-start;
+        width: 100%;
+      }
+
+      .article-faq {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+      }
+
+      .faq-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .faq-item summary {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+      }
+
+      .faq-item p {
+        margin: 0 0 0.5rem 0;
+        padding: 0 0 0.5rem 0;
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+    }
+  </style>
+
+  <!-- Strukturierte Daten (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dd-gossen.com/#organization",
+        "name": "DD-Gossen",
+        "url": "https://dd-gossen.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dd-gossen.com/Logo.png"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/maik-gossen"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dd-gossen.com/#author",
+        "name": "Maik Gossen",
+        "url": "https://dd-gossen.com/",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://dd-gossen.com/Maik-Gossen-ShopifyFreelancer.png",
+          "width": 400,
+          "height": 400
+        },
+        "jobTitle": "Shopify Freelancer & Entwickler",
+        "worksFor": {
+          "@id": "https://dd-gossen.com/#organization"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://dd-gossen.com/blog/shopify-vs-shopware/#article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dd-gossen.com/blog/shopify-vs-shopware/"
+        },
+        "headline": "Shopify vs. Shopware: Der ehrliche Vergleich für den DACH-Markt (2026)",
+        "description": "Shopify vs. Shopware im Vergleich: Kosten, Performance, Apps und Skalierbarkeit. Welches System passt zu deinem Business? Ehrliche Einschätzung 2026.",
+        "datePublished": "2026-03-30",
+        "dateModified": "2026-03-30",
+        "author": {
+          "@id": "https://dd-gossen.com/#author"
+        },
+        "publisher": {
+          "@id": "https://dd-gossen.com/#organization",
+          "name": "DD-Gossen",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://dd-gossen.com/Logo.png",
+            "width": 600,
+            "height": 60
+          }
+        },
+        "articleSection": "E-Commerce",
+        "keywords": ["Shopify vs Shopware", "Shopify oder Shopware", "Shopware Alternative", "E-Commerce Plattform Vergleich"],
+        "wordCount": 2400
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dd-gossen.com/blog/shopify-vs-shopware/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Ist Shopify oder Shopware besser für kleine Shops?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Für kleine bis mittlere Online-Shops ist Shopify in den meisten Fällen die bessere Wahl. Der Einstieg ab 36 Euro pro Monat ist deutlich günstiger als Shopware, das Hosting ist inklusive und die Bedienung erfordert keine technischen Vorkenntnisse. Shopware lohnt sich erst ab einer gewissen Unternehmensgröße mit komplexen Anforderungen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann ich von Shopware zu Shopify wechseln?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, eine Migration von Shopware zu Shopify ist möglich und wird regelmäßig durchgeführt. Produkte, Kundendaten und Bestellhistorie lassen sich übertragen. Wichtig sind saubere 301-Weiterleitungen, damit bestehende SEO-Rankings erhalten bleiben. Mit professioneller Unterstützung dauert eine Migration je nach Shop-Größe zwischen 2 und 6 Wochen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Welches System ist besser für B2B?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Shopware 6 hat traditionell starke B2B-Features wie kundenspezifische Preislisten, Staffelpreise und Anfrage-Workflows. Shopify hat mit Shopify Plus und der B2B-Erweiterung aber massiv aufgeholt. Für einfache B2B-Setups reicht Shopify Plus. Bei sehr komplexen B2B-Prozessen mit tiefer ERP-Integration kann Shopware noch Vorteile haben."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ist Shopify auch für den deutschen Markt geeignet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolut. Shopify unterstützt deutsche Zahlungsanbieter, Rechnungsstellung mit korrekter Umsatzsteuer, DSGVO-konforme Cookie-Banner und alle rechtlich erforderlichen Seiten wie Impressum und Widerrufsbelehrung. Tausende deutsche Shops laufen erfolgreich auf Shopify, darunter auch bekannte Marken."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="https://dd-gossen.com/shopify-freelancer/" class="logo">
+      <img src="../../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+    </a>
+    <div class="header-right-container">
+      <div class="header-cta-container">
+        <a href="#" class="header-cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt anfragen</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main" style="margin-top: 0; padding: 8rem 1rem 4rem;">
+
+    <div class="article-layout">
+
+      <!-- Sticky Sidebar -->
+      <div class="sidebar-column">
+      <aside class="article-sidebar">
+        <div class="sidebar-toc">
+          <h3>Inhaltsverzeichnis</h3>
+          <ul>
+            <li><a href="#ueberblick">Shopify vs. Shopware: Überblick</a></li>
+            <li><a href="#kosten">Kosten im Vergleich</a></li>
+            <li><a href="#bedienung">Bedienung und Benutzerfreundlichkeit</a></li>
+            <li><a href="#design">Design und Themes</a></li>
+            <li><a href="#apps">Apps und Erweiterungen</a></li>
+            <li><a href="#seo-vergleich">SEO-Fähigkeiten</a></li>
+            <li><a href="#wann-welches">Wann Shopify, wann Shopware?</a></li>
+            <li><a href="#fazit">Fazit und Empfehlung</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-cta">
+          <p>Migration zu Shopify? Ich begleite dich beim Wechsel von Shopware.</p>
+          <a href="https://dd-gossen.com/shopify-migration/">Jetzt anfragen →</a>
+        </div>
+      </aside>
+      </div><!-- /.sidebar-column -->
+
+      <!-- Main Content -->
+      <div class="article-main">
+        <div class="article-card">
+
+          <!-- Meta Info -->
+          <div class="article-meta">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              30.03.26
+            </span>
+            <span class="meta-item meta-lesezeit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              12 Min. Lesezeit
+            </span>
+            <span class="meta-tag">Vergleich</span>
+            <span class="meta-tag">E-Commerce</span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="article-title" style="text-align: left; margin: 0 0 1.5rem 0; font-size: 2.4rem; max-width: 100%; padding: 0;">Shopify vs. Shopware: Der ehrliche Vergleich für den DACH-Markt (2026)</h1>
+
+          <!-- In Kürze (ausklappbar, SEO-freundlich) -->
+          <details class="article-summary">
+            <summary>Artikel in Kürze</summary>
+            <ul>
+              <li><strong>Shopify:</strong> SaaS-Plattform, Hosting inklusive, ab 36 EUR/Monat, 8.000+ Apps, ideal für D2C und schnellen Start.</li>
+              <li><strong>Shopware:</strong> Open-Source-Kern (Community Edition), Self-Hosted möglich, ab 600 EUR/Monat (Rise), stark im B2B-Bereich.</li>
+              <li><strong>Kosten:</strong> Shopify ist bei Einstieg und laufendem Betrieb deutlich günstiger; bei Shopware kommen Hosting, Wartung und Agenturkosten hinzu.</li>
+              <li><strong>Bedienung:</strong> Shopify ist intuitiver und ohne Entwickler nutzbar; Shopware erfordert technisches Know-how.</li>
+              <li><strong>Empfehlung:</strong> Für die meisten Shops im DACH-Markt ist Shopify die effizientere Wahl. Shopware hat Berechtigung bei komplexen B2B-Setups.</li>
+            </ul>
+          </details>
+
+          <!-- Article Content -->
+          <div class="article-content" style="width: 100%; max-width: 100%; padding: 0; box-sizing: border-box; margin: 0;">
+
+            <p>Shopify oder Shopware? Diese Frage stellt sich fast jeder, der einen Online-Shop im deutschsprachigen Raum <a href="https://dd-gossen.com/shopify-shop-erstellen/">aufbauen</a> oder wechseln will. Beide Plattformen haben ihre Daseinsberechtigung, aber sie unterscheiden sich fundamental in Ansatz, Zielgruppe und Kostenstruktur.</p>
+
+            <p>Ich arbeite seit über fünf Jahren als Shopify Freelancer und habe in dieser Zeit dutzende Shops aufgebaut, migriert und optimiert. Dabei hatte ich immer wieder mit Kunden zu tun, die vorher auf Shopware unterwegs waren oder zwischen beiden Systemen abwägen. In diesem Artikel gebe ich dir einen ehrlichen Vergleich, der dir die Entscheidung leichter macht.</p>
+
+            <!-- Section 1 -->
+            <h2 id="ueberblick">Shopify vs. Shopware: Überblick</h2>
+
+            <p>Bevor wir ins Detail gehen, ein kurzer Überblick über die beiden Systeme und ihre grundlegende Ausrichtung.</p>
+
+            <p><strong>Shopify</strong> ist eine kanadische SaaS-Plattform (Software as a Service), die seit 2006 am Markt ist. Das bedeutet: Du zahlst eine monatliche Gebühr und bekommst dafür Hosting, Updates, Sicherheit und Support aus einer Hand. Shopify betreibt weltweit über 4,8 Millionen Shops und ist damit die größte eigenständige E-Commerce-Plattform der Welt.</p>
+
+            <p><strong>Shopware</strong> ist ein deutsches Unternehmen aus Schöppingen, das seit 2004 E-Commerce-Software entwickelt. Shopware 6, die aktuelle Version, bietet eine Community Edition (Open Source, kostenlos) und kommerzielle Pläne (Rise, Evolve, Beyond). Shopware ist vor allem im DACH-Markt verbreitet und hat eine treue Nutzerbasis, besonders im Mittelstand.</p>
+
+            <p>Der fundamentale Unterschied: Shopify nimmt dir die gesamte Technik ab. Du kümmerst dich um Produkte und Marketing. Bei Shopware bist du (oder deine Agentur) für Hosting, Updates, Server-Sicherheit und Performance selbst verantwortlich, zumindest bei der Self-Hosted-Variante.</p>
+
+            <!-- Section 2 -->
+            <h2 id="kosten">Kosten im Vergleich</h2>
+
+            <p>Die Kostenstruktur ist einer der größten Unterschiede zwischen Shopify und Shopware. Einen detaillierten Überblick findest du in meinem <a href="https://dd-gossen.com/blog/shopify-kosten/">Shopify-Kosten-Guide</a>. Hier lohnt sich ein genauer Blick, denn die offensichtlichen Preise erzählen nicht die ganze Geschichte.</p>
+
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Kriterium</th>
+                  <th>Shopify</th>
+                  <th>Shopware</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Einstiegsplan</td>
+                  <td>Basic: 36 EUR/Monat</td>
+                  <td>Community: kostenlos (Self-Hosted)</td>
+                </tr>
+                <tr>
+                  <td>Kommerzieller Plan</td>
+                  <td>Shopify: 105 EUR/Monat</td>
+                  <td>Rise: ab 600 EUR/Monat</td>
+                </tr>
+                <tr>
+                  <td>Enterprise</td>
+                  <td>Shopify Plus: ab ca. 2.300 EUR/Monat</td>
+                  <td>Evolve/Beyond: auf Anfrage (5-stellig)</td>
+                </tr>
+                <tr>
+                  <td>Hosting</td>
+                  <td>Inklusive (unbegrenzter Traffic)</td>
+                  <td>Separat: 50-500+ EUR/Monat</td>
+                </tr>
+                <tr>
+                  <td>SSL-Zertifikat</td>
+                  <td>Inklusive</td>
+                  <td>Separat oder via Hoster</td>
+                </tr>
+                <tr>
+                  <td>Updates & Sicherheit</td>
+                  <td>Automatisch, inklusive</td>
+                  <td>Manuell oder via Agentur</td>
+                </tr>
+                <tr>
+                  <td>Transaktionsgebühren</td>
+                  <td>0 % bei Shopify Payments</td>
+                  <td>Keine (nur Payment-Provider-Gebühren)</td>
+                </tr>
+                <tr>
+                  <td>Typische Agenturkosten</td>
+                  <td>Gering bis keine (Freelancer reicht)</td>
+                  <td>Hoch (Entwickler für Setup, Wartung, Updates)</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p><strong>Die Rechnung in der Praxis:</strong> Shopware Community Edition ist zwar kostenlos, aber Hosting, ein SSL-Zertifikat, regelmäßige Updates und die Einrichtung durch eine Agentur summieren sich schnell. Realistisch kommst du bei Shopware Self-Hosted auf 200 bis 800 Euro pro Monat laufende Kosten, noch bevor du eine einzige Erweiterung kaufst. Beim kommerziellen Rise-Plan landen die monatlichen Gesamtkosten schnell im vierstelligen Bereich.</p>
+
+            <p>Bei Shopify zahlst du 36 Euro und kannst sofort loslegen. Hosting, SSL, Updates, CDN und 99,99 % Uptime sind inklusive. Selbst mit ein paar kostenpflichtigen Apps bleibst du bei den meisten Shops unter 150 Euro pro Monat Gesamtkosten.</p>
+
+            <!-- Inline CTA 1 -->
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Von Shopware zu Shopify wechseln?</strong>
+                <span>Ich migriere deinen Shop strukturiert und ohne Datenverlust.</span>
+              </div>
+              <a href="https://dd-gossen.com/shopify-migration/">Migration anfragen</a>
+            </div>
+
+            <!-- Section 3 -->
+            <h2 id="bedienung">Bedienung und Benutzerfreundlichkeit</h2>
+
+            <p>Shopify wurde von Anfang an für Nicht-Techniker gebaut. Die Oberfläche ist aufgeräumt, logisch strukturiert und auf Deutsch verfügbar. Produkte anlegen, Bestellungen verwalten, Rabatte einrichten: All das funktioniert ohne Vorkenntnisse. Der Drag-and-Drop-Editor für Seiten und Themes macht es möglich, das Design ohne Code anzupassen.</p>
+
+            <p>Shopware 6 hat im Vergleich zu früheren Versionen deutlich aufgeholt, was die Bedienbarkeit angeht. Die Administration ist modern gestaltet und bietet ein sogenanntes „Erlebniswelten"-System (Shopping Experiences) für die Content-Gestaltung. Allerdings ist die Lernkurve steiler. Viele Einstellungen sind verschachtelt, und für grundlegende Anpassungen am Layout brauchst du häufig einen Entwickler.</p>
+
+            <p>Ein konkretes Beispiel: Wenn du bei Shopify eine neue Produktseite gestalten willst, öffnest du den Theme-Editor und ziehst Blöcke per Drag-and-Drop zusammen. Bei Shopware erstellst du eine „Erlebniswelt" mit dem Layout-Builder, was funktioniert, aber deutlich mehr Einarbeitungszeit erfordert. Und sobald du vom Standard abweichst, landest du schnell bei Twig-Templates und Symfony-Konfiguration.</p>
+
+            <p><strong>Mein ehrliches Fazit zur Bedienung:</strong> Wenn du als Gründer, Solopreneur oder kleines Team ohne dedizierte Entwickler arbeitest, wirst du mit Shopify schneller und produktiver sein. Shopware setzt in der Praxis voraus, dass du eine Agentur oder zumindest einen erfahrenen Freelancer im Rücken hast.</p>
+
+            <!-- Section 4 -->
+            <h2 id="design">Design und Themes</h2>
+
+            <p>Shopify bietet über 190 Themes im offiziellen Theme Store, davon rund 13 kostenlos. Die kostenpflichtigen Themes liegen zwischen 180 und 400 US-Dollar, einmalig. Alle Themes sind responsive, performant und werden regelmäßig aktualisiert. Das Default-Theme „Dawn" setzt auf eine schnelle, saubere Basis mit JSON-Templates, die sich ohne Code anpassen lassen.</p>
+
+            <p>Shopware 6 hat einen kleineren Theme-Markt. Im Shopware Store findest du Themes, aber die Auswahl ist deutlich geringer. Viele Shopware-Shops laufen auf Custom-Themes, die von Agenturen individuell entwickelt werden. Das gibt maximale Flexibilität, kostet aber auch entsprechend: Ein professionelles Shopware-Theme als Individualentwicklung liegt schnell bei 5.000 bis 15.000 Euro.</p>
+
+            <p>Beide Plattformen ermöglichen vollständig individuelle Designs. Der Unterschied liegt im Aufwand: Bei Shopify kannst du mit einem Premium-Theme für 300 Dollar starten und per Drag-and-Drop anpassen. Bei Shopware brauchst du in den meisten Fällen einen Entwickler, der Twig-Templates und SCSS beherrscht.</p>
+
+            <h3>Responsive Design und Mobile Performance</h3>
+
+            <p>Beide Systeme liefern responsive Themes. Shopify hat hier allerdings einen strukturellen Vorteil: Da alle Themes im Store von Shopify geprüft und auf Performance getestet werden, ist ein gewisser Qualitätsstandard garantiert. Bei Shopware hängt die mobile Performance stark vom gewählten Theme und der Hosting-Konfiguration ab.</p>
+
+            <!-- Section 5 -->
+            <h2 id="apps">Apps und Erweiterungen</h2>
+
+            <p>Das App-Ökosystem ist einer der Bereiche, in denen Shopify klar die Nase vorn hat. Der Shopify App Store bietet über 8.000 Apps, von Bewertungstools über E-Mail-Marketing bis hin zu komplexen ERP-Anbindungen. Die Installation dauert meistens weniger als zwei Minuten, und die meisten Apps bieten kostenlose Testphasen.</p>
+
+            <p>Der Shopware Store kommt auf rund 3.500 Erweiterungen (Plugins). Die Qualität ist insgesamt solide, aber die Auswahl ist kleiner. Besonders im Bereich Marketing-Automatisierung, Conversion-Optimierung und Dropshipping hat Shopify deutlich mehr Optionen.</p>
+
+            <p>Ein wichtiger Punkt: Bei Shopware können Plugins untereinander Konflikte verursachen, besonders nach Updates. Das liegt an der Plugin-Architektur und der Tatsache, dass verschiedene Entwickler auf unterschiedliche Shopware-Versionen optimieren. Bei Shopify sind solche Konflikte seltener, weil Apps über eine standardisierte API kommunizieren und nicht direkt in den Core eingreifen.</p>
+
+            <h3>Wichtige App-Kategorien im Vergleich</h3>
+
+            <ul>
+              <li><strong>Payment:</strong> Shopify Payments (integriert, keine Extragebühren) vs. Shopware (PayPal, Mollie, Stripe als Plugins)</li>
+              <li><strong>Versand:</strong> Shopify bietet vergünstigte DHL-Tarife in Deutschland; bei Shopware brauchst du Shipping-Plugins</li>
+              <li><strong>Marketing:</strong> Shopify hat Klaviyo, Omnisend, Privy nativ integrierbar; Shopware hat weniger Optionen</li>
+              <li><strong>Bewertungen:</strong> Judge.me, Loox, Stamped bei Shopify; bei Shopware Trusted Shops oder Ekomi-Plugins</li>
+              <li><strong>Buchhaltung:</strong> Beide haben Lexoffice- und sevDesk-Anbindungen für den DACH-Markt</li>
+            </ul>
+
+            <!-- Inline CTA 2 -->
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Shopify-Shop erstellen lassen?</strong>
+                <span>Ich richte deinen Shop ein, inklusive Theme, Apps und optimiertem Checkout.</span>
+              </div>
+              <a href="https://dd-gossen.com/shopify-shop-erstellen/">Mehr erfahren</a>
+            </div>
+
+            <!-- Section 6 -->
+            <h2 id="seo-vergleich">SEO-Fähigkeiten</h2>
+
+            <p>SEO ist für jeden Online-Shop überlebenswichtig. Beide Plattformen bieten die grundlegenden SEO-Features, unterscheiden sich aber in den Details.</p>
+
+            <p><strong>Shopify SEO-Vorteile:</strong></p>
+            <ul>
+              <li>Automatisch generierte Sitemaps und robots.txt</li>
+              <li>Schnelle Ladezeiten dank globalem CDN und optimierter Infrastruktur</li>
+              <li>Saubere URL-Strukturen (anpassbar)</li>
+              <li>Meta-Title und Description für jede Seite editierbar</li>
+              <li>Canonical Tags automatisch gesetzt</li>
+              <li>Strukturierte Daten (Schema.org) via Theme oder App</li>
+              <li>Core Web Vitals: In der Regel sehr gute Werte out-of-the-box</li>
+            </ul>
+
+            <p><strong>Shopware SEO-Vorteile:</strong></p>
+            <ul>
+              <li>Volle Kontrolle über URL-Strukturen (keine /products/-Prefix-Pflicht wie bei Shopify)</li>
+              <li>Flexible SEO-Templates für Meta-Daten</li>
+              <li>Technisch tiefere Anpassungsmöglichkeiten (Hreflang, Canonicals)</li>
+              <li>Integriertes CMS (Erlebniswelten) für Content-Marketing</li>
+            </ul>
+
+            <p>In der Praxis ist der SEO-Unterschied zwischen beiden Plattformen geringer, als viele denken. Shopify hat in den letzten Jahren massiv nachgelegt. Die URL-Struktur mit /products/ oder /collections/ stört Google nachweislich nicht. Was zählt, sind Ladezeit, Content-Qualität und technische Sauberkeit. Und hier hat Shopify durch die kontrollierte Infrastruktur oft die Nase vorn, weil du dich nicht um Server-Optimierung kümmern musst.</p>
+
+            <p>Shopware bietet mehr Flexibilität bei der URL-Gestaltung, aber diese Flexibilität ist ein Vorteil, den 90 % der Shop-Betreiber nie brauchen werden. Die typischen SEO-Probleme bei Shopware entstehen durch langsame Server, veraltete Plugins oder fehlende Updates, also durch die Infrastruktur, die du selbst verwalten musst.</p>
+
+            <!-- Section 7 -->
+            <h2 id="wann-welches">Wann Shopify, wann Shopware?</h2>
+
+            <p>Es gibt keine Pauschalantwort, aber es gibt klare Tendenzen. Hier meine ehrliche Einschätzung nach hunderten Kundengesprächen:</p>
+
+            <h3>Shopify ist die bessere Wahl, wenn du ...</h3>
+            <ul>
+              <li>einen D2C-Shop (Direct to Consumer) aufbauen willst</li>
+              <li>schnell starten möchtest, ohne monatelange Entwicklungsphase</li>
+              <li>kein eigenes Entwicklerteam hast</li>
+              <li>international verkaufen willst (Multi-Currency, Multi-Language nativ)</li>
+              <li>Wert auf geringe laufende Kosten legst</li>
+              <li>Social Commerce (Instagram, TikTok Shop) nutzen willst</li>
+              <li>einen stabilen, wartungsfreien Shop ohne Server-Sorgen brauchst</li>
+              <li>Dropshipping oder Print-on-Demand betreibst</li>
+            </ul>
+
+            <h3>Shopware kann sinnvoll sein, wenn du ...</h3>
+            <ul>
+              <li>ein komplexes <a href="https://dd-gossen.com/blog/shopify-b2b-grosshandel/">B2B-Setup</a> mit Staffelpreisen, kundenindividuellen Katalogen und Anfrage-Workflows brauchst</li>
+              <li>ein großes Entwicklerteam oder eine feste Agenturpartnerschaft hast</li>
+              <li>bereits eine Shopware-Infrastruktur betreibst und keine <a href="https://dd-gossen.com/shopify-migration/">Migration</a> möchtest</li>
+              <li>volle Kontrolle über Hosting und Server-Architektur benötigst</li>
+              <li>ein Enterprise-Setup mit tiefer ERP-Integration (SAP, Microsoft Dynamics) planst</li>
+              <li>auf regulatorische Anforderungen angewiesen bist, die Self-Hosting voraussetzen</li>
+            </ul>
+
+            <p><strong>Wichtig zu verstehen:</strong> Shopify Plus hat in den letzten zwei Jahren massiv im B2B-Bereich aufgeholt. Features wie B2B-Preislisten, Unternehmenskonten, Nettpreise und individuelle Zahlungsbedingungen sind mittlerweile nativ verfügbar. Für viele B2B-Szenarien, die früher ein Shopware-Argument waren, reicht heute Shopify Plus.</p>
+
+            <p>Auch das Argument „Shopware ist deutscher Anbieter, also besser für den deutschen Markt" greift nur bedingt. Shopify unterstützt alle deutschen Zahlungsanbieter, bietet Rechnungsstellung mit korrekter USt., und die DSGVO-Anforderungen lassen sich mit den richtigen Apps vollständig abdecken. Tausende deutsche Shops laufen erfolgreich auf Shopify.</p>
+
+            <!-- Section 8 -->
+            <h2 id="fazit">Fazit und Empfehlung</h2>
+
+            <p>Shopify und Shopware sind beide leistungsfähige E-Commerce-Plattformen, aber sie richten sich an unterschiedliche Zielgruppen und Bedürfnisse.</p>
+
+            <p><strong>Shopify</strong> gewinnt beim Preis-Leistungs-Verhältnis, bei der Benutzerfreundlichkeit, beim App-Ökosystem und bei den Gesamtkosten. Die Plattform ist ideal für D2C-Shops, schnelle Markteintritte und Teams ohne eigene Entwickler. Die globale Infrastruktur sorgt für schnelle Ladezeiten und 99,99 % Uptime, ohne dass du dich um Server kümmern musst.</p>
+
+            <p><strong>Shopware</strong> hat seine Stärken bei komplexen B2B-Setups, bei denen tiefe ERP-Integration und maximale Kontrolle über die Infrastruktur gefragt sind. Wer ein großes Entwicklerteam hat und die Flexibilität von Self-Hosting braucht, findet in Shopware eine solide Basis. Die Community Edition ist ein faires Angebot für Entwickler, die alles selbst aufsetzen wollen.</p>
+
+            <p>Meine ehrliche Empfehlung: Für die große Mehrheit der Shop-Betreiber im DACH-Markt ist Shopify die effizientere, kostengünstigere und langfristig wartungsärmere Lösung. Du sparst dir die Agenturabhängigkeit, die Server-Wartung und die Update-Problematik. Die Zeit, die du nicht mit Technik verbringst, investierst du in Marketing und Wachstum.</p>
+
+            <p>Wenn du unsicher bist, welche Plattform zu deinem konkreten Case passt, oder wenn du bereits auf Shopware bist und über einen Wechsel nachdenkst: Lass uns darüber sprechen. In einem kostenlosen Erstgespräch schauen wir uns deine Situation an und finden die richtige Lösung.</p>
+
+            <!-- Final CTA Box -->
+            <div class="cta-box">
+              <h3>Kostenlose Beratung: Shopify oder Shopware?</h3>
+              <p>Du bist unsicher, welche Plattform zu deinem Business passt? In einem kostenlosen Erstgespräch analysieren wir deine Anforderungen und finden die richtige Lösung. Unverbindlich und ehrlich.</p>
+              <a href="#" class="cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt kostenloses Erstgespräch buchen</a>
+            </div>
+
+          </div><!-- /.article-content -->
+
+          <!-- FAQ Section -->
+          <section class="article-faq">
+            <h2 class="faq-title">Häufige Fragen: Shopify vs. Shopware</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>Ist Shopify oder Shopware besser für kleine Shops?</summary>
+                <div>
+                  <p>Für kleine bis mittlere Online-Shops ist Shopify in den meisten Fällen die bessere Wahl. Der Einstieg ab 36 Euro pro Monat ist deutlich günstiger als Shopware, das Hosting ist inklusive und die Bedienung erfordert keine technischen Vorkenntnisse. Shopware lohnt sich erst ab einer gewissen Unternehmensgröße mit komplexen Anforderungen.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Kann ich von Shopware zu Shopify wechseln?</summary>
+                <div>
+                  <p>Ja, eine Migration von Shopware zu Shopify ist möglich und wird regelmäßig durchgeführt. Produkte, Kundendaten und Bestellhistorie lassen sich übertragen. Wichtig sind saubere 301-Weiterleitungen, damit bestehende SEO-Rankings erhalten bleiben. Mit professioneller Unterstützung dauert eine Migration je nach Shop-Größe zwischen 2 und 6 Wochen.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Welches System ist besser für B2B?</summary>
+                <div>
+                  <p>Shopware 6 hat traditionell starke B2B-Features wie kundenspezifische Preislisten, Staffelpreise und Anfrage-Workflows. Shopify hat mit Shopify Plus und der B2B-Erweiterung aber massiv aufgeholt. Für einfache B2B-Setups reicht Shopify Plus. Bei sehr komplexen B2B-Prozessen mit tiefer ERP-Integration kann Shopware noch Vorteile haben.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Ist Shopify auch für den deutschen Markt geeignet?</summary>
+                <div>
+                  <p>Absolut. Shopify unterstützt deutsche Zahlungsanbieter, Rechnungsstellung mit korrekter Umsatzsteuer, DSGVO-konforme Cookie-Banner und alle rechtlich erforderlichen Seiten wie Impressum und Widerrufsbelehrung. Tausende deutsche Shops laufen erfolgreich auf Shopify, darunter auch bekannte Marken.</p>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <!-- Author Box – kleine Karte darunter -->
+          <div class="author-box">
+            <h3 class="author-box-title">Autorenbox</h3>
+            <p class="author-bio">Ich helfe Online-Shop-Betreibern dabei, ihren Shopify-Shop aufzubauen, zu optimieren und zu migrieren. Mit über 5 Jahren Erfahrung und 70+ abgeschlossenen Projekten weiß ich, worauf es ankommt – technisch und strategisch.</p>
+            <div class="author-details">
+              <img src="../../Maik-Gossen-ShopifyFreelancer.png" alt="Maik Gossen" class="author-avatar">
+              <div class="author-info">
+                <p class="author-name"><a href="https://dd-gossen.com/" class="author-name-link">Maik Gossen</a></p>
+                <p class="author-role">Shopify Freelancer & Entwickler</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.article-card -->
+      </div><!-- /.article-main -->
+
+    </div><!-- /.article-layout -->
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-name">MAIK GOSSEN</div>
+        <div class="footer-contact-label">Kontakt:</div>
+        <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+        <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+        <div class="footer-social">
+          <a href="mailto:info@dd-gossen.com" title="E-Mail" aria-label="E-Mail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Menü</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/">Übersicht</a></li>
+          <li><a href="https://dd-gossen.com/">Meine Services</a></li>
+          <li><a href="https://dd-gossen.com/blog/">Blog</a></li>
+          <li><a href="https://dd-gossen.com/#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-shop-erstellen/">Shopify Shop erstellen</a></li>
+          <li><a href="https://dd-gossen.com/shopify-migration/">Shopify Migration</a></li>
+          <li><a href="https://dd-gossen.com/shopify-optimierung/">Shopify Optimierung</a></li>
+          <li><a href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/">Widerrufsbutton einbauen lassen</a></li>
+          <li><a href="https://dd-gossen.com/blog/shopify-freelancer-deutschland/">Shopify Freelancer Deutschland</a></li>
+          <li><a href="https://dd-gossen.com/#competencies">Kompetenzen</a></li>
+          <li><a href="https://dd-gossen.com/#projects">Portfolio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Schnellzugriff</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/#contact">Kostenloses Erstgespräch</a></li>
+          <li><a href="https://dd-gossen.com/#about-me">Über mich</a></li>
+          <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://dd-gossen.com/impressum.html">Impressum</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/datenschutz.html">Datenschutz</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/agb.html">AGB</a>
+      <span class="footer-sep">|</span>
+      <a href="#" id="openCookieSettings">Cookie-Einstellungen</a>
+      <span class="footer-sep">|</span>
+      <span>© 2025 Maik Gossen</span>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll behavior
+    (function() {
+      var header = document.querySelector('.header');
+      if (!header) return;
+      let lastScrollTop = 0;
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        header.style.background = scrollTop > 100 ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.15)';
+        if (scrollTop > 100) {
+          header.classList.toggle('hidden', scrollTop > lastScrollTop);
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+      });
+    })();
+
+    // Sync sidebar sticky-top with header visibility
+    (function() {
+      const header = document.querySelector('.header');
+      if (!header) return;
+      const root = document.documentElement;
+      function update() {
+        root.style.setProperty('--sidebar-top',
+          header.classList.contains('hidden') ? '24px' : '110px');
+      }
+      new MutationObserver(update).observe(header, { attributes: true, attributeFilter: ['class'] });
+      update();
+    })();
+
+    // Active TOC link on scroll
+    (function() {
+      const sections = document.querySelectorAll('.article-content h2[id]');
+      const tocLinks = document.querySelectorAll('.sidebar-toc a');
+      if (!sections.length || !tocLinks.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.sidebar-toc a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+
+      sections.forEach(section => observer.observe(section));
+    })();
+  </script>
+
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+    function initCalUI() {
+      if (window.Cal && window.Cal.ns && window.Cal.ns.erstgespraech) {
+        Cal.ns.erstgespraech("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      } else { setTimeout(initCalUI, 100); }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCalUI);
+    } else { initCalUI(); }
+  </script>
+
+</body>
+</html>

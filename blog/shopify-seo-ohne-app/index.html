@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopify SEO ohne App: 11 Maßnahmen für bessere Rankings (2026) | DD-Gossen</title>
+  <meta name="description" content="Shopify SEO ohne App ✓ 11 kostenlose Maßnahmen für bessere Google-Rankings ✓ Meta-Tags, Seitenstruktur, PageSpeed & mehr ✓ Praxis-Guide 2026">
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../article-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Two-column layout */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+
+    /* Grid column wrapper – stretches to full row height so sticky works */
+    .sidebar-column {
+      align-self: stretch;
+    }
+
+    /* Sidebar – sticky inside the full-height column */
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      position: sticky;
+      top: var(--sidebar-top, 110px);
+      transition: top 0.3s ease;
+    }
+
+    /* Content column starts at top, not stretched */
+    .article-main {
+      align-self: start;
+      min-width: 0;
+      width: 100%;
+    }
+
+    .sidebar-toc {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .sidebar-toc h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid rgba(35,126,181,0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sidebar-toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .sidebar-toc a {
+      display: block;
+      font-size: 0.88rem;
+      color: #374151;
+      text-decoration: none;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      line-height: 1.4;
+    }
+
+    .sidebar-toc a:hover,
+    .sidebar-toc a.active {
+      background: rgba(35,126,181,0.1);
+      color: #237eb5;
+    }
+
+    .sidebar-cta {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(15,23,42,0.25);
+    }
+
+    .sidebar-cta p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
+      margin: 0 0 1rem 0;
+      line-height: 1.5;
+    }
+
+    .sidebar-cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+      padding: 0.65rem 1.2rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .sidebar-cta a:hover {
+      background: linear-gradient(135deg, #0066e6 0%, #004999 100%);
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Main article area */
+    .article-main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Restore card styling */
+    .article-card {
+      max-width: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-sizing: border-box;
+    }
+
+    /* Hero image – override article-styles.css max-width:600px */
+    .article-hero-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      display: block;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Inline CTA */
+    .inline-cta {
+      background: linear-gradient(135deg, rgba(35,126,181,0.08) 0%, rgba(35,126,181,0.15) 100%);
+      border: 1px solid rgba(35,126,181,0.25);
+      border-left: 4px solid #237eb5;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .inline-cta-text {
+      flex: 1;
+    }
+
+    .inline-cta-text strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem;
+      color: #0f172a;
+      margin-bottom: 0.3rem;
+    }
+
+    .inline-cta-text span {
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    .inline-cta a {
+      display: inline-block;
+      background: #0f172a;
+      color: white !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none !important;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .inline-cta a:hover {
+      background: #1e293b;
+    }
+
+    /* Author box – kleine Karte unter FAQ, ohne Hintergrund */
+    .author-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: transparent !important;
+      border: 1px solid rgba(35,126,181,0.15);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    .author-box-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .author-bio {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.5;
+      margin: 0 0 1rem 0;
+    }
+
+    .author-details {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-name-link {
+      color: #333;
+      text-decoration: none;
+      font-weight: inherit;
+    }
+
+    .author-name-link:hover {
+      color: #333;
+      text-decoration: none;
+    }
+
+    /* In Kürze – linksbündig, unscheinbar, volle Breite */
+    .article-summary {
+      margin: 0 0 2rem 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .article-summary summary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #64748b;
+      padding: 0.25rem 0 0.4rem 0;
+      cursor: pointer;
+      list-style: none;
+      border-bottom: 1px solid rgba(35,126,181,0.15);
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+
+    .article-summary summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .article-summary summary::after {
+      content: '\25BC';
+      float: right;
+      font-size: 0.6rem;
+      opacity: 0.4;
+    }
+
+    .article-summary[open] summary::after {
+      content: '\25B2';
+    }
+
+    .article-summary ul {
+      margin: 0.5rem 0 0 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+    }
+
+    .article-summary li {
+      padding: 0.3rem 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #64748b;
+      border-bottom: 1px solid rgba(35,126,181,0.06);
+    }
+
+    .article-summary li:last-child {
+      border-bottom: none;
+    }
+
+    /* FAQ Section */
+    .article-faq {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(35,126,181,0.15);
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+
+    .faq-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .faq-item {
+      padding: 0;
+      margin: 0;
+      border-bottom: 1px solid rgba(35,126,181,0.12);
+      width: 100%;
+      min-width: 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item summary {
+      font-weight: 600;
+      color: #0f172a;
+      padding: 1rem 0;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      float: right;
+      font-size: 1.2rem;
+      color: #237eb5;
+    }
+
+    .faq-item[open] summary::after {
+      content: '\2212';
+    }
+
+    .faq-item p {
+      margin: 0 0 1rem 0;
+      padding: 0 0 1rem 0;
+      line-height: 1.6;
+      color: #374151;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    .author-avatar {
+      width: 48px !important;
+      height: 48px !important;
+      max-width: 48px !important;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      flex-shrink: 0;
+      border: none;
+      margin: 0 !important;
+    }
+
+    .author-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .author-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+    }
+
+    .author-role {
+      font-size: 0.875rem;
+      color: #777;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    /* Blog meta info */
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.88rem;
+      color: #6b7280;
+      margin-bottom: 0rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .meta-tag {
+      background: rgba(35,126,181,0.1);
+      color: #237eb5;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        padding: 0 0.2rem;
+        gap: 0.8rem;
+      }
+
+      /* Disable sticky on mobile */
+      .article-sidebar {
+        position: static;
+        top: auto;
+        transition: none;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      /* Compact TOC on mobile */
+      .sidebar-toc {
+        padding: 0.8rem 1rem;
+        border-radius: 12px;
+        margin-bottom: 0;
+      }
+
+      .sidebar-toc h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .sidebar-toc ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem 0;
+        margin: 0;
+      }
+
+      .sidebar-toc li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .sidebar-toc li::before {
+        display: none;
+      }
+
+      .sidebar-toc a {
+        font-size: 0.88rem;
+        padding: 0.25rem 0;
+        background: transparent;
+        border-radius: 0;
+        white-space: normal;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      .sidebar-toc a:hover {
+        background: transparent;
+        text-decoration: underline;
+      }
+
+      /* Hide CTA on mobile */
+      .sidebar-cta {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .inline-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+
+      .author-box {
+        padding: 1rem 1.25rem;
+      }
+
+      .author-box-title {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .author-bio {
+        font-size: 0.93rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .author-details {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .article-hero-img {
+        border-radius: 12px;
+        margin-bottom: 0.8rem;
+      }
+
+      .article-meta {
+        justify-content: flex-start;
+        text-align: left;
+        align-self: flex-start;
+        width: 100%;
+      }
+
+      .article-faq {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+      }
+
+      .faq-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .faq-item summary {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+      }
+
+      .faq-item p {
+        margin: 0 0 0.5rem 0;
+        padding: 0 0 0.5rem 0;
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+    }
+  </style>
+
+  <!-- Strukturierte Daten (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dd-gossen.com/#organization",
+        "name": "DD-Gossen",
+        "url": "https://dd-gossen.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dd-gossen.com/Logo.png"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/maik-gossen"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dd-gossen.com/#author",
+        "name": "Maik Gossen",
+        "url": "https://dd-gossen.com/",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://dd-gossen.com/Maik-Gossen-ShopifyFreelancer.png",
+          "width": 400,
+          "height": 400
+        },
+        "jobTitle": "Shopify Freelancer & Entwickler",
+        "worksFor": {
+          "@id": "https://dd-gossen.com/#organization"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://dd-gossen.com/blog/shopify-seo-ohne-app/#article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dd-gossen.com/blog/shopify-seo-ohne-app/"
+        },
+        "headline": "Shopify SEO ohne App: 11 Maßnahmen für bessere Rankings (2026)",
+        "description": "Shopify SEO ohne App - 11 kostenlose Maßnahmen für bessere Google-Rankings: Meta-Tags, Seitenstruktur, PageSpeed und mehr. Praxis-Guide 2026.",
+        "datePublished": "2026-04-01",
+        "dateModified": "2026-04-01",
+        "author": {
+          "@id": "https://dd-gossen.com/#author"
+        },
+        "publisher": {
+          "@id": "https://dd-gossen.com/#organization",
+          "name": "DD-Gossen",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://dd-gossen.com/Logo.png",
+            "width": 600,
+            "height": 60
+          }
+        },
+        "articleSection": "SEO",
+        "keywords": ["Shopify SEO", "Shopify SEO ohne App", "Shopify Google Ranking", "Shopify SEO Tipps", "Shopify SEO Anleitung"],
+        "wordCount": 2200
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dd-gossen.com/blog/shopify-seo-ohne-app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Brauche ich eine SEO-App für meinen Shopify-Shop?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein. Die meisten SEO-Apps erledigen Aufgaben, die du auch manuell im Shopify-Admin umsetzen kannst: Meta-Titles setzen, Alt-Tags pflegen, Weiterleitungen anlegen. Apps wie Yoast oder SEO Manager sind bequem, aber nicht notwendig. Spare dir die monatlichen Kosten und lerne, die Stellschrauben selbst zu bedienen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie lange dauert es, bis SEO-Maßnahmen bei Shopify wirken?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rechne mit 4 bis 12 Wochen, bis erste Veränderungen in den Google-Rankings sichtbar werden. Technische Fixes wie Meta-Tags oder PageSpeed-Verbesserungen wirken oft schneller. Content-Optimierungen und interne Verlinkung brauchen mehr Zeit, liefern dafür aber nachhaltigere Ergebnisse."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was ist der wichtigste SEO-Faktor für Shopify-Shops?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Es gibt keinen einzelnen Faktor, aber wenn ich einen nennen müsste: Content-Qualität. Einzigartige Produktbeschreibungen, sinnvolle Seitenstruktur und relevante Inhalte sind die Basis. Technische Optimierung wie PageSpeed und Meta-Tags sind wichtig, aber ohne guten Content rankt nichts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann ich mit Shopify auf Seite 1 bei Google ranken?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja. Shopify ist technisch solide für SEO – schnelles Hosting, sauberer Code, SSL standardmäßig. Die Plattform selbst ist kein Nachteil. Entscheidend ist, was du daraus machst: optimierte Meta-Tags, guter Content, durchdachte Seitenstruktur und konsequenter Linkaufbau."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="https://dd-gossen.com/shopify-freelancer/" class="logo">
+      <img src="../../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+    </a>
+    <div class="header-right-container">
+      <div class="header-cta-container">
+        <a href="#" class="header-cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt anfragen</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main" style="margin-top: 0; padding: 8rem 1rem 4rem;">
+
+    <div class="article-layout">
+
+      <!-- Sticky Sidebar -->
+      <div class="sidebar-column">
+      <aside class="article-sidebar">
+        <div class="sidebar-toc">
+          <h3>Inhaltsverzeichnis</h3>
+          <ul>
+            <li><a href="#warum-seo">Warum SEO für Shopify-Shops wichtig ist</a></li>
+            <li><a href="#meta-tags">Meta-Titles und Descriptions optimieren</a></li>
+            <li><a href="#seitenstruktur">URL-Struktur und Navigation</a></li>
+            <li><a href="#content">Content-Optimierung für Produktseiten</a></li>
+            <li><a href="#bilder">Bilder-SEO: Alt-Tags und Komprimierung</a></li>
+            <li><a href="#pagespeed">PageSpeed verbessern</a></li>
+            <li><a href="#interne-verlinkung">Interne Verlinkung aufbauen</a></li>
+            <li><a href="#fazit">Fazit: SEO ist kein Einmal-Projekt</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-cta">
+          <p>Professionelles Shopify SEO?</p>
+          <a href="https://dd-gossen.com/shopify-optimierung/">Jetzt anfragen &rarr;</a>
+        </div>
+      </aside>
+      </div><!-- /.sidebar-column -->
+
+      <!-- Main Content -->
+      <div class="article-main">
+        <div class="article-card">
+
+          <!-- Meta Info -->
+          <div class="article-meta">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              01.04.26
+            </span>
+            <span class="meta-item meta-lesezeit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              11 Min. Lesezeit
+            </span>
+            <span class="meta-tag">SEO</span>
+            <span class="meta-tag">Shopify</span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="article-title" style="text-align: left; margin: 0 0 1.5rem 0; font-size: 2.4rem; max-width: 100%; padding: 0;">Shopify SEO ohne App: 11 Ma&szlig;nahmen f&uuml;r bessere Rankings (2026)</h1>
+
+          <!-- In Kürze (ausklappbar, SEO-freundlich) -->
+          <details class="article-summary">
+            <summary>Artikel in K&uuml;rze</summary>
+            <ul>
+              <li><strong>Keine App n&ouml;tig:</strong> Die meisten SEO-Optimierungen lassen sich direkt im Shopify-Admin umsetzen.</li>
+              <li><strong>Meta-Tags:</strong> Title und Description f&uuml;r jede Seite individuell setzen &ndash; das kostet nichts und bringt viel.</li>
+              <li><strong>Seitenstruktur:</strong> Saubere URLs, logische Navigation und flache Hierarchien verbessern Crawling und Rankings.</li>
+              <li><strong>Content:</strong> Einzigartige Produktbeschreibungen und strukturierte &Uuml;berschriften sind die Basis.</li>
+              <li><strong>Technik:</strong> Bilder komprimieren, Lazy Loading aktivieren und unn&ouml;tige Apps entfernen f&uuml;r besseren PageSpeed.</li>
+            </ul>
+          </details>
+
+          <!-- Article Content -->
+          <div class="article-content" style="width: 100%; max-width: 100%; padding: 0; box-sizing: border-box; margin: 0;">
+
+            <p>SEO-Apps f&uuml;r Shopify gibt es wie Sand am Meer. Yoast, SEO Manager, Plug in SEO &ndash; alle versprechen bessere Rankings auf Knopfdruck. Die Realit&auml;t: Die meisten dieser Apps erledigen Aufgaben, die du genauso gut manuell umsetzen kannst. Ohne monatliche Kosten. Ohne unn&ouml;tigen Code, der deinen Shop verlangsamt. Und mit dem richtigen Wissen &uuml;ber <a href="https://dd-gossen.com/blog/strukturierte-daten-shopify/">strukturierte Daten</a> holst du noch mehr aus deinen Rankings heraus.</p>
+
+            <p>In diesem Guide zeige ich dir 11 konkrete Ma&szlig;nahmen, mit denen du dein Shopify SEO ohne eine einzige App verbesserst. Keine Theorie, keine vagen Tipps &ndash; sondern Schritte, die du heute umsetzen kannst.</p>
+
+            <!-- Section 1 -->
+            <h2 id="warum-seo">Warum SEO f&uuml;r Shopify-Shops wichtig ist</h2>
+
+            <p>Organischer Traffic ist der profitabelste Kanal f&uuml;r E-Commerce. Kein CPC, keine Abh&auml;ngigkeit von Meta-Ads, keine steigenden Werbekosten. Wer bei Google auf Seite 1 steht, bekommt Besucher &ndash; kostenlos und dauerhaft.</p>
+
+            <p>Das Problem: Viele Shopify-Shop-Betreiber verlassen sich auf bezahlte Werbung und ignorieren SEO komplett. Oder sie installieren eine SEO-App und denken, damit sei alles erledigt. Beides ist falsch.</p>
+
+            <p>Shopify bringt als Plattform gute SEO-Grundlagen mit: schnelles Hosting auf Cloudflare-CDN, automatische SSL-Verschl&uuml;sselung, sauberer HTML-Code und eine generierte Sitemap. Was Shopify im Detail <a href="https://dd-gossen.com/blog/shopify-kosten/">kostet</a>, erf&auml;hrst du in meinem Kosten-Guide. Was Shopify nicht f&uuml;r dich macht: deine Inhalte optimieren, deine Meta-Tags pflegen und deine Seitenstruktur durchdenken. Das liegt an dir.</p>
+
+            <p>Die gute Nachricht: Du brauchst daf&uuml;r keine App. Alles, was SEO-Apps k&ouml;nnen, kannst du auch selbst &ndash; direkt im Shopify-Admin oder mit ein paar Zeilen Code im Theme.</p>
+
+            <!-- Section 2 -->
+            <h2 id="meta-tags">Meta-Titles und Descriptions optimieren</h2>
+
+            <p>Der Meta-Title ist der wichtigste On-Page-SEO-Faktor. Er erscheint als blaue &Uuml;berschrift in den Google-Suchergebnissen und sagt Google direkt, worum es auf deiner Seite geht. Die Meta-Description steht darunter und entscheidet, ob jemand klickt oder weiterscrollt.</p>
+
+            <p>In Shopify kannst du beides f&uuml;r jede Seite individuell setzen. Das geht unter &bdquo;Onlineshop &gt; Suchmaschinenoptimierung&ldquo; am Ende jeder Produkt-, Kollektion- oder Seitenbearbeitung. Viele Shop-Betreiber lassen dieses Feld leer &ndash; ein verschenktes Potenzial.</p>
+
+            <h3>So schreibst du gute Meta-Titles</h3>
+
+            <ul>
+              <li><strong>Keyword vorne:</strong> Stell dein Haupt-Keyword an den Anfang. &bdquo;Handgemachte Ledertasche&ldquo; statt &bdquo;Unsere sch&ouml;ne handgemachte Ledertasche aus Italien&ldquo;.</li>
+              <li><strong>Unter 60 Zeichen:</strong> Alles dar&uuml;ber wird von Google abgeschnitten. Pr&uuml;fe die L&auml;nge mit einem SERP-Preview-Tool.</li>
+              <li><strong>Einzigartig pro Seite:</strong> Jede Seite braucht einen eigenen Title. Keine Duplikate.</li>
+              <li><strong>Brand am Ende:</strong> &bdquo;Handgemachte Ledertasche | Dein Shopname&ldquo; &ndash; so bleibt Platz f&uuml;r das Keyword.</li>
+            </ul>
+
+            <h3>Meta-Descriptions, die klicken lassen</h3>
+
+            <p>Die Description beeinflusst nicht direkt das Ranking, aber die Klickrate. Und die Klickrate beeinflusst das Ranking. Schreib 120&ndash;155 Zeichen, die den Nutzen klar machen. Verwende eine Handlungsaufforderung. Und ja, Sonderzeichen wie Haken oder Pfeile funktionieren weiterhin.</p>
+
+            <p><strong>Ma&szlig;nahme 1:</strong> Meta-Titles f&uuml;r alle Produkte und Kollektionen setzen.<br>
+            <strong>Ma&szlig;nahme 2:</strong> Meta-Descriptions mit Keyword und Call-to-Action schreiben.</p>
+
+            <!-- Section 3 -->
+            <h2 id="seitenstruktur">URL-Struktur und Navigation</h2>
+
+            <p>Shopify generiert URLs automatisch basierend auf dem Seitentitel. Das Problem: Diese automatischen URLs sind oft zu lang, enthalten Stoppw&ouml;rter oder sind nicht keyword-optimiert. Den URL-Handle kannst du manuell anpassen &ndash; bei Produkten, Kollektionen, Seiten und Blog-Artikeln.</p>
+
+            <h3>URL-Handles richtig setzen</h3>
+
+            <ul>
+              <li><strong>Kurz und pr&auml;gnant:</strong> <code>/collections/ledertaschen</code> statt <code>/collections/unsere-handgemachten-ledertaschen-aus-italien</code></li>
+              <li><strong>Keyword enthalten:</strong> Die URL sollte dein Haupt-Keyword widerspiegeln.</li>
+              <li><strong>Keine Stoppw&ouml;rter:</strong> &bdquo;und&ldquo;, &bdquo;f&uuml;r&ldquo;, &bdquo;mit&ldquo; &ndash; raus damit.</li>
+              <li><strong>Nur Kleinbuchstaben und Bindestriche:</strong> Shopify macht das automatisch, aber pr&uuml;fe es trotzdem.</li>
+            </ul>
+
+            <h3>Navigation und Seitenhierarchie</h3>
+
+            <p>Google crawlt deinen Shop &uuml;ber die Navigation. Eine flache Hierarchie &ndash; maximal 3 Klicks von der Startseite zu jedem Produkt &ndash; ist ideal. Nutze die Shopify-Navigation unter &bdquo;Onlineshop &gt; Navigation&ldquo;, um eine logische Struktur aufzubauen. Hauptkategorien im Hauptmen&uuml;, Unterkategorien als verschachtelte Men&uuml;punkte.</p>
+
+            <p><strong>Ma&szlig;nahme 3:</strong> URL-Handles f&uuml;r alle Produkte und Kollektionen pr&uuml;fen und optimieren.<br>
+            <strong>Ma&szlig;nahme 4:</strong> Navigation so aufbauen, dass jedes Produkt in maximal 3 Klicks erreichbar ist.</p>
+
+            <!-- Section 4 -->
+            <h2 id="content">Content-Optimierung f&uuml;r Produktseiten</h2>
+
+            <p>Hier scheitern die meisten Shopify-Shops: Sie &uuml;bernehmen die Herstellerbeschreibungen 1:1. Das Ergebnis ist Duplicate Content &ndash; Google straft das nicht direkt ab, aber es gibt keinen Grund, deine Seite vor die Konkurrenz zu setzen, wenn der Inhalt identisch ist.</p>
+
+            <h3>Einzigartige Produktbeschreibungen</h3>
+
+            <p>Jedes Produkt braucht einen eigenen Text. Nicht drei S&auml;tze, sondern mindestens 200&ndash;300 W&ouml;rter. Beschreibe nicht nur Features, sondern den Nutzen. Wer kauft das Produkt? Welches Problem l&ouml;st es? Wie unterscheidet es sich von Alternativen?</p>
+
+            <h3>&Uuml;berschriften-Hierarchie (H1/H2/H3)</h3>
+
+            <p>Jede Seite braucht genau eine H1 &ndash; bei Shopify ist das automatisch der Produkttitel. Verwende H2 f&uuml;r Abschnitte wie &bdquo;Details&ldquo;, &bdquo;Material&ldquo;, &bdquo;Pflegehinweise&ldquo;. H3 f&uuml;r Unterabschnitte. Diese Struktur hilft Google, deine Seite zu verstehen, und verbessert die Chance auf Featured Snippets.</p>
+
+            <p>In Shopify bearbeitest du das direkt im Rich-Text-Editor der Produktbeschreibung. Nutze den &bdquo;Format&ldquo;-Dropdown f&uuml;r &Uuml;berschriften &ndash; nicht einfach fettgedruckten Text.</p>
+
+            <p><strong>Ma&szlig;nahme 5:</strong> Herstellerbeschreibungen durch einzigartige, keyword-optimierte Texte ersetzen.<br>
+            <strong>Ma&szlig;nahme 6:</strong> &Uuml;berschriften-Hierarchie (H1 &gt; H2 &gt; H3) auf allen Seiten pr&uuml;fen.</p>
+
+            <!-- Section 5 -->
+            <h2 id="bilder">Bilder-SEO: Alt-Tags und Komprimierung</h2>
+
+            <p>Bilder sind ein h&auml;ufig untersch&auml;tzter SEO-Faktor. Google kann Bilder nicht &bdquo;sehen&ldquo; &ndash; es liest den Alt-Text, um zu verstehen, was dargestellt wird. Au&szlig;erdem sind Bilder oft der gr&ouml;&szlig;te Performance-Killer in Shopify-Shops.</p>
+
+            <h3>Alt-Tags richtig setzen</h3>
+
+            <p>Jedes Bild braucht einen beschreibenden Alt-Text. In Shopify findest du das Feld, wenn du auf ein Produktbild klickst und &bdquo;Alternativtext bearbeiten&ldquo; w&auml;hlst. Schreibe, was auf dem Bild zu sehen ist &ndash; und baue dein Keyword nat&uuml;rlich ein.</p>
+
+            <ul>
+              <li><strong>Gut:</strong> &bdquo;Braune Ledertasche mit Messingverschluss, Seitenansicht&ldquo;</li>
+              <li><strong>Schlecht:</strong> &bdquo;IMG_4523&ldquo; oder &bdquo;Produktbild&ldquo;</li>
+              <li><strong>Auch schlecht:</strong> &bdquo;Ledertasche kaufen g&uuml;nstig beste Ledertasche online shop&ldquo; (Keyword-Stuffing)</li>
+            </ul>
+
+            <h3>Bilder komprimieren und WebP nutzen</h3>
+
+            <p>Shopify konvertiert hochgeladene Bilder automatisch in WebP-Format und nutzt ein CDN f&uuml;r schnelle Auslieferung. Was du trotzdem tun solltest: Bilder vor dem Upload komprimieren. Ein Produktbild muss nicht 5 MB gro&szlig; sein. Nutze ein kostenloses Tool wie Squoosh oder TinyPNG, um Bilder auf unter 200 KB zu dr&uuml;cken &ndash; ohne sichtbaren Qualit&auml;tsverlust.</p>
+
+            <p>Dateibenennung z&auml;hlt ebenfalls: Benenne Dateien vor dem Upload in beschreibende Namen um. <code>braune-ledertasche-seitenansicht.jpg</code> statt <code>IMG_4523.jpg</code>.</p>
+
+            <p><strong>Ma&szlig;nahme 7:</strong> Alt-Tags f&uuml;r alle Produktbilder setzen.<br>
+            <strong>Ma&szlig;nahme 8:</strong> Bilder vor dem Upload auf unter 200 KB komprimieren.</p>
+
+            <!-- Section 6 -->
+            <h2 id="pagespeed">PageSpeed verbessern</h2>
+
+            <p>Google nutzt Core Web Vitals als Ranking-Faktor. Langsame Shops ranken schlechter &ndash; und verlieren Kunden. Eine ausf&uuml;hrliche Anleitung findest du in meinem Guide zur <a href="https://dd-gossen.com/blog/shopify-pagespeed-optimieren/">Shopify PageSpeed-Optimierung</a>. Die durchschnittliche Absprungrate steigt um 32% wenn die Ladezeit von 1 auf 3 Sekunden steigt.</p>
+
+            <p>Die gr&ouml;&szlig;ten PageSpeed-Killer in Shopify-Shops sind fast immer dieselben:</p>
+
+            <ul>
+              <li><strong>Zu viele Apps:</strong> Jede App l&auml;dt eigenen JavaScript-Code. 20 installierte Apps bedeuten 20 zus&auml;tzliche Scripts. Deinstalliere alles, was du nicht aktiv nutzt &ndash; und pr&uuml;fe, ob die App Codeschnipsel im Theme hinterlassen hat.</li>
+              <li><strong>Gro&szlig;e Bilder:</strong> Siehe oben. Komprimierung ist Pflicht.</li>
+              <li><strong>Aufwendige Slider und Animationen:</strong> Ein Karussell auf der Startseite sieht nett aus, l&auml;dt aber mehrere gro&szlig;e Bilder gleichzeitig. &Uuml;berleg, ob du es wirklich brauchst.</li>
+              <li><strong>Externe Schriften:</strong> Shopify-Themes laden oft Google Fonts. Wenn m&ouml;glich, nutze System-Fonts oder hoste Schriften lokal.</li>
+            </ul>
+
+            <h3>Lazy Loading aktivieren</h3>
+
+            <p>Lazy Loading sorgt daf&uuml;r, dass Bilder erst geladen werden, wenn sie in den sichtbaren Bereich scrollen. Die meisten modernen Shopify-Themes (Dawn, Refresh) unterst&uuml;tzen das bereits. Pr&uuml;fe, ob dein Theme das Attribut <code>loading="lazy"</code> auf Bildern setzt. Falls nicht, kannst du es manuell in den Liquid-Templates erg&auml;nzen.</p>
+
+            <p><strong>Ma&szlig;nahme 9:</strong> Nicht genutzte Apps deinstallieren und verbleibenden Code aus dem Theme entfernen.</p>
+
+            <!-- Inline CTA 1 -->
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>SEO-Audit f&uuml;r deinen Shop?</strong>
+                <span>Ich analysiere deinen Shopify-Shop auf SEO-Schwachstellen und zeige dir, wo du sofort ansetzen kannst.</span>
+              </div>
+              <a href="https://dd-gossen.com/shopify-optimierung/">Zum SEO-Audit</a>
+            </div>
+
+            <!-- Section 7 -->
+            <h2 id="interne-verlinkung">Interne Verlinkung aufbauen</h2>
+
+            <p>Interne Links sind einer der am meisten untersch&auml;tzten SEO-Hebel. Sie verteilen &bdquo;Link Juice&ldquo; (Ranking-Kraft) innerhalb deines Shops und helfen Google, alle deine Seiten zu finden und zu bewerten.</p>
+
+            <h3>Wo du interne Links setzen solltest</h3>
+
+            <ul>
+              <li><strong>Produktbeschreibungen:</strong> Verlinke verwandte Produkte oder die zugeh&ouml;rige Kollektion im Text. Nicht nur &uuml;ber automatische &bdquo;&Auml;hnliche Produkte&ldquo;-Sections.</li>
+              <li><strong>Blog-Artikel:</strong> Jeder Blog-Artikel sollte auf mindestens ein Produkt oder eine Kollektion verlinken. Das ist der Hauptzweck eines Shopify-Blogs: Seiten zu st&auml;rken, die Umsatz bringen.</li>
+              <li><strong>Kollektionsseiten:</strong> F&uuml;ge oben oder unten einen kurzen Text mit internen Links zu verwandten Kollektionen ein.</li>
+              <li><strong>Footer:</strong> Wichtige Kategorien und Seiten sollten im Footer verlinkt sein.</li>
+            </ul>
+
+            <h3>Ankertexte richtig w&auml;hlen</h3>
+
+            <p>Der Ankertext (der klickbare Text des Links) sagt Google, worum es auf der Zielseite geht. &bdquo;Hier klicken&ldquo; ist nutzlos. &bdquo;Unsere Ledertaschen-Kollektion&ldquo; ist perfekt &ndash; beschreibend, nat&uuml;rlich und keyword-relevant.</p>
+
+            <p><strong>Ma&szlig;nahme 10:</strong> In jedem Blog-Artikel mindestens 2&ndash;3 interne Links zu Produkten oder Kollektionen setzen.<br>
+            <strong>Ma&szlig;nahme 11:</strong> Kollektionsseiten mit kurzem SEO-Text und internen Verlinkungen erg&auml;nzen.</p>
+
+            <!-- Inline CTA 2 -->
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Professionelle SEO-Optimierung?</strong>
+                <span>Von Meta-Tags &uuml;ber Content bis Seitenstruktur &ndash; ich optimiere deinen Shopify-Shop f&uuml;r nachhaltige Rankings.</span>
+              </div>
+              <a href="https://dd-gossen.com/#contact">Jetzt anfragen</a>
+            </div>
+
+            <!-- Section 8 -->
+            <h2 id="fazit">Fazit: SEO ist kein Einmal-Projekt</h2>
+
+            <p>Die 11 Ma&szlig;nahmen in diesem Guide sind kein Geheimwissen. Meta-Tags setzen, URLs optimieren, Bilder komprimieren &ndash; das ist Handwerk. Der Unterschied zwischen Shops, die ranken, und Shops, die unsichtbar bleiben, liegt nicht im Wissen. Er liegt in der konsequenten Umsetzung.</p>
+
+            <p>SEO ist keine einmalige Aktion. Es ist ein laufender Prozess. Google bewertet deine Seiten regelm&auml;&szlig;ig neu. Deine Konkurrenz optimiert ebenfalls. Wer stehen bleibt, f&auml;llt zur&uuml;ck.</p>
+
+            <p>Mein Rat: Fang heute an. Nimm dir eine Ma&szlig;nahme pro Woche vor. In drei Monaten hast du einen Shop, der technisch und inhaltlich besser aufgestellt ist als 80% der Konkurrenz. Ohne eine einzige App. Ohne monatliche Kosten.</p>
+
+            <p>Und wenn du merkst, dass du Unterst&uuml;tzung brauchst &ndash; sei es f&uuml;r ein technisches SEO-Audit, Content-Strategie oder eine umfassende <a href="https://dd-gossen.com/shopify-optimierung/">Shopify-Optimierung</a> &ndash; dann melde dich.</p>
+
+            <!-- Final CTA Box -->
+            <div class="cta-box">
+              <h3>Shopify SEO professionell umsetzen</h3>
+              <p>Du willst dein Shopify SEO nicht alleine angehen? Ich analysiere deinen Shop, identifiziere die gr&ouml;&szlig;ten Hebel und setze die Optimierung um &ndash; technisch, inhaltlich und strategisch. Ohne &uuml;berfl&uuml;ssige Apps.</p>
+              <a href="#" class="cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt kostenloses Erstgespr&auml;ch buchen</a>
+            </div>
+
+          </div><!-- /.article-content -->
+
+          <!-- FAQ Section -->
+          <section class="article-faq">
+            <h2 class="faq-title">H&auml;ufige Fragen zu Shopify SEO</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>Brauche ich eine SEO-App f&uuml;r meinen Shopify-Shop?</summary>
+                <div>
+                  <p>Nein. Die meisten SEO-Apps erledigen Aufgaben, die du auch manuell im Shopify-Admin umsetzen kannst: Meta-Titles setzen, Alt-Tags pflegen, Weiterleitungen anlegen. Apps wie Yoast oder SEO Manager sind bequem, aber nicht notwendig. Spare dir die monatlichen Kosten und lerne, die Stellschrauben selbst zu bedienen.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Wie lange dauert es, bis SEO-Ma&szlig;nahmen bei Shopify wirken?</summary>
+                <div>
+                  <p>Rechne mit 4 bis 12 Wochen, bis erste Ver&auml;nderungen in den Google-Rankings sichtbar werden. Technische Fixes wie Meta-Tags oder PageSpeed-Verbesserungen wirken oft schneller. Content-Optimierungen und interne Verlinkung brauchen mehr Zeit, liefern daf&uuml;r aber nachhaltigere Ergebnisse.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Was ist der wichtigste SEO-Faktor f&uuml;r Shopify-Shops?</summary>
+                <div>
+                  <p>Es gibt keinen einzelnen Faktor, aber wenn ich einen nennen m&uuml;sste: Content-Qualit&auml;t. Einzigartige Produktbeschreibungen, sinnvolle Seitenstruktur und relevante Inhalte sind die Basis. Technische Optimierung wie PageSpeed und Meta-Tags sind wichtig, aber ohne guten Content rankt nichts.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Kann ich mit Shopify auf Seite 1 bei Google ranken?</summary>
+                <div>
+                  <p>Ja. Shopify ist technisch solide f&uuml;r SEO &ndash; schnelles Hosting, sauberer Code, SSL standardm&auml;&szlig;ig. Die Plattform selbst ist kein Nachteil. Entscheidend ist, was du daraus machst: optimierte Meta-Tags, guter Content, durchdachte Seitenstruktur und konsequenter Linkaufbau.</p>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <!-- Author Box – kleine Karte darunter -->
+          <div class="author-box">
+            <h3 class="author-box-title">Autorenbox</h3>
+            <p class="author-bio">Ich helfe Online-Shop-Betreibern dabei, ihren Shopify-Shop aufzubauen, zu optimieren und zu migrieren. Mit &uuml;ber 5 Jahren Erfahrung und 70+ abgeschlossenen Projekten wei&szlig; ich, worauf es ankommt &ndash; technisch und strategisch.</p>
+            <div class="author-details">
+              <img src="../../Maik-Gossen-ShopifyFreelancer.png" alt="Maik Gossen" class="author-avatar">
+              <div class="author-info">
+                <p class="author-name"><a href="https://dd-gossen.com/" class="author-name-link">Maik Gossen</a></p>
+                <p class="author-role">Shopify Freelancer &amp; Entwickler</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.article-card -->
+      </div><!-- /.article-main -->
+
+    </div><!-- /.article-layout -->
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-name">MAIK GOSSEN</div>
+        <div class="footer-contact-label">Kontakt:</div>
+        <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+        <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+        <div class="footer-social">
+          <a href="mailto:info@dd-gossen.com" title="E-Mail" aria-label="E-Mail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Men&uuml;</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/">&Uuml;bersicht</a></li>
+          <li><a href="https://dd-gossen.com/">Meine Services</a></li>
+          <li><a href="https://dd-gossen.com/blog/">Blog</a></li>
+          <li><a href="https://dd-gossen.com/#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-shop-erstellen/">Shopify Shop erstellen</a></li>
+          <li><a href="https://dd-gossen.com/shopify-migration/">Shopify Migration</a></li>
+          <li><a href="https://dd-gossen.com/shopify-optimierung/">Shopify Optimierung</a></li>
+          <li><a href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/">Widerrufsbutton einbauen lassen</a></li>
+          <li><a href="https://dd-gossen.com/blog/shopify-freelancer-deutschland/">Shopify Freelancer Deutschland</a></li>
+          <li><a href="https://dd-gossen.com/#competencies">Kompetenzen</a></li>
+          <li><a href="https://dd-gossen.com/#projects">Portfolio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Schnellzugriff</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/#contact">Kostenloses Erstgespr&auml;ch</a></li>
+          <li><a href="https://dd-gossen.com/#about-me">&Uuml;ber mich</a></li>
+          <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://dd-gossen.com/impressum.html">Impressum</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/datenschutz.html">Datenschutz</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/agb.html">AGB</a>
+      <span class="footer-sep">|</span>
+      <a href="#" id="openCookieSettings">Cookie-Einstellungen</a>
+      <span class="footer-sep">|</span>
+      <span>&copy; 2025 Maik Gossen</span>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll behavior
+    (function() {
+      var header = document.querySelector('.header');
+      if (!header) return;
+      let lastScrollTop = 0;
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        header.style.background = scrollTop > 100 ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.15)';
+        if (scrollTop > 100) {
+          header.classList.toggle('hidden', scrollTop > lastScrollTop);
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+      });
+    })();
+
+    // Sync sidebar sticky-top with header visibility
+    (function() {
+      const header = document.querySelector('.header');
+      if (!header) return;
+      const root = document.documentElement;
+      function update() {
+        root.style.setProperty('--sidebar-top',
+          header.classList.contains('hidden') ? '24px' : '110px');
+      }
+      new MutationObserver(update).observe(header, { attributes: true, attributeFilter: ['class'] });
+      update();
+    })();
+
+    // Active TOC link on scroll
+    (function() {
+      const sections = document.querySelectorAll('.article-content h2[id]');
+      const tocLinks = document.querySelectorAll('.sidebar-toc a');
+      if (!sections.length || !tocLinks.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.sidebar-toc a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+
+      sections.forEach(section => observer.observe(section));
+    })();
+  </script>
+
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+    function initCalUI() {
+      if (window.Cal && window.Cal.ns && window.Cal.ns.erstgespraech) {
+        Cal.ns.erstgespraech("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      } else { setTimeout(initCalUI, 100); }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCalUI);
+    } else { initCalUI(); }
+  </script>
+
+</body>
+</html>

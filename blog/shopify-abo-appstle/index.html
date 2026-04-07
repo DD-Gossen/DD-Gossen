@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopify Abo-Modell einrichten: Appstle Subscriptions im Praxis-Test (2026) | DD-Gossen</title>
+  <meta name="description" content="Shopify Abo-Modell mit Appstle ✓ Subscriptions, Build-a-Box & Membership ✓ Ab 0 €/Monat ✓ 6.400+ Bewertungen (5 Sterne) ✓ Setup-Anleitung & Praxis-Tipps">
+  <meta name="keywords" content="Shopify Abo, Shopify Subscriptions, Appstle Subscriptions, Shopify Abo-Modell, Shopify wiederkehrende Bestellungen, Abo-Commerce Shopify">
+  <meta name="author" content="Maik Gossen">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Shopify Abo-Modell einrichten: Appstle Subscriptions im Praxis-Test (2026) | DD-Gossen">
+  <meta property="og:description" content="Shopify Abo-Modell mit Appstle ✓ Subscriptions, Build-a-Box & Membership ✓ Ab 0 €/Monat ✓ 6.400+ Bewertungen (5 Sterne) ✓ Setup-Anleitung & Praxis-Tipps">
+  <meta property="og:url" content="https://dd-gossen.com/blog/shopify-abo-appstle/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="DD-Gossen">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shopify Abo-Modell einrichten: Appstle Subscriptions im Praxis-Test (2026) | DD-Gossen">
+  <meta name="twitter:description" content="Shopify Abo-Modell mit Appstle ✓ Subscriptions, Build-a-Box & Membership ✓ Ab 0 €/Monat ✓ 6.400+ Bewertungen (5 Sterne) ✓ Setup-Anleitung & Praxis-Tipps">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://dd-gossen.com/blog/shopify-abo-appstle/">
+
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../article-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Two-column layout */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+
+    /* Grid column wrapper – stretches to full row height so sticky works */
+    .sidebar-column {
+      align-self: stretch;
+    }
+
+    /* Sidebar – sticky inside the full-height column */
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      position: sticky;
+      top: var(--sidebar-top, 110px);
+      transition: top 0.3s ease;
+    }
+
+    /* Content column starts at top, not stretched */
+    .article-main {
+      align-self: start;
+      min-width: 0;
+      width: 100%;
+    }
+
+    .sidebar-toc {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .sidebar-toc h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid rgba(35,126,181,0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sidebar-toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .sidebar-toc a {
+      display: block;
+      font-size: 0.88rem;
+      color: #374151;
+      text-decoration: none;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      line-height: 1.4;
+    }
+
+    .sidebar-toc a:hover,
+    .sidebar-toc a.active {
+      background: rgba(35,126,181,0.1);
+      color: #237eb5;
+    }
+
+    .sidebar-cta {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(15,23,42,0.25);
+    }
+
+    .sidebar-cta p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
+      margin: 0 0 1rem 0;
+      line-height: 1.5;
+    }
+
+    .sidebar-cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+      padding: 0.65rem 1.2rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .sidebar-cta a:hover {
+      background: linear-gradient(135deg, #0066e6 0%, #004999 100%);
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Main article area */
+    .article-main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Restore card styling */
+    .article-card {
+      max-width: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-sizing: border-box;
+    }
+
+    /* Hero image – override article-styles.css max-width:600px */
+    .article-hero-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      display: block;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Inline CTA */
+    .inline-cta {
+      background: linear-gradient(135deg, rgba(35,126,181,0.08) 0%, rgba(35,126,181,0.15) 100%);
+      border: 1px solid rgba(35,126,181,0.25);
+      border-left: 4px solid #237eb5;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .inline-cta-text {
+      flex: 1;
+    }
+
+    .inline-cta-text strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem;
+      color: #0f172a;
+      margin-bottom: 0.3rem;
+    }
+
+    .inline-cta-text span {
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    .inline-cta a {
+      display: inline-block;
+      background: #0f172a;
+      color: white !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none !important;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .inline-cta a:hover {
+      background: #1e293b;
+    }
+
+    /* Author box – kleine Karte unter FAQ, ohne Hintergrund */
+    .author-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: transparent !important;
+      border: 1px solid rgba(35,126,181,0.15);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    .author-box-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .author-bio {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.5;
+      margin: 0 0 1rem 0;
+    }
+
+    .author-details {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-name-link {
+      color: #333;
+      text-decoration: none;
+      font-weight: inherit;
+    }
+
+    .author-name-link:hover {
+      color: #333;
+      text-decoration: none;
+    }
+
+    /* In Kürze – linksbündig, unscheinbar, volle Breite */
+    .article-summary {
+      margin: 0 0 2rem 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .article-summary summary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #64748b;
+      padding: 0.25rem 0 0.4rem 0;
+      cursor: pointer;
+      list-style: none;
+      border-bottom: 1px solid rgba(35,126,181,0.15);
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+
+    .article-summary summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .article-summary summary::after {
+      content: '▼';
+      float: right;
+      font-size: 0.6rem;
+      opacity: 0.4;
+    }
+
+    .article-summary[open] summary::after {
+      content: '▲';
+    }
+
+    .article-summary ul {
+      margin: 0.5rem 0 0 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+    }
+
+    .article-summary li {
+      padding: 0.3rem 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #64748b;
+      border-bottom: 1px solid rgba(35,126,181,0.06);
+    }
+
+    .article-summary li:last-child {
+      border-bottom: none;
+    }
+
+    /* FAQ Section */
+    .article-faq {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(35,126,181,0.15);
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+
+    .faq-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .faq-item {
+      padding: 0;
+      margin: 0;
+      border-bottom: 1px solid rgba(35,126,181,0.12);
+      width: 100%;
+      min-width: 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item summary {
+      font-weight: 600;
+      color: #0f172a;
+      padding: 1rem 0;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      float: right;
+      font-size: 1.2rem;
+      color: #237eb5;
+    }
+
+    .faq-item[open] summary::after {
+      content: '−';
+    }
+
+    .faq-item p {
+      margin: 0 0 1rem 0;
+      padding: 0 0 1rem 0;
+      line-height: 1.6;
+      color: #374151;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    .author-avatar {
+      width: 48px !important;
+      height: 48px !important;
+      max-width: 48px !important;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      flex-shrink: 0;
+      border: none;
+      margin: 0 !important;
+    }
+
+    .author-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .author-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+    }
+
+    .author-role {
+      font-size: 0.875rem;
+      color: #777;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    /* Blog meta info */
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.88rem;
+      color: #6b7280;
+      margin-bottom: 0rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .meta-tag {
+      background: rgba(35,126,181,0.1);
+      color: #237eb5;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Pricing table */
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .pricing-table thead th {
+      background: #0f172a;
+      color: white;
+      padding: 0.8rem 1rem;
+      text-align: left;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .pricing-table tbody td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid rgba(35,126,181,0.1);
+      color: #374151;
+    }
+
+    .pricing-table tbody tr:nth-child(even) {
+      background: rgba(35,126,181,0.04);
+    }
+
+    .pricing-table tbody tr:hover {
+      background: rgba(35,126,181,0.08);
+    }
+
+    .pricing-highlight {
+      color: #16a34a;
+      font-weight: 600;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        padding: 0 0.2rem;
+        gap: 0.8rem;
+      }
+
+      /* Disable sticky on mobile */
+      .article-sidebar {
+        position: static;
+        top: auto;
+        transition: none;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      /* Compact TOC on mobile */
+      .sidebar-toc {
+        padding: 0.8rem 1rem;
+        border-radius: 12px;
+        margin-bottom: 0;
+      }
+
+      .sidebar-toc h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .sidebar-toc ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem 0;
+        margin: 0;
+      }
+
+      .sidebar-toc li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .sidebar-toc li::before {
+        display: none;
+      }
+
+      .sidebar-toc a {
+        font-size: 0.88rem;
+        padding: 0.25rem 0;
+        background: transparent;
+        border-radius: 0;
+        white-space: normal;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      .sidebar-toc a:hover {
+        background: transparent;
+        text-decoration: underline;
+      }
+
+      /* Hide CTA on mobile */
+      .sidebar-cta {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .inline-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+
+      .author-box {
+        padding: 1rem 1.25rem;
+      }
+
+      .author-box-title {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .author-bio {
+        font-size: 0.93rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .author-details {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .article-hero-img {
+        border-radius: 12px;
+        margin-bottom: 0.8rem;
+      }
+
+      .article-meta {
+        justify-content: flex-start;
+        text-align: left;
+        align-self: flex-start;
+        width: 100%;
+      }
+
+      .article-faq {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+      }
+
+      .faq-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .faq-item summary {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+      }
+
+      .faq-item p {
+        margin: 0 0 0.5rem 0;
+        padding: 0 0 0.5rem 0;
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+
+      .pricing-table {
+        font-size: 0.85rem;
+      }
+
+      .pricing-table thead th,
+      .pricing-table tbody td {
+        padding: 0.5rem 0.6rem;
+      }
+    }
+  </style>
+
+  <!-- Strukturierte Daten (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dd-gossen.com/#organization",
+        "name": "DD-Gossen",
+        "url": "https://dd-gossen.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dd-gossen.com/Logo.png"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/maik-gossen"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dd-gossen.com/#author",
+        "name": "Maik Gossen",
+        "url": "https://dd-gossen.com/",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://dd-gossen.com/Maik-Gossen-ShopifyFreelancer.png",
+          "width": 400,
+          "height": 400
+        },
+        "jobTitle": "Shopify Freelancer & Entwickler",
+        "worksFor": {
+          "@id": "https://dd-gossen.com/#organization"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://dd-gossen.com/blog/shopify-abo-appstle/#article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dd-gossen.com/blog/shopify-abo-appstle/"
+        },
+        "headline": "Shopify Abo-Modell einrichten: Appstle Subscriptions im Praxis-Test (2026)",
+        "description": "Shopify Abo-Modell mit Appstle ✓ Subscriptions, Build-a-Box & Membership ✓ Ab 0 €/Monat ✓ 6.400+ Bewertungen (5 Sterne) ✓ Setup-Anleitung & Praxis-Tipps",
+        "datePublished": "2026-04-04",
+        "dateModified": "2026-04-04",
+        "author": {
+          "@id": "https://dd-gossen.com/#author"
+        },
+        "publisher": {
+          "@id": "https://dd-gossen.com/#organization",
+          "name": "DD-Gossen",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://dd-gossen.com/Logo.png",
+            "width": 600,
+            "height": 60
+          }
+        },
+        "articleSection": "Shopify",
+        "keywords": ["Shopify Abo", "Shopify Subscriptions", "Appstle Subscriptions", "Shopify Abo-Modell", "Shopify wiederkehrende Bestellungen", "Abo-Commerce Shopify"],
+        "wordCount": 2000
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dd-gossen.com/blog/shopify-abo-appstle/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Was kostet Appstle Subscriptions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Appstle Subscriptions bietet einen kostenlosen Plan bis 500 $ Abo-Umsatz pro Monat. Danach starten die Pläne ab 10 $/Monat. Alle Pläne haben 0 % Transaktionsgebühren – das ist ein großer Vorteil gegenüber Konkurrenten, die oft 1–2 % nehmen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ist Appstle besser als Recharge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Für die meisten Shopify-Shops ja. Appstle ist günstiger, erhebt 0 % Transaktionsgebühren (Recharge nimmt 1 % + 10 Cent pro Transaktion im Standardplan) und hat mit 5,0 Sternen bei über 6.400 Bewertungen die besseren Nutzerbewertungen im Shopify App Store."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann ich verschiedene Abo-Intervalle anbieten?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, Appstle unterstützt flexible Intervalle: wöchentlich, alle 2 Wochen, monatlich, alle 2 Monate, alle 3 Monate, alle 6 Monate und jährlich. Du kannst auch eigene Intervalle definieren."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Können Kunden ihr Abo selbst verwalten?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, Appstle bietet eine umfangreiche Kundenseite mit passwortlosem Login. Kunden können ihr Abo pausieren, eine Lieferung überspringen, Produkte tauschen, das Intervall ändern oder kündigen – alles selbstständig und ohne den Support kontaktieren zu müssen."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="https://dd-gossen.com/shopify-freelancer/" class="logo">
+      <img src="../../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+    </a>
+    <div class="header-right-container">
+      <div class="header-cta-container">
+        <a href="#" class="header-cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt anfragen</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main" style="margin-top: 0; padding: 8rem 1rem 4rem;">
+
+    <div class="article-layout">
+
+      <!-- Sticky Sidebar -->
+      <div class="sidebar-column">
+      <aside class="article-sidebar">
+        <div class="sidebar-toc">
+          <h3>Inhaltsverzeichnis</h3>
+          <ul>
+            <li><a href="#warum-abo">Warum Abo-Modelle boomen</a></li>
+            <li><a href="#appstle-ueberblick">Appstle Subscriptions</a></li>
+            <li><a href="#abo-modelle">Unterstützte Abo-Modelle</a></li>
+            <li><a href="#features">Die wichtigsten Features</a></li>
+            <li><a href="#preise">Preise und Pläne</a></li>
+            <li><a href="#einrichtung">Einrichtung Schritt für Schritt</a></li>
+            <li><a href="#praxis-tipps">Praxis-Tipps</a></li>
+            <li><a href="#fazit">Fazit</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-cta">
+          <p>Abo-Modell einrichten?</p>
+          <a href="https://subscription-admin.appstle.com/affiliates?fpr=maik69" target="_blank" rel="noopener">Appstle testen &rarr;</a>
+        </div>
+      </aside>
+      </div><!-- /.sidebar-column -->
+
+      <!-- Main Content -->
+      <div class="article-main">
+        <div class="article-card">
+
+          <!-- Meta Info -->
+          <div class="article-meta">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              04.04.26
+            </span>
+            <span class="meta-item meta-lesezeit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              9 Min. Lesezeit
+            </span>
+            <span class="meta-tag">Apps</span>
+            <span class="meta-tag">Shopify</span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="article-title" style="text-align: left; margin: 0 0 1.5rem 0; font-size: 2.4rem; max-width: 100%; padding: 0;">Shopify Abo-Modell einrichten: Appstle Subscriptions im Praxis-Test (2026)</h1>
+
+          <!-- In Kürze (ausklappbar, SEO-freundlich) -->
+          <details class="article-summary">
+            <summary>Artikel in Kürze</summary>
+            <ul>
+              <li><strong>Abo-Commerce boomt:</strong> Subscription Commerce wächst jährlich um 20 %+ und steigert den Customer Lifetime Value um das 3-5-fache.</li>
+              <li><strong>Appstle Subscriptions:</strong> Beste Bewertung im Shopify App Store (5,0 Sterne, 6.400+ Reviews), 0 % Transaktionsgebühren.</li>
+              <li><strong>5 Abo-Modelle:</strong> Subscribe & Save, Build-a-Box, Curated Box, Membership und Prepaid-Abos.</li>
+              <li><strong>Kostenloser Start:</strong> Free-Plan bis 500 $ Abo-Umsatz/Monat, danach ab 10 $/Monat.</li>
+              <li><strong>Setup in 7 Schritten:</strong> Von der Installation bis zur Testbestellung – komplett in unter einer Stunde.</li>
+            </ul>
+          </details>
+
+          <!-- Article Content -->
+          <div class="article-content" style="width: 100%; max-width: 100%; padding: 0; box-sizing: border-box; margin: 0;">
+
+            <p>Wiederkehrende Einnahmen sind der heilige Gral im E-Commerce. Während die meisten Shopify-Shops auf Einzelkäufe setzen, bauen die erfolgreichsten Marken längst auf Abo-Modelle – mit planbarem Umsatz, höherer Kundenbindung und einem Cashflow, der nicht nach jeder Werbekampagne wieder bei null anfängt.</p>
+
+            <p>In diesem Artikel zeige ich dir, wie du mit <a href="https://subscription-admin.appstle.com/affiliates?fpr=maik69" target="_blank" rel="noopener">Appstle Subscriptions</a> ein professionelles Abo-Modell in deinem Shopify-Shop einrichtest – mit konkreter Schritt-für-Schritt-Anleitung, Preisvergleich und Praxis-Tipps aus realen Projekten.</p>
+
+            <!-- Section 1 -->
+            <h2 id="warum-abo">Warum Abo-Modelle im E-Commerce boomen</h2>
+
+            <p>Subscription Commerce ist kein Trend mehr, sondern eine fundamentale Verschiebung im Kaufverhalten. Der globale Subscription-E-Commerce-Markt wächst jährlich um über 20 % – und das aus gutem Grund: Sowohl Händler als auch Kunden profitieren massiv.</p>
+
+            <p>Für Shop-Betreiber bedeutet ein Abo-Modell vor allem eines: <strong>planbarer Umsatz</strong>. Statt jeden Monat bei null zu starten und über Ads neue Kunden akquirieren zu müssen, generierst du mit aktiven Abonnenten einen stabilen Recurring Revenue. Der Cashflow wird berechenbar, Investitionen in Wachstum werden sicherer.</p>
+
+            <p>Die Zahlen sprechen für sich: Der <strong>Customer Lifetime Value (CLV) von Abo-Kunden liegt im Schnitt 3-5x höher</strong> als bei Einmalkäufern. Ein Kunde, der monatlich Kaffee-Bohnen für 25 Euro bestellt, generiert in einem Jahr 300 Euro Umsatz – statt einmalig 25 Euro. Dazu kommt: Die Akquisekosten fallen nur einmal an.</p>
+
+            <p>Die erfolgreichsten Abo-Modelle im E-Commerce finden sich in Branchen mit hoher Wiederbestellrate:</p>
+
+            <ul>
+              <li><strong>Kaffee-Abos:</strong> Frisch geröstete Bohnen alle 2-4 Wochen</li>
+              <li><strong>Supplements & Nahrungsergänzung:</strong> Monatliche Nachlieferung von Proteinen, Vitaminen, Superfoods</li>
+              <li><strong>Tiernahrung:</strong> Futter-Abos mit automatischer Lieferung</li>
+              <li><strong>Kosmetik-Boxen:</strong> Kuratierte Überraschungsboxen mit neuen Produkten</li>
+              <li><strong>Lebensmittel & Snacks:</strong> Wöchentliche oder monatliche Genuss-Boxen</li>
+            </ul>
+
+            <p>Für Shopify-Shops ist ein Abo-Modell oft der Schlüssel, um von „guten Monaten und schlechten Monaten" zu stabilem, planbarem Wachstum zu kommen. Und die technische Hürde ist dank moderner Apps deutlich niedriger als viele denken.</p>
+
+            <!-- Section 2 -->
+            <h2 id="appstle-ueberblick">Appstle Subscriptions: Überblick</h2>
+
+            <p><a href="https://subscription-admin.appstle.com/affiliates?fpr=maik69" target="_blank" rel="noopener">Appstle Subscriptions</a> ist die am besten bewertete Abo-App im gesamten Shopify App Store – und das mit deutlichem Abstand. Mit <strong>5,0 Sternen bei über 6.400 Bewertungen</strong> setzt die App einen Standard, den kein Konkurrent erreicht.</p>
+
+            <p>Was Appstle von anderen Subscription-Apps unterscheidet, lässt sich in drei Kernpunkten zusammenfassen:</p>
+
+            <ul>
+              <li><strong>0 % Transaktionsgebühren:</strong> Während Konkurrenten wie Recharge 1 % + 10 Cent pro Transaktion nehmen, behält Appstle bei allen Plänen null Prozent ein. Bei 10.000 Euro Abo-Umsatz im Monat sparst du so 100 Euro+ gegenüber der Konkurrenz.</li>
+              <li><strong>Kostenloser Einstieg:</strong> Der Free-Plan deckt bis zu 500 $ Abo-Umsatz pro Monat ab – genug, um das Modell zu testen und die ersten Abonnenten zu gewinnen, ohne einen Cent zu investieren.</li>
+              <li><strong>Alles aus einer Hand:</strong> Subscribe & Save, Build-a-Box, Membership, Prepaid, Churn-Prevention, Analytics – alles in einer einzigen App, ohne Zusatzkosten für Module.</li>
+            </ul>
+
+            <p>Appstle wurde für Shopify-Shops jeder Größe entwickelt: vom Solo-Gründer, der seinen <a href="https://dd-gossen.com/shopify-shop-erstellen/">ersten Shopify-Shop erstellt</a>, bis zum Enterprise-Shop mit tausenden aktiven Abonnenten. Die App integriert sich nahtlos in jedes Shopify-Theme und unterstützt Shopify Checkout nativ.</p>
+
+            <!-- Section 3 -->
+            <h2 id="abo-modelle">Unterstützte Abo-Modelle</h2>
+
+            <p>Appstle beschränkt sich nicht auf ein einziges Abo-Format. Die App unterstützt fünf verschiedene Modelle, die du einzeln oder kombiniert einsetzen kannst – je nachdem, was zu deinem Produktsortiment und deiner Zielgruppe passt.</p>
+
+            <h3>Subscribe & Save</h3>
+            <p>Der Klassiker unter den Abo-Modellen. Kunden abonnieren ein Produkt und erhalten bei jeder wiederkehrenden Bestellung einen Rabatt – typischerweise 10-15 %. Das Prinzip ist simpel und funktioniert für praktisch jedes Verbrauchsprodukt: Kaffee, Proteinpulver, Hautpflege, Reinigungsmittel, Tiernahrung. Der Kunde spart Geld, du gewinnst planbare Einnahmen.</p>
+
+            <h3>Build-a-Box</h3>
+            <p>Kunden stellen ihre eigene Box zusammen – aus einer von dir definierten Produktauswahl. Beispiel: Eine Snack-Box, bei der der Kunde aus 20 verschiedenen Snacks seine 8 Favoriten auswählt. Oder eine Tee-Auswahl, bei der der Kunde seine Lieblingssorten selbst zusammenstellt. Build-a-Box erzeugt ein personalisiertes Erlebnis, das die Kundenbindung massiv stärkt.</p>
+
+            <h3>Curated Box</h3>
+            <p>Du als Händler kuratierst die Box – der Kunde weiß vorher nicht genau, was drin ist. Das Überraschungselement ist hier der Hauptanreiz. Typische Anwendungsfälle: Beauty-Boxen, Gourmet-Boxen, Craft-Beer-Pakete. Curated Boxes haben oft die höchste Marge, weil du Produkte strategisch zusammenstellen und Restbestände einbinden kannst.</p>
+
+            <h3>Membership</h3>
+            <p>Statt ein physisches Produkt zu abonnieren, werden Kunden Mitglieder – mit exklusiven Vorteilen. Das können dauerhafte Rabatte auf das gesamte Sortiment sein, Early Access zu neuen Produkten, kostenloser Versand oder Zugang zu Members-only-Produkten. Memberships eignen sich besonders für Marken mit starker Community.</p>
+
+            <h3>Prepaid-Abos</h3>
+            <p>Kunden zahlen vorab für 3, 6 oder 12 Monate – zu einem vergünstigten Gesamtpreis. Der Vorteil für dich: Der durchschnittliche Bestellwert (AOV) steigt massiv. Statt 25 Euro pro Monat zahlst der Kunde einmalig 250 Euro für 12 Monate. Das verbessert deinen Cashflow sofort und reduziert die Churn-Rate, weil Kunden bei Vorauszahlung seltener kündigen.</p>
+
+            <!-- Inline CTA 1 -->
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Abo-Modell für deinen Shop einrichten?</strong>
+                <span>Starte kostenlos mit der bestbewerteten Subscription-App im Shopify App Store.</span>
+              </div>
+              <a href="https://subscription-admin.appstle.com/affiliates?fpr=maik69" target="_blank" rel="noopener">Appstle kostenlos testen</a>
+            </div>
+
+            <!-- Section 4 -->
+            <h2 id="features">Die wichtigsten Features</h2>
+
+            <p>Appstle Subscriptions ist keine minimale Abo-Lösung, sondern eine vollständige Subscription-Plattform. Hier sind die Features, die in der Praxis den größten Unterschied machen:</p>
+
+            <h3>Kundenseite mit passwortlosem Login</h3>
+            <p>Deine Kunden erhalten eine eigene Abo-Verwaltungsseite, auf die sie sich ohne Passwort einloggen können – per Magic Link via E-Mail. Dort können sie ihr Abo pausieren, eine Lieferung überspringen (Skip), Produkte austauschen (Swap), das Intervall ändern oder kündigen. Das reduziert Support-Anfragen um 60-80 %.</p>
+
+            <h3>Churn-Control und Kündigungsprävention</h3>
+            <p>Wenn ein Kunde kündigen will, greift Appstle automatisch ein: Vor der endgültigen Kündigung wird ein Rabattangebot angezeigt (z. B. 20 % auf die nächste Lieferung), eine Pause vorgeschlagen oder das Intervall angepasst. Diese Retention-Flows lassen sich vollständig konfigurieren und können die Churn-Rate um 15-30 % senken.</p>
+
+            <h3>Automatisierte E-Mails und SMS</h3>
+            <p>Vor jeder Abo-Verlängerung erhalten Kunden automatisch eine Benachrichtigung per E-Mail oder SMS. Für eine noch gezieltere E-Mail-Strategie lohnt sich die Kombination mit <a href="https://dd-gossen.com/blog/klaviyo-shopify-email-marketing/">Klaviyo</a>. Sie können dann noch Änderungen vornehmen, bevor die Bestellung ausgelöst wird. Das schafft Vertrauen und verhindert Chargebacks.</p>
+
+            <h3>Inventar-Prognosen</h3>
+            <p>Basierend auf aktiven Abos berechnet Appstle, wie viel Bestand du für die kommenden Wochen und Monate benötigst. Das ist besonders wertvoll für Shops mit eigener Produktion oder langen Lieferzeiten – du vermeidest Überbestände und Out-of-Stock-Situationen gleichermaßen.</p>
+
+            <h3>Analytics-Dashboard</h3>
+            <p>Das integrierte Dashboard zeigt dir die wichtigsten Subscription-KPIs auf einen Blick: Monthly Recurring Revenue (MRR), Churn Rate, Customer Lifetime Value (LTV), aktive vs. pausierte Abos, durchschnittlicher Abo-Wert und Wachstumstrends. Alle Daten lassen sich auch als Report exportieren.</p>
+
+            <h3>Build-a-Box Builder</h3>
+            <p>Der visuelle Box-Builder lässt sich direkt in dein Shopify-Theme integrieren. Kunden sehen eine interaktive Oberfläche, auf der sie Produkte per Drag & Drop in ihre Box ziehen können – mit Live-Preisberechnung und Mindest-/Maximalmengen.</p>
+
+            <h3>Loyalty-Rewards</h3>
+            <p>Je länger ein Kunde abonniert ist, desto mehr Rabatt erhält er. Du kannst Stufen definieren: Nach 3 Monaten 10 % Rabatt, nach 6 Monaten 12 %, nach 12 Monaten 15 %. Das belohnt Treue und gibt Kunden einen Grund, ihr Abo laufen zu lassen.</p>
+
+            <h3>Robuste APIs</h3>
+            <p>Für Shops mit individuellen Anforderungen bietet Appstle umfangreiche REST-APIs. Damit lassen sich Custom-Integrationen bauen – z. B. Anbindung an ERP-Systeme, individuelle Dashboards oder automatisierte Workflows mit Tools wie Zapier oder Make.</p>
+
+            <!-- Section 5 -->
+            <h2 id="preise">Preise und Pläne</h2>
+
+            <p>Die Preisstruktur von Appstle ist transparent und fair. Der entscheidende Vorteil gegenüber der Konkurrenz: <strong>0 % Transaktionsgebühren bei allen Plänen</strong>.</p>
+
+            <table class="pricing-table">
+              <thead>
+                <tr>
+                  <th>Plan</th>
+                  <th>Preis</th>
+                  <th>Abo-Umsatz/Monat</th>
+                  <th>Transaktionsgebühr</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Free</strong></td>
+                  <td>0 €</td>
+                  <td>bis 500 $</td>
+                  <td><span class="pricing-highlight">0 %</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Starter</strong></td>
+                  <td>10 $/Monat</td>
+                  <td>bis 10.000 $</td>
+                  <td><span class="pricing-highlight">0 %</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Business</strong></td>
+                  <td>30 $/Monat</td>
+                  <td>bis 30.000 $</td>
+                  <td><span class="pricing-highlight">0 %</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Business Premium</strong></td>
+                  <td>100 $/Monat</td>
+                  <td>bis 100.000 $</td>
+                  <td><span class="pricing-highlight">0 %</span></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>Warum sind die 0 % Transaktionsgebühren so wichtig? Ein Rechenbeispiel: Bei 20.000 Euro Abo-Umsatz pro Monat zahlst du bei Appstle 30 $/Monat. Bei einem Konkurrenten mit 1 % Transaktionsgebühr wären es 200 Euro + Grundgebühr – also das Vielfache. Je höher dein Abo-Umsatz skaliert, desto größer wird dieser Vorteil.</p>
+
+            <p>Der Free-Plan ist dabei kein „Lockvogelangebot" mit eingeschränkten Funktionen. Du bekommst Zugang zu Subscribe & Save, Build-a-Box, Kundenseite und E-Mail-Benachrichtigungen – alles, was du für den Start brauchst.</p>
+
+            <!-- Section 6 -->
+            <h2 id="einrichtung">Einrichtung Schritt für Schritt</h2>
+
+            <p>Die Einrichtung von Appstle Subscriptions dauert in der Regel unter einer Stunde. Hier ist der Prozess Schritt für Schritt:</p>
+
+            <h3>1. App installieren</h3>
+            <p>Gehe in den Shopify App Store und installiere <a href="https://subscription-admin.appstle.com/affiliates?fpr=maik69" target="_blank" rel="noopener">Appstle Subscriptions</a>. Die Installation dauert weniger als eine Minute. Nach der Installation öffnet sich das Appstle-Dashboard direkt in deinem Shopify-Admin.</p>
+
+            <h3>2. Abo-Plan erstellen</h3>
+            <p>Im Appstle-Dashboard erstellst du deinen ersten Subscription-Plan. Definiere die Intervalle: wöchentlich, alle 2 Wochen, monatlich, alle 2 Monate, alle 3 Monate oder jährlich. Du kannst auch mehrere Intervalle zur Auswahl anbieten – der Kunde entscheidet dann selbst.</p>
+
+            <h3>3. Produkte zuweisen</h3>
+            <p>Wähle die Produkte oder Collections aus, die als Abo verfügbar sein sollen. Du kannst einzelne Produkte, bestimmte Varianten oder ganze Collections einem Abo-Plan zuweisen. Appstle zeigt dann automatisch die Abo-Option auf der Produktseite an.</p>
+
+            <h3>4. Rabatt konfigurieren</h3>
+            <p>Lege den Abo-Rabatt fest – z. B. 10 % Subscribe & Save. Du kannst den Rabatt als Prozentsatz oder als festen Betrag definieren. Für Prepaid-Abos lassen sich gestaffelte Rabatte einrichten: 10 % bei 3 Monaten, 15 % bei 6 Monaten, 20 % bei 12 Monaten.</p>
+
+            <h3>5. Kundenseite anpassen</h3>
+            <p>Passe die Abo-Verwaltungsseite an dein Branding an: Farben, Logo, Texte. Aktiviere die Funktionen, die deine Kunden nutzen sollen – Pause, Skip, Swap, Intervall ändern, Kündigung. Konfiguriere den passwortlosen Login via Magic Link.</p>
+
+            <h3>6. E-Mail-Benachrichtigungen einrichten</h3>
+            <p>Appstle sendet automatische E-Mails vor jeder Abo-Verlängerung. Passe die E-Mail-Templates an dein Branding an und definiere, wie viele Tage vor der Verlängerung die Benachrichtigung rausgehen soll. Optional: SMS-Benachrichtigungen aktivieren.</p>
+
+            <h3>7. Testen mit Testbestellung</h3>
+            <p>Bevor du live gehst: Führe eine Testbestellung durch. Aktiviere dafür den Shopify-Testmodus in den Zahlungseinstellungen. Prüfe den gesamten Flow: Abo auswählen, Checkout, Bestätigungs-E-Mail, Kundenseite, Abo-Verwaltung. Erst wenn alles sauber läuft, schaltest du das Feature für deine Kunden frei.</p>
+
+            <!-- Section 7 -->
+            <h2 id="praxis-tipps">Praxis-Tipps für mehr Abo-Umsatz</h2>
+
+            <p>Die technische Einrichtung ist der einfache Teil. Der eigentliche Hebel liegt darin, wie du das Abo-Modell vermarktest und optimierst. Hier sind die Tipps, die in der Praxis den größten Impact haben:</p>
+
+            <h3>Starte mit 10-15 % Rabatt auf Subscribe & Save</h3>
+            <p>Weniger als 10 % ist für die meisten Kunden kein ausreichender Anreiz. Mehr als 15 % frisst deine Marge. Der Sweet Spot liegt bei 10-15 % – das ist attraktiv genug, um Kunden zum Abo zu bewegen, ohne dein Geschäft unrentabel zu machen. Teste verschiedene Rabattstufen und messe die Conversion-Rate.</p>
+
+            <h3>Kostenloser Versand für Abonnenten</h3>
+            <p>Kostenloser Versand ist einer der stärksten Conversion-Trigger im E-Commerce – und für Abo-Kunden sollte er selbstverständlich sein. Der Versand pro Paket kostet dich 4-6 Euro, aber der Lifetime Value eines Abo-Kunden ist ein Vielfaches davon. Kommuniziere den kostenlosen Versand prominent auf der Produktseite und im <a href="https://dd-gossen.com/blog/shopify-checkout-optimieren/">Checkout</a>.</p>
+
+            <h3>Nutze die Churn-Prevention aktiv</h3>
+            <p>Konfiguriere die Kündigungsprävention von Appstle so, dass Kunden bei einem Kündigungsversuch zuerst eine Alternative sehen: „20 % Rabatt auf die nächste Lieferung", „Abo pausieren statt kündigen" oder „Intervall auf alle 2 Monate ändern". Diese Retention-Flows retten in der Praxis 15-30 % der Kündigungen.</p>
+
+            <h3>Abo-Vorteil prominent auf der Produktseite</h3>
+            <p>Der häufigste Fehler: Die Abo-Option ist auf der Produktseite kaum sichtbar. Platziere den Subscribe & Save-Block prominent, zeige den Rabatt klar an und erkläre in einem Satz, was der Kunde bekommt: „Spare 10 % bei jeder Lieferung – jederzeit pausieren oder kündigen." Transparenz baut Vertrauen auf.</p>
+
+            <h3>Prepaid-Optionen für höheren AOV</h3>
+            <p>Biete neben dem monatlichen Abo immer auch Prepaid-Optionen an: 3 Monate (10 % Rabatt), 6 Monate (15 % Rabatt), 12 Monate (20 % Rabatt). Prepaid-Kunden haben einen massiv höheren durchschnittlichen Bestellwert und churnen seltener. In der Praxis wählen 20-30 % der Abo-Kunden eine Prepaid-Option, wenn sie attraktiv präsentiert wird.</p>
+
+            <!-- Inline CTA 2 -->
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Professionelles Abo-Setup?</strong>
+                <span>Ich richte dein Subscription-Modell ein – technisch sauber, conversion-optimiert und auf dein Sortiment zugeschnitten.</span>
+              </div>
+              <a href="https://dd-gossen.com/#contact">Jetzt beraten lassen</a>
+            </div>
+
+            <!-- Section 8 -->
+            <h2 id="fazit">Fazit</h2>
+
+            <p>Appstle Subscriptions ist die beste Preis-Leistungs-Abo-App für Shopify – und das mit deutlichem Abstand. Der kostenlose Start bis 500 $ Abo-Umsatz macht es risikolos, das Modell zu testen. Die 0 % Transaktionsgebühren sparen dir bei wachsendem Abo-Umsatz hunderte Euro pro Monat gegenüber der Konkurrenz. Und mit 5,0 Sternen bei über 6.400 Bewertungen ist der Support nachweislich erstklassig.</p>
+
+            <p>Die App deckt alle relevanten Abo-Modelle ab: vom einfachen Subscribe & Save über Build-a-Box bis hin zu Memberships und Prepaid-Abos. Dazu kommen Features wie Churn-Prevention, automatisierte Benachrichtigungen, Inventar-Prognosen und ein vollständiges Analytics-Dashboard – alles in einer App, ohne Zusatzkosten.</p>
+
+            <p>Wer Abo-Commerce ernst nimmt, sollte mit Appstle starten. Die technische Einrichtung ist in unter einer Stunde erledigt -- was dich Shopify insgesamt <a href="https://dd-gossen.com/blog/shopify-kosten/">kostet</a>, erfährst du in meinem Kosten-Guide. Der Free-Plan gibt dir genug Raum zum Testen, und wenn dein Abo-Umsatz wächst, skalieren die Pläne fair mit – ohne versteckte Transaktionsgebühren.</p>
+
+            <!-- Final CTA Box -->
+            <div class="cta-box">
+              <h3>Abo-Commerce professionell umsetzen</h3>
+              <p>Du möchtest ein Subscription-Modell für deinen Shopify-Shop einrichten? Ich helfe dir bei der Auswahl des richtigen Abo-Modells, der technischen Einrichtung mit Appstle, der Conversion-Optimierung auf den Produktseiten und der Integration in deine bestehende E-Mail-Automatisierung. Lass uns in einem kostenlosen Erstgespräch besprechen, wie Abo-Commerce für dein Sortiment funktionieren kann.</p>
+              <a href="#" class="cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt kostenloses Erstgespräch buchen</a>
+            </div>
+
+          </div><!-- /.article-content -->
+
+          <!-- FAQ Section -->
+          <section class="article-faq">
+            <h2 class="faq-title">Häufige Fragen zu Appstle Subscriptions</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>Was kostet Appstle Subscriptions?</summary>
+                <div>
+                  <p>Appstle Subscriptions bietet einen kostenlosen Plan bis 500 $ Abo-Umsatz pro Monat. Danach starten die Pläne ab 10 $/Monat (Starter, bis 10.000 $ Abo-Umsatz). Alle Pläne haben 0 % Transaktionsgebühren – das ist ein großer Vorteil gegenüber Konkurrenten wie Recharge, die oft 1-2 % pro Transaktion nehmen.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Ist Appstle besser als Recharge?</summary>
+                <div>
+                  <p>Für die meisten Shopify-Shops ja. Appstle ist günstiger (Free-Plan verfügbar), erhebt 0 % Transaktionsgebühren (Recharge nimmt 1 % + 10 Cent pro Transaktion im Standardplan) und hat mit 5,0 Sternen bei über 6.400 Bewertungen die deutlich besseren Nutzerbewertungen im Shopify App Store. Recharge hat Vorteile bei sehr großen Enterprise-Shops mit komplexen Migrationsprojekten – für alle anderen ist Appstle die bessere Wahl.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Kann ich verschiedene Abo-Intervalle anbieten?</summary>
+                <div>
+                  <p>Ja, Appstle unterstützt flexible Intervalle: wöchentlich, alle 2 Wochen, monatlich, alle 2 Monate, alle 3 Monate, alle 6 Monate und jährlich. Du kannst auch eigene Intervalle definieren und mehrere Optionen gleichzeitig anbieten – der Kunde wählt dann beim Checkout sein bevorzugtes Intervall.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Können Kunden ihr Abo selbst verwalten?</summary>
+                <div>
+                  <p>Ja, Appstle bietet eine umfangreiche Kundenseite mit passwortlosem Login per Magic Link. Kunden können dort ihr Abo pausieren, eine Lieferung überspringen (Skip), Produkte tauschen (Swap), das Lieferintervall ändern oder ihr Abo kündigen – alles selbstständig, ohne den Support kontaktieren zu müssen.</p>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <!-- Author Box – kleine Karte darunter -->
+          <div class="author-box">
+            <h3 class="author-box-title">Autorenbox</h3>
+            <p class="author-bio">Ich helfe Online-Shop-Betreibern dabei, ihren Shopify-Shop aufzubauen, zu optimieren und zu migrieren. Mit über 5 Jahren Erfahrung und 70+ abgeschlossenen Projekten weiß ich, worauf es ankommt – technisch und strategisch.</p>
+            <div class="author-details">
+              <img src="../../Maik-Gossen-ShopifyFreelancer.png" alt="Maik Gossen" class="author-avatar">
+              <div class="author-info">
+                <p class="author-name"><a href="https://dd-gossen.com/" class="author-name-link">Maik Gossen</a></p>
+                <p class="author-role">Shopify Freelancer & Entwickler</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.article-card -->
+      </div><!-- /.article-main -->
+
+    </div><!-- /.article-layout -->
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-name">MAIK GOSSEN</div>
+        <div class="footer-contact-label">Kontakt:</div>
+        <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+        <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+        <div class="footer-social">
+          <a href="mailto:info@dd-gossen.com" title="E-Mail" aria-label="E-Mail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Menü</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/">Übersicht</a></li>
+          <li><a href="https://dd-gossen.com/">Meine Services</a></li>
+          <li><a href="https://dd-gossen.com/blog/">Blog</a></li>
+          <li><a href="https://dd-gossen.com/#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-shop-erstellen/">Shopify Shop erstellen</a></li>
+          <li><a href="https://dd-gossen.com/shopify-migration/">Shopify Migration</a></li>
+          <li><a href="https://dd-gossen.com/shopify-optimierung/">Shopify Optimierung</a></li>
+          <li><a href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/">Widerrufsbutton einbauen lassen</a></li>
+          <li><a href="https://dd-gossen.com/blog/shopify-freelancer-deutschland/">Shopify Freelancer Deutschland</a></li>
+          <li><a href="https://dd-gossen.com/#competencies">Kompetenzen</a></li>
+          <li><a href="https://dd-gossen.com/#projects">Portfolio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Schnellzugriff</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/#contact">Kostenloses Erstgespräch</a></li>
+          <li><a href="https://dd-gossen.com/#about-me">Über mich</a></li>
+          <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://dd-gossen.com/impressum.html">Impressum</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/datenschutz.html">Datenschutz</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/agb.html">AGB</a>
+      <span class="footer-sep">|</span>
+      <a href="#" id="openCookieSettings">Cookie-Einstellungen</a>
+      <span class="footer-sep">|</span>
+      <span>© 2025 Maik Gossen</span>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll behavior
+    (function() {
+      var header = document.querySelector('.header');
+      if (!header) return;
+      let lastScrollTop = 0;
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        header.style.background = scrollTop > 100 ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.15)';
+        if (scrollTop > 100) {
+          header.classList.toggle('hidden', scrollTop > lastScrollTop);
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+      });
+    })();
+
+    // Sync sidebar sticky-top with header visibility
+    (function() {
+      const header = document.querySelector('.header');
+      if (!header) return;
+      const root = document.documentElement;
+      function update() {
+        root.style.setProperty('--sidebar-top',
+          header.classList.contains('hidden') ? '24px' : '110px');
+      }
+      new MutationObserver(update).observe(header, { attributes: true, attributeFilter: ['class'] });
+      update();
+    })();
+
+    // Active TOC link on scroll
+    (function() {
+      const sections = document.querySelectorAll('.article-content h2[id]');
+      const tocLinks = document.querySelectorAll('.sidebar-toc a');
+      if (!sections.length || !tocLinks.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.sidebar-toc a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+
+      sections.forEach(section => observer.observe(section));
+    })();
+  </script>
+
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+    function initCalUI() {
+      if (window.Cal && window.Cal.ns && window.Cal.ns.erstgespraech) {
+        Cal.ns.erstgespraech("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      } else { setTimeout(initCalUI, 100); }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCalUI);
+    } else { initCalUI(); }
+  </script>
+
+</body>
+</html>

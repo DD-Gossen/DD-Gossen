@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopify B2B: Großhandel und Wholesale mit Shopify umsetzen (2026) | DD-Gossen</title>
+  <meta name="description" content="Shopify B2B einrichten ✓ NEU: B2B-Features jetzt auch ohne Plus ✓ Großhandel, Staffelpreise & Kundengruppen ✓ SparkLayer-Alternative ✓ Praxis-Guide 2026">
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../article-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Two-column layout */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+
+    /* Grid column wrapper – stretches to full row height so sticky works */
+    .sidebar-column {
+      align-self: stretch;
+    }
+
+    /* Sidebar – sticky inside the full-height column */
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      position: sticky;
+      top: var(--sidebar-top, 110px);
+      transition: top 0.3s ease;
+    }
+
+    /* Content column starts at top, not stretched */
+    .article-main {
+      align-self: start;
+      min-width: 0;
+      width: 100%;
+    }
+
+    .sidebar-toc {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .sidebar-toc h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid rgba(35,126,181,0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sidebar-toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .sidebar-toc a {
+      display: block;
+      font-size: 0.88rem;
+      color: #374151;
+      text-decoration: none;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      line-height: 1.4;
+    }
+
+    .sidebar-toc a:hover,
+    .sidebar-toc a.active {
+      background: rgba(35,126,181,0.1);
+      color: #237eb5;
+    }
+
+    .sidebar-cta {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(15,23,42,0.25);
+    }
+
+    .sidebar-cta p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
+      margin: 0 0 1rem 0;
+      line-height: 1.5;
+    }
+
+    .sidebar-cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+      padding: 0.65rem 1.2rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .sidebar-cta a:hover {
+      background: linear-gradient(135deg, #0066e6 0%, #004999 100%);
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Main article area */
+    .article-main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Restore card styling */
+    .article-card {
+      max-width: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-sizing: border-box;
+    }
+
+    /* Hero image – override article-styles.css max-width:600px */
+    .article-hero-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      display: block;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Inline CTA */
+    .inline-cta {
+      background: linear-gradient(135deg, rgba(35,126,181,0.08) 0%, rgba(35,126,181,0.15) 100%);
+      border: 1px solid rgba(35,126,181,0.25);
+      border-left: 4px solid #237eb5;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .inline-cta-text {
+      flex: 1;
+    }
+
+    .inline-cta-text strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem;
+      color: #0f172a;
+      margin-bottom: 0.3rem;
+    }
+
+    .inline-cta-text span {
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    .inline-cta a {
+      display: inline-block;
+      background: #0f172a;
+      color: white !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none !important;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .inline-cta a:hover {
+      background: #1e293b;
+    }
+
+    /* Author box – kleine Karte unter FAQ, ohne Hintergrund */
+    .author-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: transparent !important;
+      border: 1px solid rgba(35,126,181,0.15);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    .author-box-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .author-bio {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.5;
+      margin: 0 0 1rem 0;
+    }
+
+    .author-details {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-name-link {
+      color: #333;
+      text-decoration: none;
+      font-weight: inherit;
+    }
+
+    .author-name-link:hover {
+      color: #333;
+      text-decoration: none;
+    }
+
+    /* In Kürze – linksbündig, unscheinbar, volle Breite */
+    .article-summary {
+      margin: 0 0 2rem 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .article-summary summary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #64748b;
+      padding: 0.25rem 0 0.4rem 0;
+      cursor: pointer;
+      list-style: none;
+      border-bottom: 1px solid rgba(35,126,181,0.15);
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+
+    .article-summary summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .article-summary summary::after {
+      content: '\25BC';
+      float: right;
+      font-size: 0.6rem;
+      opacity: 0.4;
+    }
+
+    .article-summary[open] summary::after {
+      content: '\25B2';
+    }
+
+    .article-summary ul {
+      margin: 0.5rem 0 0 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+    }
+
+    .article-summary li {
+      padding: 0.3rem 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #64748b;
+      border-bottom: 1px solid rgba(35,126,181,0.06);
+    }
+
+    .article-summary li:last-child {
+      border-bottom: none;
+    }
+
+    /* FAQ Section */
+    .article-faq {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(35,126,181,0.15);
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+
+    .faq-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .faq-item {
+      padding: 0;
+      margin: 0;
+      border-bottom: 1px solid rgba(35,126,181,0.12);
+      width: 100%;
+      min-width: 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item summary {
+      font-weight: 600;
+      color: #0f172a;
+      padding: 1rem 0;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      float: right;
+      font-size: 1.2rem;
+      color: #237eb5;
+    }
+
+    .faq-item[open] summary::after {
+      content: '\2212';
+    }
+
+    .faq-item p {
+      margin: 0 0 1rem 0;
+      padding: 0 0 1rem 0;
+      line-height: 1.6;
+      color: #374151;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    .author-avatar {
+      width: 48px !important;
+      height: 48px !important;
+      max-width: 48px !important;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      flex-shrink: 0;
+      border: none;
+      margin: 0 !important;
+    }
+
+    .author-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .author-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+    }
+
+    .author-role {
+      font-size: 0.875rem;
+      color: #777;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    /* Blog meta info */
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.88rem;
+      color: #6b7280;
+      margin-bottom: 0rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .meta-tag {
+      background: rgba(35,126,181,0.1);
+      color: #237eb5;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        padding: 0 0.2rem;
+        gap: 0.8rem;
+      }
+
+      /* Disable sticky on mobile */
+      .article-sidebar {
+        position: static;
+        top: auto;
+        transition: none;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      /* Compact TOC on mobile */
+      .sidebar-toc {
+        padding: 0.8rem 1rem;
+        border-radius: 12px;
+        margin-bottom: 0;
+      }
+
+      .sidebar-toc h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .sidebar-toc ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem 0;
+        margin: 0;
+      }
+
+      .sidebar-toc li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .sidebar-toc li::before {
+        display: none;
+      }
+
+      .sidebar-toc a {
+        font-size: 0.88rem;
+        padding: 0.25rem 0;
+        background: transparent;
+        border-radius: 0;
+        white-space: normal;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      .sidebar-toc a:hover {
+        background: transparent;
+        text-decoration: underline;
+      }
+
+      /* Hide CTA on mobile */
+      .sidebar-cta {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .inline-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+
+      .author-box {
+        padding: 1rem 1.25rem;
+      }
+
+      .author-box-title {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .author-bio {
+        font-size: 0.93rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .author-details {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .article-hero-img {
+        border-radius: 12px;
+        margin-bottom: 0.8rem;
+      }
+
+      .article-meta {
+        justify-content: flex-start;
+        text-align: left;
+        align-self: flex-start;
+        width: 100%;
+      }
+
+      .article-faq {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+      }
+
+      .faq-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .faq-item summary {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+      }
+
+      .faq-item p {
+        margin: 0 0 0.5rem 0;
+        padding: 0 0 0.5rem 0;
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+    }
+  </style>
+
+  <!-- Strukturierte Daten (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dd-gossen.com/#organization",
+        "name": "DD-Gossen",
+        "url": "https://dd-gossen.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dd-gossen.com/Logo.png"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/maik-gossen"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dd-gossen.com/#author",
+        "name": "Maik Gossen",
+        "url": "https://dd-gossen.com/",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://dd-gossen.com/Maik-Gossen-ShopifyFreelancer.png",
+          "width": 400,
+          "height": 400
+        },
+        "jobTitle": "Shopify Freelancer & Entwickler",
+        "worksFor": {
+          "@id": "https://dd-gossen.com/#organization"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://dd-gossen.com/blog/shopify-b2b-grosshandel/#article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dd-gossen.com/blog/shopify-b2b-grosshandel/"
+        },
+        "headline": "Shopify B2B: Großhandel und Wholesale mit Shopify umsetzen (2026)",
+        "description": "Shopify B2B einrichten ✓ NEU: B2B-Features jetzt auch ohne Plus ✓ Großhandel, Staffelpreise & Kundengruppen ✓ SparkLayer-Alternative ✓ Praxis-Guide 2026",
+        "datePublished": "2026-04-06",
+        "dateModified": "2026-04-06",
+        "author": {
+          "@id": "https://dd-gossen.com/#author"
+        },
+        "publisher": {
+          "@id": "https://dd-gossen.com/#organization",
+          "name": "DD-Gossen",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://dd-gossen.com/Logo.png",
+            "width": 600,
+            "height": 60
+          }
+        },
+        "articleSection": "Shopify",
+        "keywords": ["Shopify B2B", "Shopify Großhandel", "Shopify Wholesale", "B2B E-Commerce Shopify", "Shopify B2B ohne Plus"],
+        "wordCount": 2000
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dd-gossen.com/blog/shopify-b2b-grosshandel/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Brauche ich Shopify Plus für B2B-Funktionen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Seit April 2026 nicht mehr für die grundlegenden B2B-Features! Shopify hat Company Profiles, Custom Catalogs und Payment Terms für alle Pläne (Basic, Grow, Advanced) freigeschaltet. Plus lohnt sich weiterhin für komplexe Anforderungen wie Custom Checkout, erweiterte Automatisierungen und Steuerbefreiungen. Für den Einstieg in B2B reicht jetzt ein normaler Shopify-Plan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was kostet ein B2B-Shop auf Shopify?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Seit April 2026 kannst du mit einem regulären Shopify-Plan (ab ca. 36 EUR/Monat) native B2B-Features nutzen. Für erweiterte Funktionen wie Schnellbestellformulare oder Agent-Ordering kommt SparkLayer ab ca. 49 USD/Monat dazu. Shopify Plus startet ab ca. 2.300 USD/Monat und lohnt sich für komplexe Enterprise-Setups. Dazu kommen Setup-Kosten für Konfiguration, Theme-Anpassungen und Datenimport – je nach Projektumfang zwischen 3.000 und 15.000 EUR."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann ich B2B und B2C in einem Shopify-Shop kombinieren?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, das ist einer der großen Vorteile von Shopify. Mit den nativen B2B-Features nutzt du Firmenkataloge mit eigenen Preisen parallel zum regulären DTC-Shop. Endkunden sehen die normalen Preise, eingeloggte B2B-Kunden sehen ihre individuellen Konditionen. Ein Produktkatalog, ein Inventar, zwei Verkaufserlebnisse – und das jetzt auf jedem Shopify-Plan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Welche B2B-Apps empfiehlst du für Shopify?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Seit dem April-2026-Update brauchst du für Basis-B2B keine App mehr. Für erweiterte Funktionen empfehle ich SparkLayer – die App bietet Schnellbestellformulare, erweiterte Mengenregeln, CSV-Import und Agent-Ordering. Weitere Optionen sind Wholesale Gorilla für einfachere Setups und Bold Custom Pricing für reine Preisanpassungen. Die Wahl hängt davon ab, welche Features über die nativen B2B-Funktionen hinaus benötigt werden."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="https://dd-gossen.com/shopify-freelancer/" class="logo">
+      <img src="../../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+    </a>
+    <div class="header-right-container">
+      <div class="header-cta-container">
+        <a href="#" class="header-cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt anfragen</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main" style="margin-top: 0; padding: 8rem 1rem 4rem;">
+
+    <div class="article-layout">
+
+      <!-- Sticky Sidebar -->
+      <div class="sidebar-column">
+      <aside class="article-sidebar">
+        <div class="sidebar-toc">
+          <h3>Inhaltsverzeichnis</h3>
+          <ul>
+            <li><a href="#b2b-ecommerce">B2B E-Commerce: Warum Shopify?</a></li>
+            <li><a href="#neue-b2b-features">NEU: B2B-Features für alle Pläne</a></li>
+            <li><a href="#shopify-plus-b2b">Shopify Plus: Erweiterte B2B-Funktionen</a></li>
+            <li><a href="#sparklayer">SparkLayer: Die B2B-Alternative</a></li>
+            <li><a href="#staffelpreise">Staffelpreise und Kundengruppen</a></li>
+            <li><a href="#schnellbestellung">Schnellbestellung und CSV-Import</a></li>
+            <li><a href="#praxis">Praxis-Beispiel: Holzbrüder.de</a></li>
+            <li><a href="#fazit">Fazit</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-cta">
+          <p>B2B-Shop erstellen lassen?</p>
+          <a href="https://dd-gossen.com/shopify-shop-erstellen/">Jetzt anfragen →</a>
+        </div>
+      </aside>
+      </div><!-- /.sidebar-column -->
+
+      <!-- Main Content -->
+      <div class="article-main">
+        <div class="article-card">
+
+          <!-- Meta Info -->
+          <div class="article-meta">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              06.04.26
+            </span>
+            <span class="meta-item meta-lesezeit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              10 Min. Lesezeit
+            </span>
+            <span class="meta-tag">B2B</span>
+            <span class="meta-tag">Shopify</span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="article-title" style="text-align: left; margin: 0 0 1.5rem 0; font-size: 2.4rem; max-width: 100%; padding: 0;">Shopify B2B: Großhandel und Wholesale mit Shopify umsetzen (2026)</h1>
+
+          <!-- In Kürze (ausklappbar, SEO-freundlich) -->
+          <details class="article-summary">
+            <summary>Artikel in Kürze</summary>
+            <ul>
+              <li><strong>NEU April 2026:</strong> Shopify hat B2B-Features wie Company Profiles, Custom Catalogs und Payment Terms für alle Pläne freigeschaltet – nicht mehr nur Plus.</li>
+              <li><strong>Shopify Plus:</strong> Weiterhin relevant für komplexe B2B-Setups mit Custom Checkout, erweiterten Automatisierungen und Steuerbefreiungen.</li>
+              <li><strong>SparkLayer:</strong> Ergänzt native B2B-Features um Schnellbestellformulare, erweiterte Mengenregeln und Agent-Ordering.</li>
+              <li><strong>Staffelpreise:</strong> Mengenrabatte und kundenspezifische Preise lassen sich flexibel pro Kundengruppe steuern.</li>
+              <li><strong>Praxis:</strong> Holzbrüder.de zeigt, wie ein B2B-Wholesale-Shop auf Shopify mit SparkLayer funktioniert.</li>
+            </ul>
+          </details>
+
+          <!-- Article Content -->
+          <div class="article-content" style="width: 100%; max-width: 100%; padding: 0; box-sizing: border-box; margin: 0;">
+
+            <p>B2B E-Commerce wächst schneller als der klassische Online-Handel. Immer mehr Großhändler, Hersteller und Distributoren suchen nach einer Plattform, die Wholesale-Prozesse digital abbilden kann, ohne gleich ein Enterprise-System mit sechsstelligen Lizenzkosten einzuführen. Shopify hat sich in den letzten Jahren von einer reinen D2C-Plattform zu einer ernsthaften Option für B2B-Commerce entwickelt – und seit April 2026 hat sich die Spielregel grundlegend geändert.</p>
+
+            <p>In diesem Artikel zeige ich dir, welche B2B-Funktionen Shopify bietet, was das historische April-Update bedeutet, wann Shopify Plus noch sinnvoll ist, wie du mit SparkLayer erweiterte Wholesale-Features bekommst und was das Ganze in der Praxis bedeutet. Die Erkenntnisse stammen aus realen Projekten, nicht aus der Theorie.</p>
+
+            <!-- Section 1 -->
+            <h2 id="b2b-ecommerce">B2B E-Commerce: Warum Shopify?</h2>
+
+            <p>Die meisten B2B-Unternehmen arbeiten noch mit manuellen Prozessen: Bestellungen per E-Mail, Preislisten als PDF, Rechnungen in Word. Das funktioniert bei 20 Kunden. Bei 200 wird es zum Engpass. Ein digitaler B2B-Kanal spart Zeit, reduziert Fehler und gibt deinen Großhandelskunden die Möglichkeit, rund um die Uhr zu bestellen.</p>
+
+            <p>Shopify eignet sich dafür aus mehreren Gründen besonders gut:</p>
+
+            <ul>
+              <li><strong>Schnelle Einrichtung:</strong> Ein <a href="https://dd-gossen.com/shopify-shop-erstellen/">B2B-Shop auf Shopify</a> steht in Wochen, nicht in Monaten. Du brauchst kein IT-Team und keine eigene Server-Infrastruktur.</li>
+              <li><strong>Einheitliche Plattform:</strong> B2B und B2C laufen auf derselben Plattform. Ein Produktkatalog, ein Inventar, ein Backend.</li>
+              <li><strong>Native B2B-Features:</strong> Seit April 2026 sind Company Profiles, Custom Catalogs und Payment Terms auf allen Plänen verfügbar.</li>
+              <li><strong>App-Ökosystem:</strong> Hunderte B2B-Apps erweitern Shopify um Funktionen wie Schnellbestellung, erweiterte Mengenregeln oder Agent-Ordering.</li>
+              <li><strong>Skalierbarkeit:</strong> Von 50 bis 50.000 Bestellungen pro Monat. Shopify skaliert mit deinem Geschäft, ohne dass du die Plattform wechseln musst.</li>
+              <li><strong>API-first:</strong> Shopifys GraphQL- und REST-APIs ermöglichen Anbindungen an ERP, WaWi und CRM-Systeme.</li>
+            </ul>
+
+            <p>Im Vergleich zu klassischen B2B-Plattformen wie Magento, SAP Commerce oder Intershop bietet Shopify deutlich niedrigere Einstiegskosten und schnellere Time-to-Market. Mit dem April-2026-Update ist Shopify zur zugänglichsten B2B-Plattform auf dem Markt geworden.</p>
+
+            <!-- Section 2 -->
+            <h2 id="neue-b2b-features">NEU: B2B-Features für alle Shopify-Pläne</h2>
+
+            <p>Am 2. April 2026 hat Shopify eine Ankündigung gemacht, die das B2B-Spiel auf der Plattform grundlegend verändert: Die bisher exklusiv auf Shopify Plus beschränkten B2B-Kernfunktionen stehen ab sofort auf allen Plänen zur Verfügung – Basic, Grow und Advanced. Das ist ein Paradigmenwechsel für den B2B-E-Commerce auf Shopify.</p>
+
+            <h3>Company Profiles auf allen Plänen</h3>
+
+            <p>Firmenprofile waren bisher ein Plus-exklusives Feature. Jetzt kann jeder Shopify-Händler B2B-Unternehmen als eigene Firmenprofile im Admin anlegen – mit Firmennamen, Steuernummer, mehreren Standorten und zugeordneten Mitarbeitern. Für kleine Großhändler, die bisher mit Tags und Workarounds gearbeitet haben, ist das ein riesiger Sprung nach vorne. Du verwaltest deine B2B-Kunden endlich dort, wo sie hingehören: in einer dedizierten Firmenstruktur.</p>
+
+            <h3>Custom Catalogs für alle</h3>
+
+            <p>Individuelle Kataloge mit festen Preisen oder prozentualen Rabatten waren der Hauptgrund, warum viele Händler auf Shopify Plus upgraden mussten. Dieses Feature ist jetzt auf allen Plänen verfügbar. Du erstellst einen Katalog, weist ihn einem Firmenprofil zu, und dein B2B-Kunde sieht beim Einloggen automatisch seine individuellen Preise. Keine Drittanbieter-App nötig, kein Plus-Plan nötig. Einfach im Shopify-Admin einrichten.</p>
+
+            <h3>Payment Terms (Zahlungsziele) ohne Plus</h3>
+
+            <p>Im B2B-Geschäft ist Vorkasse die Ausnahme. Netto 30 oder Netto 60 sind Standard. Bisher brauchtest du dafür Shopify Plus oder musstest Zahlungsbedingungen über externe Apps oder manuelle Prozesse abbilden. Seit dem April-Update kannst du Zahlungsziele direkt im Shopify-Admin pro Firmenprofil festlegen – auf jedem Plan. Der Kunde bestellt, die Rechnung wird automatisch erstellt, die Zahlung ist innerhalb der vereinbarten Frist fällig.</p>
+
+            <h3>Was bedeutet das in der Praxis?</h3>
+
+            <p>Shopify ist damit die zugänglichste B2B-E-Commerce-Plattform auf dem Markt geworden. Ein Hersteller mit 30 Großhandelskunden braucht nicht mehr 2.300 USD/Monat für Shopify Plus auszugeben, um professionelle B2B-Funktionen zu nutzen. Die Einstiegshürde für B2B auf Shopify ist praktisch auf null gesunken. Firmenprofile, individuelle Preise, Zahlungsziele – alles nativ, alles ab dem Basic-Plan.</p>
+
+            <p>Wichtig zu wissen: Plus bleibt weiterhin relevant für komplexe B2B-Anforderungen. Custom Checkout, erweiterte Automatisierungen mit Shopify Flow, Steuerbefreiungen pro Firma und der dedizierte B2B-Verkaufskanal mit eigenem Storefront sind nach wie vor Plus-exklusiv. Aber für den Einstieg in B2B und für die Mehrheit der mittelständischen Großhändler reichen die neuen nativen Features auf dem Standard-Plan vollkommen aus.</p>
+
+            <!-- Inline CTA 1 -->
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>B2B-Shop auf Shopify aufbauen?</strong>
+                <span>Ich richte deinen Wholesale-Kanal ein – mit den neuen nativen B2B-Features oder SparkLayer, je nach Bedarf.</span>
+              </div>
+              <a href="https://dd-gossen.com/shopify-shop-erstellen/">Shop erstellen lassen</a>
+            </div>
+
+            <!-- Section 3 -->
+            <h2 id="shopify-plus-b2b">Shopify Plus: Erweiterte B2B-Funktionen</h2>
+
+            <p>Auch wenn die Basis-B2B-Features jetzt auf allen Plänen verfügbar sind, bleibt <a href="https://dd-gossen.com/shopify-plus/">Shopify Plus</a> die erste Wahl für Unternehmen mit komplexen Wholesale-Anforderungen. Plus bietet Funktionen, die über die Grundausstattung hinausgehen und für Enterprise-B2B unverzichtbar sind.</p>
+
+            <h3>Dedizierter B2B-Verkaufskanal</h3>
+
+            <p>Shopify Plus bietet einen eigenen B2B-Verkaufskanal, der komplett getrennt vom DTC-Shop läuft. B2B-Kunden loggen sich in einen separaten Storefront ein und sehen ausschließlich ihre Produkte, ihre Preise und ihre Konditionen. Das ermöglicht ein maßgeschneidertes B2B-Einkaufserlebnis, das sich vom Endkunden-Shop fundamental unterscheiden kann – in Design, Navigation und Funktionalität.</p>
+
+            <h3>Custom Checkout</h3>
+
+            <p>Der Shopify-Checkout ist standardmäßig für Endkunden optimiert. Mit Plus kannst du den Checkout über Checkout Extensions an B2B-Anforderungen anpassen: PO-Nummern (Purchase Orders) als Pflichtfeld, spezielle Versandoptionen für Paletten-Lieferungen, individuelle Checkout-Logik basierend auf Firmenprofil und Bestellwert. Das sind Features, die im Standard-Checkout nicht verfügbar sind.</p>
+
+            <h3>Erweiterte Automatisierungen mit Shopify Flow</h3>
+
+            <p>Shopify Flow ist auf Plus deutlich leistungsfähiger. Du kannst automatisierte Workflows erstellen, die B2B-Bestellungen verarbeiten: automatische Genehmigungsprozesse für Großbestellungen, Benachrichtigungen ans Vertriebsteam bei Neukundenregistrierung, automatisches Tagging von Kunden basierend auf Bestellvolumen. Für Unternehmen mit hohem B2B-Volumen spart das dutzende Arbeitsstunden pro Woche.</p>
+
+            <h3>Steuerbefreiungen und Steuerverwaltung</h3>
+
+            <p>Im B2B-Geschäft ist die Steuerlogik komplex. Innergemeinschaftliche Lieferungen, Reverse-Charge-Verfahren, steuerbefreite Kunden mit gültiger USt-IdNr. – Shopify Plus unterstützt diese Szenarien nativ pro Firmenprofil. Auf dem Standard-Plan musst du solche Sonderfälle manuell oder über Apps abbilden.</p>
+
+            <p>Der Trade-off: Shopify Plus <a href="https://dd-gossen.com/blog/shopify-kosten/">kostet ab ca. 2.300 USD pro Monat</a>. Für Unternehmen mit einem B2B-Umsatz ab 500.000 EUR/Jahr ist das in der Regel vertretbar. Für kleinere Großhändler, die gerade erst in den B2B-E-Commerce einsteigen, sind die neuen nativen B2B-Features auf dem Standard-Plan der bessere Startpunkt.</p>
+
+            <!-- Section 4 -->
+            <h2 id="sparklayer">SparkLayer: Die B2B-Alternative</h2>
+
+            <p>SparkLayer ist die meistgenutzte B2B-App im Shopify-Ökosystem. Mit dem April-2026-Update stellt sich die Frage: Braucht man SparkLayer noch? Die Antwort: Ja, aber aus anderen Gründen als bisher. SparkLayer ist nicht mehr die einzige Möglichkeit, B2B auf Shopify ohne Plus zu betreiben. Stattdessen ergänzt die App die nativen B2B-Features um Funktionen, die Shopify selbst (noch) nicht bietet.</p>
+
+            <h3>Was SparkLayer über native B2B hinaus bietet</h3>
+
+            <ul>
+              <li><strong>Schnellbestellformular (Quick Order):</strong> Eine dedizierte Bestellseite, auf der B2B-Kunden alle Produkte in einer kompakten Liste sehen und Mengen direkt eingeben – ohne durch den Katalog zu browsen. Shopify bietet das nativ nicht.</li>
+              <li><strong>Erweiterte Mengenregeln:</strong> Komplexe Staffelpreise mit mehreren Stufen, Mindestbestellmengen pro Produkt und Warenkorb, Maximalmengen und Verpackungseinheiten (nur in 6er-Schritten bestellbar etc.).</li>
+              <li><strong>CSV-Bulk-Bestellung:</strong> Kunden laden eine CSV-Datei hoch und der gesamte Warenkorb wird automatisch befüllt. Ideal für Kunden mit regelmäßigen Nachbestellungen von 100+ Positionen.</li>
+              <li><strong>Agent-Ordering:</strong> Vertriebsmitarbeiter können im Namen eines B2B-Kunden bestellen – mit dessen Preisen, Konditionen und Lieferadressen. Für Unternehmen mit Außendienst unverzichtbar.</li>
+              <li><strong>Wiederbestellungen:</strong> Kunden können vergangene Bestellungen mit einem Klick erneut aufgeben, ohne alle Artikel neu zusammensuchen zu müssen.</li>
+              <li><strong>Netto-/Brutto-Preisumschaltung:</strong> Automatische Anzeige von Netto-Preisen für B2B-Kunden und Brutto-Preisen für Endkunden im selben Shop.</li>
+            </ul>
+
+            <p>SparkLayer startet ab ca. 49 USD/Monat und skaliert je nach Funktionsumfang. Die Empfehlung: Starte mit den nativen B2B-Features und ergänze SparkLayer, wenn du Schnellbestellformulare, CSV-Import oder Agent-Ordering brauchst. So hältst du die Kosten niedrig und erweiterst nur bei echtem Bedarf.</p>
+
+            <!-- Section 5 -->
+            <h2 id="staffelpreise">Staffelpreise und Kundengruppen</h2>
+
+            <p>Staffelpreise sind das Herzstück jedes B2B-Shops. Die Logik: Je mehr ein Kunde bestellt, desto günstiger wird der Stückpreis. Das kennt jeder Großhändler aus dem Tagesgeschäft, aber digital umzusetzen ist es oft komplizierter als gedacht.</p>
+
+            <h3>Staffelpreise in der Praxis</h3>
+
+            <p>Ein typisches Setup sieht so aus:</p>
+
+            <ul>
+              <li>1 bis 9 Stück: 12,00 EUR/Stück</li>
+              <li>10 bis 49 Stück: 10,50 EUR/Stück</li>
+              <li>50 bis 99 Stück: 9,00 EUR/Stück</li>
+              <li>Ab 100 Stück: 7,50 EUR/Stück</li>
+            </ul>
+
+            <p>Mit den neuen nativen B2B-Features lassen sich solche Staffelungen direkt über Custom Catalogs abbilden – auf jedem Shopify-Plan. Du erstellst einen Katalog mit Mengenstaffelungen und weist ihn dem Firmenprofil zu. Der Kunde sieht beim Einloggen sofort, was er bei welcher Menge zahlt. Für komplexere Staffelregeln (z. B. unterschiedliche Staffeln pro Produktkategorie oder Verpackungseinheiten) bietet SparkLayer die flexibleren Konfigurationsmöglichkeiten.</p>
+
+            <h3>Kundengruppen und individuelle Preise</h3>
+
+            <p>Nicht jeder Großhandelskunde bekommt dieselben Konditionen. Ein Stammkunde mit 500.000 EUR Jahresumsatz erwartet andere Preise als ein Neukunde mit Erstbestellung. Mit den nativen B2B-Features löst du das über unterschiedliche Firmenkataloge:</p>
+
+            <ul>
+              <li><strong>Standard-Wholesale:</strong> Katalog mit 20 % Rabatt auf den Listenpreis.</li>
+              <li><strong>Premium-Wholesale:</strong> Katalog mit 30 % Rabatt plus kostenloser Versand ab 500 EUR.</li>
+              <li><strong>Key Accounts:</strong> Individuelle Kataloge mit Festpreisen pro Produkt, manuell gepflegt.</li>
+            </ul>
+
+            <p>Jedes Firmenprofil wird einem Katalog zugeordnet. Beim Login sieht der Kunde automatisch seine Preise. Das funktioniert jetzt auf jedem Shopify-Plan ohne zusätzliche App. Bei SparkLayer hast du zusätzlich die Möglichkeit, Kundengruppen (z. B. Gold, Silber, Bronze) anzulegen und Preisregeln gruppenbasiert zu steuern – das ist etwas flexibler als die katalogbasierte Logik von Shopify.</p>
+
+            <!-- Section 6 -->
+            <h2 id="schnellbestellung">Schnellbestellung und CSV-Import</h2>
+
+            <p>B2B-Kunden kaufen nicht wie Endverbraucher. Sie browsen nicht durch Kategorien und legen einzelne Artikel in den Warenkorb. Sie wissen genau, was sie brauchen, und wollen es schnell bestellen. Dafür braucht dein Shop spezielle Bestellwege – und hier zeigt sich, wo SparkLayer auch nach dem April-Update noch echten Mehrwert bietet.</p>
+
+            <h3>Schnellbestellformular (Quick Order)</h3>
+
+            <p>Das Schnellbestellformular zeigt eine kompakte Produktliste mit Eingabefeldern für die Menge. Der Kunde tippt die gewünschte Stückzahl neben jedes Produkt und klickt einmal auf "Alle in den Warenkorb". Kein Klicken durch Produktseiten, kein Scrollen durch Bildergalerien. Für einen B2B-Kunden, der 40 verschiedene Artikel bestellt, spart das 20 Minuten pro Bestellung.</p>
+
+            <p>Shopify bietet nativ kein Schnellbestellformular. SparkLayer hat ein eingebautes Quick-Order-Formular, das sich direkt ins Theme integriert. Bei Shopify Plus kannst du ähnliche Formulare über das B2B-Checkout-API oder Custom-Storefronts bauen – das erfordert allerdings Entwicklungsaufwand.</p>
+
+            <h3>CSV-Bulk-Bestellung</h3>
+
+            <p>Noch schneller geht es per CSV-Upload. Der Kunde exportiert seine Bestellliste aus dem eigenen ERP oder der WaWi als CSV-Datei (Artikelnummer, Menge) und lädt sie direkt im Shop hoch. Die Produkte werden automatisch dem Warenkorb hinzugefügt. Das ist besonders relevant für Kunden mit regelmäßigen Nachbestellungen oder sehr großen Warenkörben mit 100+ Positionen.</p>
+
+            <p>In SparkLayer ist der CSV-Import standardmäßig enthalten. Der Kunde bekommt eine Vorlage, füllt sie aus und lädt sie hoch. Fehlerhafte SKUs oder nicht verfügbare Produkte werden markiert, bevor die Bestellung abgeschickt wird. Shopify bietet diese Funktion nativ nicht – hier ist SparkLayer nach wie vor die beste Lösung.</p>
+
+            <!-- Section 7 -->
+            <h2 id="praxis">Praxis-Beispiel: Holzbrüder.de</h2>
+
+            <p>Theorie ist das eine, Praxis das andere. Deshalb hier ein konkretes Beispiel aus meiner Arbeit: <a href="https://dd-gossen.com/projekte/holzbrueder/">Holzbrüder.de</a> ist ein Shopify-Shop für Holzprodukte, der sowohl Endkunden als auch Großhändler bedient.</p>
+
+            <h3>Ausgangssituation</h3>
+
+            <p>Holzbrüder hatte einen funktionierenden D2C-Shop auf Shopify, aber B2B-Bestellungen liefen komplett manuell: Preislisten per E-Mail, Bestellungen per Telefon, Rechnungen in Excel. Mit wachsender Zahl an Großhandelskunden wurde der Prozess unhaltbar. Die Anforderung: Ein B2B-Kanal innerhalb des bestehenden Shopify-Shops, ohne Shopify Plus.</p>
+
+            <h3>Umsetzung mit SparkLayer</h3>
+
+            <p>Ich habe SparkLayer in den bestehenden Shopify-Shop integriert und folgendes Setup aufgebaut:</p>
+
+            <ul>
+              <li><strong>Drei Kundengruppen:</strong> Standard-Händler (15 % Rabatt), Premium-Händler (25 % Rabatt) und Sonderkonditionen für zwei Key Accounts mit individuellen Festpreisen.</li>
+              <li><strong>Staffelpreise:</strong> Für die 30 meistbestellten Produkte wurden Mengenstaffeln hinterlegt, die sich automatisch im Warenkorb aktualisieren.</li>
+              <li><strong>Schnellbestellformular:</strong> Eine dedizierte Seite, auf der B2B-Kunden alle Produkte in einer kompakten Liste sehen und Mengen direkt eingeben können.</li>
+              <li><strong>CSV-Upload:</strong> Für Kunden, die regelmäßig dieselben 50+ Artikel nachbestellen, wurde der CSV-Import eingerichtet.</li>
+              <li><strong>Netto-Preisanzeige:</strong> B2B-Kunden sehen alle Preise ohne MwSt., Endkunden mit MwSt.</li>
+            </ul>
+
+            <h3>Ergebnis</h3>
+
+            <p>Der manuelle Aufwand für B2B-Bestellungen sank um rund 80 %. Großhandelskunden bestellen jetzt selbstständig, auch abends und am Wochenende. Die durchschnittliche B2B-Bestellgröße stieg um 35 %, weil Kunden durch die Staffelpreise motiviert werden, größere Mengen zu bestellen. Und die Fehlerquote bei Bestellungen ging gegen null, weil kein Telefon-Stille-Post mehr nötig ist.</p>
+
+            <p>Hinweis: Würde ich dieses Projekt heute neu aufsetzen, würde ich die Firmenprofile und Kataloge über die nativen B2B-Features abbilden und SparkLayer nur noch für das Schnellbestellformular und den CSV-Import einsetzen. Das hätte zum Zeitpunkt des Projekts noch Shopify Plus erfordert – seit April 2026 geht das auf jedem Plan.</p>
+
+            <!-- Inline CTA 2 -->
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Ähnliches Projekt umsetzen?</strong>
+                <span>Ich baue deinen B2B-Kanal auf Shopify auf, genau wie bei Holzbrüder.de.</span>
+              </div>
+              <a href="https://dd-gossen.com/#contact">Kostenlos anfragen</a>
+            </div>
+
+            <!-- Section 8 -->
+            <h2 id="fazit">Fazit</h2>
+
+            <p>Das April-2026-Update hat Shopify zur zugänglichsten B2B-E-Commerce-Plattform auf dem Markt gemacht. Company Profiles, Custom Catalogs und Payment Terms stehen jetzt auf allen Plänen zur Verfügung – vom Basic-Plan bis Advanced. Du brauchst kein Plus-Abo mehr, um professionelle B2B-Funktionen zu nutzen. Das senkt die Einstiegshürde für Großhändler, Hersteller und Distributoren, die ihren Wholesale-Kanal digitalisieren wollen, auf ein Minimum.</p>
+
+            <p>Shopify Plus bleibt die richtige Wahl für Unternehmen mit komplexen Anforderungen: Custom Checkout, erweiterte Automatisierungen, Steuerbefreiungen und ein dedizierter B2B-Storefront. SparkLayer ergänzt die nativen Features um Schnellbestellformulare, CSV-Import und Agent-Ordering – Funktionen, die Shopify selbst noch nicht bietet.</p>
+
+            <p>Die wichtigste Erkenntnis aus meinen Projekten: B2B auf Shopify funktioniert nicht, indem du einfach Features aktivierst und fertig bist. Es braucht eine durchdachte Konfiguration, saubere Produktdaten, klar definierte Kundengruppen und ein Theme, das B2B-Elemente sauber integriert. Aber wenn das Setup stimmt, hast du eine Plattform, die mit deinem Geschäft mitwächst – und seit April 2026 musst du dafür nicht mal mehr in den teuersten Plan investieren.</p>
+
+            <!-- Final CTA Box -->
+            <div class="cta-box">
+              <h3>B2B E-Commerce professionell umsetzen</h3>
+              <p>Du willst deinen Großhandel auf Shopify bringen? Ich begleite dich von der Strategieberatung über das technische Setup bis zum Live-Gang – mit nativen B2B-Features, SparkLayer oder Shopify Plus. Aus echter Projekterfahrung, nicht aus der Theorie.</p>
+              <a href="#" class="cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt kostenloses Erstgespräch buchen</a>
+            </div>
+
+          </div><!-- /.article-content -->
+
+          <!-- FAQ Section -->
+          <section class="article-faq">
+            <h2 class="faq-title">Häufige Fragen zu Shopify B2B</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>Brauche ich Shopify Plus für B2B-Funktionen?</summary>
+                <div>
+                  <p>Seit April 2026 nicht mehr für die grundlegenden B2B-Features! Shopify hat Company Profiles, Custom Catalogs und Payment Terms für alle Pläne (Basic, Grow, Advanced) freigeschaltet. Du kannst Firmenprofile anlegen, individuelle Preislisten erstellen und Zahlungsziele festlegen – ohne Plus. Plus lohnt sich weiterhin für komplexe Anforderungen wie Custom Checkout, erweiterte Automatisierungen mit Shopify Flow und Steuerbefreiungen pro Firma.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Was kostet ein B2B-Shop auf Shopify?</summary>
+                <div>
+                  <p>Seit dem April-2026-Update kannst du mit einem regulären Shopify-Plan (ab ca. 36 EUR/Monat) native B2B-Features nutzen. Für erweiterte Funktionen wie Schnellbestellformulare oder Agent-Ordering kommt SparkLayer ab ca. 49 USD/Monat hinzu. Shopify Plus startet ab ca. 2.300 USD/Monat und lohnt sich für komplexe Enterprise-Setups. Dazu kommen Setup-Kosten für Konfiguration, Theme-Anpassungen und Datenimport – je nach Projektumfang zwischen 3.000 und 15.000 EUR.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Kann ich B2B und B2C in einem Shopify-Shop kombinieren?</summary>
+                <div>
+                  <p>Ja, das ist einer der großen Vorteile von Shopify. Mit den nativen B2B-Features nutzt du Firmenkataloge mit eigenen Preisen parallel zum regulären DTC-Shop – und das jetzt auf jedem Shopify-Plan. Endkunden sehen die normalen Preise, eingeloggte B2B-Kunden sehen ihre individuellen Konditionen. Ein Produktkatalog, ein Inventar, zwei Verkaufserlebnisse.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Welche B2B-Apps empfiehlst du für Shopify?</summary>
+                <div>
+                  <p>Seit dem April-2026-Update brauchst du für Basis-B2B (Firmenprofile, Kataloge, Zahlungsziele) keine App mehr. Für erweiterte Funktionen empfehle ich SparkLayer – die App bietet Schnellbestellformulare, erweiterte Mengenregeln, CSV-Import und Agent-Ordering. Weitere Optionen sind Wholesale Gorilla für einfachere Setups und Bold Custom Pricing für reine Preisanpassungen. In einem Erstgespräch berate ich dich gerne, welche Lösung zu deinen Anforderungen passt.</p>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <!-- Author Box – kleine Karte darunter -->
+          <div class="author-box">
+            <h3 class="author-box-title">Autorenbox</h3>
+            <p class="author-bio">Ich helfe Online-Shop-Betreibern dabei, ihren Shopify-Shop aufzubauen, zu optimieren und zu migrieren. Mit über 5 Jahren Erfahrung und 70+ abgeschlossenen Projekten weiß ich, worauf es ankommt – technisch und strategisch.</p>
+            <div class="author-details">
+              <img src="../../Maik-Gossen-ShopifyFreelancer.png" alt="Maik Gossen" class="author-avatar">
+              <div class="author-info">
+                <p class="author-name"><a href="https://dd-gossen.com/" class="author-name-link">Maik Gossen</a></p>
+                <p class="author-role">Shopify Freelancer & Entwickler</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.article-card -->
+      </div><!-- /.article-main -->
+
+    </div><!-- /.article-layout -->
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-name">MAIK GOSSEN</div>
+        <div class="footer-contact-label">Kontakt:</div>
+        <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+        <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+        <div class="footer-social">
+          <a href="mailto:info@dd-gossen.com" title="E-Mail" aria-label="E-Mail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Menü</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/">Übersicht</a></li>
+          <li><a href="https://dd-gossen.com/">Meine Services</a></li>
+          <li><a href="https://dd-gossen.com/blog/">Blog</a></li>
+          <li><a href="https://dd-gossen.com/#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-shop-erstellen/">Shopify Shop erstellen</a></li>
+          <li><a href="https://dd-gossen.com/shopify-migration/">Shopify Migration</a></li>
+          <li><a href="https://dd-gossen.com/shopify-optimierung/">Shopify Optimierung</a></li>
+          <li><a href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/">Widerrufsbutton einbauen lassen</a></li>
+          <li><a href="https://dd-gossen.com/blog/shopify-freelancer-deutschland/">Shopify Freelancer Deutschland</a></li>
+          <li><a href="https://dd-gossen.com/#competencies">Kompetenzen</a></li>
+          <li><a href="https://dd-gossen.com/#projects">Portfolio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Schnellzugriff</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/#contact">Kostenloses Erstgespräch</a></li>
+          <li><a href="https://dd-gossen.com/#about-me">Über mich</a></li>
+          <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://dd-gossen.com/impressum.html">Impressum</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/datenschutz.html">Datenschutz</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/agb.html">AGB</a>
+      <span class="footer-sep">|</span>
+      <a href="#" id="openCookieSettings">Cookie-Einstellungen</a>
+      <span class="footer-sep">|</span>
+      <span>© 2025 Maik Gossen</span>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll behavior
+    (function() {
+      var header = document.querySelector('.header');
+      if (!header) return;
+      let lastScrollTop = 0;
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        header.style.background = scrollTop > 100 ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.15)';
+        if (scrollTop > 100) {
+          header.classList.toggle('hidden', scrollTop > lastScrollTop);
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+      });
+    })();
+
+    // Sync sidebar sticky-top with header visibility
+    (function() {
+      const header = document.querySelector('.header');
+      if (!header) return;
+      const root = document.documentElement;
+      function update() {
+        root.style.setProperty('--sidebar-top',
+          header.classList.contains('hidden') ? '24px' : '110px');
+      }
+      new MutationObserver(update).observe(header, { attributes: true, attributeFilter: ['class'] });
+      update();
+    })();
+
+    // Active TOC link on scroll
+    (function() {
+      const sections = document.querySelectorAll('.article-content h2[id]');
+      const tocLinks = document.querySelectorAll('.sidebar-toc a');
+      if (!sections.length || !tocLinks.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.sidebar-toc a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+
+      sections.forEach(section => observer.observe(section));
+    })();
+  </script>
+
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+    function initCalUI() {
+      if (window.Cal && window.Cal.ns && window.Cal.ns.erstgespraech) {
+        Cal.ns.erstgespraech("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      } else { setTimeout(initCalUI, 100); }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCalUI);
+    } else { initCalUI(); }
+  </script>
+
+</body>
+</html>

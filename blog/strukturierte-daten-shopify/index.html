@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strukturierte Daten in Shopify: Rich Snippets für bessere Rankings (2026) | DD-Gossen</title>
+  <meta name="description" content="Strukturierte Daten für Shopify ✓ Product, FAQ & Breadcrumb Schema einrichten ✓ Rich Snippets in Google ✓ Schritt-für-Schritt-Anleitung ohne App">
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../article-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Two-column layout */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+
+    /* Grid column wrapper – stretches to full row height so sticky works */
+    .sidebar-column {
+      align-self: stretch;
+    }
+
+    /* Sidebar – sticky inside the full-height column */
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      position: sticky;
+      top: var(--sidebar-top, 110px);
+      transition: top 0.3s ease;
+    }
+
+    /* Content column starts at top, not stretched */
+    .article-main {
+      align-self: start;
+      min-width: 0;
+      width: 100%;
+    }
+
+    .sidebar-toc {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .sidebar-toc h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid rgba(35,126,181,0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sidebar-toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .sidebar-toc a {
+      display: block;
+      font-size: 0.88rem;
+      color: #374151;
+      text-decoration: none;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      line-height: 1.4;
+    }
+
+    .sidebar-toc a:hover,
+    .sidebar-toc a.active {
+      background: rgba(35,126,181,0.1);
+      color: #237eb5;
+    }
+
+    .sidebar-cta {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(15,23,42,0.25);
+    }
+
+    .sidebar-cta p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
+      margin: 0 0 1rem 0;
+      line-height: 1.5;
+    }
+
+    .sidebar-cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+      padding: 0.65rem 1.2rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .sidebar-cta a:hover {
+      background: linear-gradient(135deg, #0066e6 0%, #004999 100%);
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Main article area */
+    .article-main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Restore card styling */
+    .article-card {
+      max-width: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-sizing: border-box;
+    }
+
+    /* Hero image – override article-styles.css max-width:600px */
+    .article-hero-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      display: block;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Inline CTA */
+    .inline-cta {
+      background: linear-gradient(135deg, rgba(35,126,181,0.08) 0%, rgba(35,126,181,0.15) 100%);
+      border: 1px solid rgba(35,126,181,0.25);
+      border-left: 4px solid #237eb5;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .inline-cta-text {
+      flex: 1;
+    }
+
+    .inline-cta-text strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem;
+      color: #0f172a;
+      margin-bottom: 0.3rem;
+    }
+
+    .inline-cta-text span {
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    .inline-cta a {
+      display: inline-block;
+      background: #0f172a;
+      color: white !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none !important;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .inline-cta a:hover {
+      background: #1e293b;
+    }
+
+    /* Author box – kleine Karte unter FAQ, ohne Hintergrund */
+    .author-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: transparent !important;
+      border: 1px solid rgba(35,126,181,0.15);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    .author-box-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .author-bio {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.5;
+      margin: 0 0 1rem 0;
+    }
+
+    .author-details {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-name-link {
+      color: #333;
+      text-decoration: none;
+      font-weight: inherit;
+    }
+
+    .author-name-link:hover {
+      color: #333;
+      text-decoration: none;
+    }
+
+    /* In Kürze – linksbündig, unscheinbar, volle Breite */
+    .article-summary {
+      margin: 0 0 2rem 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .article-summary summary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #64748b;
+      padding: 0.25rem 0 0.4rem 0;
+      cursor: pointer;
+      list-style: none;
+      border-bottom: 1px solid rgba(35,126,181,0.15);
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+
+    .article-summary summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .article-summary summary::after {
+      content: '\25BC';
+      float: right;
+      font-size: 0.6rem;
+      opacity: 0.4;
+    }
+
+    .article-summary[open] summary::after {
+      content: '\25B2';
+    }
+
+    .article-summary ul {
+      margin: 0.5rem 0 0 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+    }
+
+    .article-summary li {
+      padding: 0.3rem 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #64748b;
+      border-bottom: 1px solid rgba(35,126,181,0.06);
+    }
+
+    .article-summary li:last-child {
+      border-bottom: none;
+    }
+
+    /* FAQ Section */
+    .article-faq {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(35,126,181,0.15);
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+
+    .faq-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .faq-item {
+      padding: 0;
+      margin: 0;
+      border-bottom: 1px solid rgba(35,126,181,0.12);
+      width: 100%;
+      min-width: 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item summary {
+      font-weight: 600;
+      color: #0f172a;
+      padding: 1rem 0;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      float: right;
+      font-size: 1.2rem;
+      color: #237eb5;
+    }
+
+    .faq-item[open] summary::after {
+      content: '\2212';
+    }
+
+    .faq-item p {
+      margin: 0 0 1rem 0;
+      padding: 0 0 1rem 0;
+      line-height: 1.6;
+      color: #374151;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    .author-avatar {
+      width: 48px !important;
+      height: 48px !important;
+      max-width: 48px !important;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      flex-shrink: 0;
+      border: none;
+      margin: 0 !important;
+    }
+
+    .author-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .author-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+    }
+
+    .author-role {
+      font-size: 0.875rem;
+      color: #777;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    /* Blog meta info */
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.88rem;
+      color: #6b7280;
+      margin-bottom: 0rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .meta-tag {
+      background: rgba(35,126,181,0.1);
+      color: #237eb5;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Code blocks */
+    pre {
+      background: #1e293b;
+      color: #e2e8f0;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      overflow-x: auto;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      margin: 1.5rem 0;
+    }
+
+    pre code {
+      font-family: 'Fira Code', 'Courier New', monospace;
+      color: inherit;
+      background: none;
+      padding: 0;
+    }
+
+    code {
+      background: rgba(35,126,181,0.08);
+      color: #0f172a;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.88em;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        padding: 0 0.2rem;
+        gap: 0.8rem;
+      }
+
+      /* Disable sticky on mobile */
+      .article-sidebar {
+        position: static;
+        top: auto;
+        transition: none;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      /* Compact TOC on mobile */
+      .sidebar-toc {
+        padding: 0.8rem 1rem;
+        border-radius: 12px;
+        margin-bottom: 0;
+      }
+
+      .sidebar-toc h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .sidebar-toc ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem 0;
+        margin: 0;
+      }
+
+      .sidebar-toc li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .sidebar-toc li::before {
+        display: none;
+      }
+
+      .sidebar-toc a {
+        font-size: 0.88rem;
+        padding: 0.25rem 0;
+        background: transparent;
+        border-radius: 0;
+        white-space: normal;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      .sidebar-toc a:hover {
+        background: transparent;
+        text-decoration: underline;
+      }
+
+      /* Hide CTA on mobile */
+      .sidebar-cta {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .inline-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+
+      .author-box {
+        padding: 1rem 1.25rem;
+      }
+
+      .author-box-title {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .author-bio {
+        font-size: 0.93rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .author-details {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .article-hero-img {
+        border-radius: 12px;
+        margin-bottom: 0.8rem;
+      }
+
+      .article-meta {
+        justify-content: flex-start;
+        text-align: left;
+        align-self: flex-start;
+        width: 100%;
+      }
+
+      .article-faq {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+      }
+
+      .faq-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .faq-item summary {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+      }
+
+      .faq-item p {
+        margin: 0 0 0.5rem 0;
+        padding: 0 0 0.5rem 0;
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+    }
+  </style>
+
+  <!-- Strukturierte Daten (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dd-gossen.com/#organization",
+        "name": "DD-Gossen",
+        "url": "https://dd-gossen.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dd-gossen.com/Logo.png"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/maik-gossen"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dd-gossen.com/#author",
+        "name": "Maik Gossen",
+        "url": "https://dd-gossen.com/",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://dd-gossen.com/Maik-Gossen-ShopifyFreelancer.png",
+          "width": 400,
+          "height": 400
+        },
+        "jobTitle": "Shopify Freelancer & Entwickler",
+        "worksFor": {
+          "@id": "https://dd-gossen.com/#organization"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://dd-gossen.com/blog/strukturierte-daten-shopify/#article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dd-gossen.com/blog/strukturierte-daten-shopify/"
+        },
+        "headline": "Strukturierte Daten in Shopify: Rich Snippets für bessere Rankings (2026)",
+        "description": "Strukturierte Daten für Shopify ✓ Product, FAQ & Breadcrumb Schema einrichten ✓ Rich Snippets in Google ✓ Schritt-für-Schritt-Anleitung ohne App",
+        "datePublished": "2026-04-03",
+        "dateModified": "2026-04-03",
+        "author": {
+          "@id": "https://dd-gossen.com/#author"
+        },
+        "publisher": {
+          "@id": "https://dd-gossen.com/#organization",
+          "name": "DD-Gossen",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://dd-gossen.com/Logo.png",
+            "width": 600,
+            "height": 60
+          }
+        },
+        "articleSection": "SEO",
+        "keywords": ["Strukturierte Daten Shopify", "Schema Markup Shopify", "Rich Snippets Shopify", "Shopify SEO"],
+        "wordCount": 2000
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dd-gossen.com/blog/strukturierte-daten-shopify/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Brauche ich eine App für strukturierte Daten in Shopify?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nein, du brauchst nicht zwingend eine App. Strukturierte Daten lassen sich direkt als JSON-LD-Code in deine Shopify-Liquid-Templates einbauen. Apps wie JSON-LD for SEO können den Prozess vereinfachen, aber für Product, FAQ und Breadcrumb Schema reicht manuelles Einbinden vollkommen aus."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Welche strukturierten Daten sind für Online-Shops am wichtigsten?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Für Shopify-Shops sind Product Schema (mit Preis, Verfügbarkeit und Bewertungen), Breadcrumb Schema und FAQ Schema am wichtigsten. Product Schema sorgt für Rich Snippets mit Preisanzeige in den Suchergebnissen, Breadcrumbs verbessern die Navigation in Google und FAQ Schema kann zusätzliche SERP-Fläche gewinnen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie lange dauert es, bis Rich Snippets in Google erscheinen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nach dem Einbau strukturierter Daten dauert es in der Regel einige Tage bis wenige Wochen, bis Google die Änderungen verarbeitet und Rich Snippets anzeigt. Du kannst den Prozess beschleunigen, indem du die betroffenen Seiten über die Google Search Console zur erneuten Indexierung einreichst."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Können falsche strukturierte Daten meinem Ranking schaden?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, fehlerhafte oder irreführende strukturierte Daten können zu einer manuellen Abstrafung durch Google führen. Besonders problematisch sind falsche Preisangaben, erfundene Bewertungen oder Markup für Inhalte, die auf der Seite gar nicht sichtbar sind. Teste dein Schema daher immer mit dem Google Rich Results Test."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="https://dd-gossen.com/shopify-freelancer/" class="logo">
+      <img src="../../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+    </a>
+    <div class="header-right-container">
+      <div class="header-cta-container">
+        <a href="#" class="header-cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt anfragen</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main" style="margin-top: 0; padding: 8rem 1rem 4rem;">
+
+    <div class="article-layout">
+
+      <!-- Sticky Sidebar -->
+      <div class="sidebar-column">
+      <aside class="article-sidebar">
+        <div class="sidebar-toc">
+          <h3>Inhaltsverzeichnis</h3>
+          <ul>
+            <li><a href="#was-sind-strukturierte-daten">Was sind strukturierte Daten?</a></li>
+            <li><a href="#warum-wichtig">Warum sind sie für Shopify wichtig?</a></li>
+            <li><a href="#product-schema">Product Schema einrichten</a></li>
+            <li><a href="#faq-schema">FAQ Schema für Shopify</a></li>
+            <li><a href="#breadcrumb">Breadcrumb Markup</a></li>
+            <li><a href="#ohne-app">Strukturierte Daten ohne App</a></li>
+            <li><a href="#testen">Schema testen und validieren</a></li>
+            <li><a href="#fazit">Fazit</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-cta">
+          <p>SEO für deinen Shopify-Shop?</p>
+          <a href="https://dd-gossen.com/shopify-optimierung/">Jetzt anfragen &rarr;</a>
+        </div>
+      </aside>
+      </div><!-- /.sidebar-column -->
+
+      <!-- Main Content -->
+      <div class="article-main">
+        <div class="article-card">
+
+          <!-- Meta Info -->
+          <div class="article-meta">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              03.04.26
+            </span>
+            <span class="meta-item meta-lesezeit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              10 Min. Lesezeit
+            </span>
+            <span class="meta-tag">SEO</span>
+            <span class="meta-tag">Shopify</span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="article-title" style="text-align: left; margin: 0 0 1.5rem 0; font-size: 2.4rem; max-width: 100%; padding: 0;">Strukturierte Daten in Shopify: Rich Snippets für bessere Rankings (2026)</h1>
+
+          <!-- In Kürze (ausklappbar, SEO-freundlich) -->
+          <details class="article-summary">
+            <summary>Artikel in Kürze</summary>
+            <ul>
+              <li><strong>Was sind strukturierte Daten?</strong> Maschinenlesbarer Code (JSON-LD), der Google den Seiteninhalt erklärt.</li>
+              <li><strong>Warum wichtig?</strong> Rich Snippets mit Preis, Bewertungen und FAQ erhöhen die Klickrate in den Suchergebnissen.</li>
+              <li><strong>Product Schema:</strong> Preis, Verfügbarkeit und Bewertungen direkt in Google anzeigen.</li>
+              <li><strong>FAQ &amp; Breadcrumb:</strong> Zusätzliche SERP-Fläche gewinnen und Navigation verbessern.</li>
+              <li><strong>Ohne App:</strong> JSON-LD lässt sich direkt in Shopify Liquid Templates einbauen.</li>
+            </ul>
+          </details>
+
+          <!-- Article Content -->
+          <div class="article-content" style="width: 100%; max-width: 100%; padding: 0; box-sizing: border-box; margin: 0;">
+
+            <p>Du investierst Zeit und Geld in deinen Shopify-Shop, aber in den Google-Suchergebnissen sehen deine Listings genauso aus wie die aller anderen? Dann fehlen dir wahrscheinlich strukturierte Daten. Mit dem richtigen Schema Markup verwandelst du langweilige blaue Links in auffällige Rich Snippets mit Sternen, Preisen und FAQ-Dropdowns. In diesem Artikel zeige ich dir Schritt für Schritt, wie du Product, FAQ und Breadcrumb Schema in deinen Shopify-Shop einbaust -- ganz ohne App. Strukturierte Daten sind ein zentraler Baustein einer soliden <a href="https://dd-gossen.com/blog/shopify-seo-ohne-app/">Shopify-SEO-Strategie</a>.</p>
+
+            <!-- Section 1 -->
+            <h2 id="was-sind-strukturierte-daten">Was sind strukturierte Daten?</h2>
+
+            <p>Strukturierte Daten sind ein standardisiertes Format, mit dem du Suchmaschinen zusätzliche Informationen über den Inhalt deiner Seite lieferst. Sie basieren auf dem <strong>Schema.org-Vokabular</strong>, das von Google, Bing, Yahoo und Yandex gemeinsam entwickelt wurde.</p>
+
+            <p>Stell dir vor, du hast eine Produktseite mit einem Preis von 49,99 Euro. Für einen Menschen ist klar, dass das der Preis ist. Für Google ist es aber erst einmal nur Text auf einer Seite. Strukturierte Daten sagen Google explizit: "Das hier ist ein Produkt, es kostet 49,99 Euro und ist aktuell auf Lager."</p>
+
+            <p>Es gibt drei Formate für strukturierte Daten:</p>
+
+            <ul>
+              <li><strong>JSON-LD</strong> (empfohlen von Google) -- ein JavaScript-Block im <code>&lt;head&gt;</code> oder <code>&lt;body&gt;</code></li>
+              <li><strong>Microdata</strong> -- HTML-Attribute direkt im Markup</li>
+              <li><strong>RDFa</strong> -- ebenfalls HTML-Attribute, aber weniger verbreitet</li>
+            </ul>
+
+            <p>Google empfiehlt ausdrücklich <strong>JSON-LD</strong>, weil es vom restlichen HTML getrennt ist und sich leichter implementieren und warten lässt. Für Shopify ist JSON-LD die beste Wahl, weil du den Code einfach in deine Liquid-Templates einfügen kannst, ohne das bestehende HTML zu verändern.</p>
+
+            <h3>Wie sieht JSON-LD aus?</h3>
+
+            <p>Ein einfaches Beispiel für ein Produkt:</p>
+
+<pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Baumwoll T-Shirt Classic",
+  "description": "Hochwertiges T-Shirt aus 100% Bio-Baumwolle",
+  "offers": {
+    "@type": "Offer",
+    "price": "29.99",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock"
+  }
+}
+&lt;/script&gt;</code></pre>
+
+            <p>Dieser Block wird unsichtbar in den Quellcode deiner Seite eingefügt. Der Besucher sieht nichts davon, aber Google kann die Informationen auslesen und in den Suchergebnissen als Rich Snippet darstellen.</p>
+
+            <!-- Section 2 -->
+            <h2 id="warum-wichtig">Warum sind strukturierte Daten für Shopify wichtig?</h2>
+
+            <p>Die kurze Antwort: Weil sie deine <strong>Klickrate (CTR) in den Suchergebnissen messbar erhöhen</strong>. Studien zeigen, dass Rich Snippets die CTR um 20 bis 30 Prozent steigern können -- und damit auch die <a href="https://dd-gossen.com/blog/shopify-checkout-optimieren/">Conversion-Rate im Checkout</a> indirekt verbessern, weil vorqualifizierte Nutzer auf deine Seite kommen. Eine höhere CTR signalisiert Google, dass dein Ergebnis relevant ist, was wiederum dein Ranking positiv beeinflusst.</p>
+
+            <p>Konkret bringen strukturierte Daten deinem Shopify-Shop folgende Vorteile:</p>
+
+            <ul>
+              <li><strong>Sternebewertungen in Google:</strong> Produkte mit Sternen fallen sofort ins Auge und schaffen Vertrauen.</li>
+              <li><strong>Preisanzeige in den SERPs:</strong> Der Preis wird direkt im Suchergebnis angezeigt, sodass Nutzer vorqualifiziert auf deine Seite kommen.</li>
+              <li><strong>Verfügbarkeits-Status:</strong> "Auf Lager" oder "Ausverkauft" wird direkt in Google sichtbar.</li>
+              <li><strong>FAQ-Dropdowns:</strong> Dein Suchergebnis nimmt mehr Platz ein und verdrängt Wettbewerber.</li>
+              <li><strong>Breadcrumb-Navigation:</strong> Statt der nackten URL zeigt Google eine übersichtliche Pfad-Navigation.</li>
+            </ul>
+
+            <p>Gerade für Shopify-Shops ist das ein enormer Wettbewerbsvorteil. Viele Shop-Betreiber kümmern sich nicht um strukturierte Daten oder verlassen sich auf die minimalen Standard-Markup-Daten, die Shopify-Themes mitliefern. Diese sind aber oft unvollständig oder veraltet. Wer hier gezielt nachbessert -- zum Beispiel im Rahmen einer professionellen <a href="https://dd-gossen.com/shopify-optimierung/">Shopify-Optimierung</a> -- kann sich von der Konkurrenz abheben.</p>
+
+            <p>Wichtig: Strukturierte Daten sind kein direkter Ranking-Faktor. Google nutzt sie primär für die Darstellung in den Suchergebnissen. Aber der indirekte Effekt über eine höhere CTR und bessere Nutzersignale ist erheblich -- ähnlich wie bei einer <a href="https://dd-gossen.com/blog/shopify-pagespeed-optimieren/">gezielten PageSpeed-Optimierung</a>.</p>
+
+            <!-- Section 3 -->
+            <h2 id="product-schema">Product Schema einrichten</h2>
+
+            <p>Das Product Schema ist für jeden Shopify-Shop das wichtigste strukturierte Daten-Markup. Es teilt Google mit, dass eine Seite ein Produkt darstellt, und liefert Details wie Name, Preis, Verfügbarkeit, Bewertungen und Bilder.</p>
+
+            <h3>Die wichtigsten Product-Schema-Eigenschaften</h3>
+
+            <ul>
+              <li><strong>name:</strong> Der Produktname</li>
+              <li><strong>description:</strong> Die Produktbeschreibung</li>
+              <li><strong>image:</strong> URL des Produktbilds</li>
+              <li><strong>sku:</strong> Die Artikelnummer</li>
+              <li><strong>brand:</strong> Der Markenname</li>
+              <li><strong>offers:</strong> Preis, Währung, Verfügbarkeit</li>
+              <li><strong>aggregateRating:</strong> Durchschnittliche Bewertung und Anzahl</li>
+            </ul>
+
+            <h3>Product Schema mit Shopify Liquid</h3>
+
+            <p>Folgenden Code fügst du in deine <code>product.liquid</code> oder in den entsprechenden Section-Code deines Themes ein. Die Liquid-Variablen ziehen die Daten automatisch aus deinem Shopify-Backend:</p>
+
+<pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ product.title | json }},
+  "description": {{ product.description | strip_html | truncate: 500 | json }},
+  "image": {{ product.featured_image | image_url: width: 1200 | prepend: "https:" | json }},
+  "sku": {{ product.selected_or_first_available_variant.sku | json }},
+  "brand": {
+    "@type": "Brand",
+    "name": {{ product.vendor | json }}
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ shop.url }}{{ product.url }}",
+    "priceCurrency": {{ cart.currency.iso_code | json }},
+    "price": {{ product.selected_or_first_available_variant.price | money_without_currency | json }},
+    "availability": "https://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
+    "seller": {
+      "@type": "Organization",
+      "name": {{ shop.name | json }}
+    }
+  }
+}
+&lt;/script&gt;</code></pre>
+
+            <h3>Bewertungen hinzufügen</h3>
+
+            <p>Wenn du eine Bewertungs-App wie Judge.me oder Loox nutzt, kannst du das <code>aggregateRating</code>-Objekt ergänzen. Viele Apps fügen das Schema automatisch ein. Falls nicht, ergänze es manuell:</p>
+
+<pre><code>"aggregateRating": {
+  "@type": "AggregateRating",
+  "ratingValue": "4.7",
+  "reviewCount": "128"
+}</code></pre>
+
+            <p>Achte darauf, dass die Werte mit den tatsächlich sichtbaren Bewertungen auf deiner Seite übereinstimmen. Google prüft das und kann dein Rich Snippet entfernen, wenn die Daten nicht zum sichtbaren Inhalt passen.</p>
+
+            <!-- Section 4 -->
+            <h2 id="faq-schema">FAQ Schema für Shopify</h2>
+
+            <p>FAQ Schema ist ein unterschätztes Werkzeug für Shopify-Shops. Es ermöglicht dir, häufig gestellte Fragen und Antworten direkt in den Suchergebnissen als ausklappbare Dropdowns darzustellen. Das Ergebnis: Dein Listing nimmt deutlich mehr Platz in den SERPs ein und verdrängt Wettbewerber nach unten.</p>
+
+            <h3>Wann FAQ Schema einsetzen?</h3>
+
+            <p>FAQ Schema eignet sich besonders für:</p>
+
+            <ul>
+              <li><strong>Produktseiten:</strong> Häufige Fragen zu Versand, Material, Pflege oder Größen</li>
+              <li><strong>Kategorieseiten:</strong> Allgemeine Fragen zur Produktkategorie</li>
+              <li><strong>Landing Pages:</strong> FAQ-Bereiche auf Service- oder Informationsseiten</li>
+              <li><strong>Blog-Artikel:</strong> Fragen, die im Artikel behandelt werden</li>
+            </ul>
+
+            <h3>FAQ Schema als JSON-LD</h3>
+
+            <p>So sieht ein vollständiges FAQ Schema aus, das du auf jeder Shopify-Seite einbauen kannst:</p>
+
+<pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie lange dauert der Versand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Lieferzeit beträgt 2-4 Werktage innerhalb Deutschlands. Für Expressversand am nächsten Werktag wähle die entsprechende Option an der Kasse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich meine Bestellung zurückgeben?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, du hast ein 30-tägiges Rückgaberecht. Die Rücksendung ist kostenlos. Nutze dafür unser Retourenportal."
+      }
+    }
+  ]
+}
+&lt;/script&gt;</code></pre>
+
+            <p>Wichtig: Die Fragen und Antworten im JSON-LD müssen identisch mit den sichtbaren FAQ-Inhalten auf der Seite sein. Google wertet es als Spam, wenn du Schema-Daten für Inhalte auszeichnest, die für den Nutzer nicht sichtbar sind.</p>
+
+            <h3>FAQ dynamisch mit Liquid generieren</h3>
+
+            <p>Wenn du FAQ-Inhalte als Metafields in Shopify speicherst, kannst du das Schema dynamisch generieren. So musst du den Code nicht bei jeder Änderung manuell anpassen. Die Metafield-Werte werden automatisch in das JSON-LD eingefügt.</p>
+
+            <!-- Inline CTA 1 -->
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>SEO-Optimierung für deinen Shop?</strong>
+                <span>Ich richte strukturierte Daten, Meta-Tags und technisches SEO professionell für deinen Shopify-Shop ein.</span>
+              </div>
+              <a href="https://dd-gossen.com/shopify-optimierung/">Mehr erfahren</a>
+            </div>
+
+            <!-- Section 5 -->
+            <h2 id="breadcrumb">Breadcrumb Markup</h2>
+
+            <p>Breadcrumb Schema sorgt dafür, dass Google in den Suchergebnissen statt der nackten URL eine übersichtliche Pfad-Navigation anzeigt. Statt <code>dd-gossen.com/collections/t-shirts/products/classic-tee</code> sieht der Nutzer: <strong>Startseite > T-Shirts > Classic Tee</strong>.</p>
+
+            <p>Das verbessert die Nutzererfahrung in den SERPs und gibt dem Suchenden sofort Kontext, wo sich das Produkt in deiner Shop-Struktur befindet.</p>
+
+            <h3>Breadcrumb Schema für Shopify-Produktseiten</h3>
+
+<pre><code>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "{{ shop.url }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ collection.title | json }},
+      "item": "{{ shop.url }}{{ collection.url }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": {{ product.title | json }},
+      "item": "{{ shop.url }}{{ product.url }}"
+    }
+  ]
+}
+&lt;/script&gt;</code></pre>
+
+            <p>Füge diesen Code in dein <code>product.liquid</code>-Template ein. Die Liquid-Variablen sorgen dafür, dass die Breadcrumbs automatisch die richtigen Collection- und Produktnamen ausgeben. Wenn ein Produkt mehreren Collections zugeordnet ist, wird die Collection verwendet, über die der Nutzer auf das Produkt gelangt ist.</p>
+
+            <p>Für Kategorieseiten (Collections) passt du den Code entsprechend an und lässt die dritte Ebene weg. So erhält jede Seitenebene deines Shops eine saubere Breadcrumb-Struktur in den Suchergebnissen.</p>
+
+            <!-- Section 6 -->
+            <h2 id="ohne-app">Strukturierte Daten ohne App einbauen</h2>
+
+            <p>Viele Shopify-Betreiber greifen sofort zu einer App, wenn es um strukturierte Daten geht. Das ist nicht nötig. Mit ein wenig Liquid-Kenntnis kannst du JSON-LD direkt in deine Theme-Dateien einbauen -- kostenlos und ohne zusätzliche Abhängigkeiten.</p>
+
+            <h3>Schritt 1: Theme-Code öffnen</h3>
+
+            <p>Gehe in deinem Shopify-Admin zu <strong>Online Store > Themes > Actions > Edit Code</strong>. Hier findest du alle Liquid-Template-Dateien deines Themes.</p>
+
+            <h3>Schritt 2: Die richtige Datei finden</h3>
+
+            <p>Je nach Schema-Typ bearbeitest du unterschiedliche Dateien:</p>
+
+            <ul>
+              <li><strong>Product Schema:</strong> <code>sections/main-product.liquid</code> oder <code>templates/product.liquid</code></li>
+              <li><strong>Breadcrumb Schema:</strong> Ebenfalls in der Produkt-Template oder im <code>theme.liquid</code> Layout</li>
+              <li><strong>FAQ Schema:</strong> In der Seite oder Section, die deine FAQ enthält</li>
+              <li><strong>Organization Schema:</strong> In <code>layout/theme.liquid</code> (gilt für alle Seiten)</li>
+            </ul>
+
+            <h3>Schritt 3: JSON-LD einfügen</h3>
+
+            <p>Füge den JSON-LD-Block am Ende der jeweiligen Datei ein, direkt vor dem schließenden Tag. Bei neueren Shopify-Themes (Dawn, etc.) arbeitest du mit Sections und Snippets. Erstelle am besten ein eigenes Snippet:</p>
+
+<pre><code>{%- comment -%} snippets/structured-data-product.liquid {%- endcomment -%}
+
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ product.title | json }},
+  "image": [
+    {%- for image in product.images -%}
+      {{ image | image_url: width: 1200 | prepend: "https:" | json }}
+      {%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ],
+  "description": {{ product.description | strip_html | truncate: 500 | json }},
+  "sku": {{ product.selected_or_first_available_variant.sku | json }},
+  "brand": {
+    "@type": "Brand",
+    "name": {{ product.vendor | json }}
+  },
+  "offers": {
+    "@type": "Offer",
+    "url": "{{ shop.url }}{{ product.url }}",
+    "priceCurrency": {{ cart.currency.iso_code | json }},
+    "price": {{ product.selected_or_first_available_variant.price | money_without_currency | json }},
+    "availability": "https://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}"
+  }
+}
+&lt;/script&gt;</code></pre>
+
+            <p>Dieses Snippet bindest du dann in deiner Produkt-Section ein mit <code>{%- render 'structured-data-product' -%}</code>. So bleibt dein Code sauber und wartbar.</p>
+
+            <h3>Schritt 4: Vorhandenes Schema prüfen</h3>
+
+            <p>Bevor du neues Schema hinzufügst, prüfe ob dein Theme bereits strukturierte Daten ausgibt. Viele Premium-Themes enthalten bereits grundlegendes Product Schema. Doppelte Schema-Auszeichnungen können zu Verwirrung bei Google führen. Suche in deinen Theme-Dateien nach <code>application/ld+json</code>, um vorhandenes Markup zu finden.</p>
+
+            <!-- Inline CTA 2 -->
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Shop-Analyse gewünscht?</strong>
+                <span>Ich prüfe dein bestehendes Schema Markup und optimiere es für maximale Sichtbarkeit.</span>
+              </div>
+              <a href="https://dd-gossen.com/#contact">Jetzt anfragen</a>
+            </div>
+
+            <!-- Section 7 -->
+            <h2 id="testen">Schema testen und validieren</h2>
+
+            <p>Strukturierte Daten einzubauen ist der erste Schritt. Mindestens genauso wichtig ist es, das Markup anschließend gründlich zu testen. Fehlerhafte strukturierte Daten können dazu führen, dass Google deine Rich Snippets nicht anzeigt oder im schlimmsten Fall eine manuelle Maßnahme verhängt.</p>
+
+            <h3>Google Rich Results Test</h3>
+
+            <p>Das wichtigste Tool ist der <strong><a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener">Google Rich Results Test</a></strong>. Gib einfach die URL deiner Seite ein, und Google zeigt dir:</p>
+
+            <ul>
+              <li>Welche strukturierten Daten erkannt wurden</li>
+              <li>Ob deine Seite für Rich Snippets qualifiziert ist</li>
+              <li>Fehler und Warnungen im Markup</li>
+              <li>Eine Vorschau des Rich Snippets</li>
+            </ul>
+
+            <p>Teste jede Seite einzeln: Produktseiten, Kategorieseiten und Seiten mit FAQ Schema. Ein häufiger Fehler ist, dass das Schema auf der Homepage funktioniert, aber auf Unterseiten fehlt oder fehlerhaft ist.</p>
+
+            <h3>Schema Markup Validator</h3>
+
+            <p>Ergänzend zum Rich Results Test gibt es den <strong><a href="https://validator.schema.org/" target="_blank" rel="noopener">Schema Markup Validator</a></strong> von Schema.org. Dieses Tool prüft dein Markup detaillierter auf Syntaxfehler und fehlende Pflichtfelder. Es zeigt dir auch optionale Eigenschaften an, die du ergänzen könntest.</p>
+
+            <h3>Google Search Console</h3>
+
+            <p>Nach dem Einbau solltest du die betroffenen Seiten über die <strong>Google Search Console</strong> zur erneuten Indexierung einreichen. Unter dem Reiter "Verbesserungen" siehst du nach einigen Tagen, ob Google deine strukturierten Daten korrekt erfasst hat. Hier werden auch Fehler und Warnungen angezeigt, die den gesamten Shop betreffen.</p>
+
+            <h3>Häufige Fehler vermeiden</h3>
+
+            <ul>
+              <li><strong>Fehlende Pflichtfelder:</strong> Product Schema braucht mindestens name, image und offers</li>
+              <li><strong>Falsche Preisformate:</strong> Der Preis muss als Zahl ohne Währungssymbol angegeben werden (z.B. "29.99", nicht "29,99 EUR")</li>
+              <li><strong>Doppeltes Schema:</strong> Wenn Theme und App gleichzeitig Product Schema ausgeben, entstehen Konflikte</li>
+              <li><strong>Unsichtbare Inhalte:</strong> Schema-Daten müssen mit den sichtbaren Seiteninhalten übereinstimmen</li>
+              <li><strong>Veraltete Markup-Typen:</strong> Verwende immer die aktuellen Schema.org-Definitionen</li>
+            </ul>
+
+            <!-- Section 8 -->
+            <h2 id="fazit">Fazit</h2>
+
+            <p>Strukturierte Daten sind kein Nice-to-have, sondern ein wichtiger Baustein für die SEO-Strategie jedes Shopify-Shops. Mit Product Schema, FAQ Schema und Breadcrumb Markup sorgst du dafür, dass dein Shop in den Google-Suchergebnissen auffällt und mehr Klicks bekommt.</p>
+
+            <p>Das Einrichten ist kein Hexenwerk. Mit JSON-LD und ein wenig Liquid-Kenntnis baust du das Markup direkt in deine Theme-Dateien ein, ohne auf kostenpflichtige Apps angewiesen zu sein. Wichtig ist, das Schema anschließend mit dem Google Rich Results Test zu validieren und über die Search Console zu überwachen.</p>
+
+            <p>Die Investition lohnt sich: Rich Snippets können deine Klickrate um 20 bis 30 Prozent steigern. In einem umkämpften Markt ist das der Unterschied zwischen Seite eins und Seite zwei -- zwischen Umsatz und Unsichtbarkeit.</p>
+
+            <!-- Final CTA Box -->
+            <div class="cta-box">
+              <h3>Strukturierte Daten professionell einrichten</h3>
+              <p>Du möchtest Product Schema, FAQ Markup und Breadcrumbs in deinem Shopify-Shop einbauen -- ohne Fehler und mit maximaler Wirkung? Ich übernehme die komplette Einrichtung und Validierung deiner strukturierten Daten.</p>
+              <a href="#" class="cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt kostenloses Erstgespräch buchen</a>
+            </div>
+
+          </div><!-- /.article-content -->
+
+          <!-- FAQ Section -->
+          <section class="article-faq">
+            <h2 class="faq-title">Häufige Fragen zu strukturierten Daten in Shopify</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>Brauche ich eine App für strukturierte Daten in Shopify?</summary>
+                <div>
+                  <p>Nein, du brauchst nicht zwingend eine App. Strukturierte Daten lassen sich direkt als JSON-LD-Code in deine Shopify-Liquid-Templates einbauen. Apps wie JSON-LD for SEO können den Prozess vereinfachen, aber für Product, FAQ und Breadcrumb Schema reicht manuelles Einbinden vollkommen aus. Der Vorteil ohne App: keine monatlichen Kosten und volle Kontrolle über den Code.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Welche strukturierten Daten sind für Online-Shops am wichtigsten?</summary>
+                <div>
+                  <p>Für Shopify-Shops sind Product Schema (mit Preis, Verfügbarkeit und Bewertungen), Breadcrumb Schema und FAQ Schema am wichtigsten. Product Schema sorgt für Rich Snippets mit Preisanzeige in den Suchergebnissen, Breadcrumbs verbessern die Navigation in Google und FAQ Schema kann zusätzliche SERP-Fläche gewinnen. Organization Schema für deine Marke ist ebenfalls empfehlenswert.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Wie lange dauert es, bis Rich Snippets in Google erscheinen?</summary>
+                <div>
+                  <p>Nach dem Einbau strukturierter Daten dauert es in der Regel einige Tage bis wenige Wochen, bis Google die Änderungen verarbeitet und Rich Snippets anzeigt. Du kannst den Prozess beschleunigen, indem du die betroffenen Seiten über die Google Search Console zur erneuten Indexierung einreichst. Beachte: Google garantiert nicht, dass Rich Snippets angezeigt werden, auch wenn das Markup fehlerfrei ist.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Können falsche strukturierte Daten meinem Ranking schaden?</summary>
+                <div>
+                  <p>Ja, fehlerhafte oder irreführende strukturierte Daten können zu einer manuellen Abstrafung durch Google führen. Besonders problematisch sind falsche Preisangaben, erfundene Bewertungen oder Markup für Inhalte, die auf der Seite gar nicht sichtbar sind. Teste dein Schema daher immer mit dem Google Rich Results Test und stelle sicher, dass die Schema-Daten exakt mit den sichtbaren Seiteninhalten übereinstimmen.</p>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <!-- Author Box – kleine Karte darunter -->
+          <div class="author-box">
+            <h3 class="author-box-title">Autorenbox</h3>
+            <p class="author-bio">Ich helfe Online-Shop-Betreibern dabei, ihren Shopify-Shop aufzubauen, zu optimieren und zu migrieren. Mit über 5 Jahren Erfahrung und 70+ abgeschlossenen Projekten weiß ich, worauf es ankommt -- technisch und strategisch.</p>
+            <div class="author-details">
+              <img src="../../Maik-Gossen-ShopifyFreelancer.png" alt="Maik Gossen" class="author-avatar">
+              <div class="author-info">
+                <p class="author-name"><a href="https://dd-gossen.com/" class="author-name-link">Maik Gossen</a></p>
+                <p class="author-role">Shopify Freelancer & Entwickler</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.article-card -->
+      </div><!-- /.article-main -->
+
+    </div><!-- /.article-layout -->
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-name">MAIK GOSSEN</div>
+        <div class="footer-contact-label">Kontakt:</div>
+        <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+        <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+        <div class="footer-social">
+          <a href="mailto:info@dd-gossen.com" title="E-Mail" aria-label="E-Mail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Menü</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/">Übersicht</a></li>
+          <li><a href="https://dd-gossen.com/">Meine Services</a></li>
+          <li><a href="https://dd-gossen.com/blog/">Blog</a></li>
+          <li><a href="https://dd-gossen.com/#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-shop-erstellen/">Shopify Shop erstellen</a></li>
+          <li><a href="https://dd-gossen.com/shopify-migration/">Shopify Migration</a></li>
+          <li><a href="https://dd-gossen.com/shopify-optimierung/">Shopify Optimierung</a></li>
+          <li><a href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/">Widerrufsbutton einbauen lassen</a></li>
+          <li><a href="https://dd-gossen.com/blog/shopify-freelancer-deutschland/">Shopify Freelancer Deutschland</a></li>
+          <li><a href="https://dd-gossen.com/#competencies">Kompetenzen</a></li>
+          <li><a href="https://dd-gossen.com/#projects">Portfolio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Schnellzugriff</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/#contact">Kostenloses Erstgespräch</a></li>
+          <li><a href="https://dd-gossen.com/#about-me">Über mich</a></li>
+          <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://dd-gossen.com/impressum.html">Impressum</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/datenschutz.html">Datenschutz</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/agb.html">AGB</a>
+      <span class="footer-sep">|</span>
+      <a href="#" id="openCookieSettings">Cookie-Einstellungen</a>
+      <span class="footer-sep">|</span>
+      <span>&copy; 2025 Maik Gossen</span>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll behavior
+    (function() {
+      var header = document.querySelector('.header');
+      if (!header) return;
+      let lastScrollTop = 0;
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        header.style.background = scrollTop > 100 ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.15)';
+        if (scrollTop > 100) {
+          header.classList.toggle('hidden', scrollTop > lastScrollTop);
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+      });
+    })();
+
+    // Sync sidebar sticky-top with header visibility
+    (function() {
+      const header = document.querySelector('.header');
+      if (!header) return;
+      const root = document.documentElement;
+      function update() {
+        root.style.setProperty('--sidebar-top',
+          header.classList.contains('hidden') ? '24px' : '110px');
+      }
+      new MutationObserver(update).observe(header, { attributes: true, attributeFilter: ['class'] });
+      update();
+    })();
+
+    // Active TOC link on scroll
+    (function() {
+      const sections = document.querySelectorAll('.article-content h2[id]');
+      const tocLinks = document.querySelectorAll('.sidebar-toc a');
+      if (!sections.length || !tocLinks.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.sidebar-toc a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+
+      sections.forEach(section => observer.observe(section));
+    })();
+  </script>
+
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+    function initCalUI() {
+      if (window.Cal && window.Cal.ns && window.Cal.ns.erstgespraech) {
+        Cal.ns.erstgespraech("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      } else { setTimeout(initCalUI, 100); }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCalUI);
+    } else { initCalUI(); }
+  </script>
+
+</body>
+</html>

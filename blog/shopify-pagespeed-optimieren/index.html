@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopify PageSpeed optimieren: So erreichst du 90+ im Google-Score (2026) | DD-Gossen</title>
+  <meta name="description" content="Shopify PageSpeed optimieren ✓ Ladezeit unter 2 Sekunden ✓ Bilder, Apps, Code & Fonts ✓ Google PageSpeed Score 90+ erreichen ✓ Praxis-Anleitung">
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../article-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Two-column layout */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+
+    /* Grid column wrapper – stretches to full row height so sticky works */
+    .sidebar-column {
+      align-self: stretch;
+    }
+
+    /* Sidebar – sticky inside the full-height column */
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      position: sticky;
+      top: var(--sidebar-top, 110px);
+      transition: top 0.3s ease;
+    }
+
+    /* Content column starts at top, not stretched */
+    .article-main {
+      align-self: start;
+      min-width: 0;
+      width: 100%;
+    }
+
+    .sidebar-toc {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .sidebar-toc h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid rgba(35,126,181,0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sidebar-toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .sidebar-toc a {
+      display: block;
+      font-size: 0.88rem;
+      color: #374151;
+      text-decoration: none;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      line-height: 1.4;
+    }
+
+    .sidebar-toc a:hover,
+    .sidebar-toc a.active {
+      background: rgba(35,126,181,0.1);
+      color: #237eb5;
+    }
+
+    .sidebar-cta {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(15,23,42,0.25);
+    }
+
+    .sidebar-cta p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
+      margin: 0 0 1rem 0;
+      line-height: 1.5;
+    }
+
+    .sidebar-cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+      padding: 0.65rem 1.2rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .sidebar-cta a:hover {
+      background: linear-gradient(135deg, #0066e6 0%, #004999 100%);
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Main article area */
+    .article-main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Restore card styling */
+    .article-card {
+      max-width: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-sizing: border-box;
+    }
+
+    /* Hero image – override article-styles.css max-width:600px */
+    .article-hero-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      display: block;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Inline CTA */
+    .inline-cta {
+      background: linear-gradient(135deg, rgba(35,126,181,0.08) 0%, rgba(35,126,181,0.15) 100%);
+      border: 1px solid rgba(35,126,181,0.25);
+      border-left: 4px solid #237eb5;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .inline-cta-text {
+      flex: 1;
+    }
+
+    .inline-cta-text strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem;
+      color: #0f172a;
+      margin-bottom: 0.3rem;
+    }
+
+    .inline-cta-text span {
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    .inline-cta a {
+      display: inline-block;
+      background: #0f172a;
+      color: white !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none !important;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .inline-cta a:hover {
+      background: #1e293b;
+    }
+
+    /* Author box – kleine Karte unter FAQ, ohne Hintergrund */
+    .author-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: transparent !important;
+      border: 1px solid rgba(35,126,181,0.15);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    .author-box-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .author-bio {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.5;
+      margin: 0 0 1rem 0;
+    }
+
+    .author-details {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-name-link {
+      color: #333;
+      text-decoration: none;
+      font-weight: inherit;
+    }
+
+    .author-name-link:hover {
+      color: #333;
+      text-decoration: none;
+    }
+
+    /* In Kürze – linksbündig, unscheinbar, volle Breite */
+    .article-summary {
+      margin: 0 0 2rem 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .article-summary summary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #64748b;
+      padding: 0.25rem 0 0.4rem 0;
+      cursor: pointer;
+      list-style: none;
+      border-bottom: 1px solid rgba(35,126,181,0.15);
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+
+    .article-summary summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .article-summary summary::after {
+      content: '\25BC';
+      float: right;
+      font-size: 0.6rem;
+      opacity: 0.4;
+    }
+
+    .article-summary[open] summary::after {
+      content: '\25B2';
+    }
+
+    .article-summary ul {
+      margin: 0.5rem 0 0 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+    }
+
+    .article-summary li {
+      padding: 0.3rem 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #64748b;
+      border-bottom: 1px solid rgba(35,126,181,0.06);
+    }
+
+    .article-summary li:last-child {
+      border-bottom: none;
+    }
+
+    /* FAQ Section */
+    .article-faq {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(35,126,181,0.15);
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+
+    .faq-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .faq-item {
+      padding: 0;
+      margin: 0;
+      border-bottom: 1px solid rgba(35,126,181,0.12);
+      width: 100%;
+      min-width: 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item summary {
+      font-weight: 600;
+      color: #0f172a;
+      padding: 1rem 0;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      float: right;
+      font-size: 1.2rem;
+      color: #237eb5;
+    }
+
+    .faq-item[open] summary::after {
+      content: '\2212';
+    }
+
+    .faq-item p {
+      margin: 0 0 1rem 0;
+      padding: 0 0 1rem 0;
+      line-height: 1.6;
+      color: #374151;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    .author-avatar {
+      width: 48px !important;
+      height: 48px !important;
+      max-width: 48px !important;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      flex-shrink: 0;
+      border: none;
+      margin: 0 !important;
+    }
+
+    .author-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .author-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+    }
+
+    .author-role {
+      font-size: 0.875rem;
+      color: #777;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    /* Blog meta info */
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.88rem;
+      color: #6b7280;
+      margin-bottom: 0rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .meta-tag {
+      background: rgba(35,126,181,0.1);
+      color: #237eb5;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        padding: 0 0.2rem;
+        gap: 0.8rem;
+      }
+
+      /* Disable sticky on mobile */
+      .article-sidebar {
+        position: static;
+        top: auto;
+        transition: none;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      /* Compact TOC on mobile */
+      .sidebar-toc {
+        padding: 0.8rem 1rem;
+        border-radius: 12px;
+        margin-bottom: 0;
+      }
+
+      .sidebar-toc h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .sidebar-toc ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem 0;
+        margin: 0;
+      }
+
+      .sidebar-toc li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .sidebar-toc li::before {
+        display: none;
+      }
+
+      .sidebar-toc a {
+        font-size: 0.88rem;
+        padding: 0.25rem 0;
+        background: transparent;
+        border-radius: 0;
+        white-space: normal;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      .sidebar-toc a:hover {
+        background: transparent;
+        text-decoration: underline;
+      }
+
+      /* Hide CTA on mobile */
+      .sidebar-cta {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .inline-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+
+      .author-box {
+        padding: 1rem 1.25rem;
+      }
+
+      .author-box-title {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .author-bio {
+        font-size: 0.93rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .author-details {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .article-hero-img {
+        border-radius: 12px;
+        margin-bottom: 0.8rem;
+      }
+
+      .article-meta {
+        justify-content: flex-start;
+        text-align: left;
+        align-self: flex-start;
+        width: 100%;
+      }
+
+      .article-faq {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+      }
+
+      .faq-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .faq-item summary {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+      }
+
+      .faq-item p {
+        margin: 0 0 0.5rem 0;
+        padding: 0 0 0.5rem 0;
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+    }
+  </style>
+
+  <!-- Strukturierte Daten (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dd-gossen.com/#organization",
+        "name": "DD-Gossen",
+        "url": "https://dd-gossen.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dd-gossen.com/Logo.png"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/maik-gossen"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dd-gossen.com/#author",
+        "name": "Maik Gossen",
+        "url": "https://dd-gossen.com/",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://dd-gossen.com/Maik-Gossen-ShopifyFreelancer.png",
+          "width": 400,
+          "height": 400
+        },
+        "jobTitle": "Shopify Freelancer & Entwickler",
+        "worksFor": {
+          "@id": "https://dd-gossen.com/#organization"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://dd-gossen.com/blog/shopify-pagespeed-optimieren/#article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dd-gossen.com/blog/shopify-pagespeed-optimieren/"
+        },
+        "headline": "Shopify PageSpeed optimieren: So erreichst du 90+ im Google-Score (2026)",
+        "description": "Shopify PageSpeed optimieren: Ladezeit unter 2 Sekunden, Bilder, Apps, Code und Fonts optimieren, Google PageSpeed Score 90+ erreichen. Praxis-Anleitung.",
+        "datePublished": "2026-03-24",
+        "dateModified": "2026-03-24",
+        "author": {
+          "@id": "https://dd-gossen.com/#author"
+        },
+        "publisher": {
+          "@id": "https://dd-gossen.com/#organization",
+          "name": "DD-Gossen",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://dd-gossen.com/Logo.png",
+            "width": 600,
+            "height": 60
+          }
+        },
+        "articleSection": "Shopify",
+        "keywords": ["Shopify PageSpeed", "Shopify Ladezeit", "Shopify Performance", "Shopify Speed Optimierung"],
+        "wordCount": 1800
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dd-gossen.com/blog/shopify-pagespeed-optimieren/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Was ist ein guter PageSpeed-Score für Shopify?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ein Score von 90+ auf Desktop und 70+ auf Mobile gilt als sehr gut für Shopify-Shops. Die meisten Shopify-Shops erreichen ohne Optimierung nur 30–50 auf Mobile. Mit den richtigen Maßnahmen – Bildoptimierung, App-Reduktion und Code-Cleanup – sind 80–95 auf Mobile realistisch."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Warum ist mein Shopify-Shop so langsam?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Die häufigsten Ursachen sind: zu viele installierte Apps (auch deaktivierte hinterlassen oft Script-Reste), unkomprimierte Bilder im PNG- oder JPEG-Format, zu viele Third-Party-Scripts wie Tracking-Pixel und Chat-Widgets sowie ein aufgeblähtes Theme mit ungenutzten Features."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Beeinflusst PageSpeed mein Google-Ranking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, seit 2021 sind die Core Web Vitals (LCP, FID/INP, CLS) ein offizieller Google-Ranking-Faktor. Langsame Shops werden in den Suchergebnissen benachteiligt. Zudem steigt die Absprungrate bei langen Ladezeiten – laut Google verlassen 53 % der Nutzer eine Seite, die länger als 3 Sekunden lädt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Welche Shopify-Apps verlangsamen meinen Shop am meisten?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Am stärksten bremsen Apps, die eigenes JavaScript in den Frontend-Code injizieren: Live-Chat-Widgets, Pop-up-Builder, Bewertungs-Apps mit Sternchen-Overlays, umfangreiche Upsell- und Cross-Sell-Tools sowie Tracking-Apps, die mehrere externe Pixel laden. Prüfe mit dem Browser-DevTools-Tab 'Network', welche Scripts geladen werden."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="https://dd-gossen.com/shopify-freelancer/" class="logo">
+      <img src="../../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+    </a>
+    <div class="header-right-container">
+      <div class="header-cta-container">
+        <a href="#" class="header-cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt anfragen</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main" style="margin-top: 0; padding: 8rem 1rem 4rem;">
+
+    <div class="article-layout">
+
+      <!-- Sticky Sidebar -->
+      <div class="sidebar-column">
+      <aside class="article-sidebar">
+        <div class="sidebar-toc">
+          <h3>Inhaltsverzeichnis</h3>
+          <ul>
+            <li><a href="#warum-speed">Warum PageSpeed wichtig ist</a></li>
+            <li><a href="#messen">PageSpeed richtig messen</a></li>
+            <li><a href="#bilder">Bilder optimieren</a></li>
+            <li><a href="#apps">App-Ballast reduzieren</a></li>
+            <li><a href="#code">Theme-Code aufräumen</a></li>
+            <li><a href="#fonts">Schriften optimieren</a></li>
+            <li><a href="#third-party">Third-Party-Scripts</a></li>
+            <li><a href="#fazit">Fazit</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-cta">
+          <p>Shop zu langsam? Ich optimiere deinen Shopify-PageSpeed.</p>
+          <a href="https://dd-gossen.com/shopify-optimierung/">Jetzt anfragen &rarr;</a>
+        </div>
+      </aside>
+      </div><!-- /.sidebar-column -->
+
+      <!-- Main Content -->
+      <div class="article-main">
+        <div class="article-card">
+
+          <!-- Meta Info -->
+          <div class="article-meta">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              24.03.26
+            </span>
+            <span class="meta-item meta-lesezeit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              8 Min. Lesezeit
+            </span>
+            <span class="meta-tag">Performance</span>
+            <span class="meta-tag">Shopify</span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="article-title" style="text-align: left; margin: 0 0 1.5rem 0; font-size: 2.4rem; max-width: 100%; padding: 0;">Shopify PageSpeed optimieren: So erreichst du 90+ im Google-Score (2026)</h1>
+
+          <!-- In Kürze (ausklappbar, SEO-freundlich) -->
+          <details class="article-summary">
+            <summary>Artikel in Kürze</summary>
+            <ul>
+              <li><strong>Warum PageSpeed?</strong> Schnelle Shops ranken besser, konvertieren mehr und haben niedrigere Absprungraten.</li>
+              <li><strong>Richtig messen:</strong> Google PageSpeed Insights + Lighthouse im Inkognito-Modus für verlässliche Werte.</li>
+              <li><strong>Bilder:</strong> WebP-Format nutzen, Lazy Loading aktivieren, Bildgrößen exakt an die Darstellung anpassen.</li>
+              <li><strong>Apps & Code:</strong> Ungenutzte Apps restlos entfernen, Theme-Code aufräumen, Critical CSS inline laden.</li>
+              <li><strong>Fonts & Scripts:</strong> font-display: swap setzen, Third-Party-Scripts verzögert laden oder eliminieren.</li>
+            </ul>
+          </details>
+
+          <!-- Article Content -->
+          <div class="article-content" style="width: 100%; max-width: 100%; padding: 0; box-sizing: border-box; margin: 0;">
+
+            <p>Ein langsamer Shopify-Shop kostet dich bares Geld. Jede zusätzliche Sekunde Ladezeit senkt die <a href="https://dd-gossen.com/blog/shopify-checkout-optimieren/">Conversion-Rate</a> um durchschnittlich 7 %. Google bestraft langsame Seiten mit schlechteren Rankings. Und deine Kunden? Die sind weg, bevor die Seite überhaupt geladen hat.</p>
+
+            <p>In diesem Artikel zeige ich dir Schritt für Schritt, wie du deinen Shopify PageSpeed auf 90+ bringst. Keine theoretischen Ratschläge, sondern konkrete Maßnahmen, die du heute umsetzen kannst. Dabei gehe ich ehrlich auf die Grenzen von Shopify ein und konzentriere mich auf das, was du als Shop-Betreiber tatsächlich kontrollieren kannst.</p>
+
+            <!-- Section 1 -->
+            <h2 id="warum-speed">Warum PageSpeed für Shopify wichtig ist</h2>
+
+            <p>PageSpeed ist kein nettes Extra. Seit 2021 sind die Core Web Vitals ein offizieller Google-Ranking-Faktor. Das bedeutet: Wenn dein Shop langsam lädt, wirst du in den Suchergebnissen von schnelleren Konkurrenten überholt. Und zwar unabhängig davon, wie gut dein <a href="https://dd-gossen.com/blog/shopify-seo-ohne-app/">Shopify SEO</a> sonst ist.</p>
+
+            <p>Die drei Core Web Vitals, die Google misst, sind:</p>
+
+            <ul>
+              <li><strong>LCP (Largest Contentful Paint):</strong> Wie schnell wird das größte sichtbare Element geladen? Zielwert: unter 2,5 Sekunden.</li>
+              <li><strong>INP (Interaction to Next Paint):</strong> Wie schnell reagiert die Seite auf Nutzer-Interaktionen? Zielwert: unter 200 Millisekunden.</li>
+              <li><strong>CLS (Cumulative Layout Shift):</strong> Wie stabil bleibt das Layout beim Laden? Zielwert: unter 0,1.</li>
+            </ul>
+
+            <p>Dazu kommt der wirtschaftliche Aspekt: Laut Google verlassen 53 % der mobilen Nutzer eine Seite, die länger als 3 Sekunden lädt. Bei einem Shop mit 10.000 Besuchern pro Monat und einer durchschnittlichen Bestellhöhe von 80 Euro kann eine Sekunde Ladezeit-Verbesserung mehrere tausend Euro pro Monat ausmachen.</p>
+
+            <p>Eine wichtige Einschränkung vorweg: Bei Shopify hast du keinen Zugriff auf den Server. Du kannst weder das Hosting ändern noch serverseitige Caching-Strategien anpassen. Shopify verwendet ein CDN und übernimmt die Infrastruktur komplett. Das heißt: Du musst dich auf die Frontend-Optimierung konzentrieren. Und genau da liegt das größte Potenzial.</p>
+
+            <!-- Section 2 -->
+            <h2 id="messen">PageSpeed richtig messen</h2>
+
+            <p>Bevor du optimierst, musst du wissen, wo du stehst. Und du musst korrekt messen, denn falsche Messwerte führen zu falschen Prioritäten.</p>
+
+            <h3>Die richtigen Tools</h3>
+
+            <p><strong>Google PageSpeed Insights</strong> (pagespeed.web.dev) ist das wichtigste Tool. Es zeigt dir sowohl Labordaten (simulierte Tests) als auch Felddaten (echte Nutzerdaten aus dem Chrome UX Report). Die Felddaten sind entscheidend, denn sie zeigen, wie dein Shop in der Praxis performt.</p>
+
+            <p><strong>Lighthouse</strong> in den Chrome DevTools liefert die detaillierteste Analyse. Öffne dafür ein Inkognito-Fenster (damit Browser-Extensions das Ergebnis nicht verfälschen), navigiere zu deinem Shop und starte unter dem Tab "Lighthouse" einen Test. Teste immer im Mobile-Modus, denn Google bewertet Mobile-First.</p>
+
+            <h3>So misst du richtig</h3>
+
+            <ul>
+              <li>Immer im <strong>Inkognito-Modus</strong> testen (keine Extensions, kein Cache)</li>
+              <li><strong>Mobile</strong> als Testgerät wählen (Google nutzt Mobile-First-Indexing)</li>
+              <li>Mehrere Seiten testen: Startseite, eine Produktseite, eine Collection-Seite</li>
+              <li>Mindestens <strong>3 Messungen</strong> pro Seite durchführen und den Durchschnitt nehmen</li>
+              <li>Felddaten in PageSpeed Insights priorisieren, wenn vorhanden</li>
+            </ul>
+
+            <p>Ein häufiger Fehler: Nur die Startseite testen. Produktseiten laden oft deutlich langsamer, weil sie mehr Bilder, Bewertungen und App-Widgets enthalten. Teste immer deine am meisten besuchten Seiten.</p>
+
+            <!-- Section 3 -->
+            <h2 id="bilder">Bilder optimieren: WebP und Lazy Loading</h2>
+
+            <p>Bilder sind in den meisten Shopify-Shops der größte Performance-Killer. Sie machen häufig 60–80 % des gesamten Seitengewichts aus. Die gute Nachricht: Hier kannst du am schnellsten die größten Verbesserungen erzielen.</p>
+
+            <h3>WebP-Format nutzen</h3>
+
+            <p>Shopify wandelt hochgeladene Bilder automatisch in WebP um, wenn der Browser es unterstützt. Das spart im Vergleich zu JPEG 25–35 % Dateigröße bei gleicher Qualität. Damit das funktioniert, musst du die Bilder über Shopifys CDN laden lassen und darfst keine hartcodierten Bild-URLs verwenden.</p>
+
+            <p>In deinem Theme-Code solltest du immer die Liquid-Filter <code>image_url</code> oder <code>img_url</code> verwenden:</p>
+
+            <blockquote>
+              Statt einer festen URL wie /images/produkt.jpg nutze immer {{ product.featured_image | image_url: width: 800 }} – so liefert Shopify automatisch das optimale Format und die richtige Größe.
+            </blockquote>
+
+            <h3>Lazy Loading aktivieren</h3>
+
+            <p>Bilder, die nicht im sichtbaren Bereich liegen, sollten erst geladen werden, wenn der Nutzer zu ihnen scrollt. Das reduziert die initiale Ladezeit drastisch. In HTML geht das mit dem Attribut <code>loading="lazy"</code>:</p>
+
+            <p>Shopifys aktuelle OS-2.0-Themes (Dawn, Craft, Sense) unterstützen Lazy Loading von Haus aus. Prüfe in deinem Theme, ob es aktiv ist. Bei älteren Themes oder Custom-Themes musst du es manuell nachrüsten.</p>
+
+            <h3>Bildgrößen richtig setzen</h3>
+
+            <ul>
+              <li><strong>Produktbilder:</strong> Maximal 2048 x 2048 px, für die meisten Shops reichen 1200 x 1200 px</li>
+              <li><strong>Hero-Banner:</strong> 1920 x 800 px als Maximum, komprimiert auf unter 200 KB</li>
+              <li><strong>Collection-Thumbnails:</strong> 600 x 600 px sind ausreichend</li>
+              <li>Verwende <code>width</code> und <code>height</code> Attribute, um CLS (Layout-Shift) zu vermeiden</li>
+              <li>Nutze das <code>srcset</code>-Attribut für responsive Bilder</li>
+            </ul>
+
+            <p>Wichtig: Lade nie ein 4000 px breites Bild hoch, wenn es maximal bei 800 px dargestellt wird. Shopify skaliert zwar automatisch, aber der Ausgangswert beeinflusst die Qualitätsstufen. Exportiere Bilder vor dem Upload in einer sinnvollen Maximalgröße.</p>
+
+            <!-- Section 4 -->
+            <h2 id="apps">App-Ballast reduzieren</h2>
+
+            <p>Shopify-Apps sind praktisch, aber jede App, die Frontend-Code injiziert, verlangsamt deinen Shop. Das Problem: Viele Shop-Betreiber installieren Apps, testen sie kurz und deinstallieren sie wieder. Was dabei oft zurückbleibt, sind Script-Fragmente im Theme-Code, die weiterhin bei jedem Seitenaufruf geladen werden.</p>
+
+            <h3>So findest du App-Leichen</h3>
+
+            <ul>
+              <li>Öffne die Chrome DevTools (F12) und gehe zum Tab <strong>"Network"</strong></li>
+              <li>Lade deine Startseite neu und filtere nach <strong>"JS"</strong></li>
+              <li>Sortiere nach Größe und prüfe, welche Scripts von externen Domains geladen werden</li>
+              <li>Vergleiche die Liste mit deinen aktuell installierten Apps</li>
+              <li>Finde Scripts, die zu Apps gehören, die du nicht mehr nutzt</li>
+            </ul>
+
+            <h3>App-Reste entfernen</h3>
+
+            <p>Deinstalliere zuerst die App über das Shopify-Admin. Prüfe danach im Theme-Code unter <strong>"Online Store > Themes > Bearbeiten > Code"</strong>, ob Reste zurückgeblieben sind. Suche in den Dateien <code>theme.liquid</code>, <code>snippets/</code> und <code>assets/</code> nach dem App-Namen oder der Domain des App-Anbieters.</p>
+
+            <p>Als Faustregel: Jede App, die du nicht aktiv nutzt und die einen messbaren Nutzen bringt, sollte raus. Viele Funktionen, die Apps bieten, lassen sich auch mit nativem Shopify-Bordmitteln oder ein paar Zeilen Custom-Code lösen.</p>
+
+            <!-- Inline CTA 1 -->
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Performance-Audit für deinen Shop?</strong>
+                <span>Ich analysiere deinen Shopify-Shop, finde die Bremsen und optimiere gezielt.</span>
+              </div>
+              <a href="https://dd-gossen.com/shopify-optimierung/">Zum Performance-Audit</a>
+            </div>
+
+            <!-- Section 5 -->
+            <h2 id="code">Theme-Code aufräumen</h2>
+
+            <p>Auch der Theme-Code selbst kann ein Performance-Problem sein. Besonders bei Premium-Themes, die viele Features mitbringen, von denen du nur einen Bruchteil nutzt. Jedes ungenutzte Feature bedeutet ungenutzten Code, der trotzdem geladen wird.</p>
+
+            <h3>Critical CSS inline laden</h3>
+
+            <p>Critical CSS bedeutet: Der CSS-Code, der für den sichtbaren Bereich (Above the Fold) nötig ist, wird direkt im HTML-Dokument eingebettet, statt über eine externe Datei geladen zu werden. Das eliminiert einen Render-Blocking-Request und beschleunigt den First Contentful Paint.</p>
+
+            <p>In Shopify kannst du das umsetzen, indem du die wichtigsten Styles in einem <code>&lt;style&gt;</code>-Tag im <code>&lt;head&gt;</code> deiner <code>theme.liquid</code> platzierst. Den Rest des CSS lädst du per <code>media="print" onload="this.media='all'"</code> asynchron nach.</p>
+
+            <h3>JavaScript optimieren</h3>
+
+            <ul>
+              <li><strong>Defer:</strong> Setze <code>defer</code> auf alle Script-Tags, die nicht sofort gebraucht werden</li>
+              <li><strong>Async:</strong> Nutze <code>async</code> für unabhängige Scripts (z. B. Analytics)</li>
+              <li><strong>Entferne ungenutzten Code:</strong> Viele Themes laden jQuery, obwohl es nicht mehr nötig ist</li>
+              <li><strong>Minifiziere:</strong> Shopify minifiziert CSS/JS nicht automatisch. Nutze minifizierte Versionen deiner Custom-Dateien</li>
+            </ul>
+
+            <h3>Liquid-Code optimieren</h3>
+
+            <p>Shopifys Template-Sprache Liquid wird serverseitig gerendert. Ineffizienter Liquid-Code erhöht die Server-Response-Time. Vermeide verschachtelte Schleifen, nutze <code>assign</code> statt wiederholter Berechnungen und begrenze die Anzahl der Produkte in Collection-Schleifen mit <code>limit</code>.</p>
+
+            <!-- Section 6 -->
+            <h2 id="fonts">Schriften optimieren</h2>
+
+            <p>Custom Fonts sind einer der am meisten unterschätzten Performance-Faktoren. Eine einzelne Schriftfamilie mit mehreren Gewichtungen kann leicht 200–500 KB ausmachen. Das ist mehr als manches Produktbild.</p>
+
+            <h3>font-display: swap</h3>
+
+            <p>Die wichtigste Maßnahme: Setze <code>font-display: swap</code> in deiner <code>@font-face</code>-Deklaration. Damit zeigt der Browser sofort eine System-Schrift an, während die Custom Font im Hintergrund lädt. Der Nutzer sieht sofort Text statt einer leeren Seite. Das verbessert sowohl LCP als auch die gefühlte Ladegeschwindigkeit erheblich.</p>
+
+            <h3>Weitere Font-Optimierungen</h3>
+
+            <ul>
+              <li><strong>Weniger Gewichtungen:</strong> Lade nur die Font-Weights, die du wirklich brauchst (z. B. 400 und 700 statt 300, 400, 500, 600, 700)</li>
+              <li><strong>WOFF2-Format:</strong> Nutze ausschließlich WOFF2 – es ist das kleinste und wird von allen modernen Browsern unterstützt</li>
+              <li><strong>Preload:</strong> Lade die wichtigste Schrift per <code>&lt;link rel="preload" as="font" type="font/woff2" crossorigin&gt;</code> vor</li>
+              <li><strong>Subsetting:</strong> Wenn du nur lateinische Zeichen brauchst, erstelle ein Font-Subset ohne kyrillische, griechische oder CJK-Zeichen</li>
+              <li><strong>System-Fonts als Fallback:</strong> Definiere eine System-Font-Stack als Fallback, der optisch zur Custom Font passt</li>
+            </ul>
+
+            <p>Wenn du Google Fonts nutzt: Lade sie selbst gehostet statt über das Google CDN. Das spart einen DNS-Lookup und eine zusätzliche TLS-Verbindung. In Shopify lädst du die Font-Dateien einfach unter "Assets" hoch und referenzierst sie in deiner CSS-Datei.</p>
+
+            <!-- Section 7 -->
+            <h2 id="third-party">Third-Party-Scripts kontrollieren</h2>
+
+            <p>Third-Party-Scripts sind neben Bildern der zweite große PageSpeed-Killer in Shopify-Shops. Jedes externe Script bedeutet: DNS-Lookup, TLS-Handshake, Download, Parse, Execute. Und das für jedes einzelne Script.</p>
+
+            <h3>Die üblichen Verdächtigen</h3>
+
+            <ul>
+              <li><strong>Chat-Widgets</strong> (Tidio, Zendesk, Intercom): Laden oft 200–500 KB JavaScript</li>
+              <li><strong>Tracking-Pixel</strong> (Facebook, TikTok, Pinterest): Jeder Pixel ein zusätzlicher Request</li>
+              <li><strong>Bewertungs-Widgets</strong> (Trustpilot, Judge.me): Laden externe CSS und JS</li>
+              <li><strong>Pop-up-Tools</strong> (Privy, Justuno): Blockieren oft das Rendering</li>
+              <li><strong>Analytics-Tools</strong> (Hotjar, Lucky Orange): Zeichnen Nutzerbewegungen auf und brauchen viel JavaScript</li>
+            </ul>
+
+            <h3>Strategien zur Kontrolle</h3>
+
+            <p><strong>Verzögertes Laden:</strong> Lade Third-Party-Scripts nicht sofort, sondern erst nach einer Nutzerinteraktion (Scroll, Klick) oder nach einem Timeout von 3–5 Sekunden. Das verbessert die initialen Core Web Vitals massiv. In der Praxis bedeutet das: Das Chat-Widget erscheint nicht in der ersten Sekunde, sondern nach dem ersten Scroll. Für den Nutzer ist das kaum merkbar, für den PageSpeed-Score macht es einen riesigen Unterschied.</p>
+
+            <p><strong>Konsolidieren:</strong> Nutze den Google Tag Manager, um Tracking-Pixel zu bündeln, statt jedes Script einzeln einzubinden. Das reduziert die Anzahl der HTTP-Requests.</p>
+
+            <p><strong>Hinterfragen:</strong> Brauchst du wirklich Hotjar, wenn du Google Analytics 4 mit Scroll-Tracking hast? Braucht dein Shop wirklich ein Live-Chat-Widget, wenn 95 % der Anfragen per E-Mail kommen? Jedes Script, das du nicht lädst, ist die beste Optimierung.</p>
+
+            <!-- Inline CTA 2 -->
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Professionelle Speed-Optimierung?</strong>
+                <span>Ich identifiziere alle Performance-Bremsen und setze die Optimierung technisch sauber um.</span>
+              </div>
+              <a href="https://dd-gossen.com/#contact">Jetzt anfragen</a>
+            </div>
+
+            <!-- Section 8 -->
+            <h2 id="fazit">Fazit</h2>
+
+            <p>Shopify PageSpeed zu optimieren ist kein einmaliges Projekt, sondern ein fortlaufender Prozess -- und Teil einer ganzheitlichen <a href="https://dd-gossen.com/shopify-optimierung/">Shopify-Optimierung</a>. Mit jeder neuen App, jedem neuen Banner und jedem zusätzlichen Tracking-Pixel riskierst du, Fortschritte wieder zu verlieren. Aber die Grundlagen sind klar und umsetzbar.</p>
+
+            <p>Die wichtigsten Hebel in der Reihenfolge ihres Impacts:</p>
+
+            <ul>
+              <li><strong>Bilder optimieren:</strong> WebP, Lazy Loading, richtige Dimensionen. Das allein kann den Score um 20–30 Punkte heben.</li>
+              <li><strong>Apps aufräumen:</strong> Ungenutzte Apps entfernen, Script-Reste beseitigen. Spart oft 500 KB+ pro Seitenaufruf.</li>
+              <li><strong>Third-Party-Scripts verzögern:</strong> Chat, Tracking und Widgets nach Nutzerinteraktion laden.</li>
+              <li><strong>Fonts optimieren:</strong> font-display: swap, WOFF2, Preload. Verbessert LCP spürbar.</li>
+              <li><strong>Theme-Code aufräumen:</strong> Critical CSS, defer/async für JavaScript, ungenutzten Code entfernen.</li>
+            </ul>
+
+            <p>Messe deinen Score regelmäßig (mindestens monatlich) und dokumentiere deine Änderungen. So erkennst du sofort, wenn eine neue App oder ein Theme-Update deine Performance verschlechtert. Und vergiss nicht: Der PageSpeed-Score ist ein Richtwert. Entscheidend ist, wie schnell sich dein Shop für echte Nutzer anfühlt. Und vergiss nicht, auch <a href="https://dd-gossen.com/blog/strukturierte-daten-shopify/">strukturierte Daten</a> einzurichten, damit dein schneller Shop auch in den Suchergebnissen auffällt.</p>
+
+            <!-- Final CTA Box -->
+            <div class="cta-box">
+              <h3>Shopify Performance professionell optimieren</h3>
+              <p>Du willst einen schnellen Shop, der bei Google gut rankt und deine Kunden nicht warten lässt? Ich analysiere deinen Shopify-Shop, identifiziere alle Performance-Bremsen und setze die Optimierung technisch sauber um. Lass uns in einem kostenlosen Erstgespräch über deinen Shop sprechen.</p>
+              <a href="#" class="cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt kostenloses Erstgespräch buchen</a>
+            </div>
+
+          </div><!-- /.article-content -->
+
+          <!-- FAQ Section -->
+          <section class="article-faq">
+            <h2 class="faq-title">Häufige Fragen zur Shopify PageSpeed-Optimierung</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>Was ist ein guter PageSpeed-Score für Shopify?</summary>
+                <div>
+                  <p>Ein Score von 90+ auf Desktop und 70+ auf Mobile gilt als sehr gut für Shopify-Shops. Die meisten Shopify-Shops erreichen ohne Optimierung nur 30–50 auf Mobile. Mit den richtigen Maßnahmen – Bildoptimierung, App-Reduktion und Code-Cleanup – sind 80–95 auf Mobile realistisch.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Warum ist mein Shopify-Shop so langsam?</summary>
+                <div>
+                  <p>Die häufigsten Ursachen sind: zu viele installierte Apps (auch deaktivierte hinterlassen oft Script-Reste), unkomprimierte Bilder im PNG- oder JPEG-Format, zu viele Third-Party-Scripts wie Tracking-Pixel und Chat-Widgets sowie ein aufgeblähtes Theme mit ungenutzten Features.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Beeinflusst PageSpeed mein Google-Ranking?</summary>
+                <div>
+                  <p>Ja, seit 2021 sind die Core Web Vitals (LCP, INP, CLS) ein offizieller Google-Ranking-Faktor. Langsame Shops werden in den Suchergebnissen benachteiligt. Zudem steigt die Absprungrate bei langen Ladezeiten – laut Google verlassen 53 % der Nutzer eine Seite, die länger als 3 Sekunden lädt.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Welche Shopify-Apps verlangsamen meinen Shop am meisten?</summary>
+                <div>
+                  <p>Am stärksten bremsen Apps, die eigenes JavaScript in den Frontend-Code injizieren: Live-Chat-Widgets, Pop-up-Builder, Bewertungs-Apps mit Sternchen-Overlays, umfangreiche Upsell- und Cross-Sell-Tools sowie Tracking-Apps, die mehrere externe Pixel laden. Prüfe mit dem Browser-DevTools-Tab "Network", welche Scripts geladen werden.</p>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <!-- Author Box – kleine Karte darunter -->
+          <div class="author-box">
+            <h3 class="author-box-title">Autorenbox</h3>
+            <p class="author-bio">Ich helfe Online-Shop-Betreibern dabei, ihren Shopify-Shop aufzubauen, zu optimieren und zu migrieren. Mit über 5 Jahren Erfahrung und 70+ abgeschlossenen Projekten weiß ich, worauf es ankommt – technisch und strategisch.</p>
+            <div class="author-details">
+              <img src="../../Maik-Gossen-ShopifyFreelancer.png" alt="Maik Gossen" class="author-avatar">
+              <div class="author-info">
+                <p class="author-name"><a href="https://dd-gossen.com/" class="author-name-link">Maik Gossen</a></p>
+                <p class="author-role">Shopify Freelancer & Entwickler</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.article-card -->
+      </div><!-- /.article-main -->
+
+    </div><!-- /.article-layout -->
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-name">MAIK GOSSEN</div>
+        <div class="footer-contact-label">Kontakt:</div>
+        <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+        <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+        <div class="footer-social">
+          <a href="mailto:info@dd-gossen.com" title="E-Mail" aria-label="E-Mail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Menü</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/">Übersicht</a></li>
+          <li><a href="https://dd-gossen.com/">Meine Services</a></li>
+          <li><a href="https://dd-gossen.com/blog/">Blog</a></li>
+          <li><a href="https://dd-gossen.com/#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-shop-erstellen/">Shopify Shop erstellen</a></li>
+          <li><a href="https://dd-gossen.com/shopify-migration/">Shopify Migration</a></li>
+          <li><a href="https://dd-gossen.com/shopify-optimierung/">Shopify Optimierung</a></li>
+          <li><a href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/">Widerrufsbutton einbauen lassen</a></li>
+          <li><a href="https://dd-gossen.com/blog/shopify-freelancer-deutschland/">Shopify Freelancer Deutschland</a></li>
+          <li><a href="https://dd-gossen.com/#competencies">Kompetenzen</a></li>
+          <li><a href="https://dd-gossen.com/#projects">Portfolio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Schnellzugriff</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/#contact">Kostenloses Erstgespräch</a></li>
+          <li><a href="https://dd-gossen.com/#about-me">Über mich</a></li>
+          <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://dd-gossen.com/impressum.html">Impressum</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/datenschutz.html">Datenschutz</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/agb.html">AGB</a>
+      <span class="footer-sep">|</span>
+      <a href="#" id="openCookieSettings">Cookie-Einstellungen</a>
+      <span class="footer-sep">|</span>
+      <span>&copy; 2025 Maik Gossen</span>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll behavior
+    (function() {
+      var header = document.querySelector('.header');
+      if (!header) return;
+      let lastScrollTop = 0;
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        header.style.background = scrollTop > 100 ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.15)';
+        if (scrollTop > 100) {
+          header.classList.toggle('hidden', scrollTop > lastScrollTop);
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+      });
+    })();
+
+    // Sync sidebar sticky-top with header visibility
+    (function() {
+      const header = document.querySelector('.header');
+      if (!header) return;
+      const root = document.documentElement;
+      function update() {
+        root.style.setProperty('--sidebar-top',
+          header.classList.contains('hidden') ? '24px' : '110px');
+      }
+      new MutationObserver(update).observe(header, { attributes: true, attributeFilter: ['class'] });
+      update();
+    })();
+
+    // Active TOC link on scroll
+    (function() {
+      const sections = document.querySelectorAll('.article-content h2[id]');
+      const tocLinks = document.querySelectorAll('.sidebar-toc a');
+      if (!sections.length || !tocLinks.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.sidebar-toc a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+
+      sections.forEach(section => observer.observe(section));
+    })();
+  </script>
+
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+    function initCalUI() {
+      if (window.Cal && window.Cal.ns && window.Cal.ns.erstgespraech) {
+        Cal.ns.erstgespraech("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      } else { setTimeout(initCalUI, 100); }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCalUI);
+    } else { initCalUI(); }
+  </script>
+
+</body>
+</html>

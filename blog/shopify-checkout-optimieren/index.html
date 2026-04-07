@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopify Checkout optimieren: 9 Tipps für mehr Conversions (2026) | DD-Gossen</title>
+  <meta name="description" content="Shopify Checkout optimieren ✓ 9 bewährte Strategien für höhere Conversion-Rates ✓ Express-Checkout, Trust-Signale & One-Page-Checkout ✓ Praxis-Guide 2026">
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../article-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Two-column layout */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+
+    /* Grid column wrapper – stretches to full row height so sticky works */
+    .sidebar-column {
+      align-self: stretch;
+    }
+
+    /* Sidebar – sticky inside the full-height column */
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      position: sticky;
+      top: var(--sidebar-top, 110px);
+      transition: top 0.3s ease;
+    }
+
+    /* Content column starts at top, not stretched */
+    .article-main {
+      align-self: start;
+      min-width: 0;
+      width: 100%;
+    }
+
+    .sidebar-toc {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .sidebar-toc h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid rgba(35,126,181,0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sidebar-toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .sidebar-toc a {
+      display: block;
+      font-size: 0.88rem;
+      color: #374151;
+      text-decoration: none;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      line-height: 1.4;
+    }
+
+    .sidebar-toc a:hover,
+    .sidebar-toc a.active {
+      background: rgba(35,126,181,0.1);
+      color: #237eb5;
+    }
+
+    .sidebar-cta {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(15,23,42,0.25);
+    }
+
+    .sidebar-cta p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
+      margin: 0 0 1rem 0;
+      line-height: 1.5;
+    }
+
+    .sidebar-cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+      padding: 0.65rem 1.2rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .sidebar-cta a:hover {
+      background: linear-gradient(135deg, #0066e6 0%, #004999 100%);
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Main article area */
+    .article-main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Restore card styling */
+    .article-card {
+      max-width: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-sizing: border-box;
+    }
+
+    /* Hero image – override article-styles.css max-width:600px */
+    .article-hero-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      display: block;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Inline CTA */
+    .inline-cta {
+      background: linear-gradient(135deg, rgba(35,126,181,0.08) 0%, rgba(35,126,181,0.15) 100%);
+      border: 1px solid rgba(35,126,181,0.25);
+      border-left: 4px solid #237eb5;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .inline-cta-text {
+      flex: 1;
+    }
+
+    .inline-cta-text strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem;
+      color: #0f172a;
+      margin-bottom: 0.3rem;
+    }
+
+    .inline-cta-text span {
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    .inline-cta a {
+      display: inline-block;
+      background: #0f172a;
+      color: white !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none !important;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .inline-cta a:hover {
+      background: #1e293b;
+    }
+
+    /* Author box – kleine Karte unter FAQ, ohne Hintergrund */
+    .author-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: transparent !important;
+      border: 1px solid rgba(35,126,181,0.15);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    .author-box-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .author-bio {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.5;
+      margin: 0 0 1rem 0;
+    }
+
+    .author-details {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-name-link {
+      color: #333;
+      text-decoration: none;
+      font-weight: inherit;
+    }
+
+    .author-name-link:hover {
+      color: #333;
+      text-decoration: none;
+    }
+
+    /* In Kürze – linksbündig, unscheinbar, volle Breite */
+    .article-summary {
+      margin: 0 0 2rem 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .article-summary summary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #64748b;
+      padding: 0.25rem 0 0.4rem 0;
+      cursor: pointer;
+      list-style: none;
+      border-bottom: 1px solid rgba(35,126,181,0.15);
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+
+    .article-summary summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .article-summary summary::after {
+      content: '\25BC';
+      float: right;
+      font-size: 0.6rem;
+      opacity: 0.4;
+    }
+
+    .article-summary[open] summary::after {
+      content: '\25B2';
+    }
+
+    .article-summary ul {
+      margin: 0.5rem 0 0 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+    }
+
+    .article-summary li {
+      padding: 0.3rem 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #64748b;
+      border-bottom: 1px solid rgba(35,126,181,0.06);
+    }
+
+    .article-summary li:last-child {
+      border-bottom: none;
+    }
+
+    /* FAQ Section */
+    .article-faq {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(35,126,181,0.15);
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+
+    .faq-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .faq-item {
+      padding: 0;
+      margin: 0;
+      border-bottom: 1px solid rgba(35,126,181,0.12);
+      width: 100%;
+      min-width: 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item summary {
+      font-weight: 600;
+      color: #0f172a;
+      padding: 1rem 0;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      float: right;
+      font-size: 1.2rem;
+      color: #237eb5;
+    }
+
+    .faq-item[open] summary::after {
+      content: '\2212';
+    }
+
+    .faq-item p {
+      margin: 0 0 1rem 0;
+      padding: 0 0 1rem 0;
+      line-height: 1.6;
+      color: #374151;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    .author-avatar {
+      width: 48px !important;
+      height: 48px !important;
+      max-width: 48px !important;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      flex-shrink: 0;
+      border: none;
+      margin: 0 !important;
+    }
+
+    .author-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .author-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+    }
+
+    .author-role {
+      font-size: 0.875rem;
+      color: #777;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    /* Blog meta info */
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.88rem;
+      color: #6b7280;
+      margin-bottom: 0rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .meta-tag {
+      background: rgba(35,126,181,0.1);
+      color: #237eb5;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        padding: 0 0.2rem;
+        gap: 0.8rem;
+      }
+
+      /* Disable sticky on mobile */
+      .article-sidebar {
+        position: static;
+        top: auto;
+        transition: none;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      /* Compact TOC on mobile */
+      .sidebar-toc {
+        padding: 0.8rem 1rem;
+        border-radius: 12px;
+        margin-bottom: 0;
+      }
+
+      .sidebar-toc h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .sidebar-toc ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem 0;
+        margin: 0;
+      }
+
+      .sidebar-toc li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .sidebar-toc li::before {
+        display: none;
+      }
+
+      .sidebar-toc a {
+        font-size: 0.88rem;
+        padding: 0.25rem 0;
+        background: transparent;
+        border-radius: 0;
+        white-space: normal;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      .sidebar-toc a:hover {
+        background: transparent;
+        text-decoration: underline;
+      }
+
+      /* Hide CTA on mobile */
+      .sidebar-cta {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .inline-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+
+      .author-box {
+        padding: 1rem 1.25rem;
+      }
+
+      .author-box-title {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .author-bio {
+        font-size: 0.93rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .author-details {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .article-hero-img {
+        border-radius: 12px;
+        margin-bottom: 0.8rem;
+      }
+
+      .article-meta {
+        justify-content: flex-start;
+        text-align: left;
+        align-self: flex-start;
+        width: 100%;
+      }
+
+      .article-faq {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+      }
+
+      .faq-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .faq-item summary {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+      }
+
+      .faq-item p {
+        margin: 0 0 0.5rem 0;
+        padding: 0 0 0.5rem 0;
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+    }
+  </style>
+
+  <!-- Strukturierte Daten (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dd-gossen.com/#organization",
+        "name": "DD-Gossen",
+        "url": "https://dd-gossen.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dd-gossen.com/Logo.png"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/maik-gossen"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dd-gossen.com/#author",
+        "name": "Maik Gossen",
+        "url": "https://dd-gossen.com/",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://dd-gossen.com/Maik-Gossen-ShopifyFreelancer.png",
+          "width": 400,
+          "height": 400
+        },
+        "jobTitle": "Shopify Freelancer & Entwickler",
+        "worksFor": {
+          "@id": "https://dd-gossen.com/#organization"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://dd-gossen.com/blog/shopify-checkout-optimieren/#article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dd-gossen.com/blog/shopify-checkout-optimieren/"
+        },
+        "headline": "Shopify Checkout optimieren: 9 Tipps für mehr Conversions (2026)",
+        "description": "Shopify Checkout optimieren: 9 bewährte Strategien für höhere Conversion-Rates. Express-Checkout, Trust-Signale und One-Page-Checkout im Praxis-Guide 2026.",
+        "datePublished": "2026-04-06",
+        "dateModified": "2026-04-06",
+        "author": {
+          "@id": "https://dd-gossen.com/#author"
+        },
+        "publisher": {
+          "@id": "https://dd-gossen.com/#organization",
+          "name": "DD-Gossen",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://dd-gossen.com/Logo.png",
+            "width": 600,
+            "height": 60
+          }
+        },
+        "articleSection": "Conversion",
+        "keywords": ["Shopify Checkout optimieren", "Checkout Conversion Rate", "Shopify Checkout anpassen", "Checkout Optimierung"],
+        "wordCount": 1800
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dd-gossen.com/blog/shopify-checkout-optimieren/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Kann ich den Shopify Checkout individuell anpassen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, seit der Einführung von Checkout Extensibility bietet Shopify umfangreiche Anpassungsmöglichkeiten. Mit Shopify Plus kannst du über Checkout-UI-Extensions eigene Felder, Upselling-Blöcke und Branding-Elemente hinzufügen. Auf Standard-Plänen lassen sich Farben, Logo und Schriftart über die Checkout-Einstellungen anpassen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was ist eine gute Checkout-Conversion-Rate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Eine gute Checkout-Conversion-Rate liegt zwischen 45 % und 65 %. Das bedeutet, dass von allen Kunden, die den Checkout starten, mindestens die Hälfte den Kauf auch abschließt. Top-Performer erreichen Werte über 70 %. Wenn deine Rate unter 40 % liegt, besteht dringender Optimierungsbedarf."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Lohnt sich Shopify Plus nur wegen des Checkouts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Shopify Plus lohnt sich vor allem dann, wenn du fortgeschrittene Checkout-Anpassungen benötigst – etwa benutzerdefinierte Felder, spezielle Rabattlogiken oder ein vollständig gebrandetes Checkout-Erlebnis. Für kleinere Shops reichen die Standard-Checkout-Optimierungen oft aus. Ab einem Umsatz von ca. 80.000 EUR pro Monat kann sich der Umstieg rechnen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie aktiviere ich Shop Pay in meinem Shopify-Shop?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Shop Pay aktivierst du unter Einstellungen > Zahlungen > Shopify Payments > Verwalten. Dort findest du die Option 'Shop Pay'. Nach der Aktivierung können Kunden ihre Adress- und Zahlungsdaten speichern und bei zukünftigen Bestellungen mit einem Klick bezahlen. Shop Pay ist für alle Shopify-Pläne mit Shopify Payments verfügbar."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="https://dd-gossen.com/shopify-freelancer/" class="logo">
+      <img src="../../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+    </a>
+    <div class="header-right-container">
+      <div class="header-cta-container">
+        <a href="#" class="header-cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt anfragen</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main" style="margin-top: 0; padding: 8rem 1rem 4rem;">
+
+    <div class="article-layout">
+
+      <!-- Sticky Sidebar -->
+      <div class="sidebar-column">
+      <aside class="article-sidebar">
+        <div class="sidebar-toc">
+          <h3>Inhaltsverzeichnis</h3>
+          <ul>
+            <li><a href="#warum-checkout">Warum der Checkout entscheidend ist</a></li>
+            <li><a href="#analyse">Checkout-Analyse: Wo verlierst du Kunden?</a></li>
+            <li><a href="#express-checkout">Express-Checkout aktivieren</a></li>
+            <li><a href="#vertrauen">Trust-Signale im Checkout</a></li>
+            <li><a href="#formular">Formularfelder reduzieren</a></li>
+            <li><a href="#mobile">Mobile Checkout optimieren</a></li>
+            <li><a href="#upselling">Post-Purchase Upselling</a></li>
+            <li><a href="#fazit">Fazit</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-cta">
+          <p>Mehr Umsatz durch besseren Checkout?</p>
+          <a href="https://dd-gossen.com/shopify-optimierung/">Jetzt optimieren lassen →</a>
+        </div>
+      </aside>
+      </div><!-- /.sidebar-column -->
+
+      <!-- Main Content -->
+      <div class="article-main">
+        <div class="article-card">
+
+          <!-- Meta Info -->
+          <div class="article-meta">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              06.04.26
+            </span>
+            <span class="meta-item meta-lesezeit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              9 Min. Lesezeit
+            </span>
+            <span class="meta-tag">Conversion</span>
+            <span class="meta-tag">Shopify</span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="article-title" style="text-align: left; margin: 0 0 1.5rem 0; font-size: 2.4rem; max-width: 100%; padding: 0;">Shopify Checkout optimieren: 9 Tipps für mehr Conversions (2026)</h1>
+
+          <!-- In Kürze (ausklappbar, SEO-freundlich) -->
+          <details class="article-summary">
+            <summary>Artikel in Kürze</summary>
+            <ul>
+              <li><strong>Checkout = Umsatzhebel:</strong> Rund 70 % aller Warenkörbe werden abgebrochen – die meisten im Checkout.</li>
+              <li><strong>Express-Checkout:</strong> Shop Pay, Apple Pay und Google Pay verkürzen den Kaufprozess auf wenige Sekunden.</li>
+              <li><strong>Trust-Signale:</strong> Sicherheitsbadges, Gütesiegel und transparente Versandinfos senken die Abbruchrate.</li>
+              <li><strong>Mobile First:</strong> Über 70 % aller Shopify-Besucher kommen mobil – der mobile Checkout muss reibungslos funktionieren.</li>
+              <li><strong>Post-Purchase:</strong> Upselling nach dem Kauf steigert den AOV ohne Conversion-Risiko.</li>
+            </ul>
+          </details>
+
+          <!-- Article Content -->
+          <div class="article-content" style="width: 100%; max-width: 100%; padding: 0; box-sizing: border-box; margin: 0;">
+
+            <p>Der Checkout ist die letzte Hürde zwischen einem interessierten Besucher und einem zahlenden Kunden. Trotzdem behandeln viele Shopify-Shop-Betreiber ihn stiefmütterlich: Das Design wird perfektioniert, die Produktseiten werden <a href="https://dd-gossen.com/shopify-optimierung/">optimiert</a>, Social Ads laufen – aber der Checkout bleibt im Standardzustand. Das ist ein teurer Fehler.</p>
+
+            <p>Studien zeigen, dass die durchschnittliche Warenkorbabbruchrate im E-Commerce bei rund 70 % liegt. Ein großer Teil dieser Abbrüche passiert direkt im Checkout-Prozess. Das bedeutet: Selbst kleine Verbesserungen am Checkout können einen spürbaren Einfluss auf deinen Umsatz haben. In diesem Guide zeige ich dir neun bewährte Strategien, mit denen du deinen Shopify Checkout optimieren und deine Conversion-Rate steigern kannst.</p>
+
+            <!-- Section 1 -->
+            <h2 id="warum-checkout">Warum der Checkout entscheidend ist</h2>
+
+            <p>Der Checkout ist der Moment der Wahrheit. Dein Besucher hat sich für ein Produkt entschieden, es in den Warenkorb gelegt und den Kaufprozess gestartet. Jetzt trennt ihn nur noch ein Formular vom Abschluss – und genau hier verlierst du die meisten potenziellen Kunden.</p>
+
+            <p>Die häufigsten Gründe für Checkout-Abbrüche sind dabei keine Überraschung:</p>
+
+            <ul>
+              <li><strong>Unerwartete Kosten:</strong> Versandkosten, Steuern oder Gebühren, die erst im Checkout sichtbar werden</li>
+              <li><strong>Pflicht zur Kontoerstellung:</strong> Kunden wollen nicht erst ein Konto anlegen, bevor sie kaufen können</li>
+              <li><strong>Zu komplizierter Prozess:</strong> Zu viele Schritte, zu viele Felder, unklare Navigation</li>
+              <li><strong>Mangelndes Vertrauen:</strong> Fehlende Sicherheitssignale oder unbekannte Zahlungsanbieter</li>
+              <li><strong>Fehlende Zahlungsmethoden:</strong> Die bevorzugte Zahlungsart ist nicht verfügbar</li>
+            </ul>
+
+            <p>Die gute Nachricht: Jeder dieser Punkte lässt sich in Shopify gezielt optimieren. Shopify hat mit der Einführung von Checkout Extensibility und dem One-Page-Checkout die Grundlage dafür geschaffen, dass du als Shop-Betreiber deutlich mehr Kontrolle über das Checkout-Erlebnis hast als je zuvor.</p>
+
+            <!-- Section 2 -->
+            <h2 id="analyse">Checkout-Analyse: Wo verlierst du Kunden?</h2>
+
+            <p>Bevor du anfängst, Dinge zu ändern, solltest du verstehen, wo genau Kunden abspringen. Optimierung ohne Daten ist Raten – und Raten kostet Geld.</p>
+
+            <h3>Die wichtigsten Kennzahlen</h3>
+
+            <p>Shopify bietet in der Analytics-Sektion bereits hilfreiche Daten. Achte auf diese Metriken:</p>
+
+            <ul>
+              <li><strong>Cart-to-Checkout-Rate:</strong> Wie viele Warenkorb-Besucher starten überhaupt den Checkout?</li>
+              <li><strong>Checkout-Completion-Rate:</strong> Wie viele Checkout-Starter schließen den Kauf ab?</li>
+              <li><strong>Abbruchstelle:</strong> An welchem Schritt im Checkout brechen die meisten Nutzer ab?</li>
+              <li><strong>Geräteverteilung:</strong> Unterscheiden sich die Conversion-Raten zwischen Desktop und Mobile?</li>
+            </ul>
+
+            <p>Neben dem Checkout solltest du auch dein <a href="https://dd-gossen.com/blog/shopify-seo-ohne-app/">Shopify SEO</a> im Blick behalten, um mehr qualifizierten Traffic in den Funnel zu bringen. Ergänzend dazu empfehle ich, Google Analytics 4 mit Enhanced E-Commerce einzurichten. Damit kannst du den Checkout-Funnel detailliert analysieren und sehen, an welcher Stelle wie viele Nutzer abspringen. Heatmap-Tools wie Hotjar oder Microsoft Clarity liefern zusätzliche Insights darüber, wo Nutzer zögern oder verwirrt sind.</p>
+
+            <blockquote>
+              Tipp: Schau dir deine Checkout-Daten mindestens einmal pro Monat an. Trends erkennst du nur über einen längeren Zeitraum – und saisonale Schwankungen können das Bild verzerren.
+            </blockquote>
+
+            <!-- Section 3 -->
+            <h2 id="express-checkout">Express-Checkout aktivieren</h2>
+
+            <p>Der schnellste Weg zu mehr Conversions ist, den Checkout-Prozess massiv abzukürzen. Express-Checkout-Methoden ermöglichen es Kunden, den Kauf mit einem einzigen Klick abzuschließen – ohne Adressformular, ohne manuelle Zahlungsdateneingabe.</p>
+
+            <h3>Shop Pay – Shopifys eigener Express-Checkout</h3>
+
+            <p>Shop Pay ist Shopifys hauseigene Beschleunigungslösung und der am häufigsten genutzte Express-Checkout im gesamten Shopify-Ökosystem. Kunden, die Shop Pay nutzen, haben ihre Adress- und Zahlungsdaten bereits hinterlegt und können mit einem Klick bestellen. Laut Shopify konvertiert Shop Pay bis zu 50 % besser als ein herkömmlicher Guest-Checkout.</p>
+
+            <p>Shop Pay aktivierst du unter Einstellungen > Zahlungen > Shopify Payments. Es ist für alle Shopify-Pläne verfügbar, sofern du Shopify Payments nutzt.</p>
+
+            <h3>Apple Pay und Google Pay</h3>
+
+            <p>Neben Shop Pay solltest du unbedingt Apple Pay und Google Pay aktivieren. Beide Methoden nutzen die auf dem Gerät gespeicherten Zahlungsdaten und bieten Kunden einen extrem schnellen Checkout – besonders auf mobilen Geräten. Die Aktivierung erfolgt ebenfalls über die Shopify-Payments-Einstellungen und ist mit wenigen Klicks erledigt.</p>
+
+            <h3>PayPal Express</h3>
+
+            <p>PayPal bleibt in Deutschland eine der beliebtesten Zahlungsmethoden. Mit PayPal Express können Kunden direkt von der Produktseite oder dem Warenkorb aus den Kauf starten, ohne den regulären Checkout zu durchlaufen. Die Adressdaten werden automatisch von PayPal übernommen.</p>
+
+            <!-- Inline CTA 1 -->
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Checkout-Optimierung gewünscht?</strong>
+                <span>Ich richte Express-Checkout, Trust-Signale und alle Zahlungsarten professionell ein.</span>
+              </div>
+              <a href="https://dd-gossen.com/shopify-optimierung/">Jetzt anfragen</a>
+            </div>
+
+            <!-- Section 4 -->
+            <h2 id="vertrauen">Trust-Signale im Checkout</h2>
+
+            <p>Vertrauen ist im Checkout alles. Ein Kunde, der an der Sicherheit seiner Daten zweifelt, wird den Kauf nicht abschließen – egal wie gut dein Produkt ist. Besonders bei Neukunden und höherpreisigen Produkten spielen Trust-Signale eine entscheidende Rolle.</p>
+
+            <h3>Welche Trust-Signale wirken im Checkout?</h3>
+
+            <ul>
+              <li><strong>SSL-Zertifikat:</strong> Das Schloss-Symbol in der Adressleiste. Shopify stellt es automatisch bereit – aber der Hinweis darauf schadet nicht.</li>
+              <li><strong>Zahlungsanbieter-Logos:</strong> Visa, Mastercard, PayPal, Klarna – zeige, welche sicheren Zahlungsarten du akzeptierst.</li>
+              <li><strong>Gütesiegel:</strong> Trusted Shops, TÜV oder Trustpilot-Bewertungen direkt im Checkout schaffen Sicherheit.</li>
+              <li><strong>Versand- und Rückgabe-Infos:</strong> Transparente Lieferzeiten und eine klare Rückgabepolitik reduzieren die Kaufunsicherheit.</li>
+              <li><strong>Kontaktmöglichkeiten:</strong> Eine sichtbare Telefonnummer oder ein Chat-Widget zeigt: Hier steht ein echtes Unternehmen dahinter.</li>
+            </ul>
+
+            <p>Mit Shopifys Checkout Extensibility kannst du eigene Informationsblöcke, Icons und Hinweise direkt in den Checkout einbauen. Auf Shopify Plus stehen dir dafür Checkout-UI-Extensions zur Verfügung, auf Standard-Plänen kannst du zumindest über die Checkout-Einstellungen grundlegende Branding-Anpassungen vornehmen.</p>
+
+            <!-- Section 5 -->
+            <h2 id="formular">Formularfelder reduzieren</h2>
+
+            <p>Jedes zusätzliche Feld im Checkout ist eine potenzielle Abbruchstelle. Die Faustregel ist einfach: Je weniger Felder, desto höher die Conversion-Rate. Shopify hat das erkannt und den Checkout in den letzten Jahren deutlich verschlankt.</p>
+
+            <h3>Konkrete Maßnahmen</h3>
+
+            <ul>
+              <li><strong>Guest-Checkout aktivieren:</strong> Zwinge Kunden nicht zur Kontoerstellung. In Shopify unter Einstellungen > Checkout > Kundenkonten „Konten sind optional" wählen.</li>
+              <li><strong>Adress-Autovervollständigung nutzen:</strong> Shopify bietet eine integrierte Adressvervollständigung mit Google. Das spart Tipparbeit und reduziert Fehler.</li>
+              <li><strong>Firmenfeld nur bei Bedarf anzeigen:</strong> In den Checkout-Einstellungen kannst du das Firmenfeld auf „optional" oder „ausgeblendet" setzen.</li>
+              <li><strong>Vor- und Nachname zusammenfassen:</strong> Shopify erlaubt die Option „Nur Nachname erforderlich". Prüfe, ob das für deinen Markt sinnvoll ist.</li>
+              <li><strong>Telefonnummer optional machen:</strong> Sofern du sie nicht zwingend für den Versand brauchst, mache sie optional.</li>
+            </ul>
+
+            <p>Shopifys One-Page-Checkout, der seit 2023 für alle Shops verfügbar ist, fasst den gesamten Checkout-Prozess auf einer einzelnen Seite zusammen. Kunden sehen Adresse, Versand und Zahlung auf einen Blick – ohne zwischen Schritten hin und her navigieren zu müssen. Wenn du noch den alten mehrseitigen Checkout nutzt, stelle unbedingt auf den One-Page-Checkout um.</p>
+
+            <!-- Section 6 -->
+            <h2 id="mobile">Mobile Checkout optimieren</h2>
+
+            <p>Über 70 % aller Shopify-Shop-Besucher kommen mittlerweile über mobile Geräte. Gleichzeitig ist die Mobile-Conversion-Rate in den meisten Shops deutlich niedriger als auf dem Desktop – oft auch wegen schlechter <a href="https://dd-gossen.com/blog/shopify-pagespeed-optimieren/">Ladezeiten</a>. Der Grund: Ein Checkout, der auf dem Desktop gut funktioniert, ist auf dem Smartphone oft umständlich zu bedienen.</p>
+
+            <h3>Worauf du achten solltest</h3>
+
+            <ul>
+              <li><strong>Große, gut tippbare Buttons:</strong> Der Kauf-Button muss auf jedem Bildschirm sofort erreichbar und groß genug sein.</li>
+              <li><strong>Automatische Tastatur-Typen:</strong> Bei Telefonnummern die Zifferntastatur, bei E-Mails die E-Mail-Tastatur. Shopify setzt das standardmäßig um.</li>
+              <li><strong>Keine horizontalen Scrolls:</strong> Alle Elemente müssen auf den Viewport passen. Teste auf verschiedenen Geräten.</li>
+              <li><strong>Sticky Kaufen-Button:</strong> Auf der Produktseite und im Warenkorb sollte der CTA immer sichtbar sein.</li>
+              <li><strong>Express-Checkout priorisieren:</strong> Shop Pay, Apple Pay und Google Pay sind auf mobilen Geräten besonders effektiv, weil sie die Eingabe komplett eliminieren.</li>
+            </ul>
+
+            <p>Teste deinen mobilen Checkout regelmäßig selbst – und zwar auf echten Geräten, nicht nur im Browser-DevTools. Gehe den gesamten Prozess durch, vom Produktseite-Aufruf bis zur Bestellbestätigung. Notiere dir jede Stelle, an der du zögerst oder etwas nicht sofort funktioniert.</p>
+
+            <!-- Inline CTA 2 -->
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Conversion-Rate zu niedrig?</strong>
+                <span>Ich analysiere deinen Checkout und setze gezielte Optimierungen um.</span>
+              </div>
+              <a href="https://dd-gossen.com/#contact">Kostenlos beraten lassen</a>
+            </div>
+
+            <!-- Section 7 -->
+            <h2 id="upselling">Post-Purchase Upselling</h2>
+
+            <p>Die meisten Shop-Betreiber fokussieren sich ausschließlich auf den Checkout selbst. Dabei gibt es einen oft übersehenen Hebel, der den durchschnittlichen Bestellwert (AOV) steigern kann, ohne die eigentliche Conversion zu gefährden: Post-Purchase Upselling.</p>
+
+            <h3>Was ist Post-Purchase Upselling?</h3>
+
+            <p>Nach dem erfolgreichen Kaufabschluss – also nach der Zahlung, aber vor der Dankesseite – wird dem Kunden ein ergänzendes Produkt angeboten. Da der Kauf bereits abgeschlossen ist, gibt es kein Risiko, dass der Kunde den ursprünglichen Kauf abbricht. Er kann das Zusatzprodukt mit einem Klick zur Bestellung hinzufügen.</p>
+
+            <h3>So setzt du es in Shopify um</h3>
+
+            <ul>
+              <li><strong>Shopify Plus:</strong> Nutze Checkout-Extensions oder Apps wie ReConvert oder CartHook für maßgeschneiderte Post-Purchase-Flows.</li>
+              <li><strong>Standard-Pläne:</strong> Apps wie AfterSell oder ReConvert bieten Post-Purchase-Upselling auch für Standard-Shopify-Pläne an.</li>
+              <li><strong>Produktauswahl:</strong> Biete ergänzende Produkte an, keine Zufallsauswahl. Wer einen Rucksack kauft, interessiert sich eher für eine Regenhülle als für Socken.</li>
+              <li><strong>Rabattanreiz:</strong> Ein zeitlich begrenztes Angebot (z. B. „Jetzt 20 % Rabatt auf dieses Zubehör") steigert die Annahmerate deutlich.</li>
+            </ul>
+
+            <p>Gut umgesetztes Post-Purchase Upselling kann den AOV um 10–15 % steigern. Bei einem durchschnittlichen Bestellwert von 80 EUR bedeutet das 8–12 EUR mehr pro Bestellung – ohne zusätzliche Akquisitionskosten.</p>
+
+            <!-- Section 8 -->
+            <h2 id="fazit">Fazit</h2>
+
+            <p>Deinen Shopify Checkout zu optimieren ist kein einmaliges Projekt, sondern ein kontinuierlicher Prozess. Die neun Strategien in diesem Guide – von Express-Checkout über Trust-Signale bis hin zu Post-Purchase Upselling – greifen ineinander und verstärken sich gegenseitig.</p>
+
+            <p>Beginne mit den Quick Wins: Aktiviere Shop Pay, Apple Pay und Google Pay, stelle auf den One-Page-Checkout um und reduziere unnötige Formularfelder. Diese Maßnahmen lassen sich in wenigen Stunden umsetzen und zeigen oft bereits nach wenigen Tagen messbare Ergebnisse.</p>
+
+            <p>Anschließend widmest du dich den tieferen Optimierungen: Trust-Signale einbauen, den mobilen Checkout durchleuchten und Post-Purchase Upselling einrichten. Und vor allem: Miss deine Ergebnisse. Nur wer seine Checkout-Daten kennt, kann gezielt verbessern.</p>
+
+            <p>Ein optimierter Checkout macht den Unterschied zwischen einem Shop, der Besucher hat, und einem Shop, der Umsatz macht.</p>
+
+            <!-- Final CTA Box -->
+            <div class="cta-box">
+              <h3>Shopify Checkout professionell optimieren</h3>
+              <p>Du willst das Maximum aus deinem Shopify Checkout herausholen? Ich analysiere deinen aktuellen Checkout, identifiziere Schwachstellen und setze gezielte Optimierungen um – für mehr Conversions und höheren Umsatz. Lass uns in einem kostenlosen Erstgespräch deine Möglichkeiten besprechen.</p>
+              <a href="#" class="cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt kostenloses Erstgespräch buchen</a>
+            </div>
+
+          </div><!-- /.article-content -->
+
+          <!-- FAQ Section -->
+          <section class="article-faq">
+            <h2 class="faq-title">Häufige Fragen zur Shopify Checkout-Optimierung</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>Kann ich den Shopify Checkout individuell anpassen?</summary>
+                <div>
+                  <p>Ja, seit der Einführung von Checkout Extensibility bietet Shopify umfangreiche Anpassungsmöglichkeiten. Mit Shopify Plus kannst du über Checkout-UI-Extensions eigene Felder, Upselling-Blöcke und Branding-Elemente hinzufügen. Auf Standard-Plänen lassen sich Farben, Logo und Schriftart über die Checkout-Einstellungen anpassen.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Was ist eine gute Checkout-Conversion-Rate?</summary>
+                <div>
+                  <p>Eine gute Checkout-Conversion-Rate liegt zwischen 45 % und 65 %. Das bedeutet, dass von allen Kunden, die den Checkout starten, mindestens die Hälfte den Kauf auch abschließt. Top-Performer erreichen Werte über 70 %. Wenn deine Rate unter 40 % liegt, besteht dringender Optimierungsbedarf.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Lohnt sich Shopify Plus nur wegen des Checkouts?</summary>
+                <div>
+                  <p><a href="https://dd-gossen.com/shopify-plus/">Shopify Plus</a> lohnt sich vor allem dann, wenn du fortgeschrittene Checkout-Anpassungen benötigst – etwa benutzerdefinierte Felder, spezielle Rabattlogiken oder ein vollständig gebrandetes Checkout-Erlebnis. Für kleinere Shops reichen die Standard-Checkout-Optimierungen oft aus. Ab einem Umsatz von ca. 80.000 EUR pro Monat kann sich der Umstieg rechnen.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Wie aktiviere ich Shop Pay in meinem Shopify-Shop?</summary>
+                <div>
+                  <p>Shop Pay aktivierst du unter Einstellungen > Zahlungen > Shopify Payments > Verwalten. Dort findest du die Option „Shop Pay". Nach der Aktivierung können Kunden ihre Adress- und Zahlungsdaten speichern und bei zukünftigen Bestellungen mit einem Klick bezahlen. Shop Pay ist für alle Shopify-Pläne mit Shopify Payments verfügbar.</p>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <!-- Author Box – kleine Karte darunter -->
+          <div class="author-box">
+            <h3 class="author-box-title">Autorenbox</h3>
+            <p class="author-bio">Ich helfe Online-Shop-Betreibern dabei, ihren Shopify-Shop aufzubauen, zu optimieren und zu migrieren. Mit über 5 Jahren Erfahrung und 70+ abgeschlossenen Projekten weiß ich, worauf es ankommt – technisch und strategisch.</p>
+            <div class="author-details">
+              <img src="../../Maik-Gossen-ShopifyFreelancer.png" alt="Maik Gossen" class="author-avatar">
+              <div class="author-info">
+                <p class="author-name"><a href="https://dd-gossen.com/" class="author-name-link">Maik Gossen</a></p>
+                <p class="author-role">Shopify Freelancer & Entwickler</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.article-card -->
+      </div><!-- /.article-main -->
+
+    </div><!-- /.article-layout -->
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-name">MAIK GOSSEN</div>
+        <div class="footer-contact-label">Kontakt:</div>
+        <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+        <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+        <div class="footer-social">
+          <a href="mailto:info@dd-gossen.com" title="E-Mail" aria-label="E-Mail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Menü</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/">Übersicht</a></li>
+          <li><a href="https://dd-gossen.com/">Meine Services</a></li>
+          <li><a href="https://dd-gossen.com/blog/">Blog</a></li>
+          <li><a href="https://dd-gossen.com/#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-shop-erstellen/">Shopify Shop erstellen</a></li>
+          <li><a href="https://dd-gossen.com/shopify-migration/">Shopify Migration</a></li>
+          <li><a href="https://dd-gossen.com/shopify-optimierung/">Shopify Optimierung</a></li>
+          <li><a href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/">Widerrufsbutton einbauen lassen</a></li>
+          <li><a href="https://dd-gossen.com/blog/shopify-freelancer-deutschland/">Shopify Freelancer Deutschland</a></li>
+          <li><a href="https://dd-gossen.com/#competencies">Kompetenzen</a></li>
+          <li><a href="https://dd-gossen.com/#projects">Portfolio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Schnellzugriff</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/#contact">Kostenloses Erstgespräch</a></li>
+          <li><a href="https://dd-gossen.com/#about-me">Über mich</a></li>
+          <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://dd-gossen.com/impressum.html">Impressum</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/datenschutz.html">Datenschutz</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/agb.html">AGB</a>
+      <span class="footer-sep">|</span>
+      <a href="#" id="openCookieSettings">Cookie-Einstellungen</a>
+      <span class="footer-sep">|</span>
+      <span>© 2025 Maik Gossen</span>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll behavior
+    (function() {
+      var header = document.querySelector('.header');
+      if (!header) return;
+      let lastScrollTop = 0;
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        header.style.background = scrollTop > 100 ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.15)';
+        if (scrollTop > 100) {
+          header.classList.toggle('hidden', scrollTop > lastScrollTop);
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+      });
+    })();
+
+    // Sync sidebar sticky-top with header visibility
+    (function() {
+      const header = document.querySelector('.header');
+      if (!header) return;
+      const root = document.documentElement;
+      function update() {
+        root.style.setProperty('--sidebar-top',
+          header.classList.contains('hidden') ? '24px' : '110px');
+      }
+      new MutationObserver(update).observe(header, { attributes: true, attributeFilter: ['class'] });
+      update();
+    })();
+
+    // Active TOC link on scroll
+    (function() {
+      const sections = document.querySelectorAll('.article-content h2[id]');
+      const tocLinks = document.querySelectorAll('.sidebar-toc a');
+      if (!sections.length || !tocLinks.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.sidebar-toc a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+
+      sections.forEach(section => observer.observe(section));
+    })();
+  </script>
+
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+    function initCalUI() {
+      if (window.Cal && window.Cal.ns && window.Cal.ns.erstgespraech) {
+        Cal.ns.erstgespraech("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      } else { setTimeout(initCalUI, 100); }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCalUI);
+    } else { initCalUI(); }
+  </script>
+
+</body>
+</html>

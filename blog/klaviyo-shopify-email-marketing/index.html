@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Klaviyo für Shopify: E-Mail-Marketing das wirklich Umsatz bringt (2026) | DD-Gossen</title>
+  <meta name="description" content="Klaviyo für Shopify ✓ E-Mail & SMS Automations ✓ Flows, Segmentierung & Analytics ✓ 193.000+ Marken ✓ Setup-Guide mit Praxis-Tipps für mehr Umsatz">
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../article-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Two-column layout */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+
+    /* Grid column wrapper – stretches to full row height so sticky works */
+    .sidebar-column {
+      align-self: stretch;
+    }
+
+    /* Sidebar – sticky inside the full-height column */
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      position: sticky;
+      top: var(--sidebar-top, 110px);
+      transition: top 0.3s ease;
+    }
+
+    /* Content column starts at top, not stretched */
+    .article-main {
+      align-self: start;
+      min-width: 0;
+      width: 100%;
+    }
+
+    .sidebar-toc {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .sidebar-toc h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid rgba(35,126,181,0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sidebar-toc ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .sidebar-toc a {
+      display: block;
+      font-size: 0.88rem;
+      color: #374151;
+      text-decoration: none;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      line-height: 1.4;
+    }
+
+    .sidebar-toc a:hover,
+    .sidebar-toc a.active {
+      background: rgba(35,126,181,0.1);
+      color: #237eb5;
+    }
+
+    .sidebar-cta {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(15,23,42,0.25);
+    }
+
+    .sidebar-cta p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
+      margin: 0 0 1rem 0;
+      line-height: 1.5;
+    }
+
+    .sidebar-cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+      padding: 0.65rem 1.2rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .sidebar-cta a:hover {
+      background: linear-gradient(135deg, #0066e6 0%, #004999 100%);
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Main article area */
+    .article-main {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Restore card styling */
+    .article-card {
+      max-width: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-sizing: border-box;
+    }
+
+    /* Hero image – override article-styles.css max-width:600px */
+    .article-hero-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      display: block;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Inline CTA */
+    .inline-cta {
+      background: linear-gradient(135deg, rgba(35,126,181,0.08) 0%, rgba(35,126,181,0.15) 100%);
+      border: 1px solid rgba(35,126,181,0.25);
+      border-left: 4px solid #237eb5;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .inline-cta-text {
+      flex: 1;
+    }
+
+    .inline-cta-text strong {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.2rem;
+      color: #0f172a;
+      margin-bottom: 0.3rem;
+    }
+
+    .inline-cta-text span {
+      font-size: 0.9rem;
+      color: #374151;
+    }
+
+    .inline-cta a {
+      display: inline-block;
+      background: #0f172a;
+      color: white !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none !important;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .inline-cta a:hover {
+      background: #1e293b;
+    }
+
+    /* Author box – kleine Karte unter FAQ, ohne Hintergrund */
+    .author-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: transparent !important;
+      border: 1px solid rgba(35,126,181,0.15);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    .author-box-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0 0 0.75rem 0;
+    }
+
+    .author-bio {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.5;
+      margin: 0 0 1rem 0;
+    }
+
+    .author-details {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .author-name-link {
+      color: #333;
+      text-decoration: none;
+      font-weight: inherit;
+    }
+
+    .author-name-link:hover {
+      color: #333;
+      text-decoration: none;
+    }
+
+    /* In Kürze – linksbündig, unscheinbar, volle Breite */
+    .article-summary {
+      margin: 0 0 2rem 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .article-summary summary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #64748b;
+      padding: 0.25rem 0 0.4rem 0;
+      cursor: pointer;
+      list-style: none;
+      border-bottom: 1px solid rgba(35,126,181,0.15);
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+
+    .article-summary summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .article-summary summary::after {
+      content: '\25BC';
+      float: right;
+      font-size: 0.6rem;
+      opacity: 0.4;
+    }
+
+    .article-summary[open] summary::after {
+      content: '\25B2';
+    }
+
+    .article-summary ul {
+      margin: 0.5rem 0 0 0;
+      padding: 0;
+      list-style: none;
+      width: 100%;
+    }
+
+    .article-summary li {
+      padding: 0.3rem 0;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #64748b;
+      border-bottom: 1px solid rgba(35,126,181,0.06);
+    }
+
+    .article-summary li:last-child {
+      border-bottom: none;
+    }
+
+    /* FAQ Section */
+    .article-faq {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(35,126,181,0.15);
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+
+    .faq-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .faq-item {
+      padding: 0;
+      margin: 0;
+      border-bottom: 1px solid rgba(35,126,181,0.12);
+      width: 100%;
+      min-width: 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item summary {
+      font-weight: 600;
+      color: #0f172a;
+      padding: 1rem 0;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      float: right;
+      font-size: 1.2rem;
+      color: #237eb5;
+    }
+
+    .faq-item[open] summary::after {
+      content: '\2212';
+    }
+
+    .faq-item p {
+      margin: 0 0 1rem 0;
+      padding: 0 0 1rem 0;
+      line-height: 1.6;
+      color: #374151;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    .author-avatar {
+      width: 48px !important;
+      height: 48px !important;
+      max-width: 48px !important;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      flex-shrink: 0;
+      border: none;
+      margin: 0 !important;
+    }
+
+    .author-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .author-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: #333;
+      margin: 0;
+    }
+
+    .author-role {
+      font-size: 0.875rem;
+      color: #777;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    /* Blog meta info */
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.88rem;
+      color: #6b7280;
+      margin-bottom: 0rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .meta-tag {
+      background: rgba(35,126,181,0.1);
+      color: #237eb5;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* Mobile */
+    @media (max-width: 900px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        padding: 0 0.2rem;
+        gap: 0.8rem;
+      }
+
+      /* Disable sticky on mobile */
+      .article-sidebar {
+        position: static;
+        top: auto;
+        transition: none;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      /* Compact TOC on mobile */
+      .sidebar-toc {
+        padding: 0.8rem 1rem;
+        border-radius: 12px;
+        margin-bottom: 0;
+      }
+
+      .sidebar-toc h3 {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .sidebar-toc ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem 0;
+        margin: 0;
+      }
+
+      .sidebar-toc li {
+        margin: 0;
+        padding: 0;
+      }
+
+      .sidebar-toc li::before {
+        display: none;
+      }
+
+      .sidebar-toc a {
+        font-size: 0.88rem;
+        padding: 0.25rem 0;
+        background: transparent;
+        border-radius: 0;
+        white-space: normal;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      .sidebar-toc a:hover {
+        background: transparent;
+        text-decoration: underline;
+      }
+
+      /* Hide CTA on mobile */
+      .sidebar-cta {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .inline-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+
+      .author-box {
+        padding: 1rem 1.25rem;
+      }
+
+      .author-box-title {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .author-bio {
+        font-size: 0.93rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .author-details {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .article-hero-img {
+        border-radius: 12px;
+        margin-bottom: 0.8rem;
+      }
+
+      .article-meta {
+        justify-content: flex-start;
+        text-align: left;
+        align-self: flex-start;
+        width: 100%;
+      }
+
+      .article-faq {
+        margin-top: 1.5rem;
+        padding-top: 1rem;
+      }
+
+      .faq-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .faq-item summary {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+      }
+
+      .faq-item p {
+        margin: 0 0 0.5rem 0;
+        padding: 0 0 0.5rem 0;
+        font-size: 0.88rem;
+        line-height: 1.45;
+      }
+    }
+  </style>
+
+  <!-- Strukturierte Daten (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dd-gossen.com/#organization",
+        "name": "DD-Gossen",
+        "url": "https://dd-gossen.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dd-gossen.com/Logo.png"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/maik-gossen"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dd-gossen.com/#author",
+        "name": "Maik Gossen",
+        "url": "https://dd-gossen.com/",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://dd-gossen.com/Maik-Gossen-ShopifyFreelancer.png",
+          "width": 400,
+          "height": 400
+        },
+        "jobTitle": "Shopify Freelancer & Entwickler",
+        "worksFor": {
+          "@id": "https://dd-gossen.com/#organization"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://dd-gossen.com/blog/klaviyo-shopify-email-marketing/#article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://dd-gossen.com/blog/klaviyo-shopify-email-marketing/"
+        },
+        "headline": "Klaviyo für Shopify: E-Mail-Marketing das wirklich Umsatz bringt (2026)",
+        "description": "Klaviyo für Shopify ✓ E-Mail & SMS Automations ✓ Flows, Segmentierung & Analytics ✓ 193.000+ Marken ✓ Setup-Guide mit Praxis-Tipps für mehr Umsatz",
+        "datePublished": "2026-04-02",
+        "dateModified": "2026-04-02",
+        "author": {
+          "@id": "https://dd-gossen.com/#author"
+        },
+        "publisher": {
+          "@id": "https://dd-gossen.com/#organization",
+          "name": "DD-Gossen",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://dd-gossen.com/Logo.png",
+            "width": 600,
+            "height": 60
+          }
+        },
+        "articleSection": "E-Mail-Marketing",
+        "keywords": ["Klaviyo Shopify", "Shopify E-Mail Marketing", "Klaviyo Erfahrungen", "Klaviyo Flows", "Shopify Newsletter", "E-Mail Automation Shopify"],
+        "wordCount": 2200
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dd-gossen.com/blog/klaviyo-shopify-email-marketing/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Ist Klaviyo besser als Mailchimp für Shopify?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, Klaviyo ist für Shopify-Shops die deutlich bessere Wahl. Die native Shopify-Integration ist tiefer, die Segmentierung leistungsfähiger und die gesamte Plattform ist speziell für E-Commerce gebaut. Mailchimp ist ein generisches E-Mail-Tool, Klaviyo wurde von Anfang an für Online-Shops entwickelt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was kostet Klaviyo für einen kleinen Shop?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Klaviyo ist kostenlos nutzbar bis 250 Kontakte und 500 E-Mails pro Monat. Danach starten die Pläne ab 20 US-Dollar pro Monat für 251 bis 500 Kontakte. Die Kosten skalieren mit der Kontaktzahl – bei 1.000 Kontakten liegt man bei etwa 30 Dollar monatlich."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann ich von Mailchimp zu Klaviyo wechseln?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ja, Klaviyo bietet ein integriertes Import-Tool speziell für Mailchimp-Daten. Kontakte, Listen, Segmente und Tags können direkt übernommen werden. Der Wechsel ist in der Regel innerhalb weniger Stunden abgeschlossen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie viel Umsatz kann ich mit Klaviyo erwarten?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Gut aufgesetzte Shopify-Shops generieren typischerweise 20 bis 40 Prozent ihres Gesamtumsatzes über E-Mail-Marketing mit Klaviyo. Das hängt von der Branche, der Listengröße und der Qualität der Flows und Kampagnen ab."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="https://dd-gossen.com/shopify-freelancer/" class="logo">
+      <img src="../../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+    </a>
+    <div class="header-right-container">
+      <div class="header-cta-container">
+        <a href="#" class="header-cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt anfragen</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main" style="margin-top: 0; padding: 8rem 1rem 4rem;">
+
+    <div class="article-layout">
+
+      <!-- Sticky Sidebar -->
+      <div class="sidebar-column">
+      <aside class="article-sidebar">
+        <div class="sidebar-toc">
+          <h3>Inhaltsverzeichnis</h3>
+          <ul>
+            <li><a href="#warum-email">Warum E-Mail-Marketing unverzichtbar ist</a></li>
+            <li><a href="#klaviyo-ueberblick">Klaviyo: Überblick & Integration</a></li>
+            <li><a href="#flows">Die 5 wichtigsten Klaviyo Flows</a></li>
+            <li><a href="#segmentierung">Segmentierung: Die Stärke von Klaviyo</a></li>
+            <li><a href="#sms">SMS-Marketing mit Klaviyo</a></li>
+            <li><a href="#preise">Preise und Pläne</a></li>
+            <li><a href="#einrichtung">Klaviyo einrichten: Schritt für Schritt</a></li>
+            <li><a href="#fazit">Fazit</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-cta">
+          <p>E-Mail-Umsatz steigern?</p>
+          <a href="https://www.klaviyo.com/partner/signup?utm_source=001Nu00000gNqLRIA0&utm_medium=partner" target="_blank" rel="noopener">Klaviyo testen &rarr;</a>
+        </div>
+      </aside>
+      </div><!-- /.sidebar-column -->
+
+      <!-- Main Content -->
+      <div class="article-main">
+        <div class="article-card">
+
+          <!-- Meta Info -->
+          <div class="article-meta">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              02.04.26
+            </span>
+            <span class="meta-item meta-lesezeit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              10 Min. Lesezeit
+            </span>
+            <span class="meta-tag">E-Mail-Marketing</span>
+            <span class="meta-tag">Shopify</span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="article-title" style="text-align: left; margin: 0 0 1.5rem 0; font-size: 2.4rem; max-width: 100%; padding: 0;">Klaviyo für Shopify: E-Mail-Marketing das wirklich Umsatz bringt (2026)</h1>
+
+          <!-- In Kürze (ausklappbar, SEO-freundlich) -->
+          <details class="article-summary">
+            <summary>Artikel in Kürze</summary>
+            <ul>
+              <li><strong>ROI-König:</strong> E-Mail-Marketing liefert im E-Commerce einen ROI von bis zu 45:1 und ist ein Owned Channel ohne Algorithmus-Abhängigkeit.</li>
+              <li><strong>Klaviyo = Shopify-Standard:</strong> 193.000+ Marken nutzen Klaviyo, nahtlose Shopify-Integration mit Echtzeit-Datensync.</li>
+              <li><strong>Flows automatisieren Umsatz:</strong> Welcome, Abandoned Cart, Post-Purchase, Browse Abandonment und Win-Back laufen 24/7.</li>
+              <li><strong>Segmentierung schlägt Gießkanne:</strong> Dynamische Segmente nach Kaufverhalten, CLV und Engagement für 6x höhere Transaktionsraten.</li>
+              <li><strong>Kostenloser Einstieg:</strong> Bis 250 Kontakte gratis, danach ab 20 $/Monat – kein Vertrag, monatlich kündbar.</li>
+            </ul>
+          </details>
+
+          <!-- Article Content -->
+          <div class="article-content" style="width: 100%; max-width: 100%; padding: 0; box-sizing: border-box; margin: 0;">
+
+            <p>E-Mail-Marketing ist kein Nice-to-have mehr. Für Shopify-Shops, die ernsthaft wachsen wollen, ist es der profitabelste Kanal überhaupt. Und wenn es um E-Mail-Marketing für Shopify geht, führt kaum ein Weg an <a href="https://www.klaviyo.com/partner/signup?utm_source=001Nu00000gNqLRIA0&utm_medium=partner" target="_blank" rel="noopener">Klaviyo</a> vorbei.</p>
+
+            <p>In diesem Guide zeige ich dir, warum Klaviyo der Gold-Standard für Shopify E-Mail-Marketing ist, welche Flows du sofort einrichten solltest und wie du die Plattform Schritt für Schritt aufsetzt. Mit konkreten Zahlen, Praxis-Tipps und ohne Marketing-Blabla.</p>
+
+            <!-- Section 1 -->
+            <h2 id="warum-email">Warum E-Mail-Marketing für Shopify unverzichtbar ist</h2>
+
+            <p>Die Zahlen sprechen eine klare Sprache: E-Mail-Marketing hat mit einem durchschnittlichen ROI von 36:1 den höchsten Return aller Marketingkanäle. Im E-Commerce liegt dieser Wert sogar oft bei 45:1. Das bedeutet: Für jeden Euro, den du in E-Mail-Marketing investierst, kommen im Schnitt 36 bis 45 Euro zurück.</p>
+
+            <p>Der entscheidende Vorteil gegenüber Social Media, Google Ads oder <a href="https://dd-gossen.com/blog/shopify-seo-ohne-app/">SEO</a>: E-Mail ist ein Owned Channel. Kein Algorithmus entscheidet, ob deine Nachricht ankommt. Keine Plattform kann dir von heute auf morgen die Reichweite abdrehen. Deine E-Mail-Liste gehört dir.</p>
+
+            <p>Bei gut aufgestellten Shopify-Shops kommen 30 bis 40 Prozent des Gesamtumsatzes aus E-Mail-Marketing. Das ist kein Wunschdenken, sondern Realität bei Shops, die ihre Flows und Kampagnen professionell aufgesetzt haben.</p>
+
+            <h3>Warum Shopify Email nicht reicht</h3>
+
+            <p>Shopify bietet mit Shopify Email ein eigenes, einfaches E-Mail-Tool. Für den Anfang ist das okay: Newsletter verschicken, einfache Templates nutzen, Grundfunktionen testen. Aber sobald du ernsthaftes E-Mail-Marketing betreiben willst, stößt du schnell an Grenzen.</p>
+
+            <ul>
+              <li>Keine echten Automations und Flows</li>
+              <li>Begrenzte Segmentierungsmöglichkeiten</li>
+              <li>Kein SMS-Marketing</li>
+              <li>Keine fortgeschrittenen A/B-Tests</li>
+              <li>Wenig Kontrolle über Timing und Trigger</li>
+            </ul>
+
+            <p>Für Shops, die ihren E-Mail-Umsatz wirklich maximieren wollen, braucht es ein dediziertes Tool. Und hier kommt Klaviyo ins Spiel.</p>
+
+            <!-- Section 2 -->
+            <h2 id="klaviyo-ueberblick">Klaviyo: Überblick und Shopify-Integration</h2>
+
+            <p>Klaviyo ist die Nummer-1-E-Mail-Marketing-Plattform für Shopify. Über 193.000 Marken weltweit setzen auf Klaviyo, darunter viele der erfolgreichsten Direct-to-Consumer-Brands. Der Grund: Klaviyo wurde von Anfang an für E-Commerce gebaut, nicht als generisches Newsletter-Tool.</p>
+
+            <h3>Nahtlose Shopify-Integration</h3>
+
+            <p>Die Shopify-Integration von Klaviyo ist die tiefste am Markt. Nach der Verbindung werden automatisch synchronisiert:</p>
+
+            <ul>
+              <li><strong>Produktdaten:</strong> Alle Produkte, Varianten, Bilder und Preise</li>
+              <li><strong>Bestelldaten:</strong> Komplette Bestellhistorie, Bestellwerte, Häufigkeit</li>
+              <li><strong>Kundendaten:</strong> Profile, Adressen, Tags und Metafelder</li>
+              <li><strong>Website-Verhalten:</strong> Seitenaufrufe, Produktansichten, Warenkorbaktionen</li>
+            </ul>
+
+            <p>Diese Daten werden in Echtzeit synchronisiert. Das bedeutet: Wenn ein Kunde gerade einen Warenkorb abbricht, kann Klaviyo sofort reagieren. Kein manueller Export, kein Batch-Sync über Nacht.</p>
+
+            <h3>AI-Features mit K:AI</h3>
+
+            <p>Klaviyos AI-Engine K:AI unterstützt dich bei der Content-Erstellung, der Performance-Analyse und der Optimierung deiner Kampagnen. Du kannst dir Betreffzeilen vorschlagen lassen, E-Mail-Texte generieren und Versandzeitpunkte automatisch optimieren. K:AI analysiert außerdem deine Daten und gibt konkrete Handlungsempfehlungen.</p>
+
+            <p>Neben E-Mail unterstützt Klaviyo auch SMS, WhatsApp und Push Notifications. Alles in einer Plattform, mit einheitlicher Datenbasis. Du brauchst kein Sammelsurium aus fünf verschiedenen Tools.</p>
+
+            <!-- Section 3 -->
+            <h2 id="flows">Die 5 wichtigsten Klaviyo Flows</h2>
+
+            <p>Flows sind automatisierte E-Mail-Serien, die durch bestimmte Trigger ausgelöst werden. Sie laufen 24/7 und generieren Umsatz, während du schläfst. Das sind die fünf Flows, die jeder Shopify-Shop sofort einrichten sollte:</p>
+
+            <h3>1. Welcome Flow (Willkommensserie)</h3>
+
+            <p>Der Welcome Flow ist deine erste Chance, einen neuen Newsletter-Abonnenten in einen Kunden zu verwandeln. Er wird ausgelöst, sobald sich jemand für deinen Newsletter anmeldet.</p>
+
+            <p>Best Practice: Eine Serie aus 3 bis 5 E-Mails. Die erste E-Mail enthält den versprochenen Willkommensgutschein (z.B. 10 % auf die erste Bestellung). Die folgenden E-Mails stellen deine Marke vor, zeigen Bestseller und bauen Vertrauen auf durch Kundenbewertungen oder deine Story.</p>
+
+            <h3>2. Abandoned Cart Flow (Warenkorbabbrecher)</h3>
+
+            <p>Der wichtigste umsatzgenerierende Flow überhaupt. Rund 70 Prozent aller Warenkörbe werden abgebrochen. Mit einem gut aufgesetzten Abandoned Cart Flow holst du 5 bis 10 Prozent davon zurück.</p>
+
+            <p>Die bewährte Sequenz: Erste Erinnerung nach 1 Stunde (ohne Rabatt, reiner Reminder). Zweite E-Mail nach 24 Stunden (mit Social Proof oder Produktbewertungen). Dritte E-Mail nach 48 Stunden (optional mit kleinem Anreiz wie kostenlosem Versand). Wichtig: Die erste E-Mail nach einer Stunde hat die höchste Conversion Rate. Wie du die <a href="https://dd-gossen.com/blog/shopify-checkout-optimieren/">Checkout-Conversion</a> zusätzlich steigerst, zeige ich in meinem Checkout-Guide.</p>
+
+            <h3>3. Post-Purchase Flow (Nach dem Kauf)</h3>
+
+            <p>Nach dem Kauf beginnt die eigentliche Kundenbeziehung. Der Post-Purchase Flow startet nach der Bestellbestätigung und begleitet den Kunden durch die gesamte Phase nach dem Kauf.</p>
+
+            <ul>
+              <li><strong>E-Mail 1 (Tag 1):</strong> Danke-Mail mit Mehrwert (Pflegetipps, Anwendungshinweise)</li>
+              <li><strong>E-Mail 2 (Tag 7):</strong> Cross-Sell mit passenden Ergänzungsprodukten</li>
+              <li><strong>E-Mail 3 (Tag 14):</strong> Bewertungsanfrage (Reviews sind Gold wert für Social Proof)</li>
+              <li><strong>E-Mail 4 (Tag 30):</strong> <a href="https://dd-gossen.com/blog/shopify-abo-appstle/">Abo-Angebot</a> oder Nachkauf-Erinnerung bei Verbrauchsprodukten</li>
+            </ul>
+
+            <h3>4. Browse Abandonment Flow</h3>
+
+            <p>Dieser Flow richtet sich an Besucher, die sich ein Produkt angeschaut haben, es aber nicht in den Warenkorb gelegt haben. Er ist subtiler als der Abandoned Cart Flow, da der Kunde noch keinen klaren Kaufwillen gezeigt hat.</p>
+
+            <p>Typischerweise reichen 1 bis 2 E-Mails: Ein dezenter Hinweis auf das angesehene Produkt, eventuell ergänzt durch ähnliche Produkte oder Kundenbewertungen. Kein aggressiver Rabatt, sondern ein hilfreicher Anstoß.</p>
+
+            <h3>5. Win-Back Flow (Kundenrückgewinnung)</h3>
+
+            <p>Kunden, die seit 60 bis 90 Tagen nicht mehr bestellt haben, drohen abzuwandern. Der Win-Back Flow versucht, sie mit einer gezielten Serie zurückzugewinnen. Starte mit einer "Wir vermissen dich"-Nachricht, zeige Neuheiten und setze in der letzten E-Mail ein spezielles Angebot ein. Wenn der Kunde auch nach dem Win-Back Flow inaktiv bleibt, solltest du die Frequenz reduzieren oder den Kontakt suppressen, um deine Zustellbarkeit zu schützen.</p>
+
+            <!-- Inline CTA 1 -->
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Klaviyo für deinen Shop einrichten?</strong>
+                <span>Starte kostenlos und richte deine ersten Flows ein, die automatisch Umsatz generieren.</span>
+              </div>
+              <a href="https://www.klaviyo.com/partner/signup?utm_source=001Nu00000gNqLRIA0&utm_medium=partner" target="_blank" rel="noopener">Klaviyo kostenlos testen</a>
+            </div>
+
+            <!-- Section 4 -->
+            <h2 id="segmentierung">Segmentierung: Die Stärke von Klaviyo</h2>
+
+            <p>Segmentierung ist der Bereich, in dem Klaviyo den größten Vorsprung gegenüber Alternativen wie Mailchimp hat. Während Mailchimp statische Listen anbietet, arbeitet Klaviyo mit dynamischen Segmenten, die sich in Echtzeit aktualisieren.</p>
+
+            <h3>Segmentierungskriterien</h3>
+
+            <p>Du kannst Segmente basierend auf praktisch jeder Datenpunkt erstellen:</p>
+
+            <ul>
+              <li><strong>Kaufhistorie:</strong> Was wurde gekauft, wie oft, wie viel ausgegeben</li>
+              <li><strong>Customer Lifetime Value (CLV):</strong> Automatisch berechnet, segmentierbar nach Wert</li>
+              <li><strong>Produktinteressen:</strong> Welche Kategorien oder Produkte wurden angesehen</li>
+              <li><strong>E-Mail-Engagement:</strong> Öffnungsraten, Klickraten, Inaktivität</li>
+              <li><strong>Website-Verhalten:</strong> Besuchte Seiten, Verweildauer, Aktionen</li>
+              <li><strong>Standort:</strong> Stadt, Region, Land für lokale Kampagnen</li>
+            </ul>
+
+            <h3>Konkrete Segment-Beispiele</h3>
+
+            <p>Die Power der Segmentierung zeigt sich in der Praxis. Statt eine Newsletter-Kampagne an die gesamte Liste zu schicken, erstellst du gezielte Segmente:</p>
+
+            <ul>
+              <li>"Hat in den letzten 90 Tagen gekauft UND CLV über 200 Euro" &rarr; VIP-Kampagne mit Early Access</li>
+              <li>"Hat Kategorie Hautpflege angesehen aber nie gekauft" &rarr; Produktvorstellung mit Bewertungen</li>
+              <li>"Letzter Kauf vor 45 Tagen, E-Mail in letzten 7 Tagen geöffnet" &rarr; Nachkauf-Reminder</li>
+              <li>"Neue Abonnenten der letzten 30 Tage, kein Kauf" &rarr; Conversion-Kampagne mit Gutschein</li>
+            </ul>
+
+            <p>Der Unterschied ist messbar: Personalisierte, segmentierte E-Mails haben laut Studien 6x höhere Transaktionsraten als generische Massen-Mails. Das ist keine Theorie, das ist der Unterschied zwischen "Newsletter verschicken" und "E-Mail-Marketing betreiben". Zusammen mit einer professionellen <a href="https://dd-gossen.com/shopify-optimierung/">Shop-Optimierung</a> ergibt das einen kraftvollen Wachstumshebel.</p>
+
+            <!-- Section 5 -->
+            <h2 id="sms">SMS-Marketing mit Klaviyo</h2>
+
+            <p>SMS-Marketing ist einer der am schnellsten wachsenden Kanäle im E-Commerce. Und Klaviyo bietet SMS und E-Mail in einer einzigen Plattform, mit derselben Datenbasis und denselben Segmenten. Du brauchst kein zusätzliches Tool wie Postscript oder Attentive.</p>
+
+            <h3>Warum SMS funktioniert</h3>
+
+            <p>Die Zahlen sind beeindruckend: SMS hat eine Open Rate von 98 Prozent, verglichen mit 20 bis 25 Prozent bei E-Mail. Nachrichten werden im Schnitt innerhalb von 3 Minuten gelesen. Für zeitkritische Kommunikation gibt es keinen besseren Kanal.</p>
+
+            <h3>Ideale Einsatzszenarien für SMS</h3>
+
+            <ul>
+              <li><strong>Flash Sales:</strong> Zeitlich begrenzte Angebote, die sofortige Aufmerksamkeit brauchen</li>
+              <li><strong>Versandbenachrichtigungen:</strong> "Dein Paket ist unterwegs" mit Tracking-Link</li>
+              <li><strong>VIP-Angebote:</strong> Exklusive Deals für deine besten Kunden</li>
+              <li><strong>Warenkorbabbrecher:</strong> SMS als Follow-up nach der E-Mail-Serie</li>
+              <li><strong>Produktlaunches:</strong> Neuheiten zuerst an die treuesten Kunden</li>
+            </ul>
+
+            <h3>DSGVO und Compliance</h3>
+
+            <p>Wichtig für den deutschen Markt: Klaviyo bietet vollständiges Opt-In/Opt-Out-Management für SMS, inklusive Double-Opt-In und einfacher Abmeldemöglichkeit. Die DSGVO-Anforderungen werden unterstützt, aber du bist als Shop-Betreiber dafür verantwortlich, die rechtlichen Vorgaben korrekt umzusetzen. Im Zweifel: Lass dich von einem Rechtsanwalt beraten.</p>
+
+            <!-- Section 6 -->
+            <h2 id="preise">Preise und Pläne</h2>
+
+            <p>Klaviyos Preismodell ist transparent und skaliert mit deiner Kontaktzahl. Es gibt keinen langfristigen Vertrag. Du kannst monatlich kündigen.</p>
+
+            <h3>Die drei Pläne im Überblick</h3>
+
+            <ul>
+              <li><strong>Free (0 €):</strong> Bis zu 250 Kontakte, 500 E-Mails pro Monat. Alle Features inklusive, inklusive Flows und Segmentierung. Perfekt zum Testen und für ganz kleine Shops.</li>
+              <li><strong>Email (ab 20 $/Monat):</strong> Ab 251 Kontakte. Unbegrenzte E-Mails (basierend auf Kontaktzahl), alle E-Mail-Features, A/B-Tests, Reporting.</li>
+              <li><strong>Email + SMS (ab 35 $/Monat):</strong> Alles aus dem Email-Plan plus SMS-Credits, SMS-Flows und -Kampagnen, gemeinsame Segmentierung.</li>
+            </ul>
+
+            <h3>Preisbeispiele nach Kontaktzahl</h3>
+
+            <ul>
+              <li><strong>500 Kontakte:</strong> ca. 20 $/Monat</li>
+              <li><strong>1.000 Kontakte:</strong> ca. 30 $/Monat</li>
+              <li><strong>5.000 Kontakte:</strong> ca. 100 $/Monat</li>
+              <li><strong>10.000 Kontakte:</strong> ca. 150 $/Monat</li>
+              <li><strong>25.000 Kontakte:</strong> ca. 400 $/Monat</li>
+            </ul>
+
+            <p>Klingt nach einer Investition? Absolut. Aber rechne nach: Wenn du mit einem E-Mail-Programm 20 bis 40 Prozent mehr Umsatz generierst, zahlt sich Klaviyo ab dem ersten Monat aus. Ein einzelner recovered Abandoned Cart kann die monatlichen Kosten schon decken.</p>
+
+            <!-- Section 7 -->
+            <h2 id="einrichtung">Klaviyo einrichten: Schritt für Schritt</h2>
+
+            <p>Die Einrichtung von Klaviyo ist unkomplizierter als viele denken. Hier ist der konkrete Fahrplan:</p>
+
+            <h3>Schritt 1: Klaviyo-Account erstellen</h3>
+
+            <p>Starte mit einem kostenlosen Account. Über den <a href="https://www.klaviyo.com/partner/signup?utm_source=001Nu00000gNqLRIA0&utm_medium=partner" target="_blank" rel="noopener">Klaviyo Account erstellen</a> Link kommst du direkt zur Registrierung. Du brauchst nur deine E-Mail-Adresse und deine Shop-URL.</p>
+
+            <h3>Schritt 2: Shopify-Integration verbinden</h3>
+
+            <p>Die Verbindung ist ein 1-Klick-Setup im Shopify App Store. Suche nach "Klaviyo", installiere die App und autorisiere den Zugriff. Klaviyo beginnt sofort mit der Synchronisierung deiner Produkt-, Bestell- und Kundendaten.</p>
+
+            <h3>Schritt 3: Bestandskunden importieren</h3>
+
+            <p>Falls du bereits eine E-Mail-Liste hast (z.B. aus Mailchimp oder einer CSV-Datei), importiere diese in Klaviyo. Das Import-Tool unterstützt verschiedene Formate und führt automatisch ein Deduplizierung durch.</p>
+
+            <h3>Schritt 4: Anmeldeformular erstellen</h3>
+
+            <p>Richte mindestens ein Anmeldeformular ein, um neue Abonnenten zu gewinnen. Klaviyo bietet verschiedene Formate: Pop-ups (nach Zeitverzögerung oder Exit Intent), eingebettete Formulare (in Footer oder Sidebar), und Fly-outs (weniger aufdringlich als Pop-ups). Tipp: Ein Pop-up mit 10% Willkommensrabatt konvertiert im Schnitt 3 bis 5 Prozent der Besucher.</p>
+
+            <h3>Schritt 5: Welcome Flow einrichten</h3>
+
+            <p>Erstelle deinen ersten Flow: die Willkommensserie für neue Abonnenten. Klaviyo bietet vorgefertigte Templates, die du als Startpunkt nutzen und an deine Marke anpassen kannst. Mindestens 3 E-Mails: Gutschein, Markenstory, Bestseller.</p>
+
+            <h3>Schritt 6: Abandoned Cart Flow aktivieren</h3>
+
+            <p>Der zweite unverzichtbare Flow. Auch hier bietet Klaviyo Pre-built Flows, die du aktivieren und anpassen kannst. Richte die Timing-Sequenz ein (1h, 24h, 48h) und passe die E-Mail-Inhalte an dein Branding an.</p>
+
+            <h3>Schritt 7: Erste Kampagne versenden</h3>
+
+            <p>Sobald deine Flows laufen, ist es Zeit für deine erste manuelle Kampagne. Starte mit einem segmentierten Newsletter an deine aktivsten Kontakte. Teste Betreffzeilen mit A/B-Tests und analysiere die Ergebnisse.</p>
+
+            <!-- Inline CTA 2 -->
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Professionelles E-Mail-Setup?</strong>
+                <span>Ich richte Klaviyo für deinen Shopify-Shop ein: Flows, Segmente und Formulare, die ab Tag 1 Umsatz generieren.</span>
+              </div>
+              <a href="https://dd-gossen.com/#contact">Jetzt beraten lassen</a>
+            </div>
+
+            <!-- Section 8 -->
+            <h2 id="fazit">Fazit</h2>
+
+            <p>Klaviyo ist der Gold-Standard für E-Mail-Marketing auf Shopify. Die Kombination aus tiefer Shopify-Integration, leistungsfähiger Segmentierung und vorgebauten Flows macht es zur besten Wahl für Shops, die ihren E-Mail-Umsatz ernsthaft maximieren wollen.</p>
+
+            <p>Die Lernkurve ist fair: Die Grundlagen (Welcome Flow, Abandoned Cart, erste Kampagne) sind in wenigen Stunden eingerichtet. Die fortgeschrittenen Features (komplexe Segmente, Multi-Channel-Flows, SMS) wachsen mit deinem Shop mit.</p>
+
+            <p>Der kostenlose Plan bis 250 Kontakte gibt dir die Möglichkeit, alles ohne Risiko zu testen. Und wenn dein Shop wächst, skaliert Klaviyo mit. Die Frage ist nicht, ob du E-Mail-Marketing brauchst. Sondern wie schnell du damit anfängst.</p>
+
+            <!-- Final CTA Box -->
+            <div class="cta-box">
+              <h3>E-Mail-Marketing professionell aufsetzen</h3>
+              <p>Du willst Klaviyo für deinen Shopify-Shop einrichten und von Anfang an alles richtig machen? Ich setze deine Flows, Segmente und Kampagnen auf, damit du ab Tag 1 mehr Umsatz über E-Mail generierst. Oder starte direkt mit einem kostenlosen <a href="https://www.klaviyo.com/partner/signup?utm_source=001Nu00000gNqLRIA0&utm_medium=partner" target="_blank" rel="noopener" style="color: #237eb5;">Klaviyo-Account</a>.</p>
+              <a href="#" class="cta-button" data-cal-link="maik-gossen-hmpi7t/erstgespraech" data-cal-namespace="erstgespraech" data-cal-config='{"layout":"month_view"}'>Jetzt kostenloses Erstgespräch buchen</a>
+            </div>
+
+          </div><!-- /.article-content -->
+
+          <!-- FAQ Section -->
+          <section class="article-faq">
+            <h2 class="faq-title">Häufige Fragen zu Klaviyo und Shopify E-Mail-Marketing</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>Ist Klaviyo besser als Mailchimp für Shopify?</summary>
+                <div>
+                  <p>Ja, Klaviyo ist für Shopify-Shops die deutlich bessere Wahl. Die native Shopify-Integration ist tiefer, die Segmentierung leistungsfähiger und die gesamte Plattform ist speziell für E-Commerce gebaut. Mailchimp ist ein generisches E-Mail-Tool, Klaviyo wurde von Anfang an für Online-Shops entwickelt. Besonders bei Flows, Echtzeit-Daten und der Segmentierung nach Kaufverhalten ist der Unterschied spürbar.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Was kostet Klaviyo für einen kleinen Shop?</summary>
+                <div>
+                  <p>Klaviyo ist kostenlos nutzbar bis 250 Kontakte und 500 E-Mails pro Monat. Danach starten die Pläne ab 20 US-Dollar pro Monat für 251 bis 500 Kontakte. Die Kosten skalieren mit der Kontaktzahl: Bei 1.000 Kontakten liegt man bei etwa 30 Dollar, bei 5.000 Kontakten bei rund 100 Dollar monatlich. Kein Vertrag, monatlich kündbar.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Kann ich von Mailchimp zu Klaviyo wechseln?</summary>
+                <div>
+                  <p>Ja, Klaviyo bietet ein integriertes Import-Tool speziell für Mailchimp-Daten. Kontakte, Listen, Segmente und Tags können direkt übernommen werden. Der Wechsel ist in der Regel innerhalb weniger Stunden abgeschlossen. Auch bestehende Flows müssen natürlich in Klaviyo neu aufgebaut werden, aber die vorgefertigten Templates machen das deutlich einfacher.</p>
+                </div>
+              </details>
+              <details class="faq-item">
+                <summary>Wie viel Umsatz kann ich mit Klaviyo erwarten?</summary>
+                <div>
+                  <p>Gut aufgesetzte Shopify-Shops generieren typischerweise 20 bis 40 Prozent ihres Gesamtumsatzes über E-Mail-Marketing mit Klaviyo. Das hängt von der Branche, der Listengröße und der Qualität der Flows und Kampagnen ab. Bereits die Basics (Welcome Flow und Abandoned Cart Flow) können die monatlichen Klaviyo-Kosten um ein Vielfaches übertreffen.</p>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <!-- Author Box – kleine Karte darunter -->
+          <div class="author-box">
+            <h3 class="author-box-title">Autorenbox</h3>
+            <p class="author-bio">Ich helfe Online-Shop-Betreibern dabei, ihren Shopify-Shop aufzubauen, zu optimieren und zu migrieren. Mit über 5 Jahren Erfahrung und 70+ abgeschlossenen Projekten weiß ich, worauf es ankommt – technisch und strategisch.</p>
+            <div class="author-details">
+              <img src="../../Maik-Gossen-ShopifyFreelancer.png" alt="Maik Gossen" class="author-avatar">
+              <div class="author-info">
+                <p class="author-name"><a href="https://dd-gossen.com/" class="author-name-link">Maik Gossen</a></p>
+                <p class="author-role">Shopify Freelancer & Entwickler</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.article-card -->
+      </div><!-- /.article-main -->
+
+    </div><!-- /.article-layout -->
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-name">MAIK GOSSEN</div>
+        <div class="footer-contact-label">Kontakt:</div>
+        <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+        <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+        <div class="footer-social">
+          <a href="mailto:info@dd-gossen.com" title="E-Mail" aria-label="E-Mail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Menü</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/">Übersicht</a></li>
+          <li><a href="https://dd-gossen.com/">Meine Services</a></li>
+          <li><a href="https://dd-gossen.com/blog/">Blog</a></li>
+          <li><a href="https://dd-gossen.com/#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-shop-erstellen/">Shopify Shop erstellen</a></li>
+          <li><a href="https://dd-gossen.com/shopify-migration/">Shopify Migration</a></li>
+          <li><a href="https://dd-gossen.com/shopify-optimierung/">Shopify Optimierung</a></li>
+          <li><a href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/">Widerrufsbutton einbauen lassen</a></li>
+          <li><a href="https://dd-gossen.com/blog/shopify-freelancer-deutschland/">Shopify Freelancer Deutschland</a></li>
+          <li><a href="https://dd-gossen.com/#competencies">Kompetenzen</a></li>
+          <li><a href="https://dd-gossen.com/#projects">Portfolio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Schnellzugriff</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/#contact">Kostenloses Erstgespräch</a></li>
+          <li><a href="https://dd-gossen.com/#about-me">Über mich</a></li>
+          <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://dd-gossen.com/impressum.html">Impressum</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/datenschutz.html">Datenschutz</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/agb.html">AGB</a>
+      <span class="footer-sep">|</span>
+      <a href="#" id="openCookieSettings">Cookie-Einstellungen</a>
+      <span class="footer-sep">|</span>
+      <span>&copy; 2025 Maik Gossen</span>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll behavior
+    (function() {
+      var header = document.querySelector('.header');
+      if (!header) return;
+      let lastScrollTop = 0;
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        header.style.background = scrollTop > 100 ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.15)';
+        if (scrollTop > 100) {
+          header.classList.toggle('hidden', scrollTop > lastScrollTop);
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+      });
+    })();
+
+    // Sync sidebar sticky-top with header visibility
+    (function() {
+      const header = document.querySelector('.header');
+      if (!header) return;
+      const root = document.documentElement;
+      function update() {
+        root.style.setProperty('--sidebar-top',
+          header.classList.contains('hidden') ? '24px' : '110px');
+      }
+      new MutationObserver(update).observe(header, { attributes: true, attributeFilter: ['class'] });
+      update();
+    })();
+
+    // Active TOC link on scroll
+    (function() {
+      const sections = document.querySelectorAll('.article-content h2[id]');
+      const tocLinks = document.querySelectorAll('.sidebar-toc a');
+      if (!sections.length || !tocLinks.length) return;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.sidebar-toc a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+
+      sections.forEach(section => observer.observe(section));
+    })();
+  </script>
+
+  <!-- Cal.com embed -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "erstgespraech", {origin:"https://app.cal.com"});
+    function initCalUI() {
+      if (window.Cal && window.Cal.ns && window.Cal.ns.erstgespraech) {
+        Cal.ns.erstgespraech("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      } else { setTimeout(initCalUI, 100); }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCalUI);
+    } else { initCalUI(); }
+  </script>
+
+</body>
+</html>
