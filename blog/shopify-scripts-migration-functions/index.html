@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopify Scripts Migration auf Functions | DD-Gossen</title>
+  <meta name="description" content="Shopify Scripts werden am 30. Juni 2026 abgeschaltet. Was Plus-Shops jetzt tun müssen: Migration auf Shopify Functions Schritt für Schritt.">
+  <link rel="canonical" href="https://dd-gossen.com/blog/shopify-scripts-migration-functions/">
+  <link rel="alternate" hreflang="de" href="https://dd-gossen.com/blog/shopify-scripts-migration-functions/">
+  <link rel="alternate" hreflang="x-default" href="https://dd-gossen.com/blog/shopify-scripts-migration-functions/">
+  <meta property="og:title" content="Shopify Scripts Migration auf Functions | DD-Gossen">
+  <meta property="og:description" content="Shopify Scripts werden am 30. Juni 2026 abgeschaltet. Was Plus-Shops jetzt tun müssen: Migration auf Shopify Functions Schritt für Schritt.">
+  <meta property="og:url" content="https://dd-gossen.com/blog/shopify-scripts-migration-functions/">
+  <meta property="og:type" content="article">
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../article-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    .article-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+    .sidebar-column { align-self: stretch; }
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      position: sticky;
+      top: var(--sidebar-top, 110px);
+      transition: top 0.3s ease;
+    }
+    .article-main { align-self: start; min-width: 0; width: 100%; }
+    .sidebar-toc {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .sidebar-toc h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid rgba(35,126,181,0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .sidebar-toc ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+    .sidebar-toc a {
+      display: block;
+      font-size: 0.88rem;
+      color: #374151;
+      text-decoration: none;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      line-height: 1.4;
+    }
+    .sidebar-toc a:hover, .sidebar-toc a.active { background: rgba(35,126,181,0.1); color: #237eb5; }
+    .sidebar-cta {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(15,23,42,0.25);
+    }
+    .sidebar-cta p { font-size: 0.9rem; color: rgba(255,255,255,0.85); margin: 0 0 1rem 0; line-height: 1.5; }
+    .sidebar-cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+      padding: 0.65rem 1.2rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .sidebar-cta a:hover { background: linear-gradient(135deg, #0066e6 0%, #004999 100%); color: white; text-decoration: none; }
+    .article-card {
+      max-width: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-sizing: border-box;
+    }
+    .article-card .article-hero-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 220px !important;
+      object-fit: cover !important;
+      object-position: center center;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      display: block;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .inline-cta {
+      background: linear-gradient(135deg, rgba(35,126,181,0.08) 0%, rgba(35,126,181,0.15) 100%);
+      border: 1px solid rgba(35,126,181,0.25);
+      border-left: 4px solid #237eb5;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .inline-cta-text { flex: 1; }
+    .inline-cta-text strong { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; color: #0f172a; margin-bottom: 0.3rem; }
+    .inline-cta-text span { font-size: 0.9rem; color: #374151; }
+    .inline-cta a {
+      display: inline-block;
+      background: #0f172a;
+      color: white !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none !important;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+      flex-shrink: 0;
+    }
+    .inline-cta a:hover { background: #1e293b; }
+    .author-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: transparent !important;
+      border: 1px solid rgba(35,126,181,0.15);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+      width: 100%;
+    }
+    .author-box-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 600; color: #333; margin: 0 0 0.75rem 0; }
+    .author-bio { font-size: 0.9rem; color: #555; line-height: 1.5; margin: 0 0 1rem 0; }
+    .author-details { display: flex; align-items: center; gap: 1rem; }
+    .author-name-link { color: #333; text-decoration: none; font-weight: inherit; }
+    .author-name-link:hover { color: #333; text-decoration: none; }
+    .article-summary { margin: 0 0 2rem 0; padding: 0; width: 100%; }
+    .article-summary summary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #64748b;
+      padding: 0.25rem 0 0.4rem 0;
+      cursor: pointer;
+      list-style: none;
+      border-bottom: 1px solid rgba(35,126,181,0.15);
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+    .article-summary summary::-webkit-details-marker { display: none; }
+    .article-summary summary::after { content: '▼'; float: right; font-size: 0.6rem; opacity: 0.4; }
+    .article-summary[open] summary::after { content: '▲'; }
+    .article-summary ul { margin: 0.5rem 0 0 0; padding: 0; list-style: none; width: 100%; }
+    .article-summary li { padding: 0.3rem 0; font-size: 0.9rem; line-height: 1.5; color: #64748b; border-bottom: 1px solid rgba(35,126,181,0.06); }
+    .article-summary li:last-child { border-bottom: none; }
+    .article-faq {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(35,126,181,0.15);
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+    .faq-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 600; color: #0f172a; margin: 0 0 1.5rem 0; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; width: 100%; min-width: 0; }
+    .faq-item { padding: 0; margin: 0; border-bottom: 1px solid rgba(35,126,181,0.12); width: 100%; min-width: 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item summary { font-weight: 600; color: #0f172a; padding: 1rem 0; cursor: pointer; list-style: none; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; float: right; font-size: 1.2rem; color: #237eb5; }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item p { margin: 0 0 1rem 0; padding: 0 0 1rem 0; line-height: 1.6; color: #0f172a; overflow-wrap: break-word; word-wrap: break-word; }
+    .author-avatar { width: 48px !important; height: 48px !important; max-width: 48px !important; border-radius: 50%; object-fit: cover; object-position: top center; flex-shrink: 0; border: none; margin: 0 !important; }
+    .author-info { display: flex; flex-direction: column; gap: 0.25rem; }
+    .author-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.125rem; font-weight: 600; color: #333; margin: 0; }
+    .author-role { font-size: 0.875rem; color: #777; font-weight: 400; margin: 0; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; font-size: 0.88rem; color: #6b7280; margin-bottom: 0rem; flex-wrap: wrap; }
+    .meta-item { display: flex; align-items: center; gap: 0.3rem; }
+    .meta-tag { background: rgba(35,126,181,0.1); color: #237eb5; padding: 0.2rem 0.7rem; border-radius: 50px; font-size: 0.8rem; font-weight: 500; }
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; padding: 0 0.2rem; gap: 0.8rem; }
+      .article-sidebar { position: static; top: auto; transition: none; flex-direction: column; gap: 0; }
+      .sidebar-toc { padding: 0.8rem 1rem; border-radius: 12px; margin-bottom: 0; background: rgba(255,255,255,0.55); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+      .sidebar-toc h3 { font-size: 0.78rem; margin-bottom: 0.35rem; color: #0f172a; }
+      .sidebar-toc ul { display: flex; flex-direction: column; flex-wrap: wrap; gap: 0.05rem 0; margin: 0; }
+      .sidebar-toc li { margin: 0; padding: 0; }
+      .sidebar-toc a { font-size: 0.85rem; padding: 0.15rem 0; background: none !important; border: none; border-radius: 0; white-space: normal; color: #0f172a !important; text-decoration: none; opacity: 0.75; }
+      .sidebar-toc a:hover { background: none !important; border: none; color: #0f172a !important; text-decoration: none; opacity: 0.9; }
+      .sidebar-cta { display: none; }
+    }
+    @media (max-width: 600px) {
+      .inline-cta { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+      .author-box { padding: 1rem 1.25rem; }
+      .author-box-title { font-size: 1rem; margin-bottom: 0.6rem; }
+      .author-bio { font-size: 0.93rem; margin-bottom: 1.5rem; }
+      .article-card .article-hero-img { height: 180px !important; border-radius: 12px; margin-bottom: 0.8rem; }
+      .article-faq { margin-top: 1.5rem; padding-top: 1rem; }
+      .faq-title { font-size: 1.2rem; margin-bottom: 0.6rem; }
+      .faq-item summary { padding: 0.5rem 0; font-size: 0.9rem; }
+      .faq-item p { margin: 0 0 0.5rem 0; padding: 0 0 0.5rem 0; font-size: 0.88rem; line-height: 1.45; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://dd-gossen.com/#organization",
+      "name": "DD-Gossen",
+      "url": "https://dd-gossen.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dd-gossen.com/Logo.png"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/maik-gossen"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://dd-gossen.com/#author",
+      "name": "Maik Gossen",
+      "url": "https://dd-gossen.com/",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://dd-gossen.com/Maik-Gossen-ShopifyFreelancer.png",
+        "width": 400,
+        "height": 400
+      },
+      "jobTitle": "Shopify Freelancer",
+      "worksFor": {
+        "@id": "https://dd-gossen.com/#organization"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://dd-gossen.com/blog/shopify-scripts-migration-functions/#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://dd-gossen.com/blog/shopify-scripts-migration-functions/"
+      },
+      "headline": "Shopify Scripts Migration: Umstieg auf Shopify Functions bis 30. Juni 2026",
+      "description": "Shopify Scripts werden am 30. Juni 2026 abgeschaltet. Was Plus-Shops jetzt tun müssen: Migration auf Shopify Functions Schritt für Schritt.",
+      "datePublished": "2026-04-22",
+      "dateModified": "2026-04-22",
+      "author": {
+        "@id": "https://dd-gossen.com/#author"
+      },
+      "publisher": {
+        "@id": "https://dd-gossen.com/#organization",
+        "name": "DD-Gossen",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dd-gossen.com/Logo.png",
+          "width": 600,
+          "height": 60
+        }
+      },
+      "articleSection": "Shopify",
+      "keywords": "Shopify Scripts, Shopify Functions, Script Editor Abschaltung, Shopify Plus Migration, Script Editor 2026",
+      "wordCount": 1400
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://dd-gossen.com/blog/shopify-scripts-migration-functions/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Werden Shopify Scripts wirklich abgeschaltet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Seit 15. April 2026 lassen sich bestehende Scripts nicht mehr bearbeiten. Am 30. Juni 2026 werden sie deaktiviert. Ohne Migration auf Shopify Functions funktioniert die bisherige Logik dann nicht mehr."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was passiert, wenn ich nicht migriere?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ab 1. Juli 2026 greifen deine bisherigen Discount-, Shipping- und Payment-Scripts nicht mehr. Rabatte werden nicht angewendet, Versandregeln fallen weg, Payment-Filter verschwinden. Der Shop läuft weiter, aber ohne die Automationen, die du über Scripts aufgesetzt hattest."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sind Shopify Functions für alle Shopify Pläne verfügbar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Functions sind für Plus-Kunden voll verfügbar, auch für Discount-, Shipping- und Payment-Customization. Basic-, Grow- und Advanced-Kunden hatten nie Zugriff auf Scripts und müssen nichts migrieren."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie lange dauert die Migration eines Scripts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Von 2 Stunden für einfache Scripts bis zu mehreren Tagen für komplexe B2B- oder Mitglieder-Logik. Rechne einen Puffer für Testing und Monitoring ein, vor allem bei Scripts, die direkt den Checkout beeinflussen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kann ich die alten Scripts noch einsehen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Auch nach der Abschaltung bleibt der Script Editor lesend erreichbar. Du kannst den alten Code als Referenz nutzen, um zu verifizieren, ob deine Function die gleiche Logik abbildet."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="https://dd-gossen.com/shopify-freelancer/" class="logo">
+      <img src="../../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+    </a>
+    <div class="header-right-container">
+      <div class="header-cta-container">
+        <a href="https://dd-gossen.com/shopify-plus/" class="header-cta-button">Shopify Plus Hilfe</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main" style="margin-top: 0; padding: 8rem 1rem 4rem;">
+
+    <div class="article-layout">
+
+      <div class="sidebar-column">
+      <aside class="article-sidebar">
+        <div class="sidebar-toc">
+          <h3>Inhaltsverzeichnis</h3>
+          <ul>
+            <li><a href="#was-passiert">Was am 30. Juni 2026 passiert</a></li>
+            <li><a href="#wer-ist-betroffen">Wer vom Scripts-Ende betroffen ist</a></li>
+            <li><a href="#was-sind-functions">Was Shopify Functions ist</a></li>
+            <li><a href="#unterschiede">Script Editor vs Functions im Vergleich</a></li>
+            <li><a href="#migration-schritt">Migration Schritt für Schritt</a></li>
+            <li><a href="#stolpersteine">Typische Stolpersteine</a></li>
+            <li><a href="#kosten">Was die Migration kostet</a></li>
+            <li><a href="#fazit">Fazit</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-cta">
+          <p>Shopify Scripts sauber auf Functions migrieren?</p>
+          <a href="https://dd-gossen.com/shopify-plus/">Zur Shopify Plus Beratung →</a>
+        </div>
+      </aside>
+      </div>
+
+      <div class="article-main">
+        <div class="article-card">
+
+          <div class="article-meta">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              22. April 2026
+            </span>
+            <span class="meta-item meta-lesezeit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              8 Min. Lesezeit
+            </span>
+            <span class="meta-tag">Shopify Plus</span>
+          </div>
+
+          <h1 class="article-title" style="text-align: left; margin: 0 0 1.5rem 0; font-size: 2.4rem; max-width: 100%; padding: 0;">Shopify Scripts zu Functions: Die Migration vor dem 30. Juni 2026</h1>
+
+          
+
+          <details class="article-summary">
+            <summary>Artikel in Kürze</summary>
+            <ul>
+              <li><strong>Deadline:</strong> Scripts nicht mehr editierbar seit 15. April 2026, endgültige Abschaltung am 30. Juni 2026.</li>
+              <li><strong>Betroffen:</strong> Ausschließlich Shopify-Plus-Shops, die den Script Editor für Discount-, Shipping- oder Payment-Logik nutzen.</li>
+              <li><strong>Nachfolger:</strong> Shopify Functions, in JavaScript oder Rust geschrieben, deutlich leistungsfähiger als der alte Editor.</li>
+              <li><strong>Migration:</strong> Jedes Script muss einzeln als Function reimplementiert, getestet und deployed werden. Kein Auto-Upgrade.</li>
+              <li><strong>Risiko:</strong> Ohne Migration keine Rabattlogik, keine angepassten Versandregeln, keine Payment-Filter ab 30. Juni.</li>
+              <li><strong>Aufwand:</strong> Pro Script zwischen 2 und 12 Stunden, je nach Komplexität und Anzahl paralleler Regeln.</li>
+            </ul>
+          </details>
+
+          <div class="article-content" style="width: 100%; max-width: 100%; padding: 0; box-sizing: border-box; margin: 0;">
+
+            <p>Am 30. Juni 2026 schaltet Shopify den Script Editor endgültig ab. Seit dem 15. April 2026 können bestehende Scripts nicht mehr bearbeitet werden, nur noch angesehen. Wer Shopify Plus nutzt und mit Scripts arbeitet, hat jetzt ein paar Wochen, um sauber auf Shopify Functions umzustellen.</p>
+
+            <p>Das klingt nach Dev-Zeug, ist aber ein harter Business-Case: Nach dem Stichtag funktionieren Discount-Scripts, Shipping-Scripts und Payment-Scripts einfach nicht mehr. Wer unvorbereitet ist, verliert Automationen, die Umsatz bringen, und im schlimmsten Fall funktioniert der Checkout in Teilen nicht mehr wie erwartet.</p>
+
+            <p>Was der Umstieg konkret bedeutet, wen er betrifft und wie du dein Setup sauber auf Shopify Functions migrierst, steht in diesem Artikel.</p>
+
+            <h2 id="was-passiert">Was am 30. Juni 2026 passiert</h2>
+
+            <p>Shopify kündigt das Ende des Script Editors schon länger an. Die Timeline ist dreistufig:</p>
+
+            <p><strong>Seit 15. April 2026:</strong> Scripts können nicht mehr bearbeitet werden. Bestehende Scripts laufen weiter, neue Scripts lassen sich nicht mehr anlegen und vorhandene nicht mehr ändern. Das betrifft auch kleinste Anpassungen wie Tippfehler-Korrekturen.</p>
+
+            <p><strong>30. Juni 2026:</strong> Der Script Editor wird abgeschaltet. Alle Scripts werden deaktiviert. Das bedeutet: Rabatte, Versandregeln und Payment-Filter, die auf Scripts basieren, greifen nicht mehr.</p>
+
+            <p><strong>Danach:</strong> Der Script Editor ist nur noch lesend erreichbar. Du kannst deine alten Scripts noch einsehen, aber nicht mehr reaktivieren. Für aktive Logik braucht es Shopify Functions.</p>
+
+            <p>Wichtig: Shopify migriert nicht automatisch. Jedes Script, das du aktiv hast, musst du manuell als Function nachbauen. Wer das versäumt, steht am 1. Juli ohne seine bisherige Rabatt- oder Checkout-Logik da.</p>
+
+            <h2 id="wer-ist-betroffen">Wer vom Scripts-Ende betroffen ist</h2>
+
+            <p>Die Abschaltung betrifft ausschließlich <strong>Shopify Plus</strong>. Der Script Editor war nie auf Basic, Grow oder Advanced verfügbar. Wer auf diesen Plänen ist, muss nichts tun.</p>
+
+            <p>Für Plus-Shops geht es konkret um drei Script-Typen, die Shopify unterschied:</p>
+
+            <p><strong>Line Item Scripts</strong> für Rabatte und Preisregeln am Warenkorb, zum Beispiel Staffelpreise, Kombi-Rabatte, Kunden-spezifische Discounts oder Mitgliederpreise.</p>
+
+            <p><strong>Shipping Scripts</strong> für angepasste Versandregeln, etwa kostenloser Versand ab einem bestimmten Warenkorbwert, Ausblenden bestimmter Versandarten für bestimmte Regionen oder Produkte, Express-Optionen nur für bestimmte Kundengruppen.</p>
+
+            <p><strong>Payment Scripts</strong> für das Filtern von Zahlungsmethoden, zum Beispiel Vorkasse ausblenden ab einem bestimmten Warenkorbwert oder PayPal nur für B2C-Kunden.</p>
+
+            <p>Wenn du dir unsicher bist, ob dein Shop Scripts nutzt: Admin-Bereich öffnen, unter Apps den Script Editor suchen. Wenn er installiert ist und aktive Scripts zeigt, hast du Migrationsbedarf.</p>
+
+            <h2 id="was-sind-functions">Was Shopify Functions ist</h2>
+
+            <p>Shopify Functions ist das Nachfolgesystem für den Script Editor. Es gibt aber zwei grundsätzliche Unterschiede: Functions laufen nicht mehr als interpretierte Scripts, sondern als kompilierter Code in WebAssembly. Und sie werden außerhalb des Shopify-Admins entwickelt, typischerweise in JavaScript oder Rust mit der Shopify CLI.</p>
+
+            <p>Der praktische Effekt: Functions sind deutlich schneller, skalieren besser bei großen Warenkörben und können komplexere Logik abbilden. Gleichzeitig sind sie aufwändiger zu entwickeln, weil sie ein richtiges Dev-Setup brauchen.</p>
+
+            <p>Functions werden als Custom App deployed. Das heißt: Du legst im Shopify Partner Dashboard eine App an, schreibst den Function-Code lokal, kompilierst ihn und pushst ihn in den Shop. Das klingt komplizierter als es ist, aber es ist ein anderer Workflow als der alte Script Editor, in dem du einfach in ein Textfeld getippt hast.</p>
+
+            <h2 id="unterschiede">Script Editor vs Functions im Vergleich</h2>
+
+            <p><strong>Entwicklungsumgebung:</strong> Script Editor war ein Textfeld im Admin. Functions erfordern lokale Entwicklung mit Shopify CLI, Node.js und Git.</p>
+
+            <p><strong>Sprache:</strong> Scripts waren in einem angepassten Ruby-Dialekt. Functions sind in JavaScript oder Rust.</p>
+
+            <p><strong>Performance:</strong> Scripts hatten ein CPU-Limit pro Checkout. Functions sind deutlich performanter, weil sie als WASM laufen.</p>
+
+            <p><strong>Testing:</strong> Scripts konnten nur live im Shop getestet werden. Functions lassen sich lokal testen, bevor sie deployed werden. Das ist der größte Win.</p>
+
+            <p><strong>Deployment:</strong> Scripts wurden per Button im Admin aktiviert. Functions werden über die CLI deployed und im Admin einer spezifischen Discount oder Shipping Rule zugewiesen.</p>
+
+            <p><strong>Wartbarkeit:</strong> Scripts lagen im Shopify-Admin, nicht in Versionskontrolle. Functions liegen in deinem Git-Repo, versionierbar und nachvollziehbar.</p>
+
+            <h2 id="migration-schritt">Migration Schritt für Schritt</h2>
+
+            <p><strong>Schritt 1: Inventur.</strong> Listee alle aktiven Scripts auf. Für jedes Script dokumentierst du: Welche Logik macht es, welche Edge Cases hat es, gibt es Kundengruppen-Abhängigkeiten, wie kritisch ist es fürs Business.</p>
+
+            <p><strong>Schritt 2: Priorisieren.</strong> Rabattlogik am Warenkorb ist meist kritischer als Versand-Filter. Fang mit dem an, was im Fall eines Ausfalls den größten Umsatz-Schaden hätte.</p>
+
+            <p><strong>Schritt 3: Dev-Setup.</strong> Shopify CLI installieren, Partner Dashboard anlegen falls noch nicht vorhanden, Custom App erstellen. Für Einsteiger: Shopify hat dafür die Dokumentation unter shopify.dev/docs/apps/build/functions.</p>
+
+            <p><strong>Schritt 4: Function entwickeln.</strong> Shopify stellt Templates für die häufigsten Use Cases bereit: product-discount, order-discount, shipping-discount, delivery-customization, payment-customization. Jedes Template enthält ein Beispiel-Script, das du als Basis nutzen kannst.</p>
+
+            <p><strong>Schritt 5: Lokal testen.</strong> Mit der CLI und realistischen Warenkorb-Daten testen. Unit Tests schreiben, falls die Logik komplex ist. Dieser Schritt war beim Script Editor nie möglich und ist jetzt der Hauptvorteil.</p>
+
+            <p><strong>Schritt 6: Im Dev-Store deployen.</strong> Nie direkt in den Produktionsshop. Shopify Plus erlaubt Dev-Stores, in denen du die Function end-to-end testen kannst, ohne echte Bestellungen zu beeinflussen.</p>
+
+            <p><strong>Schritt 7: Live schalten.</strong> Function in den Live-Shop deployen und der passenden Regel (Discount, Shipping Rule, Payment Customization) zuweisen. Erst dann das alte Script deaktivieren, nicht vorher.</p>
+
+            <p><strong>Schritt 8: Monitoring.</strong> Mindestens zwei Wochen beobachten: Warenkorb-Reports, Conversion Rate, Kunden-Support-Tickets. Viele Migrations-Fehler fallen erst auf, wenn ein Edge Case im Checkout triggert.</p>
+
+            <h2 id="stolpersteine">Typische Stolpersteine</h2>
+
+            <p><strong>Komplexe verschachtelte Rabatt-Logik.</strong> Wer Scripts mit mehreren If-Else-Ebenen hatte, stellt fest, dass Functions einen anderen Execution-Context haben. Verschachtelte Conditions funktionieren anders, vor allem bei sich widersprechenden Rabatten.</p>
+
+            <p><strong>Kundengruppen-Logik.</strong> Scripts konnten auf Customer Tags direkt zugreifen. Functions brauchen teilweise zusätzliche Metafelder oder API-Calls. Das ändert die Architektur, nicht nur den Code.</p>
+
+            <p><strong>Versand-Regeln mit Gewichtsbezug.</strong> Wer Shipping Scripts hat, die auf Produkt-Gewicht filtern, muss in Functions teilweise Metafields oder Product-Tags nutzen, weil die Gewichts-Attribute anders verfügbar sind.</p>
+
+            <p><strong>Payment-Filter mit B2B-Bezug.</strong> Wenn du Zahlungsmethoden nach B2B/B2C filterst, musst du prüfen, ob die Customer-Company-Daten in deiner Function verfügbar sind. Je nach Shop-Setup braucht das zusätzliche Konfiguration.</p>
+
+            <p><strong>Deployment-Berechtigungen.</strong> Custom Apps zu deployen braucht im Partner Dashboard die richtigen Scopes. Wer das nicht vorbereitet hat, scheitert beim ersten Push.</p>
+
+            <h2 id="kosten">Was die Migration kostet</h2>
+
+            <p>Die Preisspanne ist groß, weil die Komplexität der Scripts stark variiert.</p>
+
+            <p><strong>Kleine Shops mit 1 bis 2 Scripts:</strong> 500 bis 1.500 Euro, meist zwischen 4 und 12 Stunden Arbeit. Ein simples Free-Shipping-Script oder ein Staffelpreis lässt sich vergleichsweise schnell nachbauen.</p>
+
+            <p><strong>Mittelgroße Shops mit 3 bis 5 Scripts:</strong> 1.500 bis 4.000 Euro. Hier kommt oft die Komplexität dazu, dass Scripts miteinander interagieren.</p>
+
+            <p><strong>Große Plus-Shops mit komplexen B2B- oder Mitglieder-Regeln:</strong> 4.000 bis 10.000 Euro aufwärts. Hier geht es nicht nur um Code, sondern auch um Testing-Aufwand und parallele Dev- und Prod-Phase.</p>
+
+            <p>Nicht vergessen: Nach der Migration bleibt der Custom-App-Code bei dir und muss langfristig gepflegt werden. Wer keinen Developer im Team hat, plant einen Wartungs-Retainer ein.</p>
+
+            <h2 id="fazit">Fazit</h2>
+
+            <p>Der 30. Juni 2026 ist ein harter Deadline. Wer Shopify Plus nutzt und Scripts aktiv hat, sollte jetzt handeln, nicht Ende Mai.</p>
+
+            <p>Die Migration ist keine einfache Knopf-Drücken-Aktion, sondern ein Dev-Projekt. Je komplexer die bestehenden Scripts, desto mehr Zeit solltest du einplanen, vor allem fürs Testing.</p>
+
+            <p>Der Vorteil: Shopify Functions sind performanter, besser testbar und langfristig wartbar. Wer jetzt sauber migriert, hat für die nächsten Jahre ein stabiles Setup.</p>
+
+            <p>Wenn du Unterstützung bei der Migration brauchst, melde dich. Ich arbeite regelmäßig mit Shopify Plus und helfe dir, die bestehenden Scripts sauber in Functions zu überführen, inklusive Testing und Live-Deployment.</p>
+
+            <div class="related-articles" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(35,126,181,0.15); border-radius: 14px; padding: 1.5rem 1.75rem; margin: 2.5rem 0;">
+              <h4 style="font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; color: #0f172a; margin: 0 0 0.8rem 0; text-transform: uppercase; letter-spacing: 0.05em;">Weiterführende Artikel</h4>
+              <ul style="margin: 0; padding: 0; list-style: none;">
+                <li style="padding: 0.35rem 0;"><a href="https://dd-gossen.com/shopify-plus/" style="color: #237eb5; text-decoration: none; font-size: 0.93rem; font-weight: 500;">Shopify Plus Freelancer: Setup, Migration und Custom Apps →</a></li>
+                <li style="padding: 0.35rem 0;"><a href="https://dd-gossen.com/projekte/strive-magazine/" style="color: #237eb5; text-decoration: none; font-size: 0.93rem; font-weight: 500;">Case Study Strive Magazine: Custom Apps und Shopify Flow →</a></li>
+              </ul>
+            </div>
+
+            <div class="cta-box">
+              <h3>Unterstützung bei der Umsetzung?</h3>
+              <p>Du willst die Änderungen sauber in deinem Shopify-Shop umsetzen lassen? Ich übernehme die technische Arbeit und sorge dafür, dass alles zuverlässig läuft.</p>
+              <a href="https://dd-gossen.com/#contact" class="cta-button">Jetzt Erstgespräch buchen</a>
+            </div>
+
+          
+
+          </div>
+
+          <section class="article-faq">
+            <h2 class="faq-title">Häufige Fragen</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>Werden Shopify Scripts wirklich abgeschaltet?</summary>
+                <p>Ja. Seit 15. April 2026 lassen sich bestehende Scripts nicht mehr bearbeiten. Am 30. Juni 2026 werden sie deaktiviert. Ohne Migration auf Shopify Functions funktioniert die bisherige Logik dann nicht mehr.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Was passiert, wenn ich nicht migriere?</summary>
+                <p>Ab 1. Juli 2026 greifen deine bisherigen Discount-, Shipping- und Payment-Scripts nicht mehr. Rabatte werden nicht angewendet, Versandregeln fallen weg, Payment-Filter verschwinden. Der Shop läuft weiter, aber ohne die Automationen, die du über Scripts aufgesetzt hattest.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Sind Shopify Functions für alle Shopify Pläne verfügbar?</summary>
+                <p>Functions sind für Plus-Kunden voll verfügbar, auch für Discount-, Shipping- und Payment-Customization. Basic-, Grow- und Advanced-Kunden hatten nie Zugriff auf Scripts und müssen nichts migrieren.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Wie lange dauert die Migration eines Scripts?</summary>
+                <p>Von 2 Stunden für einfache Scripts bis zu mehreren Tagen für komplexe B2B- oder Mitglieder-Logik. Rechne einen Puffer für Testing und Monitoring ein, vor allem bei Scripts, die direkt den Checkout beeinflussen.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Kann ich die alten Scripts noch einsehen?</summary>
+                <p>Ja. Auch nach der Abschaltung bleibt der Script Editor lesend erreichbar. Du kannst den alten Code als Referenz nutzen, um zu verifizieren, ob deine Function die gleiche Logik abbildet.</p>
+              </details>
+            </div>
+          </section>
+
+          <div class="author-box">
+            <h3 class="author-box-title">Über den Autor</h3>
+            <p class="author-bio">Ich arbeite als Shopify Freelancer aus Deutschland und unterstütze Shopbetreiber bei technischer Umsetzung, rechtssicherer Konfiguration und langfristiger Optimierung ihrer Shops.</p>
+            <div class="author-details">
+              <img src="../../Maik-Gossen-ShopifyFreelancer.png" alt="Maik Gossen" class="author-avatar">
+              <div class="author-info">
+                <p class="author-name"><a href="https://dd-gossen.com/" class="author-name-link">Maik Gossen</a></p>
+                <p class="author-role">Shopify Freelancer & Entwickler</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-name">MAIK GOSSEN</div>
+        <div class="footer-contact-label">Kontakt:</div>
+        <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+        <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+        <div class="footer-social">
+          <a href="mailto:info@dd-gossen.com" title="E-Mail" aria-label="E-Mail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col footer-col-toggle">
+        <div class="footer-col-title">Menü</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/">Übersicht</a></li>
+          <li><a href="https://dd-gossen.com/">Meine Services</a></li>
+          <li><a href="https://dd-gossen.com/shopify-kostenrechner/">Kostenrechner</a></li>
+          <li><a href="https://dd-gossen.com/blog/">Blog</a></li>
+          <li><a href="https://dd-gossen.com/#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-toggle">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-shop-erstellen/">Shopify Shop erstellen</a></li>
+          <li><a href="https://dd-gossen.com/shopify-migration/">Shopify Migration</a></li>
+          <li><a href="https://dd-gossen.com/shopify-optimierung/">Shopify Optimierung</a></li>
+          <li><a href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/">Widerrufsbutton einbauen lassen</a></li>
+          <li><a href="https://dd-gossen.com/#competencies">Kompetenzen</a></li>
+          <li><a href="https://dd-gossen.com/#projects">Portfolio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-toggle">
+        <div class="footer-col-title">Schnellzugriff</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/#contact">Kostenloses Erstgespräch</a></li>
+          <li><a href="https://dd-gossen.com/#about-me">Über mich</a></li>
+          <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://dd-gossen.com/impressum.html">Impressum</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/datenschutz.html">Datenschutz</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/agb.html">AGB</a>
+      <span class="footer-sep">|</span>
+      <a href="#" id="openCookieSettings">Cookie-Einstellungen</a>
+      <span class="footer-sep">|</span>
+      <span>© 2025 Maik Gossen</span>
+    </div>
+  </footer>
+
+  <script src="../../script.js"></script>
+  <script>
+    (function() {
+      var header = document.querySelector('.header');
+      if (!header) return;
+      let lastScrollTop = 0;
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        header.style.background = scrollTop > 100 ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.15)';
+        if (scrollTop > 100) {
+          header.classList.toggle('hidden', scrollTop > lastScrollTop);
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+      });
+    })();
+
+    (function() {
+      const header = document.querySelector('.header');
+      if (!header) return;
+      const root = document.documentElement;
+      function update() {
+        root.style.setProperty('--sidebar-top', header.classList.contains('hidden') ? '24px' : '110px');
+      }
+      new MutationObserver(update).observe(header, { attributes: true, attributeFilter: ['class'] });
+      update();
+    })();
+
+    (function() {
+      const sections = document.querySelectorAll('.article-content h2[id]');
+      const tocLinks = document.querySelectorAll('.sidebar-toc a');
+      if (!sections.length || !tocLinks.length) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.sidebar-toc a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+      sections.forEach(section => observer.observe(section));
+    })();
+  </script>
+
+</body>
+</html>

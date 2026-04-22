@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Claims Shopify | DD-Gossen</title>
+  <meta name="description" content="Ab 27. September 2026 greift die EmpCo-Richtlinie. Was Shopify-Shops mit Nachhaltigkeits-Claims tun müssen, damit sie rechtssicher bleiben.">
+  <link rel="canonical" href="https://dd-gossen.com/blog/green-claims-shopify-greenwashing/">
+  <link rel="alternate" hreflang="de" href="https://dd-gossen.com/blog/green-claims-shopify-greenwashing/">
+  <link rel="alternate" hreflang="x-default" href="https://dd-gossen.com/blog/green-claims-shopify-greenwashing/">
+  <meta property="og:title" content="Green Claims Shopify | DD-Gossen">
+  <meta property="og:description" content="Ab 27. September 2026 greift die EmpCo-Richtlinie. Was Shopify-Shops mit Nachhaltigkeits-Claims tun müssen, damit sie rechtssicher bleiben.">
+  <meta property="og:url" content="https://dd-gossen.com/blog/green-claims-shopify-greenwashing/">
+  <meta property="og:type" content="article">
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../article-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    .article-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 2rem;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
+    .sidebar-column { align-self: stretch; }
+    .article-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      position: sticky;
+      top: var(--sidebar-top, 110px);
+      transition: top 0.3s ease;
+    }
+    .article-main { align-self: start; min-width: 0; width: 100%; }
+    .sidebar-toc {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .sidebar-toc h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 1rem 0;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid rgba(35,126,181,0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .sidebar-toc ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+    .sidebar-toc a {
+      display: block;
+      font-size: 0.88rem;
+      color: #374151;
+      text-decoration: none;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      line-height: 1.4;
+    }
+    .sidebar-toc a:hover, .sidebar-toc a.active { background: rgba(35,126,181,0.1); color: #237eb5; }
+    .sidebar-cta {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(15,23,42,0.25);
+    }
+    .sidebar-cta p { font-size: 0.9rem; color: rgba(255,255,255,0.85); margin: 0 0 1rem 0; line-height: 1.5; }
+    .sidebar-cta a {
+      display: inline-block;
+      background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+      color: white;
+      padding: 0.65rem 1.2rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .sidebar-cta a:hover { background: linear-gradient(135deg, #0066e6 0%, #004999 100%); color: white; text-decoration: none; }
+    .article-card {
+      max-width: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.52);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-sizing: border-box;
+    }
+    .article-card .article-hero-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 220px !important;
+      object-fit: cover !important;
+      object-position: center center;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+      display: block;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .inline-cta {
+      background: linear-gradient(135deg, rgba(35,126,181,0.08) 0%, rgba(35,126,181,0.15) 100%);
+      border: 1px solid rgba(35,126,181,0.25);
+      border-left: 4px solid #237eb5;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin: 2.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .inline-cta-text { flex: 1; }
+    .inline-cta-text strong { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; color: #0f172a; margin-bottom: 0.3rem; }
+    .inline-cta-text span { font-size: 0.9rem; color: #374151; }
+    .inline-cta a {
+      display: inline-block;
+      background: #0f172a;
+      color: white !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none !important;
+      white-space: nowrap;
+      transition: background 0.2s ease;
+      flex-shrink: 0;
+    }
+    .inline-cta a:hover { background: #1e293b; }
+    .author-box {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: transparent !important;
+      border: 1px solid rgba(35,126,181,0.15);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 2rem;
+      width: 100%;
+    }
+    .author-box-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 600; color: #333; margin: 0 0 0.75rem 0; }
+    .author-bio { font-size: 0.9rem; color: #555; line-height: 1.5; margin: 0 0 1rem 0; }
+    .author-details { display: flex; align-items: center; gap: 1rem; }
+    .author-name-link { color: #333; text-decoration: none; font-weight: inherit; }
+    .author-name-link:hover { color: #333; text-decoration: none; }
+    .article-summary { margin: 0 0 2rem 0; padding: 0; width: 100%; }
+    .article-summary summary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #64748b;
+      padding: 0.25rem 0 0.4rem 0;
+      cursor: pointer;
+      list-style: none;
+      border-bottom: 1px solid rgba(35,126,181,0.15);
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+    .article-summary summary::-webkit-details-marker { display: none; }
+    .article-summary summary::after { content: '▼'; float: right; font-size: 0.6rem; opacity: 0.4; }
+    .article-summary[open] summary::after { content: '▲'; }
+    .article-summary ul { margin: 0.5rem 0 0 0; padding: 0; list-style: none; width: 100%; }
+    .article-summary li { padding: 0.3rem 0; font-size: 0.9rem; line-height: 1.5; color: #64748b; border-bottom: 1px solid rgba(35,126,181,0.06); }
+    .article-summary li:last-child { border-bottom: none; }
+    .article-faq {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(35,126,181,0.15);
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
+    .faq-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 600; color: #0f172a; margin: 0 0 1.5rem 0; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; width: 100%; min-width: 0; }
+    .faq-item { padding: 0; margin: 0; border-bottom: 1px solid rgba(35,126,181,0.12); width: 100%; min-width: 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item summary { font-weight: 600; color: #0f172a; padding: 1rem 0; cursor: pointer; list-style: none; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; float: right; font-size: 1.2rem; color: #237eb5; }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item p { margin: 0 0 1rem 0; padding: 0 0 1rem 0; line-height: 1.6; color: #0f172a; overflow-wrap: break-word; word-wrap: break-word; }
+    .author-avatar { width: 48px !important; height: 48px !important; max-width: 48px !important; border-radius: 50%; object-fit: cover; object-position: top center; flex-shrink: 0; border: none; margin: 0 !important; }
+    .author-info { display: flex; flex-direction: column; gap: 0.25rem; }
+    .author-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.125rem; font-weight: 600; color: #333; margin: 0; }
+    .author-role { font-size: 0.875rem; color: #777; font-weight: 400; margin: 0; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; font-size: 0.88rem; color: #6b7280; margin-bottom: 0rem; flex-wrap: wrap; }
+    .meta-item { display: flex; align-items: center; gap: 0.3rem; }
+    .meta-tag { background: rgba(35,126,181,0.1); color: #237eb5; padding: 0.2rem 0.7rem; border-radius: 50px; font-size: 0.8rem; font-weight: 500; }
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; padding: 0 0.2rem; gap: 0.8rem; }
+      .article-sidebar { position: static; top: auto; transition: none; flex-direction: column; gap: 0; }
+      .sidebar-toc { padding: 0.8rem 1rem; border-radius: 12px; margin-bottom: 0; background: rgba(255,255,255,0.55); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+      .sidebar-toc h3 { font-size: 0.78rem; margin-bottom: 0.35rem; color: #0f172a; }
+      .sidebar-toc ul { display: flex; flex-direction: column; flex-wrap: wrap; gap: 0.05rem 0; margin: 0; }
+      .sidebar-toc li { margin: 0; padding: 0; }
+      .sidebar-toc a { font-size: 0.85rem; padding: 0.15rem 0; background: none !important; border: none; border-radius: 0; white-space: normal; color: #0f172a !important; text-decoration: none; opacity: 0.75; }
+      .sidebar-toc a:hover { background: none !important; border: none; color: #0f172a !important; text-decoration: none; opacity: 0.9; }
+      .sidebar-cta { display: none; }
+    }
+    @media (max-width: 600px) {
+      .inline-cta { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+      .author-box { padding: 1rem 1.25rem; }
+      .author-box-title { font-size: 1rem; margin-bottom: 0.6rem; }
+      .author-bio { font-size: 0.93rem; margin-bottom: 1.5rem; }
+      .article-card .article-hero-img { height: 180px !important; border-radius: 12px; margin-bottom: 0.8rem; }
+      .article-faq { margin-top: 1.5rem; padding-top: 1rem; }
+      .faq-title { font-size: 1.2rem; margin-bottom: 0.6rem; }
+      .faq-item summary { padding: 0.5rem 0; font-size: 0.9rem; }
+      .faq-item p { margin: 0 0 0.5rem 0; padding: 0 0 0.5rem 0; font-size: 0.88rem; line-height: 1.45; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://dd-gossen.com/#organization",
+      "name": "DD-Gossen",
+      "url": "https://dd-gossen.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dd-gossen.com/Logo.png"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/maik-gossen"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://dd-gossen.com/#author",
+      "name": "Maik Gossen",
+      "url": "https://dd-gossen.com/",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://dd-gossen.com/Maik-Gossen-ShopifyFreelancer.png",
+        "width": 400,
+        "height": 400
+      },
+      "jobTitle": "Shopify Freelancer",
+      "worksFor": {
+        "@id": "https://dd-gossen.com/#organization"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://dd-gossen.com/blog/green-claims-shopify-greenwashing/#article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://dd-gossen.com/blog/green-claims-shopify-greenwashing/"
+      },
+      "headline": "Green Claims Richtlinie: Greenwashing-Verbot für Shopify Shops 2026",
+      "description": "Ab 27. September 2026 greift die EmpCo-Richtlinie. Was Shopify-Shops mit Nachhaltigkeits-Claims tun müssen, damit sie rechtssicher bleiben.",
+      "datePublished": "2026-04-22",
+      "dateModified": "2026-04-22",
+      "author": {
+        "@id": "https://dd-gossen.com/#author"
+      },
+      "publisher": {
+        "@id": "https://dd-gossen.com/#organization",
+        "name": "DD-Gossen",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://dd-gossen.com/Logo.png",
+          "width": 600,
+          "height": 60
+        }
+      },
+      "articleSection": "Shopify",
+      "keywords": "Green Claims Richtlinie, Greenwashing Shopify, EmpCo Richtlinie, klimaneutraler Versand, Nachhaltigkeits-Claims Onlineshop",
+      "wordCount": 1250
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://dd-gossen.com/blog/green-claims-shopify-greenwashing/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Darf ich klimaneutral noch schreiben?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ab 27. September 2026 nur noch, wenn die Emissionen nachweislich reduziert wurden, nicht nur kompensiert. Eine reine CO2-Kompensation über Zertifikate reicht nicht mehr. Alternative Formulierungen: CO2-reduziert, klimabewusst mit konkreten Reduktions-Maßnahmen."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist mit selbstgemachten Öko-Siegeln?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Eigene Siegel ohne unabhängige Zertifizierung sind ab September 2026 verboten. Erlaubt bleiben staatliche Siegel (Blauer Engel, EU Ecolabel), unabhängig zertifizierte Standards (GOTS, Fairtrade) und transparent geprüfte Branchen-Siegel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Brauche ich ein Zertifikat für Nachhaltigkeits-Aussagen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Für konkrete Aussagen ja: Wer ein Produkt als nachhaltig bewirbt, muss belegen können, was genau nachhaltig ist (Material, Produktion, Lieferkette) und idealerweise eine unabhängige Prüfung vorlegen. Ohne Belege sind solche Aussagen abmahnbar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was gilt ab September 2026 neu bei Gewährleistung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ein verpflichtendes Gewährleistungs- und Garantielabel auf der Produktseite. Kunden sollen auf einen Blick sehen, welche gesetzliche Gewährleistung gilt (in Deutschland zwei Jahre) und welche Herstellergarantie optional dazukommt."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was kostet eine Abmahnung bei Greenwashing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Typische Abmahnkosten liegen zwischen 500 und 2.500 Euro Anwaltsgebühren plus Unterlassungserklärung. Bei Wiederholung werden Vertragsstrafen von 3.000 bis 10.000 Euro pro Verstoß üblich. Die teureren Fälle sind Musterklagen durch Verbraucherverbände."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="https://dd-gossen.com/shopify-freelancer/" class="logo">
+      <img src="../../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+    </a>
+    <div class="header-right-container">
+      <div class="header-cta-container">
+        <a href="https://dd-gossen.com/#contact" class="header-cta-button">Kontakt</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main" style="margin-top: 0; padding: 8rem 1rem 4rem;">
+
+    <div class="article-layout">
+
+      <div class="sidebar-column">
+      <aside class="article-sidebar">
+        <div class="sidebar-toc">
+          <h3>Inhaltsverzeichnis</h3>
+          <ul>
+            <li><a href="#was-ist-empco">Was die EmpCo-Richtlinie ist</a></li>
+            <li><a href="#wer-betroffen">Welche Shopify-Shops betroffen sind</a></li>
+            <li><a href="#kritische-begriffe">Welche Begriffe jetzt kritisch sind</a></li>
+            <li><a href="#siegel">Was mit Eigensiegeln passiert</a></li>
+            <li><a href="#co2">CO2-Kompensation richtig kommunizieren</a></li>
+            <li><a href="#reparierbarkeit">Reparierbarkeit und Haltbarkeit</a></li>
+            <li><a href="#garantielabel">Gewährleistungs- und Garantielabel</a></li>
+            <li><a href="#umsetzung">Umsetzung in Shopify</a></li>
+            <li><a href="#fazit">Fazit</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-cta">
+          <p>Shopify-Shop für Green-Claims-Anforderungen prüfen lassen?</p>
+          <a href="https://dd-gossen.com/#contact">Zur Beratung →</a>
+        </div>
+      </aside>
+      </div>
+
+      <div class="article-main">
+        <div class="article-card">
+
+          <div class="article-meta">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              22. April 2026
+            </span>
+            <span class="meta-item meta-lesezeit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              7 Min. Lesezeit
+            </span>
+            <span class="meta-tag">Recht & Compliance</span>
+          </div>
+
+          <h1 class="article-title" style="text-align: left; margin: 0 0 1.5rem 0; font-size: 2.4rem; max-width: 100%; padding: 0;">Green Claims Richtlinie: Was Shopify-Shops ab September 2026 dürfen und was nicht</h1>
+
+          
+
+          <details class="article-summary">
+            <summary>Artikel in Kürze</summary>
+            <ul>
+              <li><strong>Stichtag:</strong> 27. September 2026, EU-Richtlinie 2024/825 (EmpCo).</li>
+              <li><strong>Vage Claims:</strong> Begriffe wie klimaneutral, umweltfreundlich, grün, öko sind nur noch mit geprüftem Nachweis erlaubt.</li>
+              <li><strong>Eigensiegel:</strong> Selbstgemachte Nachhaltigkeitssiegel ohne unabhängige Zertifizierung sind verboten.</li>
+              <li><strong>CO2-Kompensation:</strong> Claims wie klimaneutraler Versand brauchen Belege zur tatsächlichen Reduktion, nicht nur Kompensation.</li>
+              <li><strong>Reparierbarkeit:</strong> Info-Pflichten zu Haltbarkeit und Reparierbarkeit bei bestimmten Produktgruppen.</li>
+              <li><strong>Garantielabel:</strong> Ab September 2026 verpflichtende Gewährleistungs- und Garantielabels.</li>
+            </ul>
+          </details>
+
+          <div class="article-content" style="width: 100%; max-width: 100%; padding: 0; box-sizing: border-box; margin: 0;">
+
+            <p>Am 27. September 2026 tritt die EU-Richtlinie 2024/825 in Kraft, bekannt als Green Claims Directive oder EmpCo-Richtlinie. Sie trifft jeden Shop, der mit Nachhaltigkeit, Umweltfreundlichkeit oder klimaneutralen Versand wirbt.</p>
+
+            <p>Das Problem ist nicht neu: Begriffe wie klimaneutral, umweltfreundlich oder nachhaltig werden in Marketing-Texten oft inflationär genutzt, ohne belastbare Grundlage. Die neue Richtlinie setzt hier hart an und verbietet viele gängige Formulierungen, wenn sie nicht belegt werden können.</p>
+
+            <p>Was konkret verboten wird, was erlaubt bleibt und wie Shopify-Shops ihren Content jetzt anpassen sollten, steht in diesem Artikel.</p>
+
+            <h2 id="was-ist-empco">Was die EmpCo-Richtlinie ist</h2>
+
+            <p>Die EU-Richtlinie 2024/825 ergänzt die Richtlinie über unlautere Geschäftspraktiken um Regeln gegen Greenwashing. EmpCo steht für Empowering Consumers for the Green Transition.</p>
+
+            <p>Die Richtlinie ist Teil des European Green Deal und adressiert konkret, dass Verbraucher durch unklare oder unbelegte Nachhaltigkeits-Aussagen getäuscht werden können. Ab 27. September 2026 müssen alle Mitgliedstaaten sie in nationales Recht umgesetzt haben. In Deutschland wird sie im UWG (Gesetz gegen den unlauteren Wettbewerb) verankert.</p>
+
+            <p>Für Shops relevant sind vor allem drei Bereiche: pauschale Umweltaussagen, Nachhaltigkeitssiegel und die Kommunikation zu Produktlebensdauer und Reparierbarkeit.</p>
+
+            <h2 id="wer-betroffen">Welche Shopify-Shops betroffen sind</h2>
+
+            <p>Betroffen ist jeder Shop, der in der EU an Verbraucher verkauft und irgendwo mit Umwelt- oder Nachhaltigkeits-Argumenten wirbt. Das betrifft:</p>
+
+            <p><strong>Produktbeschreibungen</strong> mit Formulierungen wie nachhaltig, umweltfreundlich, klimafreundlich, öko, grün, biologisch abbaubar.</p>
+
+            <p><strong>Shop-weite Aussagen</strong> wie klimaneutraler Versand, plastikfrei, CO2-neutral, umweltbewusst.</p>
+
+            <p><strong>Eigens entwickelte Siegel</strong> wie Green Choice, Eco-Friendly Brand oder ähnliche Hausmarken-Zeichen.</p>
+
+            <p><strong>Marketing-Claims</strong> in Kategorietexten, Banner, Email-Newsletter und Social Media, die im Shop verlinkt sind.</p>
+
+            <p>Nicht betroffen: Rein fachliche Angaben wie Material-Deklarationen (Baumwolle bio, PET recycelt) mit offiziellen Standards wie GOTS oder dem EU Ecolabel. Die sind durch unabhängige Zertifizierung gedeckt.</p>
+
+            <h2 id="kritische-begriffe">Welche Begriffe jetzt kritisch sind</h2>
+
+            <p>Die Richtlinie listet explizit einige Begriffe auf, die ohne konkrete Belege nicht mehr verwendet werden dürfen:</p>
+
+            <p><strong>Klimaneutral:</strong> Nur erlaubt, wenn durch nachweisbare Reduktion erreicht, nicht durch reine Kompensation über Drittprojekte. Wer seinen Versand als klimaneutral bewirbt, weil er CO2-Zertifikate kauft, erfüllt die Anforderung nicht mehr automatisch.</p>
+
+            <p><strong>Umweltfreundlich / grün / öko:</strong> Nur mit konkreter Angabe, worauf sich das bezieht (Material, Produktion, Transport) und mit unabhängiger Prüfung. Pauschal als Adjektiv nicht mehr verwendbar.</p>
+
+            <p><strong>Nachhaltig:</strong> Gleiches Prinzip. Wenn du ein nachhaltiges T-Shirt verkaufst, musst du angeben, was genau nachhaltig ist (Baumwolle, Färbung, Arbeitsbedingungen) und das belegen können.</p>
+
+            <p><strong>Biologisch abbaubar / kompostierbar:</strong> Nur mit Angabe unter welchen Bedingungen (industrielle Kompostierung, Hauskompost, Meeresumgebung) und innerhalb welcher Zeit.</p>
+
+            <p><strong>Natürlich:</strong> Als pauschaler Begriff untersagt, wenn nicht präzisiert. Ein "natürliches Produkt" braucht klar definierte Zutaten oder Standards.</p>
+
+            <p>Die Liste ist nicht abschließend. Vage Begriffe ohne Beleg fallen generell unter das neue Verbot.</p>
+
+            <h2 id="siegel">Was mit Eigensiegeln passiert</h2>
+
+            <p>Ein oft übersehener Punkt: Viele Shops haben eigene Nachhaltigkeits-Siegel entwickelt, die bei ihren Produkten angezeigt werden. Green Seal, Eco Choice, Nachhaltig gemacht. Ab 27. September 2026 sind solche selbstgemachten Siegel ohne unabhängige Prüfung verboten.</p>
+
+            <p>Erlaubt bleiben:</p>
+
+            <p><strong>Staatliche oder öffentliche Siegel</strong> wie Blauer Engel, EU Ecolabel, EU Bio-Logo.</p>
+
+            <p><strong>Siegel mit unabhängiger Zertifizierung</strong> wie GOTS, Fairtrade, Bluesign, FSC.</p>
+
+            <p><strong>Branchen-Siegel</strong>, wenn sie auf definierten, transparenten Standards beruhen und extern geprüft werden.</p>
+
+            <p>Wer eigene Siegel hat, sollte sie bis September entweder entfernen oder durch extern zertifizierte Alternativen ersetzen. Wer sich unsicher ist, ob ein bestehendes Siegel den Anforderungen genügt, prüft zwei Kriterien: Gibt es transparente Kriterien, und wer prüft die Einhaltung unabhängig vom Anbieter.</p>
+
+            <h2 id="co2">CO2-Kompensation richtig kommunizieren</h2>
+
+            <p>Das Thema klimaneutraler Versand oder klimaneutrales Produkt ist besonders sensibel. Viele Shops haben CO2-Kompensationen über Projekte wie myclimate, ClimatePartner oder Atmosfair integriert und beworben.</p>
+
+            <p>Ab September 2026 gilt: Eine reine Kompensation reicht nicht, um ein Produkt oder eine Leistung als klimaneutral zu bewerben. Es braucht einen Nachweis der tatsächlichen Emissionsreduktion. Kompensation darf nur als Ergänzung zur Reduktion genutzt werden, nicht als Ersatz.</p>
+
+            <p>Praktisch bedeutet das: Wer klimaneutraler Versand schreibt, muss nachweisen, dass die Emissionen pro Paket aktiv reduziert wurden (etwa durch optimierte Packgrößen, regionale Lager, CO2-ärmere Transportmittel). Die Rest-Emissionen, die dann noch kompensiert werden, sind der Add-on.</p>
+
+            <p>Alternative Formulierungen, die weiter erlaubt bleiben: CO2-reduzierter Versand, wir kompensieren Restemissionen über Projekt XY, klimabewusst versendet mit Reduktions-Maßnahmen. Konkreter und belegbarer.</p>
+
+            <h2 id="reparierbarkeit">Reparierbarkeit und Haltbarkeit</h2>
+
+            <p>Bei bestimmten Produktgruppen, vor allem Elektronik, Haushaltsgeräte und Textilien, kommen zusätzliche Info-Pflichten. Shops müssen Angaben zu Reparierbarkeit und Haltbarkeit machen, wenn solche Informationen für die Kaufentscheidung wesentlich sind.</p>
+
+            <p>In der Praxis wird das über den Product Passport laufen, der für viele Produktgruppen ohnehin kommt. Für Shopify heißt das: Metafields für Reparierbarkeits-Score, erwartete Lebensdauer, Ersatzteil-Verfügbarkeit.</p>
+
+            <p>Wer Elektronik, Mode oder Möbel verkauft, sollte jetzt prüfen, ob die Hersteller-Daten für diese Angaben vorliegen und ob die Produktseite entsprechend erweitert werden muss.</p>
+
+            <h2 id="garantielabel">Gewährleistungs- und Garantielabel</h2>
+
+            <p>Zusätzlich zur EmpCo-Richtlinie wird ab 27. September 2026 ein verpflichtendes Gewährleistungs- und Garantielabel eingeführt. Jedes Produkt im Shop muss klar kommunizieren, welche gesetzliche Gewährleistung gilt (in Deutschland zwei Jahre) und welche darüber hinausgehende Herstellergarantie optional dazukommt.</p>
+
+            <p>Das Label soll Verbrauchern helfen, langlebige Produkte leichter zu erkennen und so Kaufentscheidungen in Richtung Nachhaltigkeit zu lenken. Für Shops bedeutet das: Die Info muss strukturiert auf der Produktseite erscheinen, idealerweise in einem standardisierten Block.</p>
+
+            <p>Shopify wird dafür voraussichtlich eine native Lösung oder zumindest klare Empfehlungen veröffentlichen. Bis dahin hilft eine Metafield-Struktur im Theme.</p>
+
+            <h2 id="umsetzung">Umsetzung in Shopify</h2>
+
+            <p><strong>Audit:</strong> Zuerst einen Durchgang durch den Shop machen und alle Stellen markieren, an denen Nachhaltigkeits-Claims auftauchen. Produktbeschreibungen, Kategorietexte, Banner, Footer, About-Page, Newsletter.</p>
+
+            <p><strong>Claims prüfen:</strong> Für jeden Claim die Frage stellen: Können wir das belegen? Gibt es eine unabhängige Zertifizierung? Wenn nein, umformulieren oder entfernen.</p>
+
+            <p><strong>Eigensiegel:</strong> Ersetzen oder entfernen. Wenn ein Siegel bleiben soll, dokumentieren, welche externe Prüfung dahintersteht.</p>
+
+            <p><strong>Metafield-Struktur:</strong> Für Reparierbarkeit, Lebensdauer und Gewährleistung einheitliche Metafields anlegen. Das erleichtert später den Product Passport.</p>
+
+            <p><strong>Theme-Anpassung:</strong> Die Garantie- und Reparierbarkeitsinfos prominent auf der Produktseite platzieren. Idealerweise als strukturierter Block mit Icons, damit es leicht lesbar ist.</p>
+
+            <p><strong>Checkliste für Inhalte:</strong> Eine interne Checkliste aufbauen, die für neue Produkte und Newsletter-Texte prüft, ob Nachhaltigkeits-Claims korrekt formuliert sind.</p>
+
+            <h2 id="fazit">Fazit</h2>
+
+            <p>Die Green Claims Richtlinie ist weniger akut als der Widerrufsbutton im Juni, aber sie trifft einen breiteren Kreis von Shops. Jeder, der irgendwo mit Umwelt-Argumenten wirbt, muss die Formulierungen und Siegel jetzt prüfen.</p>
+
+            <p>Der Zeitraum bis Ende September reicht, wenn man jetzt anfängt. Wer wartet, steht im August vor einem größeren Umbau, weil Produktbeschreibungen, Siegel und Theme-Blocks gleichzeitig anzupassen sind.</p>
+
+            <p>Der beste Ansatz: einmal einen kompletten Audit machen, eine Liste der betroffenen Claims, und dann pro Woche ein paar abarbeiten. So ist es bis Ende August fertig.</p>
+
+            <p>Wenn du Hilfe beim Audit oder bei der technischen Umsetzung in Shopify brauchst, zum Beispiel Metafield-Struktur oder Produktseiten-Block für Gewährleistung, melde dich.</p>
+
+            <div class="related-articles" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(35,126,181,0.15); border-radius: 14px; padding: 1.5rem 1.75rem; margin: 2.5rem 0;">
+              <h4 style="font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; color: #0f172a; margin: 0 0 0.8rem 0; text-transform: uppercase; letter-spacing: 0.05em;">Weiterführende Artikel</h4>
+              <ul style="margin: 0; padding: 0; list-style: none;">
+                <li style="padding: 0.35rem 0;"><a href="https://dd-gossen.com/blog/ai-act-shopify-shops/" style="color: #237eb5; text-decoration: none; font-size: 0.93rem; font-weight: 500;">AI-Act für Shopify Shops: Kennzeichnungspflicht ab August 2026 →</a></li>
+                <li style="padding: 0.35rem 0;"><a href="https://dd-gossen.com/blog/widerrufsrecht-shopify-2026/" style="color: #237eb5; text-decoration: none; font-size: 0.93rem; font-weight: 500;">Widerrufsbutton Shopify: Was ab Juni 2026 gilt →</a></li>
+              </ul>
+            </div>
+
+            <div class="cta-box">
+              <h3>Unterstützung bei der Umsetzung?</h3>
+              <p>Du willst die Änderungen sauber in deinem Shopify-Shop umsetzen lassen? Ich übernehme die technische Arbeit und sorge dafür, dass alles zuverlässig läuft.</p>
+              <a href="https://dd-gossen.com/#contact" class="cta-button">Jetzt Erstgespräch buchen</a>
+            </div>
+
+          
+
+          </div>
+
+          <section class="article-faq">
+            <h2 class="faq-title">Häufige Fragen</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>Darf ich klimaneutral noch schreiben?</summary>
+                <p>Ab 27. September 2026 nur noch, wenn die Emissionen nachweislich reduziert wurden, nicht nur kompensiert. Eine reine CO2-Kompensation über Zertifikate reicht nicht mehr. Alternative Formulierungen: CO2-reduziert, klimabewusst mit konkreten Reduktions-Maßnahmen.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Was ist mit selbstgemachten Öko-Siegeln?</summary>
+                <p>Eigene Siegel ohne unabhängige Zertifizierung sind ab September 2026 verboten. Erlaubt bleiben staatliche Siegel (Blauer Engel, EU Ecolabel), unabhängig zertifizierte Standards (GOTS, Fairtrade) und transparent geprüfte Branchen-Siegel.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Brauche ich ein Zertifikat für Nachhaltigkeits-Aussagen?</summary>
+                <p>Für konkrete Aussagen ja: Wer ein Produkt als nachhaltig bewirbt, muss belegen können, was genau nachhaltig ist (Material, Produktion, Lieferkette) und idealerweise eine unabhängige Prüfung vorlegen. Ohne Belege sind solche Aussagen abmahnbar.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Was gilt ab September 2026 neu bei Gewährleistung?</summary>
+                <p>Ein verpflichtendes Gewährleistungs- und Garantielabel auf der Produktseite. Kunden sollen auf einen Blick sehen, welche gesetzliche Gewährleistung gilt (in Deutschland zwei Jahre) und welche Herstellergarantie optional dazukommt.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Was kostet eine Abmahnung bei Greenwashing?</summary>
+                <p>Typische Abmahnkosten liegen zwischen 500 und 2.500 Euro Anwaltsgebühren plus Unterlassungserklärung. Bei Wiederholung werden Vertragsstrafen von 3.000 bis 10.000 Euro pro Verstoß üblich. Die teureren Fälle sind Musterklagen durch Verbraucherverbände.</p>
+              </details>
+            </div>
+          </section>
+
+          <div class="author-box">
+            <h3 class="author-box-title">Über den Autor</h3>
+            <p class="author-bio">Ich arbeite als Shopify Freelancer aus Deutschland und unterstütze Shopbetreiber bei technischer Umsetzung, rechtssicherer Konfiguration und langfristiger Optimierung ihrer Shops.</p>
+            <div class="author-details">
+              <img src="../../Maik-Gossen-ShopifyFreelancer.png" alt="Maik Gossen" class="author-avatar">
+              <div class="author-info">
+                <p class="author-name"><a href="https://dd-gossen.com/" class="author-name-link">Maik Gossen</a></p>
+                <p class="author-role">Shopify Freelancer & Entwickler</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-name">MAIK GOSSEN</div>
+        <div class="footer-contact-label">Kontakt:</div>
+        <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+        <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+        <div class="footer-social">
+          <a href="mailto:info@dd-gossen.com" title="E-Mail" aria-label="E-Mail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col footer-col-toggle">
+        <div class="footer-col-title">Menü</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/">Übersicht</a></li>
+          <li><a href="https://dd-gossen.com/">Meine Services</a></li>
+          <li><a href="https://dd-gossen.com/shopify-kostenrechner/">Kostenrechner</a></li>
+          <li><a href="https://dd-gossen.com/blog/">Blog</a></li>
+          <li><a href="https://dd-gossen.com/#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-toggle">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-shop-erstellen/">Shopify Shop erstellen</a></li>
+          <li><a href="https://dd-gossen.com/shopify-migration/">Shopify Migration</a></li>
+          <li><a href="https://dd-gossen.com/shopify-optimierung/">Shopify Optimierung</a></li>
+          <li><a href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/">Widerrufsbutton einbauen lassen</a></li>
+          <li><a href="https://dd-gossen.com/#competencies">Kompetenzen</a></li>
+          <li><a href="https://dd-gossen.com/#projects">Portfolio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-toggle">
+        <div class="footer-col-title">Schnellzugriff</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/#contact">Kostenloses Erstgespräch</a></li>
+          <li><a href="https://dd-gossen.com/#about-me">Über mich</a></li>
+          <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://dd-gossen.com/impressum.html">Impressum</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/datenschutz.html">Datenschutz</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/agb.html">AGB</a>
+      <span class="footer-sep">|</span>
+      <a href="#" id="openCookieSettings">Cookie-Einstellungen</a>
+      <span class="footer-sep">|</span>
+      <span>© 2025 Maik Gossen</span>
+    </div>
+  </footer>
+
+  <script src="../../script.js"></script>
+  <script>
+    (function() {
+      var header = document.querySelector('.header');
+      if (!header) return;
+      let lastScrollTop = 0;
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        header.style.background = scrollTop > 100 ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.15)';
+        if (scrollTop > 100) {
+          header.classList.toggle('hidden', scrollTop > lastScrollTop);
+        } else {
+          header.classList.remove('hidden');
+        }
+        lastScrollTop = scrollTop;
+      });
+    })();
+
+    (function() {
+      const header = document.querySelector('.header');
+      if (!header) return;
+      const root = document.documentElement;
+      function update() {
+        root.style.setProperty('--sidebar-top', header.classList.contains('hidden') ? '24px' : '110px');
+      }
+      new MutationObserver(update).observe(header, { attributes: true, attributeFilter: ['class'] });
+      update();
+    })();
+
+    (function() {
+      const sections = document.querySelectorAll('.article-content h2[id]');
+      const tocLinks = document.querySelectorAll('.sidebar-toc a');
+      if (!sections.length || !tocLinks.length) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.sidebar-toc a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+      sections.forEach(section => observer.observe(section));
+    })();
+  </script>
+
+</body>
+</html>
