@@ -256,8 +256,14 @@
 
   <!-- Case Studies / Projekte -->
   <url>
+    <loc>https://dd-gossen.com/projekte/strive-magazine/</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://dd-gossen.com/projekte/uhren2000/</loc>
-    <lastmod>2026-04-06</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
