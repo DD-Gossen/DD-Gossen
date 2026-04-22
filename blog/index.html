@@ -45,9 +45,15 @@
       margin: 0;
       padding: 0;
     }
-    .blog-card-single {
-      max-width: 700px;
+    .blog-grid {
+      max-width: 1200px;
       margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
+    .blog-card-single {
+      margin: 0;
       background: rgba(255, 255, 255, 0.4);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.4);
@@ -61,16 +67,33 @@
     }
     .blog-card-single-image {
       width: 100%;
-      height: 280px;
+      height: 220px;
       object-fit: cover;
       display: block;
     }
+    .blog-card-no-image {
+      width: 100%;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0f172a 0%, #237eb5 100%);
+      color: rgba(255, 255, 255, 0.9);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
     .blog-card-single-content {
-      padding: 2rem 2rem 2rem;
+      padding: 1.5rem 1.5rem 1.5rem;
     }
     .blog-card-single-title {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.6rem;
+      font-size: 1.3rem;
       font-weight: 600;
       color: #0f172a;
       margin: 0 0 0.75rem 0;
@@ -142,6 +165,12 @@
       border: 1px solid rgba(0,0,0,0.08);
       flex-shrink: 0;
     }
+    @media (max-width: 900px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+    }
     @media (max-width: 768px) {
       .blog-main {
         margin-top: 100px;
@@ -153,8 +182,8 @@
       .blog-card-single {
         border-radius: 16px;
       }
-      .blog-card-single-image {
-        height: 200px;
+      .blog-card-single-image, .blog-card-no-image {
+        height: 180px;
       }
       .blog-card-single-content {
         padding: 1.5rem 1.25rem;
@@ -189,7 +218,9 @@
       <h1 class="blog-main-title">Blog</h1>
     </div>
 
+    <section class="blog-grid">
     <a href="shopify-scripts-migration-functions/" class="blog-card-single">
+      <img src="images/hero-shopify-scripts.jpg" alt="Shopify Scripts Migration zu Functions" class="blog-card-single-image">
       <div class="blog-card-single-content">
         <h2 class="blog-card-single-title">Shopify Scripts Migration: Umstieg auf Shopify Functions bis 30. Juni 2026</h2>
         <p class="blog-card-single-date">22. April 2026</p>
@@ -201,7 +232,8 @@
       </div>
     </a>
 
-    <a href="ai-act-shopify-shops/" class="blog-card-single" style="margin-top: 2rem;">
+    <a href="ai-act-shopify-shops/" class="blog-card-single">
+      <img src="images/hero-ai-act.jpg" alt="AI-Act für Shopify Shops" class="blog-card-single-image">
       <div class="blog-card-single-content">
         <h2 class="blog-card-single-title">AI-Act für Shopify Shops: Kennzeichnungspflicht ab August 2026</h2>
         <p class="blog-card-single-date">22. April 2026</p>
@@ -213,7 +245,8 @@
       </div>
     </a>
 
-    <a href="green-claims-shopify-greenwashing/" class="blog-card-single" style="margin-top: 2rem;">
+    <a href="green-claims-shopify-greenwashing/" class="blog-card-single">
+      <img src="images/hero-green-claims.jpg" alt="Green Claims Richtlinie Shopify" class="blog-card-single-image">
       <div class="blog-card-single-content">
         <h2 class="blog-card-single-title">Green Claims Richtlinie: Greenwashing-Verbot für Shopify Shops 2026</h2>
         <p class="blog-card-single-date">22. April 2026</p>
@@ -225,7 +258,8 @@
       </div>
     </a>
 
-    <a href="shopify-updates-sommer-2026/" class="blog-card-single" style="margin-top: 2rem;">
+    <a href="shopify-updates-sommer-2026/" class="blog-card-single">
+      <img src="images/hero-shopify-updates.jpg" alt="Shopify Updates Sommer 2026" class="blog-card-single-image">
       <div class="blog-card-single-content">
         <h2 class="blog-card-single-title">Shopify Updates Sommer 2026: Was für deutsche Shops wichtig ist</h2>
         <p class="blog-card-single-date">22. April 2026</p>
@@ -237,7 +271,8 @@
       </div>
     </a>
 
-    <a href="shopify-checkout-optimieren/" class="blog-card-single" style="margin-top: 2rem;">
+    <a href="shopify-checkout-optimieren/" class="blog-card-single">
+      <div class="blog-card-no-image">Shopify Checkout optimieren</div>
       <div class="blog-card-single-content">
         <h2 class="blog-card-single-title">Shopify Checkout optimieren: 9 Tipps für mehr Conversions (2026)</h2>
         <p class="blog-card-single-date">06. April 2026</p>
@@ -249,7 +284,8 @@
       </div>
     </a>
 
-    <a href="shopify-b2b-grosshandel/" class="blog-card-single" style="margin-top: 2rem;">
+    <a href="shopify-b2b-grosshandel/" class="blog-card-single">
+      <div class="blog-card-no-image">Shopify B2B Großhandel</div>
       <div class="blog-card-single-content">
         <h2 class="blog-card-single-title">Shopify B2B: Großhandel und Wholesale mit Shopify umsetzen (2026)</h2>
         <p class="blog-card-single-date">06. April 2026</p>
@@ -261,7 +297,8 @@
       </div>
     </a>
 
-    <a href="shopify-abo-appstle/" class="blog-card-single" style="margin-top: 2rem;">
+    <a href="shopify-abo-appstle/" class="blog-card-single">
+      <div class="blog-card-no-image">Shopify Abo mit Appstle</div>
       <div class="blog-card-single-content">
         <h2 class="blog-card-single-title">Shopify Abo-Modell einrichten: Appstle Subscriptions im Praxis-Test (2026)</h2>
         <p class="blog-card-single-date">04. April 2026</p>
@@ -273,7 +310,8 @@
       </div>
     </a>
 
-    <a href="strukturierte-daten-shopify/" class="blog-card-single" style="margin-top: 2rem;">
+    <a href="strukturierte-daten-shopify/" class="blog-card-single">
+      <div class="blog-card-no-image">Strukturierte Daten Shopify</div>
       <div class="blog-card-single-content">
         <h2 class="blog-card-single-title">Strukturierte Daten in Shopify: Rich Snippets für bessere Rankings (2026)</h2>
         <p class="blog-card-single-date">03. April 2026</p>
@@ -285,7 +323,8 @@
       </div>
     </a>
 
-    <a href="klaviyo-shopify-email-marketing/" class="blog-card-single" style="margin-top: 2rem;">
+    <a href="klaviyo-shopify-email-marketing/" class="blog-card-single">
+      <div class="blog-card-no-image">Klaviyo für Shopify</div>
       <div class="blog-card-single-content">
         <h2 class="blog-card-single-title">Klaviyo für Shopify: E-Mail-Marketing das wirklich Umsatz bringt (2026)</h2>
         <p class="blog-card-single-date">02. April 2026</p>
@@ -297,7 +336,8 @@
       </div>
     </a>
 
-    <a href="shopify-seo-ohne-app/" class="blog-card-single" style="margin-top: 2rem;">
+    <a href="shopify-seo-ohne-app/" class="blog-card-single">
+      <div class="blog-card-no-image">Shopify SEO ohne App</div>
       <div class="blog-card-single-content">
         <h2 class="blog-card-single-title">Shopify SEO ohne App: 11 Maßnahmen für bessere Rankings (2026)</h2>
         <p class="blog-card-single-date">01. April 2026</p>
@@ -309,7 +349,7 @@
       </div>
     </a>
 
-    <a href="widerrufsbutton-shopify-einbauen/" class="blog-card-single" style="margin-top: 2rem;">
+    <a href="widerrufsbutton-shopify-einbauen/" class="blog-card-single">
       <img src="images/Widerrufsbutton-Shopify-Anleitung.png" alt="Widerrufsbutton in Shopify einbauen – Anleitung" class="blog-card-single-image">
       <div class="blog-card-single-content">
         <h2 class="blog-card-single-title">Widerrufsbutton in Shopify einbauen: Kostenlose Schritt-für-Schritt-Anleitung</h2>
@@ -322,7 +362,7 @@
       </div>
     </a>
 
-    <a href="widerrufsrecht-shopify-2026/" class="blog-card-single" style="margin-top: 2rem;">
+    <a href="widerrufsrecht-shopify-2026/" class="blog-card-single">
       <span class="lang-badge"><span class="lang-badge-flag"></span>EN</span>
       <img src="images/Widerrufsrecht-Shopify-2026.png" alt="Neues Widerrufsrecht 2026 für Shopify-Shops" class="blog-card-single-image">
       <div class="blog-card-single-content">
@@ -334,7 +374,8 @@
         </div>
         <p class="blog-card-single-readmore">Artikel lesen →</p>
       </div>
-    </a><a href="shopify-vs-shopware/" class="blog-card-single" style="margin-top: 2rem;">
+    </a><a href="shopify-vs-shopware/" class="blog-card-single">
+      <div class="blog-card-no-image">Shopify vs Shopware</div>
       <div class="blog-card-single-content">
         <h2 class="blog-card-single-title">Shopify vs. Shopware: Der ehrliche Vergleich für den DACH-Markt (2026)</h2>
         <p class="blog-card-single-date">30. März 2026</p>
@@ -346,7 +387,8 @@
       </div>
     </a>
 
-    <a href="shopify-pagespeed-optimieren/" class="blog-card-single" style="margin-top: 2rem;">
+    <a href="shopify-pagespeed-optimieren/" class="blog-card-single">
+      <div class="blog-card-no-image">Shopify PageSpeed</div>
       <div class="blog-card-single-content">
         <h2 class="blog-card-single-title">Shopify PageSpeed optimieren: So erreichst du 90+ im Google-Score (2026)</h2>
         <p class="blog-card-single-date">24. März 2026</p>
@@ -358,7 +400,8 @@
       </div>
     </a>
 
-    <a href="shopify-kosten/" class="blog-card-single" style="margin-top: 2rem;">
+    <a href="shopify-kosten/" class="blog-card-single">
+      <img src="images/Maik_Blog.jpg" alt="Shopify Kosten 2026" class="blog-card-single-image">
       <div class="blog-card-single-content">
         <h2 class="blog-card-single-title">Was kostet Shopify? Alle Preise und Kosten im Überblick (2026)</h2>
         <p class="blog-card-single-date">20. März 2026</p>
@@ -370,6 +413,7 @@
       </div>
     </a>
 
+  </section>
   </main>
 
   <!-- Shopify Services Hinweis -->
