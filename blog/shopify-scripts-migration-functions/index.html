@@ -344,6 +344,17 @@
   ]
 }
   </script>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://dd-gossen.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://dd-gossen.com/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "Shopify Scripts Migration auf Functions", "item": "https://dd-gossen.com/blog/shopify-scripts-migration-functions/" }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -478,7 +489,7 @@
 
             <p><strong>Schritt 2: Priorisieren.</strong> Rabattlogik am Warenkorb ist meist kritischer als Versand-Filter. Fang mit dem an, was im Fall eines Ausfalls den größten Umsatz-Schaden hätte.</p>
 
-            <p><strong>Schritt 3: Dev-Setup.</strong> Shopify CLI installieren, Partner Dashboard anlegen falls noch nicht vorhanden, Custom App erstellen. Für Einsteiger: Shopify hat dafür die Dokumentation unter shopify.dev/docs/apps/build/functions.</p>
+            <p><strong>Schritt 3: Dev-Setup.</strong> Shopify CLI installieren, Partner Dashboard anlegen falls noch nicht vorhanden, Custom App erstellen. Für Einsteiger: Shopify hat dafür die Dokumentation unter shopify.dev/docs/apps/build/functions. Wer das Dev-Setup nicht selbst aufziehen will, kann die komplette Migration als <a href="https://dd-gossen.com/shopify-hilfe/">Shopify-Hilfe-Paket</a> einkaufen.</p>
 
             <p><strong>Schritt 4: Function entwickeln.</strong> Shopify stellt Templates für die häufigsten Use Cases bereit: product-discount, order-discount, shipping-discount, delivery-customization, payment-customization. Jedes Template enthält ein Beispiel-Script, das du als Basis nutzen kannst.</p>
 
@@ -515,7 +526,7 @@
             <p>Nicht vergessen: Nach der Migration bleibt der Custom-App-Code bei dir und muss langfristig gepflegt werden. Wer keinen Developer im Team hat, plant einen Wartungs-Retainer ein.</p>
 
             <h2 id="praxis">Aus der Praxis</h2>
-            <p>Ich habe kürzlich für einen Plus-Kunden drei Discount-Scripts migriert, die eine verschachtelte B2B-Rabattlogik mit Staffelpreisen und Kundengruppen abbildeten. Die reine Code-Portierung war in wenigen Stunden erledigt. Der größte Teil der zwei Tage Arbeit ging in Testing und Edge-Case-Prüfung im Dev-Store. Das zeigt: Die Migration selbst ist machbar, aber Testing ist nicht verhandelbar, weil Rabatt-Fehler direkt Umsatz kosten.</p>
+            <p>Ich habe kürzlich für einen Plus-Kunden drei Discount-Scripts migriert, die eine verschachtelte B2B-Rabattlogik mit Staffelpreisen und Kundengruppen abbildeten. Ein ähnliches Custom-App-Setup haben wir auch bei <a href="https://dd-gossen.com/projekte/strive-magazine/">Strive Magazine</a> umgesetzt, dort für die Subscription- und Bundle-Logik. Die reine Code-Portierung war in wenigen Stunden erledigt. Der größte Teil der zwei Tage Arbeit ging in Testing und Edge-Case-Prüfung im Dev-Store. Das zeigt: Die Migration selbst ist machbar, aber Testing ist nicht verhandelbar, weil Rabatt-Fehler direkt Umsatz kosten.</p>
 
             <h2 id="fazit">Fazit</h2>
 
