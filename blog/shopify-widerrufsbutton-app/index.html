@@ -75,10 +75,22 @@
     .article-meta { display: flex; align-items: center; gap: 1rem; font-size: 0.88rem; color: #6b7280; margin-bottom: 0rem; flex-wrap: wrap; }
     .meta-item { display: flex; align-items: center; gap: 0.3rem; }
     .meta-tag { background: rgba(35,126,181,0.1); color: #237eb5; padding: 0.2rem 0.7rem; border-radius: 50px; font-size: 0.8rem; font-weight: 500; }
-    .compare-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem 0; font-size: 0.92rem; background: rgba(255,255,255,0.5); border-radius: 12px; overflow: hidden; }
+    .compare-wrapper { width: 100%; overflow-x: auto; margin: 1.5rem 0 2rem 0; }
+    .compare-table { width: 100%; min-width: 600px; border-collapse: collapse; font-size: 0.92rem; background: rgba(255,255,255,0.5); border-radius: 12px; overflow: hidden; }
     .compare-table th, .compare-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid rgba(35,126,181,0.12); vertical-align: top; }
     .compare-table th { background: rgba(35,126,181,0.08); font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; color: #0f172a; }
     .compare-table tr:last-child td { border-bottom: none; }
+    .compare-cards { display: none; }
+    @media (max-width: 700px) {
+      .compare-wrapper { display: none; }
+      .compare-cards { display: block; margin: 1.5rem 0 2rem 0; }
+      .compare-card { background: rgba(255,255,255,0.55); border-radius: 12px; padding: 1rem 1.25rem; margin-bottom: 0.8rem; border: 1px solid rgba(35,126,181,0.15); }
+      .compare-card-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; color: #0f172a; margin-bottom: 0.6rem; padding-bottom: 0.4rem; border-bottom: 1px solid rgba(35,126,181,0.15); }
+      .compare-card-row { display: flex; flex-direction: column; gap: 0.2rem; margin-bottom: 0.7rem; font-size: 0.88rem; }
+      .compare-card-row:last-child { margin-bottom: 0; }
+      .compare-card-label { font-weight: 600; color: #64748b; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+      .compare-card-value { color: #0f172a; line-height: 1.4; }
+    }
     .inline-screenshot { width: 100%; max-width: 720px; margin: 1.5rem auto; display: block; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
     .inline-screenshot-narrow { max-width: 420px; }
     @media (max-width: 900px) {
@@ -278,27 +290,42 @@
 
             <p><strong>Beide Wege funktionieren, sie unterscheiden sich aber bei Setup, Mehrsprachigkeit und Bearbeitung.</strong> Der DIY-Weg mit Shopify Forms und Flow kann für einfache Shops eine gute Lösung sein. Gerade bei einsprachigen Shops mit wenig Prozessanforderungen ist der Ansatz nachvollziehbar. Der Unterschied beginnt dort, wo der Widerrufsbutton nicht nur ein Formular sein soll, sondern ein echter Workflow.</p>
 
-            <table class="compare-table">
-              <thead>
-                <tr>
-                  <th>Thema</th>
-                  <th>DIY mit Shopify Forms/Flow</th>
-                  <th>App-Lösung mit Revoq</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>Setup</td><td>manuell über mehrere Shopify-Funktionen</td><td>geführtes Onboarding</td></tr>
-                <tr><td>Einbindung</td><td>Formular, Seite und Flow selbst konfigurieren</td><td>Shopify Theme App Extension</td></tr>
-                <tr><td>Zwei-Schritt-Flow</td><td>muss sauber selbst abgebildet werden</td><td>integriert</td></tr>
-                <tr><td>Bestätigungsmail</td><td>über Flow/Mail selbst einrichten</td><td>automatisch</td></tr>
-                <tr><td>Mehrsprachigkeit</td><td>manuell pflegen</td><td>alle EU-Sprachen integriert</td></tr>
-                <tr><td>Bestellabgleich</td><td>nicht nativ</td><td>Kunde sieht passende Bestellung sofort</td></tr>
-                <tr><td>Teilwiderruf</td><td>meist Freitext</td><td>Artikel- und Mengenauswahl</td></tr>
-                <tr><td>Bearbeitung</td><td>verteilt über Forms, Flow, E-Mail</td><td>Dashboard im Shopify-Admin</td></tr>
-                <tr><td>Formular- und Mailtexte</td><td>an mehreren Stellen pflegen</td><td>zentral in Revoq anpassbar</td></tr>
-                <tr><td>Datenschutzprüfung</td><td>abhängig vom Setup und Anbieter</td><td>auf EU- und DSGVO-relevante Anforderungen ausgerichtet</td></tr>
-              </tbody>
-            </table>
+            <div class="compare-wrapper">
+              <table class="compare-table">
+                <thead>
+                  <tr>
+                    <th>Thema</th>
+                    <th>DIY mit Shopify Forms/Flow</th>
+                    <th>App-Lösung mit Revoq</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>Setup</td><td>manuell über mehrere Shopify-Funktionen</td><td>geführtes Onboarding</td></tr>
+                  <tr><td>Einbindung</td><td>Formular, Seite und Flow selbst konfigurieren</td><td>Shopify Theme App Extension</td></tr>
+                  <tr><td>Zwei-Schritt-Flow</td><td>muss sauber selbst abgebildet werden</td><td>integriert</td></tr>
+                  <tr><td>Bestätigungsmail</td><td>über Flow/Mail selbst einrichten</td><td>automatisch</td></tr>
+                  <tr><td>Mehrsprachigkeit</td><td>manuell pflegen</td><td>alle EU-Sprachen integriert</td></tr>
+                  <tr><td>Bestellabgleich</td><td>nicht nativ</td><td>Kunde sieht passende Bestellung sofort</td></tr>
+                  <tr><td>Teilwiderruf</td><td>meist Freitext</td><td>Artikel- und Mengenauswahl</td></tr>
+                  <tr><td>Bearbeitung</td><td>verteilt über Forms, Flow, E-Mail</td><td>Dashboard im Shopify-Admin</td></tr>
+                  <tr><td>Formular- und Mailtexte</td><td>an mehreren Stellen pflegen</td><td>zentral in Revoq anpassbar</td></tr>
+                  <tr><td>Datenschutzprüfung</td><td>abhängig vom Setup und Anbieter</td><td>auf EU- und DSGVO-relevante Anforderungen ausgerichtet</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="compare-cards">
+              <div class="compare-card"><div class="compare-card-title">Setup</div><div class="compare-card-row"><span class="compare-card-label">DIY mit Forms/Flow</span><span class="compare-card-value">manuell über mehrere Shopify-Funktionen</span></div><div class="compare-card-row"><span class="compare-card-label">Revoq</span><span class="compare-card-value">geführtes Onboarding</span></div></div>
+              <div class="compare-card"><div class="compare-card-title">Einbindung</div><div class="compare-card-row"><span class="compare-card-label">DIY mit Forms/Flow</span><span class="compare-card-value">Formular, Seite und Flow selbst konfigurieren</span></div><div class="compare-card-row"><span class="compare-card-label">Revoq</span><span class="compare-card-value">Shopify Theme App Extension</span></div></div>
+              <div class="compare-card"><div class="compare-card-title">Zwei-Schritt-Flow</div><div class="compare-card-row"><span class="compare-card-label">DIY mit Forms/Flow</span><span class="compare-card-value">muss sauber selbst abgebildet werden</span></div><div class="compare-card-row"><span class="compare-card-label">Revoq</span><span class="compare-card-value">integriert</span></div></div>
+              <div class="compare-card"><div class="compare-card-title">Bestätigungsmail</div><div class="compare-card-row"><span class="compare-card-label">DIY mit Forms/Flow</span><span class="compare-card-value">über Flow/Mail selbst einrichten</span></div><div class="compare-card-row"><span class="compare-card-label">Revoq</span><span class="compare-card-value">automatisch</span></div></div>
+              <div class="compare-card"><div class="compare-card-title">Mehrsprachigkeit</div><div class="compare-card-row"><span class="compare-card-label">DIY mit Forms/Flow</span><span class="compare-card-value">manuell pflegen</span></div><div class="compare-card-row"><span class="compare-card-label">Revoq</span><span class="compare-card-value">alle EU-Sprachen integriert</span></div></div>
+              <div class="compare-card"><div class="compare-card-title">Bestellabgleich</div><div class="compare-card-row"><span class="compare-card-label">DIY mit Forms/Flow</span><span class="compare-card-value">nicht nativ</span></div><div class="compare-card-row"><span class="compare-card-label">Revoq</span><span class="compare-card-value">Kunde sieht passende Bestellung sofort</span></div></div>
+              <div class="compare-card"><div class="compare-card-title">Teilwiderruf</div><div class="compare-card-row"><span class="compare-card-label">DIY mit Forms/Flow</span><span class="compare-card-value">meist Freitext</span></div><div class="compare-card-row"><span class="compare-card-label">Revoq</span><span class="compare-card-value">Artikel- und Mengenauswahl</span></div></div>
+              <div class="compare-card"><div class="compare-card-title">Bearbeitung</div><div class="compare-card-row"><span class="compare-card-label">DIY mit Forms/Flow</span><span class="compare-card-value">verteilt über Forms, Flow, E-Mail</span></div><div class="compare-card-row"><span class="compare-card-label">Revoq</span><span class="compare-card-value">Dashboard im Shopify-Admin</span></div></div>
+              <div class="compare-card"><div class="compare-card-title">Formular- und Mailtexte</div><div class="compare-card-row"><span class="compare-card-label">DIY mit Forms/Flow</span><span class="compare-card-value">an mehreren Stellen pflegen</span></div><div class="compare-card-row"><span class="compare-card-label">Revoq</span><span class="compare-card-value">zentral in Revoq anpassbar</span></div></div>
+              <div class="compare-card"><div class="compare-card-title">Datenschutzprüfung</div><div class="compare-card-row"><span class="compare-card-label">DIY mit Forms/Flow</span><span class="compare-card-value">abhängig vom Setup und Anbieter</span></div><div class="compare-card-row"><span class="compare-card-label">Revoq</span><span class="compare-card-value">auf EU- und DSGVO-relevante Anforderungen ausgerichtet</span></div></div>
+            </div>
 
             <p>Kurz gesagt: Shopify Forms und Flow können reichen, wenn du eine einfache DIY-Lösung möchtest. Revoq ist sinnvoll, wenn du den Widerrufsprozess strukturiert, mehrsprachig und mit weniger Setup-Risiko abbilden willst.</p>
 
