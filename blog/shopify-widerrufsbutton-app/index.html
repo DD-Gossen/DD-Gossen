@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopify Widerrufsbutton App: Revoq vs. Forms & Flow</title>
+  <meta name="description" content="Shopify Widerrufsbutton App oder DIY mit Forms und Flow? Vergleich, wann sich die Revoq-App für den EU-Widerrufsbutton lohnt und für wen DIY reicht.">
+  <link rel="canonical" href="https://dd-gossen.com/blog/shopify-widerrufsbutton-app/">
+  <link rel="alternate" hreflang="de" href="https://dd-gossen.com/blog/shopify-widerrufsbutton-app/">
+  <link rel="alternate" hreflang="x-default" href="https://dd-gossen.com/blog/shopify-widerrufsbutton-app/">
+  <meta property="og:title" content="Shopify Widerrufsbutton App: Revoq vs. Forms & Flow">
+  <meta property="og:description" content="Shopify Widerrufsbutton App oder DIY mit Forms und Flow? Vergleich, wann sich die Revoq-App für den EU-Widerrufsbutton lohnt und für wen DIY reicht.">
+  <meta property="og:url" content="https://dd-gossen.com/blog/shopify-widerrufsbutton-app/">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="https://dd-gossen.com/blog/images/revoq-01-app-store.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="800">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dd-gossen.com/blog/images/revoq-01-app-store.png">
+  <link rel="icon" type="image/png" href="../../favicon.png">
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="stylesheet" href="../article-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    .article-layout { display: grid; grid-template-columns: 260px 1fr; gap: 2rem; width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 1rem; box-sizing: border-box; }
+    .sidebar-column { align-self: stretch; }
+    .article-sidebar { display: flex; flex-direction: column; gap: 1.2rem; position: sticky; top: var(--sidebar-top, 110px); transition: top 0.3s ease; }
+    .article-main { align-self: start; min-width: 0; width: 100%; }
+    .sidebar-toc { background: rgba(255,255,255,0.55); backdrop-filter: blur(12px); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .sidebar-toc h3 { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; color: #0f172a; margin: 0 0 1rem 0; padding-bottom: 0.6rem; border-bottom: 2px solid rgba(35,126,181,0.3); text-transform: uppercase; letter-spacing: 0.05em; }
+    .sidebar-toc ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.2rem; }
+    .sidebar-toc a { display: block; font-size: 0.88rem; color: #374151; text-decoration: none; padding: 0.35rem 0.6rem; border-radius: 6px; transition: all 0.2s ease; line-height: 1.4; }
+    .sidebar-toc a:hover, .sidebar-toc a.active { background: rgba(35,126,181,0.1); color: #237eb5; }
+    .sidebar-cta { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 16px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 20px rgba(15,23,42,0.25); }
+    .sidebar-cta p { font-size: 0.9rem; color: rgba(255,255,255,0.85); margin: 0 0 1rem 0; line-height: 1.5; }
+    .sidebar-cta a { display: inline-block; background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); color: white; padding: 0.65rem 1.2rem; border-radius: 50px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: background 0.2s ease; width: 100%; box-sizing: border-box; }
+    .sidebar-cta a:hover { background: linear-gradient(135deg, #0066e6 0%, #004999 100%); color: white; text-decoration: none; }
+    .article-card { max-width: 100%; width: 100%; background: rgba(255, 255, 255, 0.52); backdrop-filter: blur(10px); border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); padding: 2.5rem; border: 1px solid rgba(255,255,255,0.2); box-sizing: border-box; }
+    .article-card .article-hero-img { width: 100% !important; max-width: 100% !important; height: 280px !important; object-fit: cover !important; object-position: center center; border-radius: 16px; margin-bottom: 2rem; display: block; box-shadow: 0 4px 20px rgba(0,0,0,0.15); background: #0a1a3d; }
+    .inline-cta { background: linear-gradient(135deg, rgba(35,126,181,0.08) 0%, rgba(35,126,181,0.15) 100%); border: 1px solid rgba(35,126,181,0.25); border-left: 4px solid #237eb5; border-radius: 12px; padding: 1.5rem 2rem; margin: 2.5rem 0; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+    .inline-cta-text { flex: 1; }
+    .inline-cta-text strong { display: block; font-family: 'Barlow Condensed', sans-serif; font-size: 1.2rem; color: #0f172a; margin-bottom: 0.3rem; }
+    .inline-cta-text span { font-size: 0.9rem; color: #374151; }
+    .inline-cta a { display: inline-block; background: #0f172a; color: white !important; padding: 0.6rem 1.4rem; border-radius: 50px; font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 600; text-decoration: none !important; white-space: nowrap; transition: background 0.2s ease; flex-shrink: 0; }
+    .inline-cta a:hover { background: #1e293b; }
+    .author-box { display: flex; flex-direction: column; gap: 0; background: transparent !important; border: 1px solid rgba(35,126,181,0.15); border-radius: 10px; padding: 1.25rem 1.5rem; margin-top: 2rem; width: 100%; }
+    .author-box-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 600; color: #333; margin: 0 0 0.75rem 0; }
+    .author-bio { font-size: 0.9rem; color: #555; line-height: 1.5; margin: 0 0 1rem 0; }
+    .author-details { display: flex; align-items: center; gap: 1rem; }
+    .author-name-link { color: #333; text-decoration: none; font-weight: inherit; }
+    .author-name-link:hover { color: #333; text-decoration: none; }
+    .article-summary { margin: 0 0 2rem 0; padding: 0; width: 100%; }
+    .article-summary summary { font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; font-weight: 500; color: #64748b; padding: 0.25rem 0 0.4rem 0; cursor: pointer; list-style: none; border-bottom: 1px solid rgba(35,126,181,0.15); display: block; width: 100%; text-align: left; }
+    .article-summary summary::-webkit-details-marker { display: none; }
+    .article-summary summary::after { content: '▼'; float: right; font-size: 0.6rem; opacity: 0.4; }
+    .article-summary[open] summary::after { content: '▲'; }
+    .article-summary ul { margin: 0.5rem 0 0 0; padding: 0; list-style: none; width: 100%; }
+    .article-summary li { padding: 0.3rem 0; font-size: 0.9rem; line-height: 1.5; color: #64748b; border-bottom: 1px solid rgba(35,126,181,0.06); }
+    .article-summary li:last-child { border-bottom: none; }
+    .article-faq { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(35,126,181,0.15); width: 100%; min-width: 0; box-sizing: border-box; }
+    .faq-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 600; color: #0f172a; margin: 0 0 1.5rem 0; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; width: 100%; min-width: 0; }
+    .faq-item { padding: 0; margin: 0; border-bottom: 1px solid rgba(35,126,181,0.12); width: 100%; min-width: 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item summary { font-weight: 600; color: #0f172a; padding: 1rem 0; cursor: pointer; list-style: none; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; float: right; font-size: 1.2rem; color: #237eb5; }
+    .faq-item[open] summary::after { content: '−'; }
+    .faq-item p { margin: 0 0 1rem 0; padding: 0 0 1rem 0; line-height: 1.6; color: #0f172a; overflow-wrap: break-word; word-wrap: break-word; }
+    .author-avatar { width: 48px !important; height: 48px !important; max-width: 48px !important; border-radius: 50%; object-fit: cover; object-position: top center; flex-shrink: 0; border: none; margin: 0 !important; }
+    .author-info { display: flex; flex-direction: column; gap: 0.25rem; }
+    .author-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.125rem; font-weight: 600; color: #333; margin: 0; }
+    .author-role { font-size: 0.875rem; color: #777; font-weight: 400; margin: 0; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; font-size: 0.88rem; color: #6b7280; margin-bottom: 0rem; flex-wrap: wrap; }
+    .meta-item { display: flex; align-items: center; gap: 0.3rem; }
+    .meta-tag { background: rgba(35,126,181,0.1); color: #237eb5; padding: 0.2rem 0.7rem; border-radius: 50px; font-size: 0.8rem; font-weight: 500; }
+    .compare-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem 0; font-size: 0.92rem; background: rgba(255,255,255,0.5); border-radius: 12px; overflow: hidden; }
+    .compare-table th, .compare-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid rgba(35,126,181,0.12); vertical-align: top; }
+    .compare-table th { background: rgba(35,126,181,0.08); font-family: 'Barlow Condensed', sans-serif; font-size: 0.95rem; color: #0f172a; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .inline-screenshot { width: 100%; max-width: 720px; margin: 1.5rem auto; display: block; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.12); }
+    .inline-screenshot-narrow { max-width: 420px; }
+    @media (max-width: 900px) {
+      .article-layout { grid-template-columns: 1fr; padding: 0 0.2rem; gap: 0.8rem; }
+      .article-sidebar { position: static; top: auto; transition: none; flex-direction: column; gap: 0; }
+      .sidebar-toc { padding: 0.8rem 1rem; border-radius: 12px; margin-bottom: 0; background: rgba(255,255,255,0.55); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.3); box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+      .sidebar-toc h3 { font-size: 0.78rem; margin-bottom: 0.35rem; color: #0f172a; }
+      .sidebar-toc ul { display: flex; flex-direction: column; flex-wrap: wrap; gap: 0.05rem 0; margin: 0; }
+      .sidebar-toc li { margin: 0; padding: 0; }
+      .sidebar-toc a { font-size: 0.85rem; padding: 0.15rem 0; background: none !important; border: none; border-radius: 0; white-space: normal; color: #0f172a !important; text-decoration: none; opacity: 0.75; }
+      .sidebar-toc a:hover { background: none !important; border: none; color: #0f172a !important; text-decoration: none; opacity: 0.9; }
+      .sidebar-cta { display: none; }
+      .compare-table { font-size: 0.85rem; }
+      .compare-table th, .compare-table td { padding: 0.5rem 0.6rem; }
+    }
+    @media (max-width: 600px) {
+      .inline-cta { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+      .author-box { padding: 1rem 1.25rem; }
+      .author-box-title { font-size: 1rem; margin-bottom: 0.6rem; }
+      .author-bio { font-size: 0.93rem; margin-bottom: 1.5rem; }
+      .article-card .article-hero-img { height: 200px !important; border-radius: 12px; margin-bottom: 0.8rem; }
+      .article-faq { margin-top: 1.5rem; padding-top: 1rem; }
+      .faq-title { font-size: 1.2rem; margin-bottom: 0.6rem; }
+      .faq-item summary { padding: 0.5rem 0; font-size: 0.9rem; }
+      .faq-item p { margin: 0 0 0.5rem 0; padding: 0 0 0.5rem 0; font-size: 0.88rem; line-height: 1.45; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://dd-gossen.com/#organization",
+        "name": "DD-Gossen",
+        "url": "https://dd-gossen.com",
+        "logo": { "@type": "ImageObject", "url": "https://dd-gossen.com/Logo.png" },
+        "sameAs": ["https://www.linkedin.com/in/maik-gossen"]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dd-gossen.com/#author",
+        "name": "Maik Gossen",
+        "url": "https://dd-gossen.com/",
+        "image": { "@type": "ImageObject", "url": "https://dd-gossen.com/Maik-Gossen-ShopifyFreelancer.png", "width": 400, "height": 400 },
+        "jobTitle": "Shopify Freelancer",
+        "worksFor": { "@id": "https://dd-gossen.com/#organization" }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://dd-gossen.com/blog/shopify-widerrufsbutton-app/#article",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://dd-gossen.com/blog/shopify-widerrufsbutton-app/" },
+        "headline": "Shopify Widerrufsbutton App: Wann eine App-Lösung sinnvoller ist als DIY mit Forms und Flow",
+        "description": "Shopify Widerrufsbutton App oder DIY mit Forms und Flow? Vergleich, wann sich die Revoq-App für den EU-Widerrufsbutton lohnt und für wen DIY reicht.",
+        "image": { "@type": "ImageObject", "url": "https://dd-gossen.com/blog/images/revoq-01-app-store.png", "width": 1200, "height": 800 },
+        "datePublished": "2026-05-13",
+        "dateModified": "2026-05-13",
+        "author": { "@id": "https://dd-gossen.com/#author" },
+        "publisher": { "@id": "https://dd-gossen.com/#organization", "name": "DD-Gossen", "logo": { "@type": "ImageObject", "url": "https://dd-gossen.com/Logo.png", "width": 600, "height": 60 } },
+        "articleSection": "Shopify",
+        "keywords": "Shopify Widerrufsbutton App, Widerrufsbutton Shopify, EU Widerrufsbutton, Revoq, Shopify Forms Widerrufsbutton, Shopify Flow Widerrufsbutton, § 356a BGB Shopify",
+        "wordCount": 1500
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://dd-gossen.com/blog/shopify-widerrufsbutton-app/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Ist der Widerrufsbutton für Shopify-Shops Pflicht?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Für alle B2C-Shops, die an Verbraucher in der EU verkaufen, wird ab dem 19. Juni 2026 eine elektronische Widerrufsfunktion zur Pflicht. Shopify-Händler sollten prüfen, ob sie einen klar erreichbaren Widerrufsbutton mit Formular, Bestätigungsschritt und Eingangsbestätigung benötigen." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kann ich den Widerrufsbutton mit Shopify Forms und Flow umsetzen?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ja, grundsätzlich ist eine DIY-Lösung mit Shopify Forms, Shopify Flow und automatisierten E-Mails möglich. Der Händler muss dann aber selbst sicherstellen, dass Formular, Zwei-Schritt-Flow, Bestätigungsmail, Platzierung im Shop, Mehrsprachigkeit und interne Bearbeitung sauber umgesetzt und getestet sind." }
+          },
+          {
+            "@type": "Question",
+            "name": "Wann ist eine Shopify Widerrufsbutton App sinnvoller?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Eine spezialisierte App lohnt sich, wenn der Shop mehrere Sprachen nutzt, Bestellungen automatisch zugeordnet werden sollen, Teilwiderrufe strukturiert erfasst werden müssen oder das Team die Widerrufe zentral im Shopify-Admin bearbeiten möchte." }
+          },
+          {
+            "@type": "Question",
+            "name": "Muss der Widerrufsbutton ohne Kundenlogin funktionieren?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ja. Der Widerrufsbutton sollte für Kunden einfach erreichbar sein und nicht davon abhängen, dass sich der Kunde zuerst einloggt. Sichtbare Einbindung im Shop ist deshalb wichtig, zum Beispiel über Widerrufsseite, Button oder Footer-Link." }
+          },
+          {
+            "@type": "Question",
+            "name": "Muss nach dem Widerruf eine Bestätigungsmail versendet werden?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Eine Eingangsbestätigung ist zentraler Teil des Prozesses. Bei einer DIY-Lösung muss die Mail selbst eingerichtet werden, zum Beispiel über Shopify Flow. Revoq sendet die Bestätigungsmail automatisch nach erfolgreicher Bestätigung des Widerrufs." }
+          },
+          {
+            "@type": "Question",
+            "name": "Was ist der Vorteil von Revoq gegenüber einem einfachen Formular?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Revoq bildet einen Shopify-Workflow ab: zweistufiger Widerrufsflow, mehrsprachige Storefront, automatische Bestätigungsmail, Bestellabgleich, Teilwiderrufe und Bearbeitung im Shopify-Admin. Dadurch wird der Widerruf nicht nur erfasst, sondern auch operativ besser verarbeitbar." }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://dd-gossen.com/blog/shopify-widerrufsbutton-app/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://dd-gossen.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://dd-gossen.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Shopify Widerrufsbutton App", "item": "https://dd-gossen.com/blog/shopify-widerrufsbutton-app/" }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header class="header">
+    <a href="https://dd-gossen.com/shopify-freelancer/" class="logo">
+      <img src="../../Logo.png" alt="DD-Gossen Logo" class="logo-img">
+    </a>
+    <div class="header-right-container">
+      <div class="header-cta-container">
+        <a href="https://apps.shopify.com/eu-withdrawal-form" target="_blank" rel="noopener" class="header-cta-button">Revoq im App Store</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="blog-main" style="margin-top: 0; padding: 8rem 1rem 4rem;">
+
+    <div class="article-layout">
+
+      <div class="sidebar-column">
+      <aside class="article-sidebar">
+        <div class="sidebar-toc">
+          <h3>Inhaltsverzeichnis</h3>
+          <ul>
+            <li><a href="#diy-oder-app">DIY oder App-Lösung?</a></li>
+            <li><a href="#datenschutz">Datenschutz beim Widerrufsbutton</a></li>
+            <li><a href="#was-revoq-anders-macht">Was Revoq anders macht</a></li>
+            <li><a href="#onboarding">Geführtes Onboarding</a></li>
+            <li><a href="#zwei-schritt-flow">Zwei-Schritt-Flow</a></li>
+            <li><a href="#bestellabgleich">Bestellabgleich und Teilwiderrufe</a></li>
+            <li><a href="#bestaetigungsmail">Automatische Bestätigungsmail</a></li>
+            <li><a href="#texte">Flexible Texte</a></li>
+            <li><a href="#admin">Bearbeitung im Shopify-Admin</a></li>
+            <li><a href="#fuer-wen">Für wen ist Revoq sinnvoll?</a></li>
+            <li><a href="#vertrauen">Vertrauen und App-Store-Listing</a></li>
+            <li><a href="#fazit">Fazit</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-cta">
+          <p>Widerrufsbutton sauber in Shopify einbauen?</p>
+          <a href="https://apps.shopify.com/eu-withdrawal-form" target="_blank" rel="noopener">Revoq im App Store →</a>
+        </div>
+      </aside>
+      </div>
+
+      <div class="article-main">
+        <div class="article-card">
+
+          <div class="article-meta">
+            <span class="meta-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              13. Mai 2026
+            </span>
+            <span class="meta-item meta-lesezeit">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              8 Min. Lesezeit
+            </span>
+            <span class="meta-tag">Recht &amp; Compliance</span>
+          </div>
+
+          <h1 class="article-title" style="text-align: left; margin: 0 0 1.5rem 0; font-size: 2.4rem; max-width: 100%; padding: 0;">Shopify Widerrufsbutton App: Wann eine App-Lösung sinnvoller ist als DIY mit Forms und Flow</h1>
+
+          <img src="../images/revoq-01-app-store.png" alt="Revoq EU-Widerrufsbutton im Shopify App Store mit Built-for-Shopify-Badge und Bewertung" class="article-hero-img">
+
+          <details class="article-summary">
+            <summary>Artikel in Kürze</summary>
+            <ul>
+              <li><strong>Stichtag:</strong> Ab dem 19. Juni 2026 müssen viele B2C-Shopify-Shops in der EU eine elektronische Widerrufsfunktion anbieten.</li>
+              <li><strong>Zwei Wege:</strong> DIY mit Shopify Forms und Flow oder eine spezialisierte Shopify Widerrufsbutton App wie Revoq.</li>
+              <li><strong>Revoq:</strong> Built-for-Shopify-App mit zweistufigem Formular, Bestellabgleich, Teilwiderrufen, mehrsprachiger Storefront und Bearbeitung im Admin.</li>
+              <li><strong>Datenschutz:</strong> Wer eine App nutzt, sollte Anbieter, DSGVO, DPA und Support prüfen. Revoq ist auf EU-Händler ausgerichtet.</li>
+              <li><strong>DIY:</strong> Für kleine, einsprachige Shops mit wenig Bearbeitungsbedarf weiterhin möglich.</li>
+              <li><strong>App-Lösung:</strong> Sinnvoll bei Mehrsprachigkeit, Teilwiderrufen, Bestellabgleich und zentraler Bearbeitung.</li>
+            </ul>
+          </details>
+
+          <div class="article-content" style="width: 100%; max-width: 100%; padding: 0; box-sizing: border-box; margin: 0;">
+
+            <p>Ab dem <strong>19. Juni 2026</strong> müssen viele B2C-Onlineshops in der EU eine elektronische Widerrufsfunktion anbieten. Für Shopify-Händler stellt sich gerade eine sehr praktische Frage: Wie setze ich den EU-Widerrufsbutton konkret in Shopify um?</p>
+
+            <p>Eine Möglichkeit ist der DIY-Weg mit <strong>Shopify Forms</strong>, <strong>Shopify Flow</strong> und einer automatisierten E-Mail. Diesen kostenlosen Ansatz habe ich in einem <a href="https://dd-gossen.com/blog/widerrufsbutton-shopify-einbauen/">separaten Artikel zum Widerrufsbutton in Shopify</a> erklärt.</p>
+
+            <p>Für viele Händler ist aber eine spezialisierte <strong>Shopify Widerrufsbutton App</strong> sinnvoller. Vor allem dann, wenn der Prozess nicht nur irgendwie funktionieren soll, sondern mehrsprachig, datenschutzbewusst und sauber im Shopify-Admin bearbeitbar sein soll. Genau hier setzt <strong>Revoq</strong> an. Mehr zum rechtlichen Hintergrund findest du auf <a href="https://www.consumer-withdrawal.eu/de" target="_blank" rel="noopener">consumer-withdrawal.eu</a>.</p>
+
+            <h2 id="diy-oder-app">DIY mit Shopify Forms/Flow oder App-Lösung?</h2>
+
+            <p><strong>Beide Wege funktionieren, sie unterscheiden sich aber bei Setup, Mehrsprachigkeit und Bearbeitung.</strong> Der DIY-Weg mit Shopify Forms und Flow kann für einfache Shops eine gute Lösung sein. Gerade bei einsprachigen Shops mit wenig Prozessanforderungen ist der Ansatz nachvollziehbar. Der Unterschied beginnt dort, wo der Widerrufsbutton nicht nur ein Formular sein soll, sondern ein echter Workflow.</p>
+
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Thema</th>
+                  <th>DIY mit Shopify Forms/Flow</th>
+                  <th>App-Lösung mit Revoq</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Setup</td><td>manuell über mehrere Shopify-Funktionen</td><td>geführtes Onboarding</td></tr>
+                <tr><td>Einbindung</td><td>Formular, Seite und Flow selbst konfigurieren</td><td>Shopify Theme App Extension</td></tr>
+                <tr><td>Zwei-Schritt-Flow</td><td>muss sauber selbst abgebildet werden</td><td>integriert</td></tr>
+                <tr><td>Bestätigungsmail</td><td>über Flow/Mail selbst einrichten</td><td>automatisch</td></tr>
+                <tr><td>Mehrsprachigkeit</td><td>manuell pflegen</td><td>alle EU-Sprachen integriert</td></tr>
+                <tr><td>Bestellabgleich</td><td>nicht nativ</td><td>Kunde sieht passende Bestellung sofort</td></tr>
+                <tr><td>Teilwiderruf</td><td>meist Freitext</td><td>Artikel- und Mengenauswahl</td></tr>
+                <tr><td>Bearbeitung</td><td>verteilt über Forms, Flow, E-Mail</td><td>Dashboard im Shopify-Admin</td></tr>
+                <tr><td>Formular- und Mailtexte</td><td>an mehreren Stellen pflegen</td><td>zentral in Revoq anpassbar</td></tr>
+                <tr><td>Datenschutzprüfung</td><td>abhängig vom Setup und Anbieter</td><td>auf EU- und DSGVO-relevante Anforderungen ausgerichtet</td></tr>
+              </tbody>
+            </table>
+
+            <p>Kurz gesagt: Shopify Forms und Flow können reichen, wenn du eine einfache DIY-Lösung möchtest. Revoq ist sinnvoll, wenn du den Widerrufsprozess strukturiert, mehrsprachig und mit weniger Setup-Risiko abbilden willst.</p>
+
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Revoq direkt ausprobieren</strong>
+                <span>Kostenloser Plan verfügbar, geführtes Onboarding und Einbindung über Theme App Extension.</span>
+              </div>
+              <a href="https://apps.shopify.com/eu-withdrawal-form" target="_blank" rel="noopener">Zum App Store</a>
+            </div>
+
+            <h2 id="datenschutz">Warum Datenschutz beim Widerrufsbutton besonders wichtig ist</h2>
+
+            <p><strong>Der EU-Widerrufsbutton ist nicht nur ein Button im Theme, beim Absenden eines Widerrufs werden personenbezogene Daten verarbeitet.</strong> Konkret: Name, E-Mail-Adresse, Bestellnummer, ausgewählte Artikel, Mengenangaben und optional eine Nachricht des Kunden. Damit ist der Widerrufsprozess auch ein DSGVO-relevantes Thema.</p>
+
+            <p>Shopify-Händler sollten deshalb bei jeder App prüfen:</p>
+
+            <p><strong>Wer ist der Anbieter?</strong> Gibt es eine klare Datenschutzerklärung? Gibt es einen Auftragsverarbeitungsvertrag bzw. DPA/AVV? Ist nachvollziehbar, welche Daten verarbeitet werden? Gibt es einen erreichbaren Support-Ansprechpartner? Ist die Lösung auf europäische Händler und EU-Anforderungen ausgerichtet?</p>
+
+            <p>Gerade im Shopify App Store gibt es viele internationale Anbieter. Das ist nicht automatisch schlecht. Aber bei einer Funktion, die Kundendaten verarbeitet und rechtlich relevant ist, sollte man nicht nur auf Preis und Feature-Liste schauen. <strong>Revoq wurde speziell für europäische Shopify-Händler entwickelt</strong> und legt den Fokus nicht nur auf die technische Einbindung, sondern auch auf transparente Datenverarbeitung und nachvollziehbare Händlerfunktionen.</p>
+
+            <h2 id="was-revoq-anders-macht">Was Revoq anders macht als eine einfache Formularlösung</h2>
+
+            <p><strong>Revoq ist eine Built-for-Shopify-App für den EU-Widerrufsbutton.</strong> Die App unterstützt Shopify-Händler bei der rechtssicheren Umsetzung der elektronischen Widerrufsfunktion und der Bearbeitung der eingehenden Widerrufe direkt im Shopify-Admin. Der große Vorteil: Händler müssen sich den Prozess nicht selbst aus mehreren Shopify-Bausteinen zusammenbauen.</p>
+
+            <h3 id="onboarding">Geführtes Onboarding statt manuellem Setup</h3>
+
+            <p>Nach der Installation führt Revoq durch die Einrichtung. Händler können den Widerrufsbutton bzw. das Widerrufsformular über eine Shopify Theme App Extension einbinden. Das heißt: kein eigener Code notwendig, keine externe Formularlösung, Einbindung direkt im Shopify-Theme, verständlicher Setup-Prozess und schnelle Aktivierung im Shop.</p>
+
+            <img src="../images/revoq-02-onboarding.png" alt="Revoq Onboarding im Shopify-Admin mit Auswahl der Einbindungsmethode" class="inline-screenshot">
+
+            <h3 id="zwei-schritt-flow">Storefront-Formular mit Zwei-Schritt-Flow</h3>
+
+            <p>Der eigentliche Widerrufsflow ist zweistufig aufgebaut. Kunden geben zunächst ihre Daten ein und bestätigen den Widerruf anschließend bewusst. Das ist wichtig, weil der Widerrufsbutton nach der neuen Regelung nicht einfach nur ein Kontaktformular sein sollte. Der Kunde soll klar erkennen, dass er eine Widerrufserklärung abgibt.</p>
+
+            <p>Revoq unterstützt unter anderem Zugriff ohne Kundenlogin, Eingabe von Name, Bestellnummer und E-Mail, einen klaren zweistufigen Flow, automatische Bestätigung nach erfolgreichem Absenden und mehrsprachige Storefront-Texte.</p>
+
+            <img src="../images/revoq-03-form-step1.png" alt="Revoq Widerrufsformular Step 1 mit Name, Bestellnummer und E-Mail-Eingabe" class="inline-screenshot inline-screenshot-narrow">
+
+            <h3 id="bestellabgleich">Bestellabgleich und Teilwiderrufe</h3>
+
+            <p>Ein besonders wichtiger Unterschied zu einer einfachen Shopify-Forms-Lösung ist der Bestellabgleich. Revoq kann Bestellnummer und E-Mail-Adresse mit Shopify-Bestellungen abgleichen. Wenn eine Bestellung gefunden wird, können dem Kunden die Bestellpositionen angezeigt werden. Dadurch kann der Widerruf strukturierter erfasst werden.</p>
+
+            <p>Das ist vor allem praktisch, wenn Kunden nicht die komplette Bestellung widerrufen, sondern nur einzelne Artikel. Revoq unterstützt je nach Plan Bestellabgleich über Bestellnummer und E-Mail, Anzeige der Bestellpositionen, Auswahl einzelner Artikel, Mengenauswahl für Teilwiderrufe, optionale Widerrufsgründe und einen Friststatus zur besseren internen Einordnung. Das reduziert Freitext, Rückfragen und manuelle Zuordnung im Support.</p>
+
+            <img src="../images/revoq-04-form-step2.png" alt="Revoq Step 2 mit gefundenen Bestellpositionen, Artikelauswahl und Mengenauswahl" class="inline-screenshot inline-screenshot-narrow">
+
+            <h3 id="bestaetigungsmail">Automatische Bestätigungsmail</h3>
+
+            <p>Nach erfolgreicher Bestätigung sendet Revoq automatisch eine Bestätigungsmail an den Kunden. Das ist ein zentraler Teil des Prozesses, weil der Kunde eine Eingangsbestätigung erhalten soll. Bei einer DIY-Lösung muss diese Mail über Shopify Flow oder eine andere Automatisierung korrekt eingerichtet und getestet werden. Mit Revoq ist dieser Teil bereits im Prozess enthalten. Je nach Setup können Händler außerdem Absenderdaten, Reply-To und weitere E-Mail-Einstellungen konfigurieren.</p>
+
+            <h3 id="texte">Flexible Texte für Formular und Bestätigungsmail</h3>
+
+            <p>Ein weiterer Vorteil gegenüber einer einfachen Formularlösung ist die Anpassbarkeit der Kommunikation. Viele Shops möchten nicht nur ein Standardformular anzeigen, sondern den Widerrufsprozess sprachlich an ihre Marke und ihren Kundenservice anpassen. Mit Revoq können Händler wichtige Formulartexte flexibel konfigurieren und die Bestätigungsmail an den eigenen Kommunikationsstil anpassen.</p>
+
+            <p>Bei einer DIY-Lösung müssen solche Texte meist an mehreren Stellen gepflegt werden, zum Beispiel im Formular, in Shopify Flow und in den E-Mail-Vorlagen. Revoq bündelt diese Einstellungen zentraler und reduziert dadurch Pflegeaufwand und Fehlerquellen.</p>
+
+            <h3 id="admin">Bearbeitung im Shopify-Admin</h3>
+
+            <p>Ein Widerrufsbutton ist nur der Anfang. Danach müssen die eingehenden Widerrufe intern bearbeitet werden. Bei einer DIY-Lösung landen Daten oft verteilt in Formularantworten, E-Mails oder Flow-Aktionen. Revoq bündelt den Prozess direkt im Shopify-Admin.</p>
+
+            <p>Händler können dort neue Widerrufe sehen, nach Vorgängen suchen, Status bearbeiten, Details zum Kunden und zur Bestellung prüfen, die interne Bearbeitung strukturieren und je nach Plan Exporte, Timeline oder weitere Shopify-Funktionen nutzen. Das macht Revoq nicht nur zu einem Formular, sondern zu einem echten Workflow für Shopify-Händler.</p>
+
+            <img src="../images/revoq-05-admin.png" alt="Revoq Widerrufsdetailseite im Shopify-Admin mit Betroffenen Artikeln, Bestelldetails und Verlauf" class="inline-screenshot">
+
+            <div class="inline-cta">
+              <div class="inline-cta-text">
+                <strong>Widerrufsprozess sauber abbilden statt selbst zusammenbauen?</strong>
+                <span>Revoq deckt Storefront-Formular, Bestätigungsmail und Bearbeitung im Admin in einer App ab.</span>
+              </div>
+              <a href="https://apps.shopify.com/eu-withdrawal-form" target="_blank" rel="noopener">Revoq installieren</a>
+            </div>
+
+            <h2 id="fuer-wen">Für wen ist Revoq besonders sinnvoll?</h2>
+
+            <p><strong>Revoq lohnt sich, wenn der Widerrufsbutton mehr als ein Formular sein muss.</strong> Typische Fälle: Der Shop verkauft in mehrere EU-Länder, die Storefront ist mehrsprachig, das Team möchte Widerrufe zentral im Shopify-Admin bearbeiten, Bestellabgleich und Teilwiderrufe sind wichtig, der Händler möchte keine eigene Forms/Flow-Konstruktion warten, eine Agentur betreut mehrere Shopify-Shops, Datenschutz und Anbietertransparenz sind relevante Auswahlkriterien.</p>
+
+            <p>Für sehr einfache Shops kann der DIY-Ansatz weiterhin ausreichen. Aber sobald Mehrsprachigkeit, Bestellzuordnung, Teilwiderrufe oder interne Bearbeitung wichtig werden, ist eine spezialisierte App meist die pragmatischere Lösung.</p>
+
+            <h2 id="vertrauen">Vertrauen und App-Store-Listing</h2>
+
+            <p><strong>Bei einer rechtlich relevanten Funktion wie dem Widerrufsbutton zählt Vertrauen.</strong> Händler geben hier Kundendaten in eine App und verlassen sich darauf, dass der Prozess im Alltag zuverlässig funktioniert.</p>
+
+            <p>Revoq ist als <strong>Built-for-Shopify-App</strong> im Shopify App Store verfügbar und wird bereits von vielen Shopify-Händlern genutzt, darunter Shops, die Wert auf saubere Prozesse, Datenschutz und zuverlässigen Support legen. Ein starkes Signal sind die positiven Bewertungen im App Store. Händler heben dort besonders die einfache Einrichtung, den schnellen Support und den klaren Workflow hervor.</p>
+
+            <p>Gerade beim EU-Widerrufsbutton sollte man nicht nur auf den günstigsten Anbieter schauen. Wichtig ist, ob die Lösung aktiv gepflegt wird, ob der Anbieter erreichbar ist und ob andere Shopify-Händler der App vertrauen.</p>
+
+            <h2 id="fazit">Fazit: DIY ist möglich, aber nicht immer die beste Wahl</h2>
+
+            <p>Den Widerrufsbutton in Shopify einzubauen ist grundsätzlich auch mit Shopify Forms und Shopify Flow möglich. Für einfache Shops kann das ein guter kostenloser Weg sein. Wer aber weniger Setup-Risiko, Mehrsprachigkeit, Bestellabgleich, Teilwiderrufe und eine zentrale Bearbeitung im Shopify-Admin möchte, sollte sich eine spezialisierte App ansehen. Revoq ist genau dafür gebaut.</p>
+
+            <div class="related-articles" style="background: rgba(255,255,255,0.6); border: 1px solid rgba(35,126,181,0.15); border-radius: 14px; padding: 1.5rem 1.75rem; margin: 2.5rem 0;">
+              <h4 style="font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 700; color: #0f172a; margin: 0 0 0.8rem 0; text-transform: uppercase; letter-spacing: 0.05em;">Weiterführende Artikel</h4>
+              <ul style="margin: 0; padding: 0; list-style: none;">
+                <li style="padding: 0.35rem 0;"><a href="https://dd-gossen.com/blog/widerrufsbutton-shopify-einbauen/" style="color: #237eb5; text-decoration: none; font-size: 0.93rem; font-weight: 500;">Widerrufsbutton in Shopify einbauen: DIY-Anleitung mit Forms und Flow →</a></li>
+                <li style="padding: 0.35rem 0;"><a href="https://dd-gossen.com/blog/widerrufsrecht-shopify-2026/" style="color: #237eb5; text-decoration: none; font-size: 0.93rem; font-weight: 500;">Widerrufsrecht 2026: Was Shopify-Shopbetreiber jetzt wissen müssen →</a></li>
+                <li style="padding: 0.35rem 0;"><a href="https://www.consumer-withdrawal.eu/de" target="_blank" rel="noopener" style="color: #237eb5; text-decoration: none; font-size: 0.93rem; font-weight: 500;">consumer-withdrawal.eu: Hintergrund zur EU-Widerrufsfunktion →</a></li>
+              </ul>
+            </div>
+
+            <div class="cta-box">
+              <h3>Revoq für deinen Shopify-Shop einrichten</h3>
+              <p>Revoq bildet den EU-Widerrufsbutton in Shopify ab: Storefront-Formular, Bestellabgleich, Teilwiderrufe, Bestätigungsmail und Bearbeitung im Admin. Kostenloser Plan verfügbar, Setup in wenigen Minuten.</p>
+              <a href="https://apps.shopify.com/eu-withdrawal-form" target="_blank" rel="noopener" class="cta-button">Revoq im Shopify App Store öffnen</a>
+            </div>
+
+          </div>
+
+          <section class="article-faq">
+            <h2 class="faq-title">Häufige Fragen zum Shopify Widerrufsbutton</h2>
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>Ist der Widerrufsbutton für Shopify-Shops Pflicht?</summary>
+                <p>Für alle B2C-Shops, die an Verbraucher in der EU verkaufen, wird ab dem 19. Juni 2026 eine elektronische Widerrufsfunktion zur Pflicht. Shopify-Händler sollten prüfen, ob sie einen klar erreichbaren Widerrufsbutton mit Formular, Bestätigungsschritt und Eingangsbestätigung benötigen.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Kann ich den Widerrufsbutton mit Shopify Forms und Flow umsetzen?</summary>
+                <p>Ja, grundsätzlich ist eine DIY-Lösung mit Shopify Forms, Shopify Flow und automatisierten E-Mails möglich. Der Händler muss dann aber selbst sicherstellen, dass Formular, Zwei-Schritt-Flow, Bestätigungsmail, Platzierung im Shop, Mehrsprachigkeit und interne Bearbeitung sauber umgesetzt und getestet sind.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Wann ist eine Shopify Widerrufsbutton App sinnvoller?</summary>
+                <p>Eine spezialisierte App lohnt sich, wenn der Shop mehrere Sprachen nutzt, Bestellungen automatisch zugeordnet werden sollen, Teilwiderrufe strukturiert erfasst werden müssen oder das Team die Widerrufe zentral im Shopify-Admin bearbeiten möchte.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Muss der Widerrufsbutton ohne Kundenlogin funktionieren?</summary>
+                <p>Ja. Der Widerrufsbutton sollte für Kunden einfach erreichbar sein und nicht davon abhängen, dass sich der Kunde zuerst einloggt. Sichtbare Einbindung im Shop ist deshalb wichtig, zum Beispiel über Widerrufsseite, Button oder Footer-Link.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Muss nach dem Widerruf eine Bestätigungsmail versendet werden?</summary>
+                <p>Eine Eingangsbestätigung ist zentraler Teil des Prozesses. Bei einer DIY-Lösung muss die Mail selbst eingerichtet werden, zum Beispiel über Shopify Flow. Revoq sendet die Bestätigungsmail automatisch nach erfolgreicher Bestätigung des Widerrufs.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Was ist der Vorteil von Revoq gegenüber einem einfachen Formular?</summary>
+                <p>Revoq bildet einen Shopify-Workflow ab: zweistufiger Widerrufsflow, mehrsprachige Storefront, automatische Bestätigungsmail, Bestellabgleich, Teilwiderrufe und Bearbeitung im Shopify-Admin. Dadurch wird der Widerruf nicht nur erfasst, sondern auch operativ besser verarbeitbar.</p>
+              </details>
+            </div>
+          </section>
+
+          <div style="margin-top: 2rem; padding: 1rem 1.25rem; background: rgba(35,126,181,0.06); border-left: 3px solid rgba(35,126,181,0.3); border-radius: 6px; font-size: 0.88rem; color: #475569; line-height: 1.5;">
+            <strong>Hinweis:</strong> Revoq unterstützt die technische Umsetzung des Widerrufsprozesses in Shopify. Dieser Artikel stellt keine Rechtsberatung dar. Händler sollten ihre rechtlichen Texte und die konkrete Umsetzung bei Bedarf mit einem geeigneten Rechtsdienstleister prüfen.
+          </div>
+
+          <div class="author-box">
+            <h3 class="author-box-title">Über den Autor</h3>
+            <p class="author-bio">Ich arbeite als Shopify Freelancer aus Deutschland und unterstütze Shopbetreiber bei technischer Umsetzung, App-Auswahl und langfristiger Optimierung ihrer Shops.</p>
+            <div class="author-details">
+              <img src="../../Maik-Gossen-ShopifyFreelancer.png" alt="Maik Gossen" class="author-avatar">
+              <div class="author-info">
+                <p class="author-name"><a href="https://dd-gossen.com/" class="author-name-link">Maik Gossen</a></p>
+                <p class="author-role">Shopify Freelancer &amp; Entwickler</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col footer-col-brand">
+        <div class="footer-brand-name">MAIK GOSSEN</div>
+        <div class="footer-contact-label">Kontakt:</div>
+        <a href="mailto:info@dd-gossen.com" class="footer-contact-email">info@dd-gossen.com</a>
+        <a href="tel:+4915168487847" class="footer-contact-phone">+49 151 68487847</a>
+        <div class="footer-social">
+          <a href="mailto:info@dd-gossen.com" title="E-Mail" aria-label="E-Mail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+          <a href="https://www.youtube.com/@dd-gossen" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
+          <a href="https://www.linkedin.com/in/maik-gossen" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col footer-col-toggle">
+        <div class="footer-col-title">Menü</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-freelancer/">Übersicht</a></li>
+          <li><a href="https://dd-gossen.com/">Meine Services</a></li>
+          <li><a href="https://dd-gossen.com/shopify-kostenrechner/">Kostenrechner</a></li>
+          <li><a href="https://dd-gossen.com/blog/">Blog</a></li>
+          <li><a href="https://dd-gossen.com/#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-toggle">
+        <div class="footer-col-title">Services</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/shopify-shop-erstellen/">Shopify Shop erstellen</a></li>
+          <li><a href="https://dd-gossen.com/shopify-migration/">Shopify Migration</a></li>
+          <li><a href="https://dd-gossen.com/shopify-optimierung/">Shopify Optimierung</a></li>
+          <li><a href="https://dd-gossen.com/shopify-hilfe/">Shopify Hilfe</a></li>
+          <li><a href="https://dd-gossen.com/#competencies">Kompetenzen</a></li>
+          <li><a href="https://dd-gossen.com/#projects">Portfolio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-col-toggle">
+        <div class="footer-col-title">Schnellzugriff</div>
+        <ul>
+          <li><a href="https://dd-gossen.com/#contact">Kostenloses Erstgespräch</a></li>
+          <li><a href="https://dd-gossen.com/#about-me">Über mich</a></li>
+          <li><a href="https://shopexperts.com/freelancers/maik-gossen" target="_blank" rel="noopener">Shopexperts</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <a href="https://dd-gossen.com/impressum.html">Impressum</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/datenschutz.html">Datenschutz</a>
+      <span class="footer-sep">|</span>
+      <a href="https://dd-gossen.com/agb.html">AGB</a>
+      <span class="footer-sep">|</span>
+      <a href="#" id="openCookieSettings">Cookie-Einstellungen</a>
+      <span class="footer-sep">|</span>
+      <span>© 2025 Maik Gossen</span>
+    </div>
+  </footer>
+
+  <script src="../../script.js"></script>
+  <script>
+    (function() {
+      var header = document.querySelector('.header');
+      if (!header) return;
+      let lastScrollTop = 0;
+      window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        header.style.background = scrollTop > 100 ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.15)';
+        if (scrollTop > 100) { header.classList.toggle('hidden', scrollTop > lastScrollTop); }
+        else { header.classList.remove('hidden'); }
+        lastScrollTop = scrollTop;
+      });
+    })();
+    (function() {
+      const header = document.querySelector('.header');
+      if (!header) return;
+      const root = document.documentElement;
+      function update() { root.style.setProperty('--sidebar-top', header.classList.contains('hidden') ? '24px' : '110px'); }
+      new MutationObserver(update).observe(header, { attributes: true, attributeFilter: ['class'] });
+      update();
+    })();
+    (function() {
+      const sections = document.querySelectorAll('.article-content h2[id], .article-content h3[id]');
+      const tocLinks = document.querySelectorAll('.sidebar-toc a');
+      if (!sections.length || !tocLinks.length) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`.sidebar-toc a[href="#${entry.target.id}"]`);
+            if (activeLink) activeLink.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-100px 0px -60% 0px' });
+      sections.forEach(section => observer.observe(section));
+    })();
+  </script>
+
+</body>
+</html>
