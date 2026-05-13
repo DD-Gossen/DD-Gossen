@@ -107,25 +107,6 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/blog/widerrufsrecht-shopify-2026/" />
   </url>
 
-
-  <url>
-    <loc>https://dd-gossen.com/widerrufsbutton-einbauen-lassen/</loc>
-    <lastmod>2026-04-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/shopify-withdrawal-button-service/" />
-  </url>
-
-  <url>
-    <loc>https://dd-gossen.com/en/shopify-withdrawal-button-service/</loc>
-    <lastmod>2026-04-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://dd-gossen.com/en/shopify-withdrawal-button-service/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://dd-gossen.com/widerrufsbutton-einbauen-lassen/" />
-  </url>
-
   <!-- Service Landing Pages -->
   <url>
     <loc>https://dd-gossen.com/shopify-shop-erstellen/</loc>
